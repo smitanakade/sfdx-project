@@ -1,0 +1,154 @@
+<apex:component controller="eNettRegistrationFallbackController">
+      <!-- **************************************************************************
+      *
+      *    Personal details - Start
+      *
+      **************************************************************************  -->
+
+ 	<!-- **************************************************************************
+    *   Hidden Preset Value
+    **************************************************************************  -->
+      <div class="input-container col-xs-12 col-sm-6 hidden">
+        <input class="hidden"    id="id" name="id" type="text" />
+        <input class="hidden"   id="referrer" name="referrer" type="text" />
+        
+        <input class="hidden"   id="leadid" name="leadid" type="text" />
+        <input class="hidden"   id="EFT_Subscription_Fee" name="EFT_Subscription_Fee" type="text" />
+        <input class="hidden"  id="VANs_Subscription_Fee" name="VANs_Subscription_Fee" type="text" />
+        <input class="hidden"   id="Subscription_Fee_Currency" name="Subscription_Fee_Currency" type="text" />
+        <input class="hidden"   id="Subscription_Fee_Symbol" name="Subscription_Fee_Symbol" type="text" />
+        <input class="hidden required"   id="product" name="product" type="text" value="VANs"  data-errorCaption="the product section"/>
+      </div>
+       <!-- **************************************************************************
+        *   Personal  details
+        **************************************************************************  -->
+      <div class="input-container col-xs-12 col-sm-6">
+        <label for="title" data-manditoryfield="Title - mandatory field">Title</label>
+        <select id="title" class="required" name="title" data-js="form-text"> 
+        </select>
+      </div>
+      <div class="input-container col-xs-12 col-sm-6">
+        <label for="firstname" data-manditoryfield="Please write your first name">First name</label>
+        <input type="text" id="firstname" class="required maxlength" data-maxlength="40" data-errorCaption="first name"  name="firstname"  autocomplete="off" data-js="form-text" />
+         <div class="field_error">
+            <p data-error-message="required" class="hidden">First name is required.</p>
+            <p data-error-message="maxlength" class="hidden">First name cannot be longer than 40 characters.</p>
+        </div>
+      </div>
+      <div class="input-container col-xs-12 col-sm-6">
+        <label for="lastname" data-manditoryfield="Last name - mandatory field">Last name</label>
+        <input type="text" id="lastname" class="required maxlength" data-maxlength="80" name="lastname" data-errorCaption="last name" autocomplete="off" data-js="form-text" />
+         <div class="field_error">
+            <p data-error-message="required" class="hidden">Last name is required.</p>
+            <p data-error-message="maxlength" class="hidden">Last name cannot be longer than 80 characters.</p>
+        </div>
+      </div>
+      <div class="input-container col-xs-12 col-sm-6">
+        <label for="jobtitle" data-manditoryfield="Job title">Job title</label>
+        <input type="text" id="jobtitle" name="jobtitle" class="required maxlength" data-maxlength="60" autocomplete="off" data-errorCaption="job title" data-js="form-text" />
+        <div class="field_error">
+            <p data-error-message="required" class="hidden">Job title is required.</p>
+            <p data-error-message="maxlength" class="hidden">Job title cannot be longer than 60 characters.</p>
+        </div>
+      </div>
+      <div class="input-container col-xs-12 col-sm-6">
+        <label for="contactnumber" data-manditoryfield="Contact number">Contact number</label>
+        <input type="text" id="contactnumber" name="contactnumber" class="required maxlength" data-maxlength="40" autocomplete="off" data-errorCaption="contact number" data-js="form-text" />
+        <div class="field_error">
+            <p data-error-message="required" class="hidden">Contact number is required.</p>
+            <p data-error-message="maxlength" class="hidden">Contact number cannot be longer than 40 characters.</p>
+        </div>
+      </div>
+      <div class="input-container col-xs-12 col-sm-6">
+        <label for="email" data-manditoryfield="Email address - mandatory field">Contact email</label>
+        <input type="text" id="email" class="required maxlength email" name="email" autocomplete="off" data-js="form-text" data-maxlength="70" data-errorCaption="contact email" />
+        <div class="field_error">
+            <p data-error-message="required" class="hidden">Contact email is required.</p>
+            <p data-error-message="maxlength" class="hidden">Contact email cannot be longer than 70 characters.</p>
+            <p data-error-message="email" class="hidden">You did not enter your email address correctly or have used internet-based account like gmail,yahoo,live or hotmail.</p>
+        </div>
+      </div>
+      <div class="input-container wrapper-select col-xs-12 col-sm-6">
+        <label for="country" data-manditoryfield="Country">Select Country</label>
+        <select id="country" class="required" name="country" data-js="form-text" data-errorCaption="country">  
+        </select>
+         <div class="field_error">
+            <p data-error-message="required" class="hidden">Country is required.</p>
+        </div>
+      </div>
+      <div class="input-container wrapper-select col-xs-12 col-sm-6">
+        <label for="state" data-manditoryfield="State">Please select country first</label>
+        <select id="state" class="required" name="state" data-js="form-text" data-errorCaption="state/regions"> 
+        </select>
+         <div class="field_error">
+            <p data-error-message="required" class="hidden">This field is required.</p>
+        </div> 
+        
+      </div>
+      <div class="input-container col-xs-12 col-sm-6">
+        <label for="businessname" data-manditoryfield="Business name">Business name</label>
+        <input type="text" id="businessname" name="businessname" class="required maxlength" data-maxlength="255" data-errorCaption="business name" autocomplete="off" data-js="form-text"  />
+        <div class="field_error">
+            <p data-error-message="required" class="hidden"><span data-label="businessname">Business name</span> is required.</p>
+            <p data-error-message="maxlength" class="hidden"><span data-label="businessname">Business name</span> cannot be longer than 255 characters.</p>
+        </div>
+      </div>
+      <div class="input-container col-xs-12 col-sm-6">
+        <label for="businessNumber" data-manditoryfield="Company Registration number">Company registration number</label>
+        <input type="text" id="businessNumber" name="businessNumber" class="required maxlength" data-maxlength="25" autocomplete="off" data-errorCaption="company registration number" data-js="form-text" />
+        <div class="field_error">
+            <p data-error-message="required" class="hidden"><span data-label="businessname">Company Registration numbe</span> is required.</p>
+            <p data-error-message="maxlength" class="hidden"><span data-label="businessname">Company Registration numbe</span> cannot be longer than 25 characters.</p>
+        </div>
+      </div>
+      
+     	<!-- **************************************************************************
+        *   Product
+        **************************************************************************  -->
+      <div class="wrapper-products hidden">
+        <h2 class="col-xs-12 col-sm-6 form-title">Please select the product you would like to use before continuing </h2>
+        <ul class="content-wrapper">
+          <li class="col-xs-12 col-md-6 item">
+            <div class="col-xs-12 title">
+              <h3>eNett VAN</h3>
+              <div class="checkbox-wrapper remove">
+                <input checked="checked" class="add" Id="van_add" name="van_add" onChange="setProducts()" type="checkbox" value="van" />
+                <label for="van_add"> Remove </label>                            
+              </div>
+            </div>
+            <div class="col-xs-12  content">
+              <p>An eNett Virtual Account Number (VAN) is an automatically generated MasterCard number that you can use to make supplier payments. A unique number is used for each new booking orpayment transaction, which makes it a highly safe and secure way to pay, or to be paid.</p>
+            </div>
+          </li>
+          <li class="col-xs-12 col-md-6 item">
+            <div class="col-xs-12 title">
+              <h3>eNett EFT</h3>
+              <div class="checkbox-wrapper">
+                <input class="add" Id="eft_add" name="eft_add" onChange="setProducts()" type="checkbox" value="eft" />
+                <label for="eft_add">
+                <span>Add</span>
+                </label>                            
+              </div>
+            </div>
+            <div class="col-xs-12 content">
+              <p>The eNett EFT system is designed purely for the travel industry, and integrates your accounts payable and receivable in one easy to use system. As well as the ability to send and receive payments to and from your travel suppliers you'll have access to criticalmanagement and financial reports online, in real-time.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+       <!-- **************************************************************************
+      *
+      *    Personal details - End
+      *
+      **************************************************************************  -->
+  
+
+    <!-- **************************************************************************
+    *   Error 
+    **************************************************************************  -->
+    <div class="wrapper-validation" id="personalDetails-error-msg">
+           
+     </div>
+
+
+</apex:component>

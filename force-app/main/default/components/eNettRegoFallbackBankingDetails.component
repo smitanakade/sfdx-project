@@ -1,0 +1,516 @@
+<apex:component >
+ 	<!-- **************************************************************************
+      *
+      *    Banking Details - Start
+      *
+      **************************************************************************  -->
+
+					<h2>Banking Details</h2>
+                    <p class="">To speed up your account set-up, you can add your bank account/s now.  If you don't have this information handy, don't stress you can skip this step and we can add it later.</p>
+                    <ul class="nav nav-tabs" role="tablist">
+                        <li role="presentation" class="active"><a href="#yes" aria-controls="home" role="tab" data-toggle="tab">Yes, I want to use my iban</a></li>
+                        <li role="presentation"><a href="#no" aria-controls="profile" role="tab" data-toggle="tab">No, I don't want to use my iban</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div role="tabpanel" class="tab-pane active" id="yes">
+                          <div class="input-container col-xs-12 col-sm-6">
+                            <label for="swift_bic" data-manditoryfield="Please enter SWIFT/BIC">SWIFT/BIC</label>
+                            <input type="text" id="swift_bic" class="required maxlength" data-maxlength="50" data-errorCaption="swift/bic" name="swift_bic" autocomplete="off" data-js="form-text" />
+                            <div class="field_error">
+                              <p data-error-message="required" class="hidden"><span data-label="swift_bic">SWIFT/BIC</span> is required.</p>
+                              <p data-error-message="maxlength" class="hidden"><span data-label="swift_bic">SWIFT/BIC</span> cannot be longer than 50 characters.</p>
+                          </div>
+                          </div>
+                          <div class="input-container col-xs-12 col-sm-6">
+                            <label for="iban" data-manditoryfield="Please enter your iban number">IBAN</label>
+                            <input type="text" id="iban" class="required maxlength" data-maxlength="50" data-errorCaption="iban" name="iban" autocomplete="off" data-js="form-text" />
+                            <div class="field_error">
+                                <p data-error-message="required" class="hidden"><span data-label="iban">IBAN</span> is required.</p>
+                                <p data-error-message="maxlength" class="hidden"><span data-label="iban">IBAN</span> cannot be longer than 50 characters.</p>
+                            </div>
+                          </div>
+                          <div class="input-container col-xs-12 col-sm-6">
+                            <label for="account_currency_iban" data-manditoryfield="Account currency - mandatory field">Currency</label>
+                           <!--  <input type="text" class="" name="account_currency_iban" autocomplete="off" data-js="form-text"/> -->
+                             <select id="account_currency_iban" class="required" data-errorCaption="currency" name="account_currency_iban" data-js="form-text">  
+                            </select>
+                            <div class="field_error">
+                                <p data-error-message="required" class="hidden"><span data-label="account_currency_iban">Currency</span> is required.</p>
+                            </div>
+                          </div>
+                          <div class="input-container col-xs-12 col-sm-6">
+                            <label for="account_name_iban" data-manditoryfield="Account name - mandatory field">Account Name</label>
+                            <input type="text" class="required maxlength" data-maxlength="50" data-errorCaption="account name" id="account_name_iban" name="account_name_iban" autocomplete="off" data-js="form-text" />
+                            <div class="field_error">
+                              <p data-error-message="required" class="hidden"><span data-label="account_name_iban">Account Name</span> is required.</p>
+                              <p data-error-message="maxlength" class="hidden"><span data-label="account_name_iban">Account Name</span> cannot be longer than 50 characters.</p>
+                          </div>
+                          </div>
+                          <div class="input-container col-xs-12 col-sm-6">
+                              <label for="account_country_iban" data-manditoryfield="Account country">Account Country</label>
+                              <select id="account_country_iban" class="required" data-errorCaption="account country" name="account_country_iban" data-js="form-text">  
+                              </select>
+                              <div class="field_error">
+                                <p data-error-message="required" class="hidden"><span data-label="account_country_iban">Account Country</span> is required.</p>
+                              </div>
+                          </div>
+
+                            <!-- **************************************************************************
+                            *   Error 
+                            **************************************************************************  -->
+                            <div class="wrapper-validation" id="funding-ibn-error-msg">
+                                   
+                             </div>
+                            <a class="btn btn-add" href="#funding-accounts" onclick="createBankAccount('Funding','iban');return false;">Add this account iban</a>
+                        </div>
+                        <div role="tabpanel" class="tab-pane" id="no">
+                          <div class="input-container col-xs-12 col-sm-6">
+                            <label for="bsb" data-manditoryfield="BSB">BSB/Branch Code</label>
+                            <input type="text" id="bsb" class="required maxlength" data-maxlength="12" data-errorCaption="bsb/branch code" name="bsb" autocomplete="off" data-js="form-text"/>
+                            <div class="field_error">
+                                <p data-error-message="required" class="hidden"><span data-label="bsb">BSB/Branch Code</span> is required.</p>
+                                <p data-error-message="maxlength" class="hidden"><span data-label="bsb">BSB/Branch Code</span> cannot be longer than 12 characters.</p>
+                            </div>
+                          </div>
+                          <div class="input-container col-xs-12 col-sm-6">
+                            <label for="account_number" data-manditoryfield="Account number">Account Number</label>
+                            <input type="text" id="account_number" class="required maxlength" data-maxlength="20" data-errorCaption="account number" name="account_number" autocomplete="off" data-js="form-text" />
+                            <div class="field_error">
+                                <p data-error-message="required" class="hidden"><span data-label="account_number">Account Number</span> is required.</p>
+                                <p data-error-message="maxlength" class="hidden"><span data-label="account_number">Account Number</span> cannot be longer than 20 characters.</p>
+                              </div>
+                          </div>
+                          <div class="input-container col-xs-12 col-sm-6">
+                            <label for="account_currency_no_iban" data-manditoryfield="Account currency - mandatory field">Currency</label>
+                             <select id="account_currency_no_iban" class="required"  data-errorCaption="currency" name="account_currency_no_iban" data-js="form-text">  
+                            </select>
+                            <div class="field_error">
+                                <p data-error-message="required" class="hidden"><span data-label="account_currency_no_iban">Currency</span> is required.</p>
+                              </div>
+                          </div>
+                          <div class="input-container col-xs-12 col-sm-6">
+                            <label for="account_name_no_iban" data-manditoryfield="Account name - mandatory field">Account Name</label>
+                            <input type="text" class="required maxlength" data-maxlength="50" data-errorCaption="account name" name="account_name_no_iban" id="account_name_no_iban" autocomplete="off" data-js="form-text"/>
+                            <div class="field_error">
+                                <p data-error-message="required" class="hidden"><span data-label="account_name_no_iban">Account Name</span> is required.</p>
+                                <p data-error-message="maxlength" class="hidden"><span data-label="account_name_no_iban">Account Name</span> cannot be longer than 50 characters.</p>
+                              </div>
+                          </div>
+                          <div class="input-container col-xs-12 col-sm-6">
+                            <label for="account_country_no_iban" data-manditoryfield="Account country">Account Country</label>
+                            <select id="account_country_no_iban" class="required"  data-errorCaption="account country" name="account_country_no_iban" data-js="form-text">  
+                            </select>
+                            <div class="field_error">
+                                <p data-error-message="required" class="hidden"><span data-label="account_country_no_iban">Account Country numbe</span> is required.</p>
+                            </div>
+                          </div>
+                          <div class="input-container col-xs-12 col-sm-6">
+                            <label for="swift_bic" data-manditoryfield="Please enter SWIFT/BIC">SWIFT/BIC</label>
+                            <input type="text" id="swift_bic_no_iba" class="required maxlength" data-maxlength="50" data-errorCaption="swift/bic" name="swift_bic_no_iba" autocomplete="off" data-js="form-text" />
+                            <div class="field_error">
+                              <p data-error-message="required" class="hidden"><span data-label="swift_bic_no_iba">SWIFT/BIC</span> is required.</p>
+                              <p data-error-message="maxlength" class="hidden"><span data-label="swift_bic_no_iba">SWIFT/BIC</span> cannot be longer than 50 characters.</p>
+                            </div>
+                          </div>
+                              <!-- **************************************************************************
+                            *   Error 
+                            **************************************************************************  -->
+                            <div class="wrapper-validation" id="funding-no_iban-error-msg">
+                                   
+                             </div>
+                            <a class="btn btn-add" href="#funding-accounts" onclick="createBankAccount('Funding','no_iban');return false;">Add this account no iban</a>
+                        </div>
+                    </div>
+                      
+                    <div class="details-repeater-block">
+                      <h2 class="title-repeater-block">My Funding Accounts new</h2>
+                      <ul class="minitem"  data-minitemname="Funding Accounts" id="funding-accounts">
+                      </ul>
+                    </div>
+                          <!-- **************************************************************************
+                          *
+                          *    PAYABLE / RECEIVABLE / BILLING DETAILS - Start
+                          *
+                          **************************************************************************  -->
+  
+                         <div class="three-column-wrapper">
+                          <h2 class="col-xs-12 col-sm-8 intro-content">EFT Service account setup</h2>
+                          <p class="col-xs-12 col-sm-8 intro-content">Please add your Accounts payable, receivable and billing for EFT service setup</p>
+                          <div class="col-xs-12 three-column">
+                            <!-- **************************************************************************
+                            *   Payable DETAILS 
+                            **************************************************************************  -->
+                           <div class="input-container col-xs-12 col-sm-6 hidden">
+                                  <input class="hidden" id="payable_account_Id" name="payable_account_Id" type="text" />
+                             </div>
+                            <ul id="payable" class="col-xs-12 col-sm-4">
+                              
+                              <li><h3>Payable</h3></li>
+                               <li onClick="pushReceivableandBilling('Receivable');return false"><span>Push field content across</span></li>
+
+                              <li>
+                                <div class="input-container">
+                                  <label for="country_payable" data-manditoryfield="Please select your country">Country</label>
+                                  <select id="country_payable" class="required" name="country_payable" data-js="form-text" data-errorCaption="country">  
+                                  </select>
+                                  <div class="field_error">
+                                      <p data-error-message="required" class="hidden"><span data-label="country_payable">Country</span> is required.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="financialinstitution_payable" data-manditoryfield="Please enter your financial institution">Financial institution</label>
+                                  <input type="text" id="financialinstitution_payable" class="required maxlength" data-maxlength="50" data-errorCaption="financial institution" name="financialinstitution_payable" autocomplete="off" data-js="form-text"/>
+                                   <div class="field_error">
+                                      <p data-error-message="required" class="hidden"><span data-label="financialinstitution_payable">Financial institution</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="financialinstitution_payable">Financial institution</span> cannot be longer than 50 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="accountname_payable" data-manditoryfield="Please enter your account name">Account name</label>
+                                  <input type="text" id="accountname_payable" class="required maxlength" data-maxlength="50" data-errorCaption="account name" name="accountname_payable" autocomplete="off" data-js="form-text"/>
+                                   <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="accountname_payable">Account name</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="accountname_payable">Account name</span> cannot be longer than 50 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="accountnumber_payable" data-manditoryfield="Please enter your account number">Account number</label>
+                                  <input type="text" id="accountnumber_payable" class="required maxlength" data-maxlength="20" data-errorCaption="account number" name="accountnumber_payable" autocomplete="off" data-js="form-text"/>
+                                  <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="accountnumber_payable">Account number</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="accountnumber_payable">Account number</span> cannot be longer than 20 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="bankcode_payable" data-manditoryfield="Please enter your bank code">Bank code</label>
+                                  <input type="text" id="bankcode_payable" class="required maxlength" data-maxlength="12" data-errorCaption="Bank code" name="bankcode_payable" autocomplete="off" data-js="form-text"/>
+                                  <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="bankcode_payable">Bank code</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="bankcode_payable">Bank code</span> cannot be longer than 12 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="addressline1_payable" data-manditoryfield="Please enter your address">Address line 1</label>
+                                  <input type="text" id="addressline1_payable" class="required maxlength" data-maxlength="255" data-errorCaption="address line 1" name="addressline1_payable" autocomplete="off" data-js="form-text"/>
+                                   <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="addressline1_payable">Address line 1</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="addressline1_payable">Address line 1</span> cannot be longer than 255 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="addressline2_payable" data-manditoryfield="Appartment, suite, unit, building, floor etc.">Address line 2</label>
+                                  <input type="text" id="addressline2_payable" class="maxlength" data-maxlength="255" data-errorCaption="address line 2" name="addressline2_payable" autocomplete="off" data-js="form-text"/>
+                                   <div class="field_error">
+                                     <!-- <p data-error-message="required" class="hidden"><span data-label="addressline2_payable">Address line 2</span> is required.</p> -->
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="addressline2_payable">Address line 2</span> cannot be longer than 255 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="city_payable" data-manditoryfield="What city do you live in?">City</label>
+                                  <input type="text" id="city_payable" class="required maxlength" data-maxlength="502" data-errorCaption="city" name="city_payable" autocomplete="off" data-js="form-text"/>
+                                   <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="city_payable">City</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="city_payable">City</span> cannot be longer than 50 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="region_payable" data-manditoryfield="What region do you live in?">Region</label>
+                                  <select id="region_payable" class="required" name="region_payable" data-js="form-text" data-errorCaption="region">  
+                                  </select>
+                                   <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="region_payable">Region</span> is required.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="postcode_payable" data-manditoryfield="Whats your postcode?">Postcode</label>
+                                  <input type="text" id="postcode_payable" class="required maxlength" data-maxlength="20" data-errorCaption="postcode" name="postcode_payable" autocomplete="off" data-js="form-text"/>
+                                   <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="postcode_payable">Postcode</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="postcode_payable">Postcode</span> cannot be longer than 20 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                               <li onClick="pushReceivableandBilling('Receivable');return false"><span>Push field content across</span></li>
+                              <li>
+                                <!-- **************************************************************************
+                                  *   Error 
+                                  **************************************************************************  -->
+                                <div class="wrapper-validation" id="payable-error-msg">
+                        
+                                </div>
+                              </li>
+                            </ul>
+
+                            <!-- **************************************************************************
+                            *   Receivable DETAILS 
+                            **************************************************************************  -->
+                            <div class="input-container col-xs-12 col-sm-6 hidden">
+                              <input class="hidden" id="receivable_account_Id" name="receivable_account_Id" type="text" />
+                            </div>
+                            <ul class="col-xs-12 col-sm-4" id="receivable">
+                              <li><h3>Receivable</h3></li>
+                             
+                              <li onClick="pushReceivableandBilling('Billing');return false"><span>Push field content across</span></li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="country_receivable" data-manditoryfield="Please select your country">Country</label>
+                                  <select id="country_receivable" class="required" data-errorCaption="country" name="country_receivable" data-js="form-text">  
+                                  </select>
+                                  <div class="field_error">
+                                      <p data-error-message="required" class="hidden"><span data-label="country_receivable">Country</span> is required.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="financialinstitution_receivable" data-manditoryfield="Please enter your financial institution">Financial institution</label>
+                                  <input type="text" id="financialinstitution_receivable" class="required maxlength" data-maxlength="50" data-errorCaption="financial institution" name="financialinstitution_receivable" autocomplete="off" data-js="form-text"/>
+                                  <div class="field_error">
+                                      <p data-error-message="required" class="hidden"><span data-label="financialinstitution_receivable">Financial institution</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="financialinstitution_receivable">Financial institution</span> cannot be longer than 50 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="accountname_receivable" data-manditoryfield="Please enter your account name">Account name</label>
+                                  <input type="text" id="accountname_receivable" class="required maxlength" data-maxlength="50" data-errorCaption="account name"  name="accountname_receivable" autocomplete="off" data-js="form-text"/>
+                                  <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="accountname_receivable">Account name</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="accountname_receivable">Account name</span> cannot be longer than 50 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="accountnumber_receivable" data-manditoryfield="Please enter your account number">Account number</label>
+                                  <input type="text" id="accountnumber_receivable" class="required maxlength" data-maxlength="20" data-errorCaption="account number" name="accountnumber_receivable" autocomplete="off" data-js="form-text"/>
+                                    <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="accountnumber_receivable">Account number</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="accountnumber_receivable">Account number</span> cannot be longer than 20 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="bankcode_receivable" data-manditoryfield="Please enter your bank code">Bank code</label>
+                                  <input type="text" id="bankcode_receivable" class="required maxlength" data-maxlength="12" data-errorCaption="Bank code" name="bankcode_receivable" autocomplete="off" data-js="form-text"/>
+                                   <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="bankcode_receivable">Bank code</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="bankcode_receivable">Bank code</span> cannot be longer than 12 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="addressline1_receivable" data-manditoryfield="Please enter your address">Address line 1</label>
+                                  <input type="text" id="addressline1_receivable" class="required maxlength" data-maxlength="255" data-errorCaption="address line 1" name="addressline1_receivable" autocomplete="off" data-js="form-text"/>
+                                  <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="addressline1_receivable">Address line 1</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="addressline1_receivable">Address line 1</span> cannot be longer than 255 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="addressline2_receivable" data-manditoryfield="Appartment, suite, unit, building, floor etc.">Address line 2</label>
+                                  <input type="text" id="addressline2_receivable"  class="maxlength" data-maxlength="255" data-errorCaption="address line 2" name="addressline2_receivable" autocomplete="off" data-js="form-text"/>
+                                   <div class="field_error">
+                                     <!-- <p data-error-message="required" class="hidden"><span data-label="addressline2_payable">Address line 2</span> is required.</p> -->
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="addressline2_receivable">Address line 2</span> cannot be longer than 255 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="city_receivable" data-manditoryfield="What city do you live in?">City</label>
+                                  <input type="text" id="city_receivable" class="required maxlength" data-maxlength="502" data-errorCaption="city" name="city_receivable" autocomplete="off" data-js="form-text"/>
+                                    <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="city_receivable">City</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="city_receivable">City</span> cannot be longer than 50 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="region_receivable" data-manditoryfield="What region do you live in?">Region</label>
+                                  <select id="region_receivable" class="required" data-errorCaption="region" name="region_receivable" data-js="form-text">  
+                                  </select>
+                                   <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="region_receivable">Region</span> is required.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="postcode_receivable" data-manditoryfield="Whatyour postcode?">Postcode</label>
+                                  <input type="text" id="postcode_receivable" class="required maxlength" data-maxlength="20"  data-errorCaption="postcode" name="postcode_receivable" autocomplete="off" data-js="form-text"/>
+                                    <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="postcode_receivable">Postcode</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="postcode_receivable">Postcode</span> cannot be longer than 20 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li onClick="pushReceivableandBilling('Billing');return false"><span>Push field content across</span></li>
+                               <li>
+                                <!-- **************************************************************************
+                                  *   Error 
+                                  **************************************************************************  -->
+                                <div class="wrapper-validation" id="receivable-error-msg">
+                        
+                                </div>
+                              </li>
+                            </ul>
+                            <!-- **************************************************************************
+                            *   Billing DETAILS 
+                            **************************************************************************  -->
+                            <div class="input-container col-xs-12 col-sm-6 hidden">
+            						        <input class="hidden" id="billing_account_Id" name="billing_account_Id" type="text" />
+            						   </div>
+                            <ul class="col-xs-12 col-sm-4">
+                              <li><h3>Billing</h3></li>
+                              <li>&nbsp;</li>
+                              <li>
+                                <div class="input-container">
+                                 <label for="country_billing" data-manditoryfield="Please select your country">Country</label>
+                                  <select id="country_billing" class="required" data-errorCaption="country" name="country_billing" data-js="form-text">  
+                                  </select>
+                                  <div class="field_error">
+                                      <p data-error-message="required" class="hidden"><span data-label="country_billing">Country</span> is required.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="financialinstitution_billing" data-manditoryfield="Please enter your financial institution">Financial institution</label>
+                                  <input type="text" id="financialinstitution_billing" class="required maxlength" data-maxlength="50" data-errorCaption="financial institution" name="financialinstitution_billing" autocomplete="off" data-js="form-text"/>
+                                   <div class="field_error">
+                                      <p data-error-message="required" class="hidden"><span data-label="financialinstitution_billing">Financial institution</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="financialinstitution_billing">Financial institution</span> cannot be longer than 50 characters.</p>
+                                  </div>
+                                </div>
+                               
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="accountname_billing" data-manditoryfield="Please enter your account name">Account name</label>
+                                  <input type="text" id="accountname_billing" class="required maxlength" data-maxlength="50" data-errorCaption="account name"  name="accountname_billing" autocomplete="off" data-js="form-text"/>
+                                  <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="accountname_billing">Account name</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="accountname_billing">Account name</span> cannot be longer than 50 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="accountnumber_billing" data-manditoryfield="Please enter your account number">Account number</label>
+                                  <input type="text" id="accountnumber_billing" class="required maxlength" data-maxlength="20" data-errorCaption="account number" name="accountnumber_billing" autocomplete="off" data-js="form-text"/>
+                                    <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="accountnumber_billing">Account number</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="accountnumber_billing">Account number</span> cannot be longer than 20 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="bankcode_billing" data-manditoryfield="Please enter your bank code">Bank code</label>
+                                  <input type="text" id="bankcode_billing" class="required maxlength" data-maxlength="12" data-errorCaption="Bank code" name="bankcode_billing" autocomplete="off" data-js="form-text"/>
+                                   <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="bankcode_billing">Bank code</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="bankcode_billing">Bank code</span> cannot be longer than 12 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="addressline1_billing" data-manditoryfield="Please enter your address">Address line 1</label>
+                                  <input type="text" id="addressline1_billing" class="required maxlength" data-maxlength="255" data-errorCaption="address line 1" name="addressline1_billing" autocomplete="off" data-js="form-text"/>
+                                  <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="addressline1_billing">Address line 1</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="addressline1_billing">Address line 1</span> cannot be longer than 255 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="addressline2_billing" data-manditoryfield="Appartment, suite, unit, building, floor etc.">Address line 2</label>
+                                  <input type="text" id="addressline2_billing"  class="maxlength" data-maxlength="255" data-errorCaption="address line 2" name="addressline2_billing" autocomplete="off" data-js="form-text"/>
+                                     <div class="field_error">
+                                     <!-- <p data-error-message="required" class="hidden"><span data-label="addressline2_payable">Address line 2</span> is required.</p> -->
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="addressline2_billing">Address line 2</span> cannot be longer than 255 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="city_billing" data-manditoryfield="What city do you live in?">City</label>
+                                  <input type="text" id="city_billing" class="required maxlength" data-maxlength="502" data-errorCaption="city" name="city_billing" autocomplete="off" data-js="form-text"/>
+                                    <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="city_billing">City</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="city_billing">City</span> cannot be longer than 50 characters.</p>
+                                  </div>
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="region_billing" data-manditoryfield="What region do you live in?">Region</label>
+                                  <select id="region_billing" class="required" data-errorCaption="region" name="region_billing" data-js="form-text">  
+                                  </select>
+                                   <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="region_billing">Region</span> is required.</p>
+                                  </div>
+
+                                </div>
+                              </li>
+                              <li>
+                                <div class="input-container">
+                                  <label for="postcode_billing" data-manditoryfield="Whatyour postcode?">Postcode</label>
+                                  <input type="text" id="postcode_billing" class="required maxlength" data-maxlength="20"  data-errorCaption="postcode" name="postcode_billing" autocomplete="off" data-js="form-text"/>
+                               
+                                  <div class="field_error">
+                                    <p data-error-message="required" class="hidden"><span data-label="postcode_billing">Postcode</span> is required.</p>
+                                      <p data-error-message="maxlength" class="hidden"><span data-label="postcode_billing">Postcode</span> cannot be longer than 20 characters.</p>
+                                  </div>
+                                 </div> 
+                              </li>
+                               <li>
+                                <!-- **************************************************************************
+                                  *   Error 
+                                  **************************************************************************  -->
+                                <div class="wrapper-validation" id="billing-error-msg">
+                        
+                                </div>
+                              </li>
+                            </ul>
+                          </div>
+                     	</div>
+
+                    
+
+                        <!-- **************************************************************************
+                          *
+                          *   PAYABLE / RECEIVABLE / BILLING DETAILS - - - - - - End - - - - - - - -
+                          *
+                          **************************************************************************  -->
+                      
+
+</apex:component>

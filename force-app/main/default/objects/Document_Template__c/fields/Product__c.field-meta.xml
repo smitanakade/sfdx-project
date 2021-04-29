@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <externalId>false</externalId>
+    <label>Product</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VANs</fullName>
+                <default>false</default>
+                <label>VANs</label>
+            </value>
+            <value>
+                <fullName>eNett EFT</fullName>
+                <default>false</default>
+                <label>eNett EFT</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

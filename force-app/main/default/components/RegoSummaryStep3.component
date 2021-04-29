@@ -1,0 +1,49 @@
+<apex:component >
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingNine">
+        <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseNine" aria-expanded="true" aria-controls="collapseNine"> Address Details</a></h4>
+    </div>
+    <div id="collapseNine" class="panel-collapse collapse wrapper-review" role="tabpanel" aria-labelledby="headingNine">
+        <div id="aboutYourBusiness" class="panel-body">
+            <!-- form element Start-->
+          <a class="btn-edit" href="#" data-stepsection="step3::headingTwo">edit</a>
+
+          <ul class="listing-review">
+            <li><a href="#">Business Country</a></li>
+            <li><a href="#">Address line 1</a></li>
+            <li><a href="#">Address line 2</a></li>
+            <li><a href="3">City</a></li>
+            <li><a href="#">Region</a></li>
+            <li><a href="#">Postcode</a></li>
+            <li>
+              <ul class="listing-files">
+                <li>Headquarters:</li>
+                <li><a href="#">Cuba</a></li>
+                <li><a href="#">Syria</a></li>
+                <li><a href="#">Yemen</a></li>
+              </ul>
+            </li>
+          </ul>
+
+
+
+                        <!-- <div class="input-container">
+                                <input type="text" name="purpose_of_use" autocomplete="off" data-js="form-text"/>
+                                <label for="purpose_of_use" data-manditoryfield="What is the intended use of your VAN">Purpose of use</label>
+                                <img class="tooltip" src="assets/img/icon-tooltip-open.svg" alt="tooltip icon" />
+                                <div class="tooltip-content">
+                                    <h4>Whats the purpose of use?</h4>
+                                    <span class="btn-close"></span>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec tempus purus interdum viverra eleifend. In sit amet est id dui aliquet maximus.</p>
+                                </div>
+                        </div>
+
+            <div class="input-container">
+              <input type="checkbox" id="sameAddress" class="required" name="sameAsBusiness" value="1"/> Registered business address is the same as above <br>
+            </div> -->
+
+
+        </div>
+    </div>
+</div>
+</apex:component>

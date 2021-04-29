@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Business_Days_since_T_C_Accepted__c</fullName>
+    <externalId>false</externalId>
+    <formula>ABS(
+  (5 * ( FLOOR( ( T_C_Accepted_Date__c  - DATE( 1900, 1,  8 ) ) / 7 ) ) 
+  + MIN( 5, MOD( T_C_Accepted_Date__c  - DATE( 1900, 1, 8 ), 7 ) ) )
+  -
+  (5 * ( FLOOR( ( today() - DATE( 1900, 1, 8 ) ) / 7 ) ) 
+  + MIN( 5, MOD( today() - DATE( 1900, 1, 8 ), 7 ) ) )
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>#Business Days since T&amp;C Accepted</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

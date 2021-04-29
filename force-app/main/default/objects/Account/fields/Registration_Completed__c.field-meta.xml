@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registration_Completed__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Automatically populated based on the date the registration was completed. For external registrations this is when the client accepts the T&amp;Cs and submits the registration. 
+For Internal registrations, registration is completed by the AML team.</inlineHelpText>
+    <label>Registration Completed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

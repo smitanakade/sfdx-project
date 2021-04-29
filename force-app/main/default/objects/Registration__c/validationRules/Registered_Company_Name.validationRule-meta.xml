@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registered_Company_Name</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND
+(ISCHANGED( Registered_Company_Name_Check__c),Registered_Company_Name_Check__c=TRUE,
+VerA_Company_Name__c=FALSE
+)</errorConditionFormula>
+    <errorMessage>At least one verification document with Evidence Type of Registered Company Name is required.</errorMessage>
+</ValidationRule>

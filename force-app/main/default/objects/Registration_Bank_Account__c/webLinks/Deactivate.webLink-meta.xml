@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Deactivate</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Deactivate</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&#39;/resource/bigiant_dialog__bDialogJs&#39;)} 
+BIGIANT_DIALOG.init(this, &#39;Message Dialog&#39;, {id : &#39;{!Registration_Bank_Account__c.Id}&#39;, controllerExt : &#39;RegBankAccount_deactivate&#39;});
+/* Old code
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+
+var confirmation = window.confirm(&quot;You are about to deactivate the Registration Bank Account for this Registration. Are you sure you want to continue?&quot;); 
+
+if (confirmation == true) { 
+
+var ba = new sforce.SObject(&quot;Registration_Bank_Account__c&quot;); 
+ba.id = &quot;{!Registration_Bank_Account__c.Id}&quot;; 
+ba.Active__c = &#39;false&#39;; 
+
+result = sforce.connection.update([ba]); 
+
+if (result[0].getBoolean(&quot;success&quot;) == false ) { 
+alert(result[0].errors.message); 
+} 
+} 
+
+window.location.reload()
+*/</url>
+</WebLink>

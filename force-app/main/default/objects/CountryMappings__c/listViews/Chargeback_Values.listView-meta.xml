@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Chargeback_Values</fullName>
+    <columns>NAME</columns>
+    <columns>Enett_Default_Currency__c</columns>
+    <columns>Enett_Default_Currency_Symbol__c</columns>
+    <columns>VANs_Subscription_Fee__c</columns>
+    <columns>EFT_Subscription_Fee__c</columns>
+    <columns>Chargeback_Fee_With_Document__c</columns>
+    <columns>Chargeback_Fee_Without_Document__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>IsApprovedCountry__c</field>
+        <operation>equals</operation>
+        <value>1</value>
+    </filters>
+    <label>Chargeback Values</label>
+</ListView>

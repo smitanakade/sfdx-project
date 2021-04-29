@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>verFlag_DR__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Flag values: 
+0 - No verification 
+1 - Each Director has one or more verifications but at least one verification has no attachments 
+2 - Each Director has at least one verification and all verifications contain at least one attachment</inlineHelpText>
+    <label>verFlag_DR</label>
+    <summaryForeignKey>Snapshot_Director_Association__c.Registration_Snapshot__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

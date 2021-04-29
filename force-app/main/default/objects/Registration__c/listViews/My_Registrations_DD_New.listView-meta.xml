@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Registrations_DD_New</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>Sector__c</columns>
+    <columns>DD_Type__c</columns>
+    <columns>DD_Status__c</columns>
+    <columns>OWNER.FIRST_NAME</columns>
+    <columns>Product__c</columns>
+    <columns>CREATED_DATE</columns>
+    <columns>Risk_Rating__c</columns>
+    <columns>DD_Completed_Date__c</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>DD_Status__c</field>
+        <operation>equals</operation>
+        <value>New</value>
+    </filters>
+    <label>My Registrations - DD New</label>
+</ListView>

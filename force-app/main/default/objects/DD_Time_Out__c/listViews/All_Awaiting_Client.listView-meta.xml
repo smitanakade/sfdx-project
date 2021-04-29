@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Awaiting_Client</fullName>
+    <columns>Account__c</columns>
+    <columns>Trading_As__c</columns>
+    <columns>NAME</columns>
+    <columns>Time_Out_Type__c</columns>
+    <columns>Start_Date__c</columns>
+    <columns>End_Date__c</columns>
+    <columns>Return_to_AML__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Return_to_AML__c</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <filters>
+        <field>Time_Out_Type__c</field>
+        <operation>equals</operation>
+        <value>Awaiting Client</value>
+    </filters>
+    <label>All DDs Awaiting Client</label>
+</ListView>

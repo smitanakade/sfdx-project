@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AddressType__c</fullName>
+    <externalId>false</externalId>
+    <label>AddressType</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Institution - Billing</fullName>
+                <default>false</default>
+                <label>Institution - Billing</label>
+            </value>
+            <value>
+                <fullName>Institution - Payable</fullName>
+                <default>false</default>
+                <label>Institution - Payable</label>
+            </value>
+            <value>
+                <fullName>Institution - Receivable</fullName>
+                <default>false</default>
+                <label>Institution - Receivable</label>
+            </value>
+            <value>
+                <fullName>Physical (Client)</fullName>
+                <default>false</default>
+                <label>Physical (Client)</label>
+            </value>
+            <value>
+                <fullName>Postal (Client)</fullName>
+                <default>false</default>
+                <label>Postal (Client)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

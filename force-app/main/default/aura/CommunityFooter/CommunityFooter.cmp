@@ -1,0 +1,19 @@
+<aura:component description="CommunityFooter_VANs" implements="forceCommunity:availableForAllPageTypes">
+    <lightning:layout title="Footer Links" horizontalAlign="center" class="footer">
+        <lightning:layoutItem padding="around-small" class="footer-link">
+            <ui:outputURL value="https://enett-help.force.com/vans/s/privacy" label="Privacy"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small" class="footer-link">
+            <ui:outputURL value="https://enett-help.force.com/vans/s/terms" label="Terms"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small" class="footer-link">
+            <ui:outputURL value="https://enett-help.force.com/vans/s/security" label="Security"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small" class="footer-link">
+            <ui:outputURL value="https://enett-help.force.com/vans/s/notice" label="Notice"/>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <lightning:layout horizontalAlign="center" class="footer">
+            <div class="copyright">Copyright © 2018 eNett International (Singapore) Pte. Ltd.</div>
+    </lightning:layout>
+</aura:component>

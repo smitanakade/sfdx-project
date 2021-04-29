@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Unassigned_Deliveries</fullName>
+    <booleanFilter>1 AND 2 AND 3</booleanFilter>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ECN__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>Attainable_TTV_annual__c</columns>
+    <columns>Delivery_Owner__c</columns>
+    <columns>Delivery_type__c</columns>
+    <columns>Delivery_Category_Name__c</columns>
+    <columns>Implementation_Start_Date__c</columns>
+    <columns>Delivery_Ticket_Number__c</columns>
+    <columns>Delivery_Phase__c</columns>
+    <columns>Delivery_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Delivery_Owner__c</field>
+        <operation>equals</operation>
+        <value>Unassigned eNett</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>8. Completed Implementation,9. Active,10. Closed-Lost,11. Delivery Terminated</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>EMEA,Americas</value>
+    </filters>
+    <label>EMEA - Unassigned Deliveries</label>
+    <sharedTo>
+        <role>Corporate</role>
+        <role>Global_Service_Desk_Level_2</role>
+        <role>Global_Service_Desk_Level_3_Delivery</role>
+    </sharedTo>
+</ListView>

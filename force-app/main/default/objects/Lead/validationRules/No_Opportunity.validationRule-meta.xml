@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>No_Opportunity</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+IsConverted,
+NOT(ISBLANK( ConvertedOpportunityId )))</errorConditionFormula>
+    <errorMessage>Creating an Opportunity is not required - one has already been created</errorMessage>
+</ValidationRule>

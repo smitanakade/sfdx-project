@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Submit_Empty_Community_Ticket</fullName>
+    <active>true</active>
+    <description>Ticket submitted from community must contain a subject</description>
+    <errorConditionFormula>AND( ISPICKVAL( Origin , &#39;Community&#39;) , Subject =&#39;&#39;)</errorConditionFormula>
+    <errorMessage>Could you please let us know what you need help with in the Subject line below?</errorMessage>
+</ValidationRule>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Take_Ownership_V2</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Take Ownership</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)}
+{!REQUIRESCRIPT(&#39;/resource/bigiant_dialog__bDialogJs&#39;)} 
+
+/* SF-4196 - Replacement for the Take Ownership managed package.  The new code prevents a user from taking ownership of a ticket if another user has just assigned it to themselves.
+*/
+
+var c = new sforce.SObject(&quot;Case&quot;);
+c.id = &quot;{!Case.Id}&quot;; 
+var queryResult = sforce.connection.query(&quot;SELECT Id, owner.id, owner.type, owner.name FROM Case WHERE Id = &#39;&quot; + c.id + &quot;&#39; LIMIT 1&quot;);
+var crec = queryResult.getArray(&quot;records&quot;)[0];
+
+if (crec.Owner.Type === &#39;Queue&#39;) {
+    c.ownerId = &quot;{!$User.Id}&quot;;
+    sforce.connection.update([c]);
+    window.location.replace(c.id);
+} else if (crec.Owner.Type === &#39;User&#39; &amp;&amp; crec.Owner.Id.substring(0,15) === &quot;{!$User.Id}&quot;) {
+    BIGIANT_DIALOG.init(this, &#39;Message Dialog&#39;, {validation_msg : &#39;The ticket is already assigned to you.&#39;});
+} else if ((crec.Owner.Type === &#39;User&#39; &amp;&amp; crec.Owner.Id.substring(0,15) !== &quot;{!$User.Id}&quot;)) {
+    BIGIANT_DIALOG.init(this, &#39;Message Dialog&#39;, {validation_msg : &#39;Oops! You can only use this button to assign a ticket from a queue. This ticket already belongs to &#39; + queryResult.getArray(&quot;records&quot;)[0].Owner.Name + &#39;. Please use the [Change] button next to Assigned To if you wish to re-assign.&#39;});
+}</url>
+</WebLink>

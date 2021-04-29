@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Commercial_Play__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the commercial segment (as per segmentation model)?</inlineHelpText>
+    <label>Commercial Segment</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Capture</fullName>
+                <default>false</default>
+                <label>Capture</label>
+            </value>
+            <value>
+                <fullName>Dislodge</fullName>
+                <default>false</default>
+                <label>Dislodge</label>
+            </value>
+            <value>
+                <fullName>Expand</fullName>
+                <default>false</default>
+                <label>Expand</label>
+            </value>
+            <value>
+                <fullName>Hold (NCA)</fullName>
+                <default>false</default>
+                <label>Hold (NCA)</label>
+            </value>
+            <value>
+                <fullName>Hold (SOW)</fullName>
+                <default>false</default>
+                <label>Hold (SOW)</label>
+            </value>
+            <value>
+                <fullName>Lock</fullName>
+                <default>false</default>
+                <label>Lock</label>
+            </value>
+            <value>
+                <fullName>VAN Virgin</fullName>
+                <default>false</default>
+                <label>VAN Virgin</label>
+            </value>
+            <value>
+                <fullName>Capture (Lite)</fullName>
+                <default>false</default>
+                <label>Capture (Lite)</label>
+            </value>
+            <value>
+                <fullName>Dislodge (Lite)</fullName>
+                <default>false</default>
+                <label>Dislodge (Lite)</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

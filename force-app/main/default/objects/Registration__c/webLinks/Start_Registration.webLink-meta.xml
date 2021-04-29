@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Registration</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Start Registration</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)}
+var reg = new sforce.SObject(&quot;Registration__c&quot;);
+reg.id = &quot;{!Registration__c.Id}&quot;;
+
+//SF-5024 2018-08-21 Jasmine - Check if an internal registration has VANs in its products and if its account has been approved before allowing the user to start the registration process
+if (&quot;{!Registration__c.Registration_Type__c}&quot; == &#39;Internal Registration&#39; || &quot;{!Registration__c.Registration_Type__c}&quot; == &#39;Internal Registration - Re Reg&#39;){
+    if (&quot;{!Registration__c.Product__c}&quot;.includes(&#39;VANs&#39;) &amp;&amp; &quot;{!Registration__c.Account_Approved__c}&quot; == &#39;0&#39;){
+        if (&quot;{!Registration__c.Registration_Status__c}&quot; == &#39;New&#39; || &quot;{!Registration__c.Registration_Status__c}&quot; == &#39;New (Product)&#39;){
+            alert(&#39;Internal Registration cannot be started if the account is pending for approval or has been rejected.&#39;)
+        }else{
+            reg.Registration_Status__c = &#39;In Progress&#39;;
+            result = sforce.connection.update([reg]);
+            window.location.reload();
+        }
+    }else{
+        reg.Registration_Status__c = &#39;In Progress&#39;;
+        result = sforce.connection.update([reg]);
+        window.location.reload();
+    }      
+} else {
+reg.Registration_Status__c = &#39;In Progress&#39;;
+result = sforce.connection.update([reg]);
+window.location.reload();
+}</url>
+</WebLink>

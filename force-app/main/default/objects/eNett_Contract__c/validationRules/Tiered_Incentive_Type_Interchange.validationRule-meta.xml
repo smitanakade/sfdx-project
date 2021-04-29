@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tiered_Incentive_Type_Interchange</fullName>
+    <active>true</active>
+    <description>For &#39;Tiered&#39; Rebate, &#39;% of Interchange&#39; Incentive Contracts, you must enter a &#39;Tier % Interchange Share&#39; and NO &#39;Tier % Fixed Share&#39;.</description>
+    <errorConditionFormula>AND( 
+RecordType.DeveloperName =&#39;eNett_Tiered_Contract&#39;,
+ISPICKVAL( Incentive_Type__c , &#39;% of Interchange&#39;),
+OR(NOT(ISBLANK( Tier_1_Fixed_Share__c )),
+ISBLANK( Tier_1_Interchange_Share__c ))
+)</errorConditionFormula>
+    <errorMessage>For &#39;Tiered&#39; Rebate, &#39;% of Interchange&#39; Incentive Contracts, you must enter a &#39;Tier % Interchange Share&#39; and NO &#39;Tier % Fixed Share&#39;.</errorMessage>
+</ValidationRule>

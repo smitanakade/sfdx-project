@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_source__c</fullName>
+    <externalId>false</externalId>
+    <label>Lead Source</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>eNett Campaign</fullName>
+                <default>false</default>
+                <label>eNett Campaign</label>
+            </value>
+            <value>
+                <fullName>eNett Online Registration</fullName>
+                <default>false</default>
+                <label>eNett Online Registration</label>
+            </value>
+            <value>
+                <fullName>Inbound call</fullName>
+                <default>false</default>
+                <label>Inbound call</label>
+            </value>
+            <value>
+                <fullName>Industry Event</fullName>
+                <default>false</default>
+                <label>Industry Event</label>
+            </value>
+            <value>
+                <fullName>Partner Campaign</fullName>
+                <default>false</default>
+                <label>Partner Campaign</label>
+            </value>
+            <value>
+                <fullName>Sales Initiated</fullName>
+                <default>false</default>
+                <label>Sales Initiated</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

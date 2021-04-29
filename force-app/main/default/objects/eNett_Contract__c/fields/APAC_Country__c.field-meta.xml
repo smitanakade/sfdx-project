@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>APAC_Country__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF ( Account_Region__c = &quot;APAC&quot;, ( IF(Account_Country__c = &quot;Australia&quot;, &quot;Australia&quot;, &quot;Other&quot;) ), &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>APAC Country</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

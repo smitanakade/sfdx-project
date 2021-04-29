@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>eNett_Contract_Task_Outcome__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field is automatically populated from the eNett Sign-off Task</inlineHelpText>
+    <label>eNett Signoff Task Outcome</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>eNett Sign-off Received</fullName>
+                <default>false</default>
+                <label>eNett Sign-off Received</label>
+            </value>
+            <value>
+                <fullName>eNett Sign-off Rejected</fullName>
+                <default>false</default>
+                <label>eNett Sign-off Rejected</label>
+            </value>
+            <value>
+                <fullName>N/A - Existing Customer</fullName>
+                <default>false</default>
+                <label>N/A - Existing Customer</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

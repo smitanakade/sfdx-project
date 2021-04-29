@@ -1,0 +1,66 @@
+<apex:component >
+    <div class="container">
+        <ul class="wrapper-footer">
+            <li><a target="_blank" href="https://www.enett.com/privacy-policy">Privacy</a></li>
+            <li><a target="_blank" href="https://www.enett.com/terms-of-use">Terms</a></li>
+            <li><a target="_blank" href="https://www.enett.com/your-security-and-information">Security</a></li>
+            <li><a target="_blank" href="https://www.enett.com/our-service-regulatory-notice">Notice</a></li>
+            <li><a target="_blank" href="https://van.enett.com/feedback">Feedback</a></li>
+            <li><a target="_blank" href="https://www.enett.com/about-us/careers">Careers</a></li>
+            <li><a target="_blank" href="https://www.enett.com/contact-us">Contact Us</a></li>
+            <li><a target="_blank" href="https://twitter.com/enettnews">Twitter</a></li>
+            <li><a target="_blank" href="https://www.linkedin.com/company/enett">Linkedin</a></li>
+            <li><a target="_blank"  href="https://www.enett.com/site-map">Sitemap</a></li>
+        </ul>
+        <p>Copyright © 2017 eNett International (Singapore) Pte. Ltd.</p>
+    </div>
+        <section class="wrapper-popup">
+      <div class="container">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <button aria-hidden="true" data-dismiss="modal" class="close close-add-user" type="button">
+                    <!-- <img width="24" alt="Close" src="../assets/img/modal-close-btn.png"/> -->
+                </button>
+                <div class="modal-body cf">
+                    <h3>Set up new users</h3>
+                    <p>Please complete the form below and we'll send you instructions on how to set up new users.</p>
+                    <p>Only Administrators and the Master Administrator are able to create new users. If you don't have permission to create a new user, please speak to the Master Administrator on your account.</p>
+                     <form method="post" name="enett-website-set-up-new-users" action="https://s1225124173.t.eloqua.com/e/f2" onsubmit="setTimeout(function(){if(document.querySelector){var s=document.querySelector('form#form62 input[type=submit]');if(s){s.disabled=true;}}},100);return true;" id="form62" class="elq-form" >
+                         <input value="enett-website-set-up-new-users" type="hidden" name="elqFormName" />
+                         <input value="1225124173" type="hidden" name="elqSiteId" />
+                         <input name="elqCampaignId" type="hidden" /> 
+                         <input type="text" placeholder="First Name" name="nu-fname" />
+                         <input type="text" placeholder="Last Name" name="nu-lname" />
+                         <input type="text" placeholder="Email Address" name="nu-email" />
+                         <div>
+                             <p>What product are you using?</p>
+                             <div class="form-group">
+                                 <input type="checkbox" value="eNett VANs" name="nu-product" class="checkbox-vans" /> eNett VANs  
+                                 <input type="checkbox" value="eNett EFT" name="nu-product" /> eNett EFT
+                             </div>
+                         </div>
+                         <div class="product-selection hidden">
+                             <p>Are you a Travelport agent?</p>
+                             <div class="form-group">
+                                 <input type="radio" value="yes" name="nu-travelport-agent" /> Yes  
+                                 <input type="radio" value="no" name="nu-travelport-agent" /> No
+                             </div>
+                         </div>
+                         <div id="formElement5" class="sc-view form-design-field sc-static-layout item-padding sc-regular-size" >
+                         <div class="field-wrapper" >
+                         </div>
+                             <div class="individual field-wrapper" >
+                                 <div class="_100 field-style" >
+                                    
+                                     <input type="submit" value="Request Instructions" class="submit-button" style="font-size: 100%;" />
+                                   
+                                 </div>
+                             </div>
+                         </div>
+                     </form>
+                </div>
+            </div>
+        </div>
+      </div>
+    </section>
+</apex:component>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BH_Reg_Value__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Time_Out_Type__c, 
+&quot;On Hold&quot;, Registration__r.BH_OnHold__c,
+&quot;Awaiting Client&quot;, Registration__r.BH_AwaitingClient__c,
+&quot;Needs More Time&quot;, Registration__r.BH_NeedsMoreTime__c,
+&quot;Non Responsive&quot;, Registration__r.BH_NonResponsive__c,
+null)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Business Hours - Reg Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>2</scale>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

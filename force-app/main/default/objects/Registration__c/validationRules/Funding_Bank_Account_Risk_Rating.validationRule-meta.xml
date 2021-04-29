@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funding_Bank_Account_Risk_Rating</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+INCLUDES(Product__c,&quot;VANs&quot;),
+verFlag_FBA__c&lt;2,
+OR(Risk_Rating__c=&quot;High&quot;,Risk_Rating__c=&quot;Medium&quot;), 
+ISCHANGED(Bank_Account_Details__c), 
+Bank_Account_Details__c =TRUE, 
+Active_Funding_Account_Count__c&gt;0
+)</errorConditionFormula>
+    <errorMessage>For VANs Accounts set to High or Medium, a verification record with at least one supporting document attachment is required for each funding record.</errorMessage>
+</ValidationRule>

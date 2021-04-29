@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Funding_Account</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Funding Account</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>var regType = &#39;{!Registration__c.Registration_Type__c}&#39;; 
+
+if ({!Registration__c.DD_Completion_Count__c} &gt; 0 &amp;&amp; regType != &#39;Internal Registration - Re Reg&#39;) {     
+
+alert(&#39;You cannot add a new funding account to a DD Approved Registration.&#39;); 
+
+} else { 
+
+window.location.href = &#39;/a1S/e?RecordType={!$Setup.recTypesRBA__c.Funding__c}&amp;CF00N9000000Eo5WR={!Registration__c.Name}&amp;CF00N9000000Eo5WR_lkid={!Registration__c.Id}&amp;CF00N9000000Eo5Rg={!Registration__c.Name}&amp;CF00N9000000Eo5Rg_lkid={!Registration__c.Id}&amp;retURL=/{!Registration__c.Id}&amp;saveURL=/{!Registration__c.Id}&amp;nooverride=1&#39;; 
+}</url>
+</WebLink>

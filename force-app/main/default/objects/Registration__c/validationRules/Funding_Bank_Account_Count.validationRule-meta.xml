@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funding_Bank_Account_Count</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+INCLUDES(Product__c,&quot;VANs&quot;),
+ISCHANGED(Bank_Account_Details__c), 
+Bank_Account_Details__c =TRUE, 
+Active_Funding_Account_Count__c=0
+)</errorConditionFormula>
+    <errorMessage>At least one active Funding account is required when the VANs product is selected.</errorMessage>
+</ValidationRule>

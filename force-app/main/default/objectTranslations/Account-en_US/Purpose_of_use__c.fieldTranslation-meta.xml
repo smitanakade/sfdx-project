@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Used to define the purpose of using VANs. This information is provided by the client during registration. --></help>
+    <label><!-- Purpose of use --></label>
+    <name>Purpose_of_use__c</name>
+</CustomFieldTranslation>

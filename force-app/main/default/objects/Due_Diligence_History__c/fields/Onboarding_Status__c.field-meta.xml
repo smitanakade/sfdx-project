@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Onboarding Status</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>New registration</fullName>
+                <default>false</default>
+                <label>New registration</label>
+            </value>
+            <value>
+                <fullName>Awaiting T&amp;C</fullName>
+                <default>false</default>
+                <label>Awaiting T&amp;C</label>
+            </value>
+            <value>
+                <fullName>Registration Complete</fullName>
+                <default>false</default>
+                <label>Registration Complete</label>
+            </value>
+            <value>
+                <fullName>DD in progress</fullName>
+                <default>false</default>
+                <label>DD in progress</label>
+            </value>
+            <value>
+                <fullName>Awaiting Approval</fullName>
+                <default>false</default>
+                <label>Awaiting Approval</label>
+            </value>
+            <value>
+                <fullName>Awaiting Citi</fullName>
+                <default>false</default>
+                <label>Awaiting Citi</label>
+            </value>
+            <value>
+                <fullName>Awaiting EFT deposit form</fullName>
+                <default>false</default>
+                <label>Awaiting EFT deposit form</label>
+            </value>
+            <value>
+                <fullName>Awaiting Legal</fullName>
+                <default>false</default>
+                <label>Awaiting Legal</label>
+            </value>
+            <value>
+                <fullName>DD Complete</fullName>
+                <default>false</default>
+                <label>DD Complete</label>
+            </value>
+            <value>
+                <fullName>Deleted</fullName>
+                <default>false</default>
+                <label>Deleted</label>
+            </value>
+            <value>
+                <fullName>Declined</fullName>
+                <default>false</default>
+                <label>Declined</label>
+            </value>
+            <value>
+                <fullName>Periodic review</fullName>
+                <default>false</default>
+                <label>Periodic review</label>
+            </value>
+            <value>
+                <fullName>Re-DD in progress</fullName>
+                <default>false</default>
+                <label>Re-DD in progress</label>
+            </value>
+            <value>
+                <fullName>Referred</fullName>
+                <default>false</default>
+                <label>Referred</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

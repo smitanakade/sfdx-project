@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DataCategoryGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <dataCategory>
+        <label>All</label>
+        <name>All</name>
+    </dataCategory>
+    <description>Moving all articles in this group to be lightning ready. Once migrated then we will divide them into different record types.</description>
+    <label>Knowledge</label>
+    <objectUsage>
+        <object>KnowledgeArticleVersion</object>
+    </objectUsage>
+</DataCategoryGroup>

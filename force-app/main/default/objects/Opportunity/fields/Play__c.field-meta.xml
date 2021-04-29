@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Play__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the commercial play (for use in deal sheets). EG - Securing BSP volumes with a strong commercial offering. Structure deal to ensure additional rebate paid out only on incremental volumes after a ~5bps increase for exclusivity at current volumes.</inlineHelpText>
+    <label>Play</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Status_Indicator__c</fullName>
+    <externalId>false</externalId>
+    <formula>IMAGE(CASE(  Delivery_Status__c ,
+&quot;Active&quot;, &quot;/servlet/servlet.FileDownload?file=01590000007PwfY&quot;,
+&quot;Dormant&quot;, &quot;/servlet/servlet.FileDownload?file=01590000007PwfT&quot;,
+&quot;Terminate&quot;, &quot;/servlet/servlet.FileDownload?file=01590000007Pweu&quot;,
+&quot;Completed&quot;,&quot;/servlet/servlet.FileDownload?file=01590000007PgbK&quot;,
+&quot;Closed/Lost Delivery&quot;, &quot;/servlet/servlet.FileDownload?file=01590000007Pweu&quot;,
+&quot;&quot;
+),&quot;&quot;,20,40)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Delivery Status Indicator</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

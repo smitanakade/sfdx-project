@@ -1,0 +1,18 @@
+<apex:component >
+    <div class="bg-tertiary top-bar-wrapper">
+        <div class="container">
+          <a class="icon back-btn" target="_blank" href="https://www.enett.com">Back</a>
+            <ul class="top-bar">
+              <li>
+                <a class="icon contact" target="_blank" href="https://www.enett.com/contact-us">Contact Us</a>
+              </li>
+              <li>
+                <a class="icon login" target="_blank" href="https://enett.com/enett">Login</a>
+              </li>
+            <li>
+              <a class="icon add-user" target="_blank" data-toggle="modal" href="#myModal" >Add new user</a>
+             </li>
+            </ul>
+        </div>
+    </div>
+</apex:component>

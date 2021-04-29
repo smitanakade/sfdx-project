@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Revenue_Acceleration_Group__c</fullName>
+    <externalId>false</externalId>
+    <label>Revenue Acceleration Group</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Bavel</fullName>
+                <default>false</default>
+                <label>Bavel</label>
+            </value>
+            <value>
+                <fullName>Prospect</fullName>
+                <default>false</default>
+                <label>Prospect</label>
+            </value>
+            <value>
+                <fullName>New Customer Not Transacting</fullName>
+                <default>false</default>
+                <label>New Customer Not Transacting</label>
+            </value>
+            <value>
+                <fullName>Customer Under Performing</fullName>
+                <default>false</default>
+                <label>Customer Under Performing</label>
+            </value>
+            <value>
+                <fullName>BAU</fullName>
+                <default>false</default>
+                <label>BAU</label>
+            </value>
+            <value>
+                <fullName>Fill the Gap</fullName>
+                <default>false</default>
+                <label>Fill the Gap</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

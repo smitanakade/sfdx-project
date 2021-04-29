@@ -1,0 +1,114 @@
+<apex:component >
+  <!--   ********************************************Start Debug*******************************************
+    ********************************************Start Debug*******************************************
+    
+    
+    
+    
+     <br/><b>Client Agreement Form</b><br/><br/><b>Contact Details</b><br/><br/>Name: {{registration.Salutation__c}} {{registration.First_Name__c}} {{registration.Last_Name__c}}<br/>Email: {{registration.Email__c}}<br/>Telephone: {{registration.Phone__c}}<br/><br/><b>Business Details</b><br/><br/>Registered Company Name: {{registration.Registered_Company_Name__c}} <br/>Region: {{registration.State_Province__c}}<br/>Country: {{registration.Country__c}}<br/><br/><b>Pricing &amp; Payment Terms</b><br/><br/>For eNett EFT:<br/>eNett EFT subscription fee: {{registration.Subscription_Fee_Currency__c}} {{registration.EFT_Subscription_Fee__c}} +GST per month per ECN <br/>Transaction fee: AUD 2.00 + GST per transaction received<br/>Default payment: AUD 50.00 +GST per Default payment<br/><br/>The below summary shall be considered the Client Agreement Form with the applicable fees set forth above. Together, the Client Agreement Form and the eNett EFT terms and conditions shall constitute the Agreement.<br/><br/>You have selected eNett EFT. By clicking the &quot;I accept the Terms and Conditions&quot; button, You (1) acknowledge having read in full the product disclosure statement and agree to the eNett EFT terms and conditions and this Client Agreement Form; (2) acknowledge and agree that your application constitutes an offer to ENAU; (3) represent and warrant that the company and bank account details provided are correct and that You are authorised by the entity that is applying for eNett EFT to bind the entity; and (4) agree that your bank account will be debited by ENAU when applicable in accordance with the terms of the Agreement. Your application will be reviewed and we shall confirm our acceptance by email at which time the Agreement shall be a valid and binding contract for eNett EFT.<br/><br/>TERM: eNett EFT is provided by eNett International Pty Ltd (ENAU) and the eNett EFT Agreement shall be between the entity set forth in the Business Details above and ENAU. From the date we have confirmed our acceptance by email, the eNett EFT Agreement shall continue in full force and effect until terminated by either Party providing the other Party with twenty-eight (28) days written notice.<br/><br/>At any time, You may request a copy of the eNett product disclosure statement and terms and conditions for eNett EFT by contacting service@enett.com.<br/><br/>eNett International Pty. Ltd. | Registered Address: 23/367 Collins St, Melbourne VIC 3000 | Australia Company Number: ABN 99 088 796 552<br/> 
+    
+    <table>
+    <tbody>
+    <tr><td><div>{{registration.Salutation__c}} {{registration.First_Name__c}} {{registration.Last_Name__c}}</div></td></tr>
+    <tr><td><div>{{registration.Id}} {{registration.First_Name__c}} {{registration.Last_Name__c}}</div></td></tr>
+    </tbody>
+    </table>
+    
+ 
+    
+    ********************************************End Debug*******************************************
+    ********************************************End Debug*******************************************
+ -->
+
+    
+
+    <div class="container" id="final-review-and-submit">
+    <!-- <p class="col-xs-12 col-sm-8 intro-content">To activiate your account we need to link your primary account used for funding to the eNett service. </p> -->
+    
+ 
+<!-- START -->   
+<div class="wrapper-terms">
+    <div class="container">
+
+        <div class="col-xs-12 col-sm-8 intro-content">
+            <p>Almost there. All that's left is to review your details and go over some terms and conditions, then you're on your way.</p>
+        </div>
+
+        <div class="wrapper-pullout">
+            <h3>Here’s a quick summary of what the T’s and C’s for {{products}} are all about:</h3>
+            <ul>
+                <li>It gives you the details of what we will do for you and how {{products}} will work in your company.</li>
+                <li>It outlines what you’ll need to do to fund and use our Pay-In accounts.</li>
+                <li>It will provide you with the details of the payment terms.</li>
+                <li>It’ll also go through the benefits of {{products}} and how you can make the most of them.</li>
+            </ul>
+        </div>
+
+
+            <!-- <h2>Review and submit</h2>
+            <p>
+                The finish line is just up ahead. All that’s left is to review your details and go over some terms and conditions, then you’re on your way.
+            </p> -->
+            <div class="wrapper-terms">
+                <h3>Read full Agreement</h3>
+                <p class="intro-content">This provides the details behind what you should expect from us, and how we’ll work with you to make your payments Fast, Easy and Safe.</p>
+                <div class="divTextArea" id="theAgreement" ng-bind-html="theAgreementHTML"></div> 
+              
+                
+
+                <h3>Review all Terms &amp; Conditions</h3>
+                <p class="intro-content">This gives you a chance to double check and make sure that you are happy with everything. Let us know if you have any questions. We’re here to help.</p>
+                <div class="divTextArea" id="TandC" ng-bind-html="theTermsAndConditionsHTML"></div>
+            </div>
+
+        
+        
+        
+        
+        <!-- Accept Terms and Conditions
+        **************************************************************************  -->
+            <div class="wrapper-print">
+                <a href="#" class="btn btn-print" onClick="PrintElem('theAgreement','TandC')"><span>Print</span></a>
+                <a href="#" class="btn btn-email" ng-click="updateEmailTC()"><span>Email</span></a>
+            </div>
+
+            <div class='tc-pdf-email-send' ng-show="registration.Email_TCs_from_Online_Form__c?true:false">
+              <p>
+                 Please check your inbox. We've sent an email to {{registration.Email__c}}. If you don't see the email, check your junk or spam folders.
+              </p>
+            </div>
+        
+            <div class="bg-lightblue wrapper-agreement ">
+                <div class="wrapper-checkbox input-container">
+                    <input  type="checkbox" 
+                           id="TandC" 
+                           name="TandCAccepted" 
+                           ng-model="registration.Accept_Terms_and_Conditions__c" 
+                           value="1"/> <span>I accept eNett's terms and conditions and confirm that the information provided is true and correct.</span> <br />
+                </div>
+
+                <div class="wrapper-checkbox input-container">
+                    <input  type="checkbox" 
+                           id="TandC2" 
+                           name="MarketingTC" 
+                           ng-model="registration.Marketing_Subscription__c"
+                           value="1"/> <span>I would like to receive news and updates from eNett.</span> <br />
+                </div>
+
+               
+                <div class="bg-lightblue wrapper-footer-btn">
+                    <div class="col-xs-12 col-sm-offset-3 col-sm-6 col-md-offset-4 col-md-4 item">
+                        <div class="btn-wrapper btn-next-wrapper">
+                            <a ng-disabled="checkDisable('TCChecked')" href="#" class="btn btn-primary btn-next" ng-click="finalSave()"><span>Submit</span></a>
+                            <input type="button" value="Submit" class="btn-next-submit"/>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+       </div>
+    </div>
+
+</div>
+
+</apex:component>

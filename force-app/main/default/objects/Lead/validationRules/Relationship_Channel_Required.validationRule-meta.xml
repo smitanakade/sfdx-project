@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Relationship_Channel_Required</fullName>
+    <active>true</active>
+    <description>Relationship Channel Required For Conversion of Leads</description>
+    <errorConditionFormula>AND( IsConverted,   ISPICKVAL( Relationship_Channel__c , &quot;&quot;),  NOT( ISPICKVAL( LeadSource , &#39;eNett Online Registration&#39;) )  )</errorConditionFormula>
+    <errorDisplayField>Relationship_Channel__c</errorDisplayField>
+    <errorMessage>Relationship Channel is required for Lead Conversion.</errorMessage>
+</ValidationRule>

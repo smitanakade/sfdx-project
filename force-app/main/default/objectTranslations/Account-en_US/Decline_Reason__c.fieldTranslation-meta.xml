@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Automatically populated, if the most recent DD on the account was declined. --></help>
+    <label><!-- Decline Reason --></label>
+    <name>Decline_Reason__c</name>
+    <picklistValues>
+        <masterLabel>Application N/A</masterLabel>
+        <translation><!-- Application N/A --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Competitor</masterLabel>
+        <translation><!-- Competitor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DD not met</masterLabel>
+        <translation><!-- DD not met --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DD not provided</masterLabel>
+        <translation><!-- DD not provided --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Language</masterLabel>
+        <translation><!-- Language --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Needs more time</masterLabel>
+        <translation><!-- Needs more time --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Non responsive</masterLabel>
+        <translation><!-- Non responsive --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not interested</masterLabel>
+        <translation><!-- Not interested --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Not travel</masterLabel>
+        <translation><!-- Not travel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Risk</masterLabel>
+        <translation><!-- Risk --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

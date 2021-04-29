@@ -1,0 +1,19 @@
+<aura:component description="CommunityFooter_EF" implements="forceCommunity:availableForAllPageTypes">
+    <lightning:layout title="Footer Links" horizontalAlign="center" class="footer">
+        <lightning:layoutItem padding="around-small" class="footer-link">
+            <ui:outputURL value="https://enett-help.force.com/eft/s/privacy" label="Privacy"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small" class="footer-link">
+            <ui:outputURL value="https://enett-help.force.com/eft/s/terms" label="Terms"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small" class="footer-link">
+            <ui:outputURL value="https://enett-help.force.com/eft/s/security" label="Security"/>
+        </lightning:layoutItem>
+        <lightning:layoutItem padding="around-small" class="footer-link">
+            <ui:outputURL value="https://enett-help.force.com/eft/s/notice" label="Notice"/>
+        </lightning:layoutItem>
+    </lightning:layout>
+    <lightning:layout horizontalAlign="center" class="footer">
+            <div class="copyright">Copyright © 2018 eNett International (Singapore) Pte. Ltd.</div>
+    </lightning:layout>
+</aura:component>

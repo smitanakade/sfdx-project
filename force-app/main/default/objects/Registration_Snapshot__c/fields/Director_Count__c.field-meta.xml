@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Director_Count__c</fullName>
+    <externalId>false</externalId>
+    <label>Director Count</label>
+    <summaryForeignKey>Snapshot_Director_Association__c.Registration_Snapshot__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

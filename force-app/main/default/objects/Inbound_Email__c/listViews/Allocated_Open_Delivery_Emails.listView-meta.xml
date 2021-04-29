@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Allocated_Open_Delivery_Emails</fullName>
+    <columns>Received_Date__c</columns>
+    <columns>NAME</columns>
+    <columns>Subject__c</columns>
+    <columns>From__c</columns>
+    <columns>fromAddress__c</columns>
+    <columns>Case__c</columns>
+    <columns>Account__c</columns>
+    <columns>Status__c</columns>
+    <columns>Delivery_Phase__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Case__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>Allocated Open Deliveries Emails</label>
+</ListView>

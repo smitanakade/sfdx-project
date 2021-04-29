@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Directors_Checkbox_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND 
+(ISCHANGED( Directors__c),Directors__c=TRUE, 
+Director_Validation_Error__c
+)</errorConditionFormula>
+    <errorMessage>At least one Director is required for this business type.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- The point of origin of the rego request, internal (1) or external (0). This value is only ever used by the Salesforce Integrator console application. --></help>
+    <label><!-- PointOfOrigin --></label>
+    <name>PointOfOrigin__c</name>
+</CustomFieldTranslation>

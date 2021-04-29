@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Bank_Account_Evidence</fullName>
+    <active>true</active>
+    <label>Bank Account Evidence</label>
+    <picklistValues>
+        <picklist>Document_Type__c</picklist>
+        <values>
+            <fullName>Statement</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Evidence_Type__c</picklist>
+        <values>
+            <fullName>Business Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Principal Signatory</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registered Business Number</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registered Company Name</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Trading Name</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Purpose__c</picklist>
+        <values>
+            <fullName>ADD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EDD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>General</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other %28Provide Note%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>PEP</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

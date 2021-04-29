@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Live_Testing_Checkpoint_Due_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field will be automatically filled in when the task &#39;API Delivery - Live Testing Completion Task&#39; is created. The default date will be the due date of the task. 
+Changing the Due Date in the task will change the date of this field.</inlineHelpText>
+    <label>Live Testing Checkpoint Due Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

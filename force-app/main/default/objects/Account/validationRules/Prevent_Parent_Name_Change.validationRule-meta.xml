@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Parent_Name_Change</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(NOT(ISNEW()), ISCHANGED(ParentId), NOT(Allow_Change_to_Reporting_Parent__c),
+OR(ISPICKVAL(Account_Type__c, &#39;Additional ECN&#39;), ISPICKVAL(Account_Type__c, &#39;Affiliate&#39;), ISPICKVAL(Account_Type__c, &#39;Customer&#39;),ISBLANK(TEXT(Account_Type__c))),
+OR($UserRole.DeveloperName = &#39;Global_Service_Desk_Level_2&#39;, $UserRole.DeveloperName = &#39;Global_Service_Desk_Level_3_Delivery&#39;, CONTAINS($Profile.Name, &#39;System Admin&#39;)))</errorConditionFormula>
+    <errorDisplayField>Allow_Change_to_Reporting_Parent__c</errorDisplayField>
+    <errorMessage>Changing the parent will change the parent child relationship in ePP and may impact funding and issuing of VANs for this account! If you still wish to proceed, select the &#39;Allow change to reporting parent&#39; checkbox.</errorMessage>
+</ValidationRule>

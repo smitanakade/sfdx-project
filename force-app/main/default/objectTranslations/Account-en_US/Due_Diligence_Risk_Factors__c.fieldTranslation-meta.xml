@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Populated by the AML team during the due diligence process. --></help>
+    <label><!-- Risk Factors --></label>
+    <name>Due_Diligence_Risk_Factors__c</name>
+    <picklistValues>
+        <masterLabel>Fraud</masterLabel>
+        <translation><!-- Fraud --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Government</masterLabel>
+        <translation><!-- Government --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>None</masterLabel>
+        <translation><!-- None --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PEP Match</masterLabel>
+        <translation><!-- PEP Match --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanction List</masterLabel>
+        <translation><!-- Sanction List --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Suspicion</masterLabel>
+        <translation><!-- Suspicion --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transaction Monitoring</masterLabel>
+        <translation><!-- Transaction Monitoring --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

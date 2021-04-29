@@ -1,0 +1,915 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Agency_Group__c</fullName>
+    <description>From Lead</description>
+    <externalId>false</externalId>
+    <label>Agency Group</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AAA</fullName>
+                <default>false</default>
+                <label>AAA</label>
+            </value>
+            <value>
+                <fullName>ADVANTAGE FOCUS GROUP</fullName>
+                <default>false</default>
+                <label>ADVANTAGE FOCUS GROUP</label>
+            </value>
+            <value>
+                <fullName>AER</fullName>
+                <default>false</default>
+                <label>AER</label>
+            </value>
+            <value>
+                <fullName>AFAT</fullName>
+                <default>false</default>
+                <label>AFAT</label>
+            </value>
+            <value>
+                <fullName>AIRMET</fullName>
+                <default>false</default>
+                <label>AIRMET</label>
+            </value>
+            <value>
+                <fullName>Air Ticket</fullName>
+                <default>false</default>
+                <label>Air Ticket</label>
+            </value>
+            <value>
+                <fullName>AIRTRADE</fullName>
+                <default>false</default>
+                <label>AIRTRADE</label>
+            </value>
+            <value>
+                <fullName>AMAVET</fullName>
+                <default>false</default>
+                <label>AMAVET</label>
+            </value>
+            <value>
+                <fullName>AMERICAN EXPRESS</fullName>
+                <default>false</default>
+                <label>AMERICAN EXPRESS</label>
+            </value>
+            <value>
+                <fullName>AMEX</fullName>
+                <default>false</default>
+                <label>AMEX</label>
+            </value>
+            <value>
+                <fullName>AREA</fullName>
+                <default>false</default>
+                <label>AREA</label>
+            </value>
+            <value>
+                <fullName>ARES</fullName>
+                <default>false</default>
+                <label>ARES</label>
+            </value>
+            <value>
+                <fullName>AR Group</fullName>
+                <default>false</default>
+                <label>AR Group</label>
+            </value>
+            <value>
+                <fullName>ASSOC OF CHINESE TRAVEL AGENTS</fullName>
+                <default>false</default>
+                <label>ASSOC OF CHINESE TRAVEL AGENTS</label>
+            </value>
+            <value>
+                <fullName>ASSORTED</fullName>
+                <default>false</default>
+                <label>ASSORTED</label>
+            </value>
+            <value>
+                <fullName>ATAC</fullName>
+                <default>false</default>
+                <label>ATAC</label>
+            </value>
+            <value>
+                <fullName>A TEAM</fullName>
+                <default>false</default>
+                <label>A TEAM</label>
+            </value>
+            <value>
+                <fullName>ATP</fullName>
+                <default>false</default>
+                <label>ATP</label>
+            </value>
+            <value>
+                <fullName>ATPI</fullName>
+                <default>false</default>
+                <label>ATPI</label>
+            </value>
+            <value>
+                <fullName>ATP ONLINE HK</fullName>
+                <default>false</default>
+                <label>ATP ONLINE HK</label>
+            </value>
+            <value>
+                <fullName>BAIA DI LUNA</fullName>
+                <default>false</default>
+                <label>BAIA DI LUNA</label>
+            </value>
+            <value>
+                <fullName>BARCELO</fullName>
+                <default>false</default>
+                <label>BARCELO</label>
+            </value>
+            <value>
+                <fullName>BCD</fullName>
+                <default>false</default>
+                <label>BCD</label>
+            </value>
+            <value>
+                <fullName>BCD GROUP</fullName>
+                <default>false</default>
+                <label>BCD GROUP</label>
+            </value>
+            <value>
+                <fullName>Berg-Hansen</fullName>
+                <default>false</default>
+                <label>Berg-Hansen</label>
+            </value>
+            <value>
+                <fullName>BEST TRAVEL</fullName>
+                <default>false</default>
+                <label>BEST TRAVEL</label>
+            </value>
+            <value>
+                <fullName>Big Travel</fullName>
+                <default>false</default>
+                <label>Big Travel</label>
+            </value>
+            <value>
+                <fullName>Billetkontoret</fullName>
+                <default>false</default>
+                <label>Billetkontoret</label>
+            </value>
+            <value>
+                <fullName>BONOLATOURS</fullName>
+                <default>false</default>
+                <label>BONOLATOURS</label>
+            </value>
+            <value>
+                <fullName>BTP UA</fullName>
+                <default>false</default>
+                <label>BTP UA</label>
+            </value>
+            <value>
+                <fullName>BV NETWORK</fullName>
+                <default>false</default>
+                <label>BV NETWORK</label>
+            </value>
+            <value>
+                <fullName>BVTC</fullName>
+                <default>false</default>
+                <label>BVTC</label>
+            </value>
+            <value>
+                <fullName>CARLSON WAGONLIT</fullName>
+                <default>false</default>
+                <label>CARLSON WAGONLIT</label>
+            </value>
+            <value>
+                <fullName>CISALPINA</fullName>
+                <default>false</default>
+                <label>CISALPINA</label>
+            </value>
+            <value>
+                <fullName>CLUB TRAVEL</fullName>
+                <default>false</default>
+                <label>CLUB TRAVEL</label>
+            </value>
+            <value>
+                <fullName>CONCORDE AGENT NETWORK</fullName>
+                <default>false</default>
+                <label>CONCORDE AGENT NETWORK</label>
+            </value>
+            <value>
+                <fullName>Concorde Travel Group</fullName>
+                <default>false</default>
+                <label>Concorde Travel Group</label>
+            </value>
+            <value>
+                <fullName>CONSORT TRAVEL GROUP</fullName>
+                <default>false</default>
+                <label>CONSORT TRAVEL GROUP</label>
+            </value>
+            <value>
+                <fullName>CONSORZIO ABRUZZO</fullName>
+                <default>false</default>
+                <label>CONSORZIO ABRUZZO</label>
+            </value>
+            <value>
+                <fullName>CONSORZIO CON TE</fullName>
+                <default>false</default>
+                <label>CONSORZIO CON TE</label>
+            </value>
+            <value>
+                <fullName>CONSULICH</fullName>
+                <default>false</default>
+                <label>CONSULICH</label>
+            </value>
+            <value>
+                <fullName>CONTUR</fullName>
+                <default>false</default>
+                <label>CONTUR</label>
+            </value>
+            <value>
+                <fullName>CO-OP</fullName>
+                <default>false</default>
+                <label>CO-OP</label>
+            </value>
+            <value>
+                <fullName>CTM</fullName>
+                <default>false</default>
+                <label>CTM</label>
+            </value>
+            <value>
+                <fullName>CT PARTNERS</fullName>
+                <default>false</default>
+                <label>CT PARTNERS</label>
+            </value>
+            <value>
+                <fullName>CTS</fullName>
+                <default>false</default>
+                <label>CTS</label>
+            </value>
+            <value>
+                <fullName>CWT</fullName>
+                <default>false</default>
+                <label>CWT</label>
+            </value>
+            <value>
+                <fullName>CWT JOINT VENTURE</fullName>
+                <default>false</default>
+                <label>CWT JOINT VENTURE</label>
+            </value>
+            <value>
+                <fullName>CWT NETWORK PARTNER</fullName>
+                <default>false</default>
+                <label>CWT NETWORK PARTNER</label>
+            </value>
+            <value>
+                <fullName>DE JONG INTRA VAKANTIES B.V.</fullName>
+                <default>false</default>
+                <label>DE JONG INTRA VAKANTIES B.V.</label>
+            </value>
+            <value>
+                <fullName>DER</fullName>
+                <default>false</default>
+                <label>DER</label>
+            </value>
+            <value>
+                <fullName>DESTI INTERNATIONAL</fullName>
+                <default>false</default>
+                <label>DESTI INTERNATIONAL</label>
+            </value>
+            <value>
+                <fullName>D-REIZEN VAKANTIEWINKELS</fullName>
+                <default>false</default>
+                <label>D-REIZEN VAKANTIEWINKELS</label>
+            </value>
+            <value>
+                <fullName>DSB</fullName>
+                <default>false</default>
+                <label>DSB</label>
+            </value>
+            <value>
+                <fullName>ELITE TRAVEL GROUP</fullName>
+                <default>false</default>
+                <label>ELITE TRAVEL GROUP</label>
+            </value>
+            <value>
+                <fullName>ENI SERVIZI</fullName>
+                <default>false</default>
+                <label>ENI SERVIZI</label>
+            </value>
+            <value>
+                <fullName>EOLE UNICLAM-GIGATOP</fullName>
+                <default>false</default>
+                <label>EOLE UNICLAM-GIGATOP</label>
+            </value>
+            <value>
+                <fullName>ERUOSTUD</fullName>
+                <default>false</default>
+                <label>ERUOSTUD</label>
+            </value>
+            <value>
+                <fullName>ESCAPE TRAVEL</fullName>
+                <default>false</default>
+                <label>ESCAPE TRAVEL</label>
+            </value>
+            <value>
+                <fullName>EUROMASTER STUDIO</fullName>
+                <default>false</default>
+                <label>EUROMASTER STUDIO</label>
+            </value>
+            <value>
+                <fullName>FALCON TRAVELSHOPS</fullName>
+                <default>false</default>
+                <label>FALCON TRAVELSHOPS</label>
+            </value>
+            <value>
+                <fullName>FCL</fullName>
+                <default>false</default>
+                <label>FCL</label>
+            </value>
+            <value>
+                <fullName>FCM</fullName>
+                <default>false</default>
+                <label>FCM</label>
+            </value>
+            <value>
+                <fullName>FDM</fullName>
+                <default>false</default>
+                <label>FDM</label>
+            </value>
+            <value>
+                <fullName>Finnish Travel Bureau (Suomen Matkatoimisto)</fullName>
+                <default>false</default>
+                <label>Finnish Travel Bureau (Suomen Matkatoimisto)</label>
+            </value>
+            <value>
+                <fullName>FIRST CALABRIA</fullName>
+                <default>false</default>
+                <label>FIRST CALABRIA</label>
+            </value>
+            <value>
+                <fullName>FIRST GROUP</fullName>
+                <default>false</default>
+                <label>FIRST GROUP</label>
+            </value>
+            <value>
+                <fullName>FLAVOUR TRAVEL</fullName>
+                <default>false</default>
+                <label>FLAVOUR TRAVEL</label>
+            </value>
+            <value>
+                <fullName>FLIGHT CENTRE</fullName>
+                <default>false</default>
+                <label>FLIGHT CENTRE</label>
+            </value>
+            <value>
+                <fullName>Flygpoolen</fullName>
+                <default>false</default>
+                <label>Flygpoolen</label>
+            </value>
+            <value>
+                <fullName>FREEDOM TRAVEL GROUP</fullName>
+                <default>false</default>
+                <label>FREEDOM TRAVEL GROUP</label>
+            </value>
+            <value>
+                <fullName>FRIGERIO</fullName>
+                <default>false</default>
+                <label>FRIGERIO</label>
+            </value>
+            <value>
+                <fullName>FTI</fullName>
+                <default>false</default>
+                <label>FTI</label>
+            </value>
+            <value>
+                <fullName>G40</fullName>
+                <default>false</default>
+                <label>G40</label>
+            </value>
+            <value>
+                <fullName>GATTINONI</fullName>
+                <default>false</default>
+                <label>GATTINONI</label>
+            </value>
+            <value>
+                <fullName>GEA</fullName>
+                <default>false</default>
+                <label>GEA</label>
+            </value>
+            <value>
+                <fullName>GLOBAL STAR</fullName>
+                <default>false</default>
+                <label>GLOBAL STAR</label>
+            </value>
+            <value>
+                <fullName>GO4TRAVEL</fullName>
+                <default>false</default>
+                <label>GO4TRAVEL</label>
+            </value>
+            <value>
+                <fullName>GO BROKER NETWORK</fullName>
+                <default>false</default>
+                <label>GO BROKER NETWORK</label>
+            </value>
+            <value>
+                <fullName>GTMC</fullName>
+                <default>false</default>
+                <label>GTMC</label>
+            </value>
+            <value>
+                <fullName>HARVEY WORLD TRAVEL</fullName>
+                <default>false</default>
+                <label>HARVEY WORLD TRAVEL</label>
+            </value>
+            <value>
+                <fullName>HAVAS</fullName>
+                <default>false</default>
+                <label>HAVAS</label>
+            </value>
+            <value>
+                <fullName>Helloworld</fullName>
+                <default>false</default>
+                <label>Helloworld</label>
+            </value>
+            <value>
+                <fullName>HOGG ROBINSON AFFILIATE</fullName>
+                <default>false</default>
+                <label>HOGG ROBINSON AFFILIATE</label>
+            </value>
+            <value>
+                <fullName>HOLIDAY SHOPPE</fullName>
+                <default>false</default>
+                <label>HOLIDAY SHOPPE</label>
+            </value>
+            <value>
+                <fullName>HOLITOURS</fullName>
+                <default>false</default>
+                <label>HOLITOURS</label>
+            </value>
+            <value>
+                <fullName>HOTELPLAN</fullName>
+                <default>false</default>
+                <label>HOTELPLAN</label>
+            </value>
+            <value>
+                <fullName>HOUSE OF TRAVEL</fullName>
+                <default>false</default>
+                <label>HOUSE OF TRAVEL</label>
+            </value>
+            <value>
+                <fullName>HRG</fullName>
+                <default>false</default>
+                <label>HRG</label>
+            </value>
+            <value>
+                <fullName>IMTG</fullName>
+                <default>false</default>
+                <label>IMTG</label>
+            </value>
+            <value>
+                <fullName>Inca Tours</fullName>
+                <default>false</default>
+                <label>Inca Tours</label>
+            </value>
+            <value>
+                <fullName>INDEPENDENCE GROUP</fullName>
+                <default>false</default>
+                <label>INDEPENDENCE GROUP</label>
+            </value>
+            <value>
+                <fullName>INDEPENDENT</fullName>
+                <default>false</default>
+                <label>INDEPENDENT</label>
+            </value>
+            <value>
+                <fullName>ISTN</fullName>
+                <default>false</default>
+                <label>ISTN</label>
+            </value>
+            <value>
+                <fullName>ITN RETAIL GROUP</fullName>
+                <default>false</default>
+                <label>ITN RETAIL GROUP</label>
+            </value>
+            <value>
+                <fullName>JETSET/TRAVELWORLD</fullName>
+                <default>false</default>
+                <label>JETSET/TRAVELWORLD</label>
+            </value>
+            <value>
+                <fullName>Kaleva (CWT)</fullName>
+                <default>false</default>
+                <label>Kaleva (CWT)</label>
+            </value>
+            <value>
+                <fullName>Kilroy</fullName>
+                <default>false</default>
+                <label>Kilroy</label>
+            </value>
+            <value>
+                <fullName>KUONI TRAVEL NEDERLAND B.V.</fullName>
+                <default>false</default>
+                <label>KUONI TRAVEL NEDERLAND B.V.</label>
+            </value>
+            <value>
+                <fullName>LCC - Lufthansa City Centre  Radius</fullName>
+                <default>false</default>
+                <label>LCC - Lufthansa City Centre  Radius</label>
+            </value>
+            <value>
+                <fullName>LIBERTY TRAVEL</fullName>
+                <default>false</default>
+                <label>LIBERTY TRAVEL</label>
+            </value>
+            <value>
+                <fullName>MAGELLAN GROUP</fullName>
+                <default>false</default>
+                <label>MAGELLAN GROUP</label>
+            </value>
+            <value>
+                <fullName>MANOR</fullName>
+                <default>false</default>
+                <label>MANOR</label>
+            </value>
+            <value>
+                <fullName>MARSUPIO</fullName>
+                <default>false</default>
+                <label>MARSUPIO</label>
+            </value>
+            <value>
+                <fullName>MERIDIANO</fullName>
+                <default>false</default>
+                <label>MERIDIANO</label>
+            </value>
+            <value>
+                <fullName>MILANO VENDE VIAGGI</fullName>
+                <default>false</default>
+                <label>MILANO VENDE VIAGGI</label>
+            </value>
+            <value>
+                <fullName>MONDO DIRECT</fullName>
+                <default>false</default>
+                <label>MONDO DIRECT</label>
+            </value>
+            <value>
+                <fullName>MONDO TRAVEL</fullName>
+                <default>false</default>
+                <label>MONDO TRAVEL</label>
+            </value>
+            <value>
+                <fullName>MONTYS TRAVEL SERVICE</fullName>
+                <default>false</default>
+                <label>MONTYS TRAVEL SERVICE</label>
+            </value>
+            <value>
+                <fullName>NETWORK ATLANTIS</fullName>
+                <default>false</default>
+                <label>NETWORK ATLANTIS</label>
+            </value>
+            <value>
+                <fullName>Nex</fullName>
+                <default>false</default>
+                <label>Nex</label>
+            </value>
+            <value>
+                <fullName>NOI LA VACANZE</fullName>
+                <default>false</default>
+                <label>NOI LA VACANZE</label>
+            </value>
+            <value>
+                <fullName>OAD/GLOBE</fullName>
+                <default>false</default>
+                <label>OAD/GLOBE</label>
+            </value>
+            <value>
+                <fullName>OAD REIZEN</fullName>
+                <default>false</default>
+                <label>OAD REIZEN</label>
+            </value>
+            <value>
+                <fullName>ORIENT EXPRESS</fullName>
+                <default>false</default>
+                <label>ORIENT EXPRESS</label>
+            </value>
+            <value>
+                <fullName>OTHER</fullName>
+                <default>false</default>
+                <label>OTHER</label>
+            </value>
+            <value>
+                <fullName>OTN</fullName>
+                <default>false</default>
+                <label>OTN</label>
+            </value>
+            <value>
+                <fullName>PROFESSIONE TURISMO</fullName>
+                <default>false</default>
+                <label>PROFESSIONE TURISMO</label>
+            </value>
+            <value>
+                <fullName>RADIUS</fullName>
+                <default>false</default>
+                <label>RADIUS</label>
+            </value>
+            <value>
+                <fullName>RAVT</fullName>
+                <default>false</default>
+                <label>RAVT</label>
+            </value>
+            <value>
+                <fullName>RCI</fullName>
+                <default>false</default>
+                <label>RCI</label>
+            </value>
+            <value>
+                <fullName>Resecentrumgruppen</fullName>
+                <default>false</default>
+                <label>Resecentrumgruppen</label>
+            </value>
+            <value>
+                <fullName>Resia</fullName>
+                <default>false</default>
+                <label>Resia</label>
+            </value>
+            <value>
+                <fullName>ROBINTUR</fullName>
+                <default>false</default>
+                <label>ROBINTUR</label>
+            </value>
+            <value>
+                <fullName>SCHIPHOL TRAVEL INTERNATIONAL</fullName>
+                <default>false</default>
+                <label>SCHIPHOL TRAVEL INTERNATIONAL</label>
+            </value>
+            <value>
+                <fullName>SELECTAIR</fullName>
+                <default>false</default>
+                <label>SELECTAIR</label>
+            </value>
+            <value>
+                <fullName>SELECTOUR</fullName>
+                <default>false</default>
+                <label>SELECTOUR</label>
+            </value>
+            <value>
+                <fullName>SIMA</fullName>
+                <default>false</default>
+                <label>SIMA</label>
+            </value>
+            <value>
+                <fullName>SPAA</fullName>
+                <default>false</default>
+                <label>SPAA</label>
+            </value>
+            <value>
+                <fullName>STA TRAVEL</fullName>
+                <default>false</default>
+                <label>STA TRAVEL</label>
+            </value>
+            <value>
+                <fullName>STELLA INDEPENDENT RETAIL</fullName>
+                <default>false</default>
+                <label>STELLA INDEPENDENT RETAIL</label>
+            </value>
+            <value>
+                <fullName>STS</fullName>
+                <default>false</default>
+                <label>STS</label>
+            </value>
+            <value>
+                <fullName>STUDENT FLIGHTS</fullName>
+                <default>false</default>
+                <label>STUDENT FLIGHTS</label>
+            </value>
+            <value>
+                <fullName>SUNAIR VAKANTIES B.V.</fullName>
+                <default>false</default>
+                <label>SUNAIR VAKANTIES B.V.</label>
+            </value>
+            <value>
+                <fullName>Swetra</fullName>
+                <default>false</default>
+                <label>Swetra</label>
+            </value>
+            <value>
+                <fullName>THE GLOBAL TRAVEL GROUP</fullName>
+                <default>false</default>
+                <label>THE GLOBAL TRAVEL GROUP</label>
+            </value>
+            <value>
+                <fullName>THE STELLA GROUP</fullName>
+                <default>false</default>
+                <label>THE STELLA GROUP</label>
+            </value>
+            <value>
+                <fullName>THOMAS COOK</fullName>
+                <default>false</default>
+                <label>THOMAS COOK</label>
+            </value>
+            <value>
+                <fullName>Ticket Affärsresor</fullName>
+                <default>false</default>
+                <label>Ticket Affärsresor</label>
+            </value>
+            <value>
+                <fullName>Ticket Feriereiser</fullName>
+                <default>false</default>
+                <label>Ticket Feriereiser</label>
+            </value>
+            <value>
+                <fullName>Ticket Privatresor</fullName>
+                <default>false</default>
+                <label>Ticket Privatresor</label>
+            </value>
+            <value>
+                <fullName>TOP ATLANTICO</fullName>
+                <default>false</default>
+                <label>TOP ATLANTICO</label>
+            </value>
+            <value>
+                <fullName>TOP SARDINIIA</fullName>
+                <default>false</default>
+                <label>TOP SARDINIIA</label>
+            </value>
+            <value>
+                <fullName>TOURCOM</fullName>
+                <default>false</default>
+                <label>TOURCOM</label>
+            </value>
+            <value>
+                <fullName>TOURIST CLUB</fullName>
+                <default>false</default>
+                <label>TOURIST CLUB</label>
+            </value>
+            <value>
+                <fullName>TRAVEL ASSOCIATES</fullName>
+                <default>false</default>
+                <label>TRAVEL ASSOCIATES</label>
+            </value>
+            <value>
+                <fullName>TRAVEL CENTRES</fullName>
+                <default>false</default>
+                <label>TRAVEL CENTRES</label>
+            </value>
+            <value>
+                <fullName>TRAVEL COMPANY HQ</fullName>
+                <default>false</default>
+                <label>TRAVEL COMPANY HQ</label>
+            </value>
+            <value>
+                <fullName>TRAVEL COUNSELLORS</fullName>
+                <default>false</default>
+                <label>TRAVEL COUNSELLORS</label>
+            </value>
+            <value>
+                <fullName>Travel Design</fullName>
+                <default>false</default>
+                <label>Travel Design</label>
+            </value>
+            <value>
+                <fullName>Travelgate</fullName>
+                <default>false</default>
+                <label>Travelgate</label>
+            </value>
+            <value>
+                <fullName>TRAVELGROUP/GIGATOUR</fullName>
+                <default>false</default>
+                <label>TRAVELGROUP/GIGATOUR</label>
+            </value>
+            <value>
+                <fullName>TRAVEL LEADERS</fullName>
+                <default>false</default>
+                <label>TRAVEL LEADERS</label>
+            </value>
+            <value>
+                <fullName>TRAVELLERS CHOICE</fullName>
+                <default>false</default>
+                <label>TRAVELLERS CHOICE</label>
+            </value>
+            <value>
+                <fullName>TRAVEL MANAGERS</fullName>
+                <default>false</default>
+                <label>TRAVEL MANAGERS</label>
+            </value>
+            <value>
+                <fullName>Travelnet</fullName>
+                <default>false</default>
+                <label>Travelnet</label>
+            </value>
+            <value>
+                <fullName>TRAVEL SAVERS</fullName>
+                <default>false</default>
+                <label>TRAVEL SAVERS</label>
+            </value>
+            <value>
+                <fullName>TRAVELSCENE/AMERICAN EXPRESS</fullName>
+                <default>false</default>
+                <label>TRAVELSCENE/AMERICAN EXPRESS</label>
+            </value>
+            <value>
+                <fullName>TRAVELSMART</fullName>
+                <default>false</default>
+                <label>TRAVELSMART</label>
+            </value>
+            <value>
+                <fullName>TRAVEL SMART</fullName>
+                <default>false</default>
+                <label>TRAVEL SMART</label>
+            </value>
+            <value>
+                <fullName>Travel Solutions International</fullName>
+                <default>false</default>
+                <label>Travel Solutions International</label>
+            </value>
+            <value>
+                <fullName>Travel Support (Travelnet and Buena Vida)</fullName>
+                <default>false</default>
+                <label>Travel Support (Travelnet and Buena Vida)</label>
+            </value>
+            <value>
+                <fullName>TTA</fullName>
+                <default>false</default>
+                <label>TTA</label>
+            </value>
+            <value>
+                <fullName>TUI</fullName>
+                <default>false</default>
+                <label>TUI</label>
+            </value>
+            <value>
+                <fullName>TUI INTERNATIONAL</fullName>
+                <default>false</default>
+                <label>TUI INTERNATIONAL</label>
+            </value>
+            <value>
+                <fullName>TUI SUISSE</fullName>
+                <default>false</default>
+                <label>TUI SUISSE</label>
+            </value>
+            <value>
+                <fullName>UNIGLOBE</fullName>
+                <default>false</default>
+                <label>UNIGLOBE</label>
+            </value>
+            <value>
+                <fullName>UNITED TRAVEL</fullName>
+                <default>false</default>
+                <label>UNITED TRAVEL</label>
+            </value>
+            <value>
+                <fullName>VEROBNELLI</fullName>
+                <default>false</default>
+                <label>VEROBNELLI</label>
+            </value>
+            <value>
+                <fullName>VERTREKPUNT</fullName>
+                <default>false</default>
+                <label>VERTREKPUNT</label>
+            </value>
+            <value>
+                <fullName>VIA Travel</fullName>
+                <default>false</default>
+                <label>VIA Travel</label>
+            </value>
+            <value>
+                <fullName>VIRGIN GROUP</fullName>
+                <default>false</default>
+                <label>VIRGIN GROUP</label>
+            </value>
+            <value>
+                <fullName>VIRTUOSO</fullName>
+                <default>false</default>
+                <label>VIRTUOSO</label>
+            </value>
+            <value>
+                <fullName>WELCOME TRAVEL GROUP</fullName>
+                <default>false</default>
+                <label>WELCOME TRAVEL GROUP</label>
+            </value>
+            <value>
+                <fullName>WIN</fullName>
+                <default>false</default>
+                <label>WIN</label>
+            </value>
+            <value>
+                <fullName>WORLDCHOICE</fullName>
+                <default>false</default>
+                <label>WORLDCHOICE</label>
+            </value>
+            <value>
+                <fullName>WORLD TICKET CENTER</fullName>
+                <default>false</default>
+                <label>WORLD TICKET CENTER</label>
+            </value>
+            <value>
+                <fullName>WORLD TRAVEL CENTRE</fullName>
+                <default>false</default>
+                <label>WORLD TRAVEL CENTRE</label>
+            </value>
+            <value>
+                <fullName>WORLD TRAVELLERS</fullName>
+                <default>false</default>
+                <label>WORLD TRAVELLERS</label>
+            </value>
+            <value>
+                <fullName>ZANI</fullName>
+                <default>false</default>
+                <label>ZANI</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

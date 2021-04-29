@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Report_Columns</fullName>
+    <columns>NAME</columns>
+    <columns>fieldLabel__c</columns>
+    <columns>reportId__c</columns>
+    <columns>columnType__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>reportId__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>All Report Columns</label>
+</ListView>

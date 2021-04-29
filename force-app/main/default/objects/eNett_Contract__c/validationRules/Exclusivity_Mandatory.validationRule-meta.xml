@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Exclusivity_Mandatory</fullName>
+    <active>true</active>
+    <description>The Exclusivity % field must be populated when the Exclusivity Clause picklist has been set to Yes - Percentage.</description>
+    <errorConditionFormula>AND(ISPICKVAL(Exclusivity_Clause__c,&quot;Yes - Percentage&quot;),ISBLANK( Exclusivity__c ))</errorConditionFormula>
+    <errorMessage>The Exclusivity % field must be populated when the Exclusivity Clause picklist has been set to Yes - Percentage.</errorMessage>
+</ValidationRule>

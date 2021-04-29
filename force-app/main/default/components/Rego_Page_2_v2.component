@@ -1,0 +1,1277 @@
+<apex:component >
+<!-- <div ng-init="getBankAccounts();getPayableBankAccounts();getReceivableBankAccounts();getBillingBankAccounts();"></div>
+ -->
+ 
+  <!--   ********************************************Start Debug*******************************************
+    ********************************************Start Debug*******************************************
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>p4_Payable_Form.$valid = {{p4_Payable_Form.$valid}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    <table>
+    <tbody>
+    <tr><td><div>p_bankaccount = {{p_bankaccount}}</div></td></tr>
+    <tr><td><div>p_bankaccount.Account_Country__c = {{p_bankaccount.Account_Country__c}}</div></td></tr>
+    <tr><td><div>p_bankaccount.State_Province_LKP__c = {{p_bankaccount.State_Province_LKP__c}}</div></td></tr>
+    <tr><td><div>payregions = {{payregions}}</div></td></tr>
+    <tr><td><div>r_bankaccount.Account_Country__c = {{r_bankaccount.Account_Country__c}}</div></td></tr>
+    <tr><td><div>r_bankaccount.State_Province_LKP__c = {{r_bankaccount.State_Province_LKP__c}}</div></td></tr>
+    <tr><td><div>recregions = {{recregions}}</div></td></tr>
+    <tr><td><div>b_bankaccount.Account_Country__c = {{b_bankaccount.Account_Country__c}}</div></td></tr>
+    <tr><td><div>b_bankaccount.State_Province_LKP__c = {{b_bankaccount.State_Province_LKP__c}}</div></td></tr>
+    <tr><td><div>billregions = {{billregions}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    <table>
+    <tbody>
+    <tr><td><div>RegoID = {{registration.Id}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    <table>
+    <tbody>
+    <tr><td><div>ba_is_iban__c = {{ba_is_iban__c}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>Payable = {{p_bankaccount}}</div></td></tr>
+    <tr><td><div>Payable = {{r_bankaccount}}</div></td></tr>
+    <tr><td><div>Payable = {{b_bankaccount}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    <table>
+    <tbody>
+    <tr><td><div>Bank Accounts = {{bankaccounts}}</div></td></tr>
+    <tr><td><div>The IBAN Flag = {{ba_is_iban__c}}</div></td></tr>
+    <tr><td><div>Stage: {{registration.Registration_Stage__c}}</div></td></tr>
+    <tr><td><div>Sub Stage: {{registration.Registration_Sub_Stage__c}}</div></td></tr>
+    <tr><td><div>Product: {{registration.Product__c}}</div></td></tr>
+    <tr><td><div>p4_Payable_Form: {{p4_Payable_Form.$valid}}</div></td></tr>
+    <tr><td><div>p4_Receivable_Form: {{p4_Receivable_Form.$valid}}</div></td></tr>
+    <tr><td><div>p4_Billing_Form: {{p4_Billing_Form.$valid}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    ********************************************End Debug*******************************************
+    ********************************************End Debug*******************************************
+     -->
+
+     <!-- **************************************************************************
+    *
+    *   FUNDING SECTION
+    *
+    **************************************************************************  -->
+    <div class="wrapper-van-tabs" ng-show="showHide('FundingSection')">
+        <div class="container">
+            <div class="intro-content col-xs-12 col-sm-8">
+            <h2>Banking Details</h2>
+            <p class="">To speed up your account set-up, you can add your bank account(s) now.  If you don't have this information handy, don't stress, you can skip this step and we can add it later.</p>
+            </div>
+            <div class="hidden-xs col-sm-4">
+                <div class="btn-wrapper btn-next-wrapper">
+                     <a href="#" class="btn btn-skip anchor-link btn-next-step" data-btnstep="step3" ng-click="setStages('Review/Confirmation');getClientAgreementTandC()" ><span>Skip this step</span></a>
+                    <input type="button" value="Submit" class="btn-next-submit"/>
+                </div>
+            </div>
+            <!-- TRY HERE -->
+           <fieldset ng-disabled="checkDisable('Disable_Form')" style="clear:both;">
+                <div class="form-container" ng-show="showHide('FundingEntry')">
+                    <div class="col-xs-12 form-single-column">
+                            <h2 class="form-title">Add Funding to VANs</h2>
+
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" ng-class="{ 'active': ba_is_iban__c }">
+                                    <a href="#yes" aria-controls="home" role="tab"  data-toggle="tab" ng-click="ba_is_iban__c = true">Yes, I want to use my iban</a>
+                                </li> 
+                                <li role="presentation" ng-class="{ 'active': !ba_is_iban__c }">
+                                    <a href="#no" aria-controls="profile" role="tab"  data-toggle="tab" ng-click="ba_is_iban__c = false">No, I don't want to use my iban</a>
+                                </li>
+                            </ul>
+
+                            <div class="tab-content">
+
+                                <!-- **************************************************************************
+                                *
+                                *   IBAN PANEL
+                                *
+                                **************************************************************************  -->
+                                
+                                <div role="tabpanel" class="tab-pane active">
+                                    <div>
+                                        <form name="p4_IBAN_Funding_Form" novalidate="novalidate">
+                                            
+                                            
+                                            <!-- SWIFT/BIC (Text/Mandatory/Tooltip)
+                                            **************************************************************************  -->
+                                            
+                                                <div   ng-show="showHide('SWIFT_BIC')" ng-class="(p4_IBAN_Funding_Form.ba_swift_bic__c.$invalid && p4_IBAN_Funding_Form.ba_swift_bic__c.$touched ? 'col-xs-12 col-sm-6 input-container field_error': 'col-xs-12 col-sm-6 input-container') 
+                                                               + ' ' +    (ba_swift_bic__c.length > 0 ? 'input-filled': '') ">           
+                                                    <input type="text" class="required" id="ba_swift_bic__c" 
+                                                           name="ba_swift_bic__c"
+                                                           ng-model="ba_swift_bic__c" 
+                                                           ng-required="ba_is_iban__c"
+                                                           ng-maxlength="swiftBicLength"
+                                                           ng-class="cssInputClass"
+                                                           ng-change="checkCssInput()" />
+                                                    <label for="ba_swift_bic__c" data-manditoryfield="SWIFT/BIC - mandatory field">SWIFT/BIC</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_swift_bic__c.$error" ng-if="p4_IBAN_Funding_Form.ba_swift_bic__c.$touched && !p4_IBAN_Funding_Form.ba_swift_bic__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                        <p ng-message="maxlength">SWIFT/BIC cannot be longer than {{swiftBicLength}} characters.</p>
+                                                    </div>
+                                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                                    <div class="tooltip-content">
+                                                        <h4>{{ttHeaders.FundingAccountSWIFTBIC}}</h4>
+                                                        <span class="btn-close"></span>
+                                                        <p>{{ttContents.FundingAccountSWIFTBIC}}</p>
+                                                    </div>
+                                                </div>
+                                            
+                                            
+                                            
+                                            <!-- IBAN (Text/Mandatory/Tooltip)
+                                            **************************************************************************  -->
+                                            
+                                                <div ng-show="showHide('IBAN')" ng-class="         (p4_IBAN_Funding_Form.ba_iban__c.$invalid && p4_IBAN_Funding_Form.ba_iban__c.$touched ? 'input-container col-xs-12 col-sm-6 field_error': 'input-container col-xs-12 col-sm-6') 
+                                                               + ' ' +    (ba_iban__c.length > 0 ? 'input-filled': '') ">           
+                                                    <input type="text" class="required" id="ba_iban__c" 
+                                                           name="ba_iban__c"
+                                                           ng-model="ba_iban__c" 
+                                                           ng-required="ba_is_iban__c"
+                                                           ng-maxlength="ibanLength"
+                                                           ng-class="cssInputClass"
+                                                           ng-change="checkCssInput()" />
+                                                    <label for="ba_iban__c" data-manditoryfield="Iban Number - mandatory field">IBAN</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_iban__c.$error" ng-if="p4_IBAN_Funding_Form.ba_iban__c.$touched && !p4_IBAN_Funding_Form.ba_iban__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                        <p ng-message="maxlength">IBAN cannot be longer than {{ibanLength}} characters.</p>
+                                                    </div>
+                                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                                    <div class="tooltip-content">
+                                                        <h4>{{ttHeaders.FundingAccountIBAN}}</h4>
+                                                        <span class="btn-close"></span>
+                                                        <p>{{ttContents.FundingAccountIBAN}}</p>
+                                                    </div>
+                                                </div>
+                                            
+                                            
+                                            
+                                            <!-- BSB (Text/Mandatory/Tooltip) ***BH - Note:stored in SWIFT_BIC__c
+                                            **************************************************************************  -->
+                                            
+                                                <div  ng-show="showHide('BSB')" ng-class="         (p4_IBAN_Funding_Form.ba_bank_code__c.$invalid && p4_IBAN_Funding_Form.ba_bank_code__c.$touched ? 'input-container col-xs-12 col-sm-6 field_error': 'input-container col-xs-12 col-sm-6') 
+                                                               + ' ' +    (ba_bank_code__c.length > 0 ? 'input-filled': '') ">           
+                                                    <input type="text" class="required" id="ba_bank_code__c" 
+                                                           name="ba_bank_code__c"
+                                                           ng-model="ba_bank_code__c" 
+                                                           ng-required="!ba_is_iban__c"
+                                                           ng-class="cssInputClass"
+                                                           ng-maxlength="BankCodeMaxLength"
+                                                           ng-change="checkCssInput()" />
+                                                    <label for="ba_bank_code__c" data-manditoryfield="BSB - mandatory field">BSB/Branch code</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_bank_code__c.$error" ng-if="p4_IBAN_Funding_Form.ba_bank_code__c.$touched && !p4_IBAN_Funding_Form.ba_bank_code__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                         <p ng-message="maxlength">BSB/Branch Code cannot be longer than {{BankCodeMaxLength}} characters.</p>
+                                                    </div>
+                                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                                    <div class="tooltip-content">
+                                                        <h4>{{ttHeaders.FundingAccountBSBBranchCode}}</h4>
+                                                        <span class="btn-close"></span>
+                                                        <p>{{ttContents.FundingAccountBSBBranchCode}}</p>
+                                                    </div>
+                                                </div>
+                                            
+                                            
+                                            
+                                            <!-- Account Number (Text/Mandatory/Tooltip)
+                                            **************************************************************************  -->
+                                           
+                                                <div ng-show="showHide('AccNo')" ng-class="         (p4_IBAN_Funding_Form.ba_account_number__c.$invalid && p4_IBAN_Funding_Form.ba_account_number__c.$touched ? 'input-container col-xs-12 col-sm-6 field_error': 'input-container col-xs-12 col-sm-6') 
+                                                               + ' ' +    (ba_account_number__c.length > 0 ? 'input-filled': '') ">           
+                                                    <input type="text" class="required" id="ba_account_number__c" 
+                                                           name="ba_account_number__c"
+                                                           ng-model="ba_account_number__c" 
+                                                           ng-required="!ba_is_iban__c"
+                                                           ng-class="cssInputClass"
+                                                           ng-maxlength="accountNumbeMaxLength"
+                                                           ng-change="checkCssInput()" />
+                                                    <label for="ba_account_number__c" data-manditoryfield="Account number - mandatory field">Account number</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_account_number__c.$error" ng-if="p4_IBAN_Funding_Form.ba_account_number__c.$touched && !p4_IBAN_Funding_Form.ba_account_number__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                        <p ng-message="maxlength">Account Number cannot be longer than {{accountNumbeMaxLength}} characters.</p>
+                                                    </div>
+                                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                                    <div class="tooltip-content">
+                                                        <h4>{{ttHeaders.FundingAccountNumber}}</h4>
+                                                        <span class="btn-close"></span>
+                                                        <p>{{ttContents.FundingAccountNumber}}</p>
+                                                    </div>
+                                                </div>
+                                           
+                                            
+                                            
+                                            <!-- Currency (Text/Picklist/Mandatory/Tooltip) ***BH - Yet to code
+                                            **************************************************************************  -->                          
+                                           
+                                                <div ng-class="         (p4_IBAN_Funding_Form.ba_account_currency__c.$invalid && p4_IBAN_Funding_Form.ba_account_currency__c.$touched ? 'input-container col-xs-12 col-sm-6 field_error wrapper-select': 'input-container col-xs-12 col-sm-6 wrapper-select') 
+                                                               + ' ' +  (ba_account_currency__c.length > 0 ? 'input-filled': '') ">           
+                                                    <select id="ba_account_currency__c" class="required" style="border: 0px;"
+                                                            name="ba_account_currency__c"
+                                                            ng-model="ba_account_currency__c"
+                                                            ng-options="ba_account_currency__c for ba_account_currency__c in fundingcurrencies"
+                                                            required="true"
+                                                            ng-class="cssInputClass"
+                                                            ng-change="checkCssInput()" >                    
+                                                    </select>                                        
+                                                    <label for="ba_account_currency__c" data-manditoryfield="Account currency - mandatory field">Currency</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_account_currency__c.$error" ng-if="p4_IBAN_Funding_Form.ba_account_currency__c.$touched && !p4_IBAN_Funding_Form.ba_account_currency__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                    </div>
+                                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                                    <div class="tooltip-content">
+                                                        <h4>{{ttHeaders.FundingAccountCurrency}}</h4>
+                                                        <span class="btn-close"></span>
+                                                        <p>{{ttContents.FundingAccountCurrency}}</p>
+                                                    </div>
+                                                </div>
+                                           
+                                            
+                                            
+                                            <!-- Account Name (Text/Mandatory)
+                                            **************************************************************************  -->
+                                           
+                                                <div ng-class="         (p4_IBAN_Funding_Form.ba_account_name__c.$invalid && p4_IBAN_Funding_Form.ba_account_name__c.$touched ? 'input-container col-xs-12 col-sm-6 field_error ': 'input-container col-xs-12 col-sm-6') 
+                                                               + ' ' +    (ba_account_name__c.length > 0 ? 'input-filled': '') ">           
+                                                    <input type="text" class="required" id="ba_account_name__c" 
+                                                           name="ba_account_name__c"
+                                                           ng-model="ba_account_name__c" 
+                                                           required="true"
+                                                           ng-class="cssInputClass"
+                                                           ng-maxlength="accountNameMaxLength"
+                                                           ng-change="checkCssInput()" />
+                                                    <label for="ba_account_name__c" data-manditoryfield="Account name - mandatory field">Account name</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_account_name__c.$error" ng-if="p4_IBAN_Funding_Form.ba_account_name__c.$touched && !p4_IBAN_Funding_Form.ba_account_name__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                        <p ng-message="maxlength">Account name cannot be longer than {{accountNameMaxLength}} characters.</p>
+                                                    </div>
+                                                </div>
+                                            
+                                            
+                                            
+                                            <!-- Country (Text/Picklist/Mandatory)
+                                            **************************************************************************  -->
+                                           
+                                                <div ng-class="         (p4_IBAN_Funding_Form.ba_account_country__c.$invalid && p4_IBAN_Funding_Form.ba_account_country__c.$touched ? 'input-container col-xs-12 col-sm-6 field_error wrapper-select': 'input-container col-xs-12 col-sm-6 wrapper-select') 
+                                                               + ' ' +  (ba_account_country__c.length > 0 ? 'input-filled': '') ">           
+                                                    <select id="ba_account_country__c" class="required" style="border: 0px;"
+                                                            name="ba_account_country__c"
+                                                            ng-model="ba_account_country__c"
+                                                            ng-options="ba_account_country__c for ba_account_country__c in countries"
+                                                            required="true"
+                                                            ng-class="cssInputClass"
+                                                            ng-change="checkCssInput()" >                    
+                                                    </select>                                        
+                                                    <label for="ba_account_country__c" data-manditoryfield="Account country - mandatory field">Account country</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_account_country__c.$error" ng-if="p4_IBAN_Funding_Form.ba_account_country__c.$touched && !p4_IBAN_Funding_Form.ba_account_country__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                    </div>
+                                                </div>
+
+                                                <div   ng-show="showHide('NO_SWIFT_BIC')"  ng-class="(p4_IBAN_Funding_Form.ba_swift_bic_no__c.$invalid && p4_IBAN_Funding_Form.ba_swift_bic_no__c.$touched ? 'col-xs-12 col-sm-6 input-container field_error': 'col-xs-12 col-sm-6 input-container') 
+                                                               + ' ' +    (ba_swift_bic_no__c.length > 0 ? 'input-filled': '') ">           
+                                                    <input type="text" class="required" id="ba_swift_bic_no__c" 
+                                                           name="ba_swift_bic_no__c"
+                                                           ng-model="ba_swift_bic_no__c" 
+                                                           ng-required="!ba_is_iban__c"
+                                                           ng-maxlength="swiftBicLength"
+                                                           ng-class="cssInputClass"
+                                                           ng-change="checkCssInput()" />
+                                                    <label for="ba_swift_bic_no__c" data-manditoryfield="SWIFT/BIC - mandatory field">SWIFT/BIC</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_swift_bic_no__c.$error" ng-if="p4_IBAN_Funding_Form.ba_swift_bic_no__c.$touched && !p4_IBAN_Funding_Form.ba_swift_bic_no__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                        <p ng-message="maxlength">SWIFT/BIC cannot be longer than {{swiftBicLength}} characters.</p>
+                                                    </div>
+                                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                                    <div class="tooltip-content">
+                                                        <h4>{{ttHeaders.FundingAccountSWIFTBIC}}</h4>
+                                                        <span class="btn-close"></span>
+                                                        <p>{{ttContents.FundingAccountSWIFTBIC}}</p>
+                                                    </div>
+                                                </div>
+                                            
+                                            
+                                            
+                                        </form>
+                                        
+                                        
+                                        <!-- Add Account Button
+                                        **************************************************************************  -->
+                                        <a class="btn btn-add" href="#" ng-disabled="p4_IBAN_Funding_Form.$invalid"  ng-click="createBankAccount()">Add this account</a>
+                                    </div>
+                                </div>
+                                <!-- <div role="tabpanel" class="tab-pane active" id="yes">
+                                    <div class="col-xs-12 col-sm-6 input-container">
+                                        <input type="text" id="swift-bic" class="required" name="swift_bic" autocomplete="off" data-js="form-text"/>
+                                        <label for="swift-bic" data-manditoryfield="Please enter SWIFT/BIC">SWIFT/BIC</label>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 input-container">
+                                        <input type="text" id="iban" class="required" name="iban" autocomplete="off" data-js="form-text"/>
+                                        <label for="iban" data-manditoryfield="Please enter your iban number">Iban</label>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 input-container">
+                                        <input type="text" class="required" name="account_currency" autocomplete="off" data-js="form-text"/>
+                                        <label for="account_currency" data-manditoryfield="Account currency - mandatory field">Account currency</label>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 input-container">
+                                        <input type="text" class="required" name="account_name" autocomplete="off" data-js="form-text"/>
+                                        <label for="account_name" data-manditoryfield="Account name - mandatory field">Account name</label>
+                                    </div>
+
+                                    <div class="col-xs-12 col-sm-6 input-container">
+                                        <input type="text" class="required " name="account_country" autocomplete="off" data-js="form-text"/>
+                                        <label for="account_name" data-manditoryfield="Account country">Account country</label>
+                                    </div>
+                                </div>
+ -->
+                                
+
+                                         <!-- Add Account Button **************************************************************************  -->
+                                       <!--  <a class="btn btn-add" href="#" ng-disabled="p4_IBAN_Funding_Form.$invalid"  ng-click="createBankAccount()">Add this account</a> -->
+
+                                        <!-- Funding Account List ****************************************** Start *******************************  -->
+                                        <div class="details-repeater-block">
+                                            <h2 class="title-repeater-block">My Funding Accounts new</h2>
+                                            <table class="table" style="margin:0; width: 100%" >
+                                                <thead>
+                                                    <tr>
+                                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Account Name</th>
+                                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">SWIFT/BIC</th>
+                                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">IBAN</th>
+                                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">BSB</th>
+                                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Acc #</th>
+                                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Currency</th>
+                                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey"></th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="item" ng-repeat="current in bankaccounts" >
+                                                        <td>{{current.Account_Name__c}}</td>
+                                                        <td>{{current.SWIFT_BIC__c}}</td>
+                                                        <td>{{current.IBAN__c}}</td>
+                                                        <td>{{current.Bank_Code__c}}</td>
+                                                        <td>{{current.Account_Number__c}}</td>
+                                                        <td>{{current.Account_Currency__c}}</td>
+                                                        <td ng-show="showHide('FundingEntry')" width="100">
+                                                            <a href="" ng-click="editFundingAccount(current)">edit</a>
+                                                            <a href="" class="remove" ng-click="deleteFundingAccount(current,current.Id,{event: $event})">remove</a>
+                                                           
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    <!-- Funding Account List *************************************************** End ***********************  -->
+                                    
+                                   
+
+
+                            </div>
+                    </div>
+
+                </div>
+            <!-- TRY HERE -->
+          </fieldset>
+              <!-- Banking attachment VAN Upload-->
+              <div class="wrapper-upload">
+                <h2>Attach your supporting documents</h2>
+                <p class="">To speed up the process of your VANs application, you may upload supporting documents for each bank account you've added.</p>
+                <c:DragDropZone attachNamePrefix="VAN_Banking_Details-" divID="Van" />
+                <br/>
+                <a href="#" class="btn btn-skip anchor-link"  ng-click="getAttachments()" id="getAttachments-VAN_Banking_Details-" ><span>Update Attachment List</span></a>
+                    <!-- Banking attachment VAN List ****************************************** Start *******************************  -->
+                    <div class="details-repeater-block details-repeater-banking " ng-show="showHide('Banking-attachment-VAN')">
+                      
+                        <table class="table" style="margin:0; width: 100%" >
+                            <thead>
+                                <tr>
+                                    <th style="padding:20px 10px 10px 0px;">Uploaded Documents TA</th>
+                                    <th style="padding:20px 10px 10px 0px;">Action</th>
+                                   
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr class="item" ng-repeat="attachment in attachmentRecordVAN" >
+                                    <td>{{attachment.Name}}</td>
+                                    <td><div ng-click="deleteAttachments(attachment.Id,'Van','VAN_Banking_Details-%',attachment.ParentId,attachment.Name)" style="cursor: pointer;">Remove</div></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                <!-- Banking attachment VAN List *************************************************** End ***********************  -->
+            </div>
+              <!-- Banking attachment VAN Upload End -->  
+        </div>
+    </div>
+
+    <!-- **************************************************************************
+    *
+    *   PAYABLE / RECEIVABLE / BILLING DETAILS
+    *
+    **************************************************************************  -->
+    
+<!-- TRY HERE -->
+  <fieldset ng-disabled="checkDisable('Disable_Form')">
+ 
+    <div class="wrapper-eft-threecolumn bg-lightblue" ng-show="showHide('EFT')">
+        <div class="container">
+          
+                    <div class="three-column-wrapper">
+                            <div class="intro-content col-xs-12 col-sm-8">
+                            <h2>EFT Service account setup</h2>
+                            <p class="">Please add your Accounts payable, receivable and billing for EFT service setup. Don’t have it? No worries. You can skip this step and we can always add it in later.</p>
+                            </div>
+                            <div class="hidden-xs col-sm-4" ng-show="!showHide('VANs')">
+                                <div class="btn-wrapper btn-next-wrapper">
+                                     <a href="#" class="btn btn-skip anchor-link btn-next-step" data-btnstep="step3" ng-click="setStages('Review/Confirmation');getClientAgreementTandC()" ><span>Skip this step</span></a>
+                                    <input type="button" value="Submit" class="btn-next-submit"/>
+                                </div>
+                            </div>
+                          
+                            <div class="col-xs-12 three-column">
+                                         <!-- **************************************************************************
+                            *
+                            *   PAYABLE DETAILS
+                            *
+                            **************************************************************************  -->
+                            <form name="p4_Payable_Form" novalidate="novalidate">
+                                
+                                <ul id="payable" class="col-xs-12 col-sm-4">
+                                    <li><h3>Payable</h3></li>
+                                    <div ng-show="p4_Payable_Form.$valid">
+                                        <li ng-show="showHide('DirectorEntry')" ng-click="pushPayable()"><span id="pushPayable">Push field content across</span></li>
+                                    </div>
+                                    <div ng-show="p4_Payable_Form.$invalid">
+                                        <li>&nbsp;</li>
+                                    </div>
+                                    
+                                    
+                                    <!-- Payable Country (Text/Picklist/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.country_payable.$invalid && p4_Payable_Form.country_payable.$touched ? 'input-container field_error wrapper-select': 'input-container wrapper-select') 
+                                                           + ' ' +  (p_bankaccount.Account_Country__c.length > 0 ? 'input-filled': '') ">           
+                                                <select id="country_payable" class="required" style="border: 0px;"
+                                                        name="country_payable"
+                                                        ng-model="p_bankaccount.Account_Country__c" 
+                                                        ng-options="country_payable for country_payable in countries"
+                                                        required="true"
+                                                        ng-class="cssInputClass"
+                                                        ng-change="checkCssInput(); changePayableCountry()" >                    
+                                                </select>                                        
+                                                <label for="country_payable" data-manditoryfield="Please select your country">Country</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.country_payable.$error" ng-if="p4_Payable_Form.country_payable.$touched && !p4_Payable_Form.country_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Financial Institution (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.financialinstitution_payable.$invalid && p4_Payable_Form.financialinstitution_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Financial_Institution__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="financialinstitution_payable" 
+                                                       name="financialinstitution_payable"
+                                                       ng-model="p_bankaccount.Financial_Institution__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-maxlength="financialInstitutionMaxLength"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="financialinstitution_payable" data-manditoryfield="Please enter your financial institution">Financial institution</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.financialinstitution_payable.$error" ng-if="p4_Payable_Form.financialinstitution_payable.$touched && !p4_Payable_Form.financialinstitution_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Financial institution cannot be longer than {{financialInstitutionMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Account Name (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.accountname_payable.$invalid && p4_Payable_Form.accountname_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Account_Name__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="accountname_payable" 
+                                                       name="accountname_payable"
+                                                       ng-model="p_bankaccount.Account_Name__c" 
+                                                       required="true"
+                                                       ng-maxlength="accountNameMaxLength"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="accountname_payable" data-manditoryfield="Please enter your account name">Account name</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.accountname_payable.$error" ng-if="p4_Payable_Form.accountname_payable.$touched && !p4_Payable_Form.accountname_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Account name cannot be longer than {{accountNameMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Account Number (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.accountnumber_payable.$invalid && p4_Payable_Form.accountnumber_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Account_Number__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="accountnumber_payable" 
+                                                       name="accountnumber_payable"
+                                                       ng-model="p_bankaccount.Account_Number__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-maxlength="accountNumbeEftMaxLength"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="accountnumber_payable" data-manditoryfield="Please enter your account number">Account number</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.accountnumber_payable.$error" ng-if="p4_Payable_Form.accountnumber_payable.$touched && !p4_Payable_Form.accountnumber_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Account Number cannot be longer than {{accountNumbeEftMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Bank Code (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.bankcode_payable.$invalid && p4_Payable_Form.bankcode_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Bank_Code__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="bankcode_payable" 
+                                                       name="bankcode_payable"
+                                                       ng-model="p_bankaccount.Bank_Code__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-maxlength="BankCodeMaxLength"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="bankcode_payable" data-manditoryfield="Please enter your {{Payable_Bank_Code_Label}}">{{Payable_Bank_Code_Label}}</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.bankcode_payable.$error" ng-if="p4_Payable_Form.bankcode_payable.$touched && !p4_Payable_Form.bankcode_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">{{Payable_Bank_Code_Label}} cannot be longer than {{BankCodeMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Address Line 1 (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.addressline1_payable.$invalid && p4_Payable_Form.addressline1_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Address_Line_1__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="addressline1_payable" 
+                                                       name="addressline1_payable"
+                                                       ng-model="p_bankaccount.Address_Line_1__c"
+                                                       ng-maxlength="addressLine1MaxLength" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="addressline1_payable" data-manditoryfield="Please enter your address">Address line 1</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.addressline1_payable.$error" ng-if="p4_Payable_Form.addressline1_payable.$touched && !p4_Payable_Form.addressline1_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Address line 1 cannot be longer than {{addressLine1MaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Address Line 2
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.addressline2_payable.$invalid && p4_Payable_Form.addressline2_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Address_Line_2__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" id="addressline2_payable" 
+                                                       name="addressline2_payable"
+                                                       ng-model="p_bankaccount.Address_Line_2__c" 
+                                                       ng-maxlength="addressLine2MaxLength"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="addressline2_payable" data-manditoryfield="Please enter your address">Address line 2</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.addressline2_payable.$error" ng-if="p4_Payable_Form.addressline2_payable.$touched && !p4_Payable_Form.addressline2_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Address line 2 cannot be longer than {{addressLine2MaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable City (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.city_payable.$invalid && p4_Payable_Form.city_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.City__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="city_payable" 
+                                                       name="city_payable"
+                                                       ng-model="p_bankaccount.City__c" 
+                                                       ng-maxlength="cityMaxLength"
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="city_payable" data-manditoryfield="What city do you live in?">City</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.city_payable.$error" ng-if="p4_Payable_Form.city_payable.$touched && !p4_Payable_Form.city_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">City cannot be longer than {{cityMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Region (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.region_payable.$invalid && p4_Payable_Form.region_payable.$touched ? 'input-container field_error wrapper-select': 'input-container wrapper-select') 
+                                                           + ' ' +    (p_bankaccount.State_Province_LKP__c.length > 0 ? 'input-filled': '') ">           
+                                                <select type="text" class="required" id="region_payable" 
+                                                        name="region_payable"
+                                                        ng-model="p_bankaccount.State_Province_LKP__c" 
+                                                        required="true"
+                                                        ng-options="reg for (reg, id) in payregions"
+                                                        ng-class="cssInputClass"
+                                                        style="border: 0px;"
+                                                        ng-change="checkCssInput()" />
+                                                <label for="region_payable" data-manditoryfield="What region do you live in?">Region</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.region_payable.$error" ng-if="p4_Payable_Form.region_payable.$touched && !p4_Payable_Form.region_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Postcode (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.postcode_payable.$invalid && p4_Payable_Form.postcode_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Postcode__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="postcode_payable" 
+                                                       name="postcode_payable"
+                                                       ng-model="p_bankaccount.Postcode__c" 
+                                                       ng-maxlength="postcodeMaxLength"
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="postcode_payable" data-manditoryfield="Whats your postcode?">Postcode</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.postcode_payable.$error" ng-if="p4_Payable_Form.postcode_payable.$touched && !p4_Payable_Form.postcode_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Postcode cannot be longer than {{postcodeMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </form>
+                            
+                            <!-- **************************************************************************
+                            *
+                            *   RECEIVABLE DETAILS
+                            *
+                            **************************************************************************  -->
+                            <form name="p4_Receivable_Form" novalidate="novalidate">
+                                
+                                <ul id="payable" class="col-xs-12 col-sm-4">
+                                    <li><h3>Receivable</h3></li>
+                                    <div ng-show="p4_Receivable_Form.$valid">
+                                        <li ng-show="showHide('DirectorEntry')" ng-click="pushReceivable()"><span id="pushPayable">Push field content across</span></li>
+                                    </div>
+                                    <div ng-show="p4_Receivable_Form.$invalid">
+                                        <li>&nbsp;</li>
+                                    </div>
+                                    
+                                    
+                                    <!-- Receivable Country (Text/Picklist/Mandatory)
+                                    *************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.country_payable.$invalid && p4_Receivable_Form.country_payable.$touched ? 'input-container field_error wrapper-select': 'input-container wrapper-select') 
+                                                           + ' ' +  (r_bankaccount.Account_Country__c.length > 0 ? 'input-filled': '') ">           
+                                                <select id="country_payable" class="required" style="border: 0px;"
+                                                        name="country_payable"
+                                                        ng-model="r_bankaccount.Account_Country__c" 
+                                                        ng-options="country_payable for country_payable in countries"
+                                                        required="true"
+                                                        ng-class="cssInputClass"
+                                                        ng-change="checkCssInput(); changeReceivableCountry()" >                    
+                                                </select>                                        
+                                                <label for="country_payable" data-manditoryfield="Please select your country">Country</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.country_payable.$error" ng-if="p4_Receivable_Form.country_payable.$touched && !p4_Receivable_Form.country_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Financial Institution (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.financialinstitution_payable.$invalid && p4_Receivable_Form.financialinstitution_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Financial_Institution__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="financialinstitution_payable" 
+                                                       name="financialinstitution_payable"
+                                                       ng-model="r_bankaccount.Financial_Institution__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-maxlength="financialInstitutionMaxLength"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="financialinstitution_payable" data-manditoryfield="Please enter your financial institution">Financial institution</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.financialinstitution_payable.$error" ng-if="p4_Receivable_Form.financialinstitution_payable.$touched && !p4_Receivable_Form.financialinstitution_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Financial institution cannot be longer than {{financialInstitutionMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Account Name (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.accountname_payable.$invalid && p4_Receivable_Form.accountname_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Account_Name__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="accountname_payable" 
+                                                       name="accountname_payable"
+                                                       ng-model="r_bankaccount.Account_Name__c"
+                                                       ng-maxlength="accountNameMaxLength" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="accountname_payable" data-manditoryfield="Please enter your account name">Account name</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.accountname_payable.$error" ng-if="p4_Receivable_Form.accountname_payable.$touched && !p4_Receivable_Form.accountname_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Account name cannot be longer than {{accountNameMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Account Number (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.accountnumber_payable.$invalid && p4_Receivable_Form.accountnumber_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Account_Number__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="accountnumber_payable" 
+                                                       name="accountnumber_payable"
+                                                       ng-model="r_bankaccount.Account_Number__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-maxlength="accountNumbeEftMaxLength"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="accountnumber_payable" data-manditoryfield="Please enter your account number">Account number</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.accountnumber_payable.$error" ng-if="p4_Receivable_Form.accountnumber_payable.$touched && !p4_Receivable_Form.accountnumber_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Account Number cannot be longer than {{accountNumbeEftMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Bank Code (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.bankcode_payable.$invalid && p4_Receivable_Form.bankcode_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Bank_Code__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="bankcode_payable" 
+                                                       name="bankcode_payable"
+                                                       ng-model="r_bankaccount.Bank_Code__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-maxlength="BankCodeMaxLength"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="bankcode_payable" data-manditoryfield="Please enter your {{Receivable_Bank_Code_Label}}">{{Receivable_Bank_Code_Label}}</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.bankcode_payable.$error" ng-if="p4_Receivable_Form.bankcode_payable.$touched && !p4_Receivable_Form.bankcode_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">{{Receivable_Bank_Code_Label}} cannot be longer than {{BankCodeMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Address Line 1 (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.addressline1_payable.$invalid && p4_Receivable_Form.addressline1_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Address_Line_1__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="addressline1_payable" 
+                                                       name="addressline1_payable"
+                                                       ng-model="r_bankaccount.Address_Line_1__c"
+                                                       ng-maxlength="addressLine1MaxLength"  
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="addressline1_payable" data-manditoryfield="Please enter your address">Address line 1</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.addressline1_payable.$error" ng-if="p4_Receivable_Form.addressline1_payable.$touched && !p4_Receivable_Form.addressline1_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Address line 1 cannot be longer than {{addressLine1MaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Address Line 2
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.addressline2_payable.$invalid && p4_Receivable_Form.addressline2_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Address_Line_2__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" id="addressline2_payable" 
+                                                       name="addressline2_payable"
+                                                       ng-model="r_bankaccount.Address_Line_2__c" 
+                                                       ng-maxlength="addressLine2MaxLength"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="addressline2_payable" data-manditoryfield="Please enter your address">Address line 2</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.addressline2_payable.$error" ng-if="p4_Receivable_Form.addressline2_payable.$touched && !p4_Receivable_Form.addressline2_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Address line 2 cannot be longer than {{addressLine2MaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable City (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.city_payable.$invalid && p4_Receivable_Form.city_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.City__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="city_payable" 
+                                                       name="city_payable"
+                                                       ng-model="r_bankaccount.City__c" 
+                                                        ng-maxlength="cityMaxLength"
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="city_payable" data-manditoryfield="What city do you live in?">City</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.city_payable.$error" ng-if="p4_Receivable_Form.city_payable.$touched && !p4_Receivable_Form.city_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">City cannot be longer than {{cityMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Region (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.region_payable.$invalid && p4_Receivable_Form.region_payable.$touched ? 'input-container field_error wrapper-select': 'input-container wrapper-select') 
+                                                           + ' ' +    (r_bankaccount.State_Province_LKP__c.length > 0 ? 'input-filled': '') ">           
+                                                <select type="text" class="required" id="region_payable" 
+                                                        name="region_payable"
+                                                        ng-model="r_bankaccount.State_Province_LKP__c" 
+                                                        required="true"
+                                                        ng-options="reg for (reg, id) in recregions"
+                                                        ng-class="cssInputClass"
+                                                        style="border: 0px;"
+                                                        ng-change="checkCssInput()" />
+                                                <label for="region_payable" data-manditoryfield="What region do you live in?">Region</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.region_payable.$error" ng-if="p4_Receivable_Form.region_payable.$touched && !p4_Receivable_Form.region_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Postcode (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.postcode_payable.$invalid && p4_Receivable_Form.postcode_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Postcode__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="postcode_payable" 
+                                                       name="postcode_payable"
+                                                       ng-model="r_bankaccount.Postcode__c" 
+                                                       ng-maxlength="postcodeMaxLength"
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="postcode_payable" data-manditoryfield="Whats your postcode?">Postcode</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.postcode_payable.$error" ng-if="p4_Receivable_Form.postcode_payable.$touched && !p4_Receivable_Form.postcode_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                     <p ng-message="maxlength">Postcode cannot be longer than {{postcodeMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </form>
+                            
+                            <!-- **************************************************************************
+                            *
+                            *   BILLING DETAILS
+                            *
+                            **************************************************************************  -->
+                            <form name="p4_Billing_Form" novalidate="novalidate">
+                                
+                                <ul class="col-xs-12 col-sm-4">
+                                    <li><h3>Billing</h3></li>
+                                    <li>&nbsp;</li>
+                                    
+                                    
+                                    <!-- Billing Country (Text/Picklist/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.country_payable.$invalid && p4_Billing_Form.country_payable.$touched ? 'input-container field_error wrapper-select': 'input-container wrapper-select') 
+                                                           + ' ' +  (b_bankaccount.Account_Country__c.length > 0 ? 'input-filled': '') ">           
+                                                <select id="country_payable" class="required" style="border: 0px;"
+                                                        name="country_payable"
+                                                        ng-model="b_bankaccount.Account_Country__c" 
+                                                        ng-options="country_payable for country_payable in countries"
+                                                        required="true"
+                                                        ng-class="cssInputClass"
+                                                        ng-change="checkCssInput(); changeBillableCountry()" >                    
+                                                </select>                                        
+                                                <label for="country_payable" data-manditoryfield="Please select your country">Country</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.country_payable.$error" ng-if="p4_Billing_Form.country_payable.$touched && !p4_Billing_Form.country_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Financial Institution (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.financialinstitution_payable.$invalid && p4_Billing_Form.financialinstitution_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Financial_Institution__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="financialinstitution_payable" 
+                                                       name="financialinstitution_payable"
+                                                       ng-model="b_bankaccount.Financial_Institution__c"
+                                                       ng-maxlength="financialInstitutionMaxLength" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="financialinstitution_payable" data-manditoryfield="Please enter your financial institution">Financial institution</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.financialinstitution_payable.$error" ng-if="p4_Billing_Form.financialinstitution_payable.$touched && !p4_Billing_Form.financialinstitution_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Financial institution cannot be longer than {{financialInstitutionMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Account Name (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.accountname_payable.$invalid && p4_Billing_Form.accountname_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Account_Name__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="accountname_payable" 
+                                                       name="accountname_payable"
+                                                       ng-model="b_bankaccount.Account_Name__c"
+                                                       ng-maxlength="accountNameMaxLength" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="accountname_payable" data-manditoryfield="Please enter your account name">Account name</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.accountname_payable.$error" ng-if="p4_Billing_Form.accountname_payable.$touched && !p4_Billing_Form.accountname_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Account name cannot be longer than {{accountNameMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Account Number (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.accountnumber_payable.$invalid && p4_Billing_Form.accountnumber_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Account_Number__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="accountnumber_payable" 
+                                                       name="accountnumber_payable"
+                                                       ng-model="b_bankaccount.Account_Number__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-maxlength="accountNumbeEftMaxLength"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="accountnumber_payable" data-manditoryfield="Please enter your account number">Account number</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.accountnumber_payable.$error" ng-if="p4_Billing_Form.accountnumber_payable.$touched && !p4_Billing_Form.accountnumber_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Account Number cannot be longer than {{accountNumbeEftMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Bank Code (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.bankcode_payable.$invalid && p4_Billing_Form.bankcode_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Bank_Code__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="bankcode_payable" 
+                                                       name="bankcode_payable"
+                                                       ng-model="b_bankaccount.Bank_Code__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-maxlength="BankCodeMaxLength"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="bankcode_payable" data-manditoryfield="Please enter your {{Billing_Bank_Code_Label}}">{{Billing_Bank_Code_Label}}</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.bankcode_payable.$error" ng-if="p4_Billing_Form.bankcode_payable.$touched && !p4_Billing_Form.bankcode_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">{{Billing_Bank_Code_Label}} cannot be longer than {{BankCodeMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Address Line 1 (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.addressline1_payable.$invalid && p4_Billing_Form.addressline1_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Address_Line_1__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="addressline1_payable" 
+                                                       name="addressline1_payable"
+                                                       ng-model="b_bankaccount.Address_Line_1__c" 
+                                                       ng-maxlength="addressLine1MaxLength" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="addressline1_payable" data-manditoryfield="Please enter your address">Address line 1</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.addressline1_payable.$error" ng-if="p4_Billing_Form.addressline1_payable.$touched && !p4_Billing_Form.addressline1_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Address line 1 cannot be longer than {{addressLine1MaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Address Line 2
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.addressline2_payable.$invalid && p4_Billing_Form.addressline2_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Address_Line_2__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" id="addressline2_payable" 
+                                                       name="addressline2_payable"
+                                                       ng-model="b_bankaccount.Address_Line_2__c"
+                                                       ng-maxlength="addressLine2MaxLength" 
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="addressline2_payable" data-manditoryfield="Please enter your address">Address line 2</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.addressline2_payable.$error" ng-if="p4_Billing_Form.addressline2_payable.$touched && !p4_Billing_Form.addressline2_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">Address line 2 cannot be longer than {{addressLine2MaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing City (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.city_payable.$invalid && p4_Billing_Form.city_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.City__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="city_payable" 
+                                                       name="city_payable"
+                                                       ng-model="b_bankaccount.City__c"
+                                                       ng-maxlength="cityMaxLength" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="city_payable" data-manditoryfield="What city do you live in?">City</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.city_payable.$error" ng-if="p4_Billing_Form.city_payable.$touched && !p4_Billing_Form.city_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                    <p ng-message="maxlength">City cannot be longer than {{cityMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Region (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.region_payable.$invalid && p4_Billing_Form.region_payable.$touched ? 'input-container field_error wrapper-select': 'input-container wrapper-select') 
+                                                           + ' ' +    (b_bankaccount.State_Province_LKP__c.length > 0 ? 'input-filled': '') ">           
+                                                <select type="text" class="required" id="region_payable" 
+                                                        name="region_payable"
+                                                        ng-model="b_bankaccount.State_Province_LKP__c" 
+                                                        required="true"
+                                                        ng-options="reg for (reg, id) in billregions"
+                                                        ng-class="cssInputClass"
+                                                        style="border: 0px;"
+                                                        ng-change="checkCssInput()" />
+                                                <label for="region_payable" data-manditoryfield="What region do you live in?">Region</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.region_payable.$error" ng-if="p4_Billing_Form.region_payable.$touched && !p4_Billing_Form.region_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Postcode (Text/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.postcode_payable.$invalid && p4_Billing_Form.postcode_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Postcode__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="postcode_payable" 
+                                                       name="postcode_payable"
+                                                       ng-model="b_bankaccount.Postcode__c" 
+                                                       ng-maxlength="postcodeMaxLength"
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="postcode_payable" data-manditoryfield="Whats your postcode?">Postcode</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.postcode_payable.$error" ng-if="p4_Billing_Form.postcode_payable.$touched && !p4_Billing_Form.postcode_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                     <p ng-message="maxlength">Postcode cannot be longer than {{postcodeMaxLength}} characters.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                      
+                                        
+                                     
+                                </ul>
+                            </form>
+                            </div>
+                    </div>
+        </div>
+    </div>
+
+      <!-- TRY HERE -->
+</fieldset>
+
+
+    <div class="wrapper-upload bg-lightblue" ng-show="showHide('EFT')">
+        <div class="container">
+            <h2>Attach your supporting documents</h2>
+            <p class="">To speed up the process of your EFT application, you may upload supporting documents for each bank account you've added.</p>
+            <c:DragDropZone attachNamePrefix="EFT_Banking_Details-"  divID="Eft"/>
+            <br/>
+            <a href="#" class="btn btn-skip anchor-link"  ng-click="getAttachments()" id="getAttachments-EFT_Banking_Details-" ><span>Update Attachment List</span></a>
+
+                <!-- Banking-attachment-EFT List ****************************************** Start *******************************  -->
+                <div class="details-repeater-block details-repeater-banking" ng-show="showHide('Banking-attachment-EFT')">
+                  
+                    <table class="table" style="margin:0; width: 100%" >
+                        <thead>
+                            <tr>
+                                <th style="padding:30px 10px 10px 0px;">Uploaded Documents</th>
+                                <th style="padding:30px 10px 10px 0px;">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="item" ng-repeat="attachment in attachmentRecordEFT" >
+                                <td>{{attachment.Name}}</td>
+                                 <td><div ng-click="deleteAttachments(attachment.Id,'Eft','EFT_Banking_Details-%',attachment.ParentId,attachment.Name)" style="cursor: pointer;">Remove</div></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        <!-- Banking-attachment-EFT List *************************************************** End ***********************  -->
+    </div>
+
+
+
+    <div class="wrapper-footer-btn bg-lightblue">
+        <div class="container">
+            <div class="btn-footer">
+                <!-- <div class="col-xs-12 col-md-offset-4 col-md-4 item">
+                    <a href="#" class="btn btn-primary anchor-link" data-btnstep="step3"><span>Skip</span></a>
+                </div> -->
+
+               <!--  <div class="col-xs-12 col-sm-6 col-md-4 col-md-offset-2 item">
+                    <div class="btn-wrapper btn-next-wrapper">
+                        <a href="#" class="btn btn-primary btn-back anchor-link" data-btnstep="step1"><span>Back</span></a>
+                    </div>
+                </div> -->
+
+                <div class="col-xs-12 col-sm-6 col-md-4 item">
+                    <div class="btn-wrapper btn-next-wrapper">
+                         <a href="#" class="btn btn-primary btn-next anchor-link btn-next-step" data-btnstep="step1" ng-click="updateHistoryEftandVan();"><span>Back</span></a>
+                        <input type="button" value="Submit" class="btn-next-submit"/>
+                    </div>
+                </div>
+
+                <div class="col-xs-12 col-sm-6 col-md-offset-4 col-md-4 item">
+                    <div class="btn-wrapper btn-next-wrapper">
+                         <a href="#" class="btn btn-primary btn-next anchor-link btn-next-step" data-btnstep="step3" ng-click="setStages('Review/Confirmation');getClientAgreementTandC();setProductLabels()" ><span>Next</span></a>
+                        <input type="button" value="Submit" class="btn-next-submit"/>
+                    </div>
+                </div>
+<!-- 
+                <div class="col-xs-12 col-sm-offset-6 col-sm-6 col-md-offset-0 col-md-4 wrapper-btn-skip item">
+                    <div class="btn-wrapper btn-next-wrapper">
+                         <a href="#" class="btn btn-primary btn-skip anchor-link btn-next-step" data-btnstep="step3" ng-click="setStages('Review/Confirmation');getClientAgreementTandC();setProductLabels()" ><span>Skip this step</span></a>
+                        <input type="button" value="Submit" class="btn-next-submit"/>
+                    </div>
+                </div> -->
+
+
+            </div>
+        </div>
+    </div>
+
+</apex:component>

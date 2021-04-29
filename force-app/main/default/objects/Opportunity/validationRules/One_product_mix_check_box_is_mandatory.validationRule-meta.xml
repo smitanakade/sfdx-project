@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>One_product_mix_check_box_is_mandatory</fullName>
+    <active>false</active>
+    <errorConditionFormula>VANs__c = false  &amp;&amp;  feeNett__c = false  &amp;&amp;  eNett_EFT__c  = false &amp;&amp;  Switching_Services__c = false</errorConditionFormula>
+    <errorMessage>Please select at least one product mix check box</errorMessage>
+</ValidationRule>

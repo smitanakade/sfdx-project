@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Risk_Assessment_Checkbox_Validation2</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND 
+(ISCHANGED( Risk_Assessment__c),Risk_Assessment__c=TRUE, 
+NOT(Risk_Rating_File_Attached__c),
+INCLUDES(Product__c , &#39;VANs&#39;)
+)</errorConditionFormula>
+    <errorMessage>Please attach the risk rating assessment to the Risk  Assessments record.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead_Notes_Mandatory</fullName>
+    <active>true</active>
+    <description>Lead notes mandatory for leads initiated by customer</description>
+    <errorConditionFormula>AND(
+ISPICKVAL(LeadSource,&quot;Customer Initiated&quot;),
+ISBLANK( Lead_Notes_History__c ),
+ISCHANGED(LeadSource)
+)</errorConditionFormula>
+    <errorMessage>Lead Notes are required for customer initiated leads</errorMessage>
+</ValidationRule>

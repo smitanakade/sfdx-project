@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>status_only_closable_if_assigned_to_user</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Status,&#39;Closed&#39;), BEGINS(OwnerId,&#39;00G&#39;))</errorConditionFormula>
+    <errorDisplayField>OwnerId</errorDisplayField>
+    <errorMessage>Ticket cannot close without  being assigned to specific user</errorMessage>
+</ValidationRule>

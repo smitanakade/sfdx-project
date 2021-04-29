@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>ECN__c</columns>
+    <columns>Trading_As__c</columns>
+    <columns>eNett_products__c</columns>
+    <columns>Region__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Account_Status__c</columns>
+    <columns>Account_Activation_Date__c</columns>
+    <columns>Active__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>DD_Status__c</field>
+        <operation>notEqual</operation>
+        <value>DD Declined</value>
+    </filters>
+    <label>All Active Accounts</label>
+</ListView>

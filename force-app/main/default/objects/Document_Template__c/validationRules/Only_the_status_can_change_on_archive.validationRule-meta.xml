@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Only_the_status_can_change_on_archive</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISNEW()) &amp;&amp; ISPICKVAL(Status__c, &#39;Archived&#39;) &amp;&amp; ISCHANGED(Status__c) &amp;&amp; (ISCHANGED(Content__c) ||  ISCHANGED(Document_Name__c) || ISCHANGED(Version__c) || 	ISCHANGED(Output_Filename__c))</errorConditionFormula>
+    <errorMessage>Only the status can be updated when archiving</errorMessage>
+</ValidationRule>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity_Status__c</fullName>
+    <description>When an opportunity is updated, a trigger is fired to update its parent account&#39;s opportunity status appropriately. This field exists so in the account view/report, users can quickly understand any new account&#39;s onboarding status.
+If an opportunity of the account is open and in progress, this picklist will then display that opportunity&#39;s stage name instead of the values available.</description>
+    <externalId>false</externalId>
+    <label>Opportunity Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Not Available</fullName>
+                <default>false</default>
+                <label>Not Available</label>
+            </value>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Product Removed</fullName>
+                <default>false</default>
+                <label>Product Removed</label>
+            </value>
+            <value>
+                <fullName>All Closed/Lost</fullName>
+                <default>false</default>
+                <label>All Closed/Lost</label>
+            </value>
+            <value>
+                <fullName>Qualified</fullName>
+                <default>false</default>
+                <label>Qualified</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

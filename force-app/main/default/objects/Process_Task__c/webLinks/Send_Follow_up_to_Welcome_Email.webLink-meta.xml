@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Follow_up_to_Welcome_Email</fullName>
+    <availability>online</availability>
+    <description>Desktop Delivery - this button navigates the User to the &#39;Send Email&#39; window. Select the &#39;Desktop Week 1 Follow-up to Welcome&#39; email template.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Send Follow-up to Welcome Email</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/_ui/core/email/author/EmailAuthor?rtype=003&amp;retURL=%2F{!Process_Task__c.Id}&amp;saveURL=%2F{!Process_Task__c.Id}&amp;p2={!Case.Contact}&amp;p2_lkid={!Case.ContactId}&amp;p3_lkid={!Case.Id}&amp;template_id=00XO0000000QoRh&amp;p26=delivery@enett.com</url>
+</WebLink>

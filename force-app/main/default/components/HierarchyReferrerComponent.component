@@ -1,0 +1,136 @@
+<apex:component Controller="HierarchyReferrerController">
+
+    <apex:attribute name="currentId" description="This is the Account Id for displaying Acccount Hierarchy" type="String" required="true" assignTo="{!currentId}"/>
+    <apex:attribute name="parentType" description="This is the field to select for the Account Heirachy relationship" type="String" required="true" assignTo="{!parentType}"/>
+
+    <apex:variable value="{!0.00}" var="totalM"/>
+    <apex:variable value="{!0.00}" var="totalA"/>
+    
+    <div class="treeNode">
+        <table width="100%" style="border: 0px; padding: 0px; cellspacing: 0px; border-collapse: collapse; line-height:16px;">
+            
+            <!-- *************************** -->
+            <!--     Header Line             -->
+            <!-- *************************** -->
+            <tr>
+                <td style="height=16px; valign=top; overflow:hidden; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold">
+                </td>
+                <td style="height=16px; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold">
+                    <apex:outputText value="Trading As" />&nbsp;
+                </td>
+                <td style="height=16px; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold">
+                    <apex:outputText value="Legal Name" />&nbsp;
+                </td>
+                <td style="height=16px; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold">
+                    <apex:outputText value="Account Type" />&nbsp;
+                </td>
+                <td style="height=16px; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold">
+                    <apex:outputText value="ECN" />&nbsp;
+                </td>
+                <td style="height=16px; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold">
+                    <apex:outputText value="Country" />&nbsp;
+                </td>
+                <td style="height=16px; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold">
+                    <apex:outputText value="Region" />&nbsp;
+                </td>
+                <td style="height=16px; text-align:right; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold">
+                    <apex:outputText value="Monthly Settlement" />&nbsp;
+                </td>
+                <td style="height=16px; text-align:right; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold;">
+                    <apex:outputText value="Annual Settlement" />&nbsp;
+                </td>
+            </tr>
+    
+                    
+            <!-- *************************** -->
+            <!--     Main Content            -->
+            <!-- *************************** -->
+            <apex:repeat value="{!ObjectStructure}" var="pos" >
+                <tr>
+                    <td style="height=16px; valign=top; overflow:hidden; border:0px; padding: 0px; cell-padding: 0px;">
+                        <apex:repeat value="{!pos.levelFlag}" var="flag" first="0">
+                            <apex:image url="/img/tree/empty.gif" height="16" width="20" rendered="{!IF(flag,false,true)}"/>
+                            <apex:image url="/s.gif" alt="" width="3" height="16" rendered="{!IF(flag,true,false)}"/>
+                            <apex:image url="/img/tree/chain.gif" height="16" width="20" rendered="{!IF(flag,true,false)}"/>
+                        </apex:repeat>
+                        <apex:outputText rendered="{!IF(pos.nodeType=='start',true,false)}">
+                            <apex:image id="tree_start" url="/img/tree/minusStart.gif" height="16" width="20" title="Click to goto account." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                            <apex:image id="Icon_start" url="/img/icon/custom51_100/globe16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,false,true), false)}"/>
+                            <apex:image id="Icon_start_current" url="/img/icon/star16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,true,false), false)}"/>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(OR(pos.nodeType=='parent',pos.nodeType=='parent_end'),true,false)}">
+                            <apex:image id="Tree_parent" url="/img/tree/minus.gif" rendered="{!IF(pos.nodeType=='parent',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                            <apex:image id="Tree_parent_end" url="/img/tree/minusEnd.gif" rendered="{!IF(pos.nodeType=='parent_end',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>                
+                            <apex:image id="Icon_parent" url="/img/icon/factory16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,false,true),false)}"/>
+                            <apex:image id="Icon_parent_current" url="/img/icon/star16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,true,false),false)}"/>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(OR(pos.nodeType=='child',pos.nodeType=='child_end'),true,false)}">
+                            <apex:image id="Tree_child" url="/img/tree/node.gif" rendered="{!IF(pos.nodeType=='child',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                            <apex:image id="Tree_child_current" url="/img/tree/nodeEnd.gif" rendered="{!IF(pos.nodeType=='child_end',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                            <apex:image id="Icon_child" url="/img/icon/desk16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,false,true), false)}"/>    
+                            <apex:image id="Icon_child_current" url="/img/icon/star16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,true,false), false)}"/>
+                        </apex:outputText>
+                        <apex:outputText rendered="{!IF(pos.nodeType=='end',true,false)}">
+                            <apex:image id="Tree_end" url="/img/tree/nodeEnd.gif" height="16" width="20"/>&nbsp;
+                            <apex:image id="Icon_end" url="/img/icon/desk16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,false,true),false)}"/>
+                            <apex:image id="Icon_end_current" url="/img/icon/star16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,true,false), false)}"/>
+                        </apex:outputText>
+                        <apex:outputLink value="/{!pos.account.id}" style="{!IF(pos.currentNode,'font-weight: bold;','')}" styleClass="columnHeadActiveBlack" target="_top">{!pos.account.name}</apex:outputLink>
+                    </td>
+                    <td style="height=16px; border:0px; padding: 0px; cell-padding: 0px;">
+                        <apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')};" value="{!pos.account.Trading_As__c}" />&nbsp;
+                    </td>
+                    <td style="height=16px; border:0px; padding: 0px; cell-padding: 0px;">
+                        <apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')};" value="{!pos.account.Legal_Name__c}" />&nbsp;
+                    </td>
+                    <td style="height=16px; border:0px; padding: 0px; cell-padding: 0px;">
+                        <apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')};" value="{!pos.account.Account_Type__c}" />&nbsp;
+                    </td>
+                    <td style="height=16px; border:0px; padding: 0px; cell-padding: 0px;">
+                        <apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')};" value="{!pos.account.ECN__c}" />&nbsp;
+                    </td>
+                    <td style="height=16px; border:0px; padding: 0px; cell-padding: 0px;">
+                        <apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')};" value="{!pos.account.Country__c}" />&nbsp;
+                    </td>
+                    <td style="height=16px; border:0px; padding: 0px; cell-padding: 0px;">
+                        <apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')};" value="{!pos.account.Region__c}" />&nbsp;
+                    </td>
+                    <td style="height=16px; text-align:right; border:0px; padding: 0px; cell-padding: 0px;">
+                        <apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')};" value="$ {0, number, ###,###}">
+                            <apex:param value="{!NULLVALUE(pos.account.Monthly_Actual__c,0)}" />
+                            <apex:variable var="totalM" value="{!totalM + NULLVALUE(pos.account.Monthly_Actual__c,0)}" />
+                        </apex:outputText>&nbsp;
+                    </td>
+                    <td style="height=16px; text-align:right; border:0px; padding: 0px; cell-padding: 0px;">
+                        <apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')};" value="$ {0, number, ###,###}">
+                            <apex:param value="{!NULLVALUE(pos.account.Yearly_Actual__c,0)}" />
+                            <apex:variable var="totalA" value="{!totalA + NULLVALUE(pos.account.Yearly_Actual__c,0)}" />
+                        </apex:outputText>&nbsp;
+                    </td>
+                </tr>         
+            </apex:repeat>
+
+            
+            <!-- *************************** -->
+            <!--     Footer Line             -->
+            <!-- *************************** -->
+            <tr>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td/>
+                <td style="height=16px; text-align:right; border-top:1px solid; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: black; font-weight: bold;">
+                    <apex:outputText value="$ {!ROUND(totalM, 0)}" />&nbsp;
+                </td>
+                <td style="height=16px; text-align:right; border-top:1px solid; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: black; font-weight: bold;">
+                    <apex:outputText value="$ {!ROUND(totalA, 0)}" />&nbsp;
+                </td>
+            </tr>
+    
+             
+        </table>
+    </div>
+</apex:component>

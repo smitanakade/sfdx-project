@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Terminate</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Terminate</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&#39;/resource/bigiant_dialog__bDialogJs&#39;)} 
+BIGIANT_DIALOG.init(this, &#39;Message Dialog&#39;, {id : &#39;{!Case.Id}&#39;, controllerExt : &#39;Case_terminate&#39;});
+
+/* Old button code
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&#39;/resource/jsConstants&#39;)}
+{!REQUIRESCRIPT(&#39;/resource/jsUtils&#39;)}
+
+caseTerminate(&quot;{!Case.Id}&quot;);
+*/</url>
+</WebLink>

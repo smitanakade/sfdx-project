@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Verification</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Verification</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/a1X/e?RecordType={!$Setup.recTypesVer__c.Bank_Account_Evidence__c}&amp;CF00N9000000Eo5X0={!Registration_Bank_Account__c.Name}&amp;CF000N9000000Eo5X0_lkid={!Registration_Bank_Account__c.Id}&amp;retURL=%2F{!Registration_Bank_Account__c.Id}&amp;nooverride=1</url>
+</WebLink>

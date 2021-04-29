@@ -1,0 +1,90 @@
+<apex:component >
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingEleven">
+        <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseEleven" aria-expanded="true" aria-controls="collapseEleven">Business Beneficial Owners</a></h4>
+    </div>
+    <div id="collapseEleven" class="panel-collapse collapse wrapper-review" role="tabpanel" aria-labelledby="headingEleven">
+        <div id="beneficialOwnersDetails" class="panel-body">
+
+        <a class="btn-edit" href="#" data-stepsection="step3::headingFour">edit</a>
+
+          <div class="panel-group" id="accordion2">
+            <div class="panel panel-default">
+             <div class="panel-heading">
+               <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerOne">
+                 Business Beneficial Owner Name
+               </a></h4>
+             </div>
+             <div id="collapseInnerOne" class="panel-collapse collapse in">
+               <div class="panel-body">
+                 <ul class="listing-review">
+                   <li><a href="#">Job title</a></li>
+                   <li><a href="#">Title</a></li>
+                   <li><a href="#">First name</a></li>
+                   <li><a href="3">Middle name</a></li>
+                   <li><a href="#">Last name</a></li>
+                   <li><a href="#">Date of Birth</a></li>
+                   <li><a href="#">Registered business name</a></li>
+                   <li><a href="#">Business number</a></li>
+                   <li><a href="#">Percentage shareholding</a></li>
+                   <li><a href="#">Business country</a></li>
+                   <li><a href="#">Address line 1</a></li>
+                   <li><a href="#">Address line 2</a></li>
+                   <li><a href="#">City</a></li>
+                   <li><a href="#">Region</a></li>
+                   <li><a href="#">Postcode</a></li>
+                   <li>
+                     <ul class="listing-files">
+                       <li>Files:</li>
+                       <li><a href="#">File1.jpg</a></li>
+                       <li><a href="#">File2.jpg</a></li>
+                       <li><a href="#">File3.jpg</a></li>
+                     </ul>
+                   </li>
+                 </ul>
+               </div>
+             </div>
+            </div>
+            <div class="panel panel-default">
+             <div class="panel-heading">
+               <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerTwo">
+                 Business Beneficial Owner Name
+               </a></h4>
+             </div>
+             <div id="collapseInnerTwo" class="panel-collapse collapse">
+               <div class="panel-body">
+                 <ul class="listing-review">
+                   <li><a href="#">Job title</a></li>
+                   <li><a href="#">Title</a></li>
+                   <li><a href="#">First name</a></li>
+                   <li><a href="3">Middle name</a></li>
+                   <li><a href="#">Last name</a></li>
+                   <li><a href="#">Date of Birth</a></li>
+                   <li><a href="#">Registered business name</a></li>
+                   <li><a href="#">Business number</a></li>
+                   <li><a href="#">Percentage shareholding</a></li>
+                   <li><a href="#">Business country</a></li>
+                   <li><a href="#">Address line 1</a></li>
+                   <li><a href="#">Address line 2</a></li>
+                   <li><a href="#">City</a></li>
+                   <li><a href="#">Region</a></li>
+                   <li><a href="#">Postcode</a></li>
+                   <li>
+                     <ul class="listing-files">
+                       <li>Files:</li>
+                       <li><a href="#">File1.jpg</a></li>
+                       <li><a href="#">File2.jpg</a></li>
+                       <li><a href="#">File3.jpg</a></li>
+                     </ul>
+                   </li>
+                 </ul>
+               </div>
+             </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+</apex:component>

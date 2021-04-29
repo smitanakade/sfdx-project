@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Volume_Commitments_Details__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please input the proposed volume commitment details here if you have ticked the field above - please note that these may be linked to a Tech Fund or a Short Term Incentive.</inlineHelpText>
+    <label>Volume Commitments Details</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

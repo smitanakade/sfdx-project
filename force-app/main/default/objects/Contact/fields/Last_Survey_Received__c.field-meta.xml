@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Last_Survey_Received__c</fullName>
+    <description>When this contact last received their eNett survey email. This helps us control how often customers get contacted.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>When this contact last received their eNett survey email. This helps us control how often customers get contacted.</inlineHelpText>
+    <label>Last Survey Received</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>DateTime</type>
+</CustomField>

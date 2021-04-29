@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Training_Completed_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is a Date field which is equivalent to Training_Completed__c for historical records.
+This is updated automatically when the Enter_Training_Completed_Date__c  field in delivery ticket is updated</inlineHelpText>
+    <label>Training Completed Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

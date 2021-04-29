@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- 3 Months to Re DD Due --></label>
+    <name>X3_Months_to_Re_DD_Due__c</name>
+</CustomFieldTranslation>

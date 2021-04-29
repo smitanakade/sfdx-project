@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Risk_Assessment</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Risk Assessment</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+
+var rrId = &quot;{!Registration__c.Id}&quot;; 
+
+var RR = sforce.connection.query(&quot;SELECT Id, Registration__c, Active__c from Risk_Rating_Evidence__c WHERE Active__c = true and Registration__c = &#39;&quot; + rrId + &quot;&#39; LIMIT 1&quot;); 
+
+if(RR.getArray(&quot;records&quot;) == null || RR.getArray(&quot;records&quot;).length &gt; 0) { 
+alert(&quot;Cannot create a new Risk Rating as this Registration already has an Active Risk Rating record.&quot;); 
+
+} else { 
+
+var rrObj = new sforce.SObject(&quot;Risk_Rating_Evidence__c&quot;); 
+
+rrObj.Registration__c = rrId; 
+rrObj.Active__c = true; 
+
+var result = sforce.connection.create([rrObj]); 
+
+if(result[0].getBoolean(&quot;success&quot;))
+{window.location = &quot;/&quot; + result[0].id;
+
+}else{
+
+alert(&#39;Could not create record &#39;+result);
+
+}
+}</url>
+</WebLink>

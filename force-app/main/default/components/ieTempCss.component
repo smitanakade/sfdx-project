@@ -1,0 +1,45 @@
+<apex:component >
+<style>
+	body{
+		/*background-color:red;*/
+	}
+	/*.top-bar-wrapper .top-bar .icon:before{
+		top:10px;
+	}
+	.navbar-header .title{
+		margin-top:30px;
+	}
+	.navbar-brand:after{
+		display:none;
+	}
+	.main-nav-header{
+		border:none;
+	}*/
+
+
+/*IE 7 and IE 8*/
+
+
+	/*.wrapper-exisiting-account{
+		text-align:center;
+		overflow:hidden;
+		padding:60px 0 0 0;
+	}
+	.wrapper-exisiting-account .link-btn-wrapper li{
+		display:inline;
+	}
+	.wrapper-steps li{
+		text-align:center;
+		margin:0 auto;
+		width:50%;
+	}
+	.wrapper-steps .item{
+		margin:0 auto;
+	}*/
+
+
+
+
+
+</style>
+</apex:component>

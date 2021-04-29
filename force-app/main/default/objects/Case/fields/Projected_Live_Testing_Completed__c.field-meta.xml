@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Projected_Live_Testing_Completed__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This field is automatically populated upon completion of the Milestone Task. Please leave blank until the Task is completed.</inlineHelpText>
+    <label>Projected Live Testing Completed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Customer_Affiliate_Details_PI</fullName>
+    <availability>online</availability>
+    <description>Used on Payment Intermeidary Page Layouts</description>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Customer/Affiliate Details</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/{!$Setup.ObjectReferenceIds__c.Service_Provider_Object_Prefix__c}/e?RecordType={!$Setup.recTypesServiceProvider__c.Service_Provider_Record_Type__c}&amp;CF{!$Setup.ObjectReferenceIds__c.Service_Provider_Account_Name__c}={!Account.Name}&amp;CF{!$Setup.ObjectReferenceIds__c.Service_Provider_Account_Name__c}_lkid={!Account.Id}&amp;retURL=/{!Account.Id}&amp;saveURL=/{!Account.Id}&amp;nooverride=1</url>
+</WebLink>

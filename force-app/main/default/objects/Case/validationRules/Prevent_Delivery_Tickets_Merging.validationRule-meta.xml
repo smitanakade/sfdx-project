@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Delivery_Tickets_Merging</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISCHANGED(Status) &amp;&amp; ISPICKVAL(Status, &#39;Closed as Duplicate&#39;) &amp;&amp; NOT(ISNULL(ParentId)) &amp;&amp; (Parent.Delivery_Ticket__c || Delivery_Ticket__c)</errorConditionFormula>
+    <errorMessage>You cannot Merge a Delivery Ticket</errorMessage>
+</ValidationRule>

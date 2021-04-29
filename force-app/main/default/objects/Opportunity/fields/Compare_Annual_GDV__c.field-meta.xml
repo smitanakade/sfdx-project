@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Compare_Annual_GDV__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( BLANKVALUE(SOM_Estimated_Annual_GDV__c, 0 )  =   BLANKVALUE(Attainable_TTV_annual__c,  0 ) , &quot;true&quot;, &quot;false&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Compare Annual GDV</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

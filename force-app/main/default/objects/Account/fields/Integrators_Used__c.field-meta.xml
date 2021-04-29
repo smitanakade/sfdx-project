@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Integrators_Used__c</fullName>
+    <externalId>false</externalId>
+    <label>Integrators Used</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Agoda</fullName>
+                <default>false</default>
+                <label>Agoda</label>
+            </value>
+            <value>
+                <fullName>Conferma</fullName>
+                <default>false</default>
+                <label>Conferma</label>
+            </value>
+            <value>
+                <fullName>Cornerstone</fullName>
+                <default>false</default>
+                <label>Cornerstone</label>
+            </value>
+            <value>
+                <fullName>Dolphin Dynamics</fullName>
+                <default>false</default>
+                <label>Dolphin Dynamics</label>
+            </value>
+            <value>
+                <fullName>Flightgenius</fullName>
+                <default>false</default>
+                <label>Flightgenius</label>
+            </value>
+            <value>
+                <fullName>Gateway</fullName>
+                <default>false</default>
+                <label>Gateway</label>
+            </value>
+            <value>
+                <fullName>Hitchhiker</fullName>
+                <default>false</default>
+                <label>Hitchhiker</label>
+            </value>
+            <value>
+                <fullName>Hotelzon</fullName>
+                <default>false</default>
+                <label>Hotelzon</label>
+            </value>
+            <value>
+                <fullName>IGA Voyages</fullName>
+                <default>false</default>
+                <label>IGA Voyages</label>
+            </value>
+            <value>
+                <fullName>Mr Orange</fullName>
+                <default>false</default>
+                <label>Mr Orange</label>
+            </value>
+            <value>
+                <fullName>Multicom</fullName>
+                <default>false</default>
+                <label>Multicom</label>
+            </value>
+            <value>
+                <fullName>Navitas</fullName>
+                <default>false</default>
+                <label>Navitas</label>
+            </value>
+            <value>
+                <fullName>Orchestra</fullName>
+                <default>false</default>
+                <label>Orchestra</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>PayU</fullName>
+                <default>false</default>
+                <label>PayU</label>
+            </value>
+            <value>
+                <fullName>Pyton</fullName>
+                <default>false</default>
+                <label>Pyton</label>
+            </value>
+            <value>
+                <fullName>Sapeig Viaxoft</fullName>
+                <default>false</default>
+                <label>Sapeig Viaxoft</label>
+            </value>
+            <value>
+                <fullName>Travelgate</fullName>
+                <default>false</default>
+                <label>Travelgate</label>
+            </value>
+            <value>
+                <fullName>Travelport Desktop</fullName>
+                <default>false</default>
+                <label>Travelport Desktop</label>
+            </value>
+            <value>
+                <fullName>Traveltek</fullName>
+                <default>false</default>
+                <label>Traveltek</label>
+            </value>
+            <value>
+                <fullName>Vibe Software</fullName>
+                <default>false</default>
+                <label>Vibe Software</label>
+            </value>
+            <value>
+                <fullName>Voxel (Bavel)</fullName>
+                <default>false</default>
+                <label>Voxel (Bavel)</label>
+            </value>
+            <value>
+                <fullName>Ypsilon.Net</fullName>
+                <default>false</default>
+                <label>Ypsilon.Net</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

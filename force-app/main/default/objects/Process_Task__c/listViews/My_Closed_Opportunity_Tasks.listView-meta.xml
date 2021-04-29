@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Closed_Opportunity_Tasks</fullName>
+    <columns>Due_Date__c</columns>
+    <columns>ECN__c</columns>
+    <columns>Related_Account__c</columns>
+    <columns>Task_Name__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>Status__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>Completed</value>
+    </filters>
+    <filters>
+        <field>Opportunity__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>My Closed Opportunity Tasks</label>
+</ListView>

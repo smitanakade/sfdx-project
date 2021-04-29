@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ENI_Testing_Scenarios_Complete_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is a Date field equivalent to the historical field &quot;ENI Testing Scenarios Confirmed Complete&quot;; populated when the relevent delivery ticket&#39;s &quot;Test Scenario Document Validated&quot; field is filled in by completion of task</inlineHelpText>
+    <label>ENI Testing Scenarios Complete Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

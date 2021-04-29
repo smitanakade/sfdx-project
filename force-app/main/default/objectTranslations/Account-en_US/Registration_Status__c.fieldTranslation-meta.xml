@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Automatically updated based on the progress of the Registration. --></help>
+    <label><!-- Registration Status --></label>
+    <name>Registration_Status__c</name>
+    <picklistValues>
+        <masterLabel>Awaiting Acceptance</masterLabel>
+        <translation><!-- Awaiting Acceptance --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Complete</masterLabel>
+        <translation><!-- Complete --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>In Progress</masterLabel>
+        <translation><!-- In Progress --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New</masterLabel>
+        <translation><!-- New --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New (Product)</masterLabel>
+        <translation><!-- New (Product) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected - Application N/A</masterLabel>
+        <translation><!-- Rejected - Application N/A --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected - Non-responsive</masterLabel>
+        <translation><!-- Rejected - Non-responsive --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rejected - Spam/test application</masterLabel>
+        <translation><!-- Rejected - Spam/test application --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

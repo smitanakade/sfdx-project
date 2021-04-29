@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Accounts1</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Status__c</columns>
+    <columns>Account_Type__c</columns>
+    <columns>eNett_products__c</columns>
+    <columns>Registration_Status__c</columns>
+    <columns>DD_Status__c</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <columns>Contract_Type__c</columns>
+    <columns>ECN__c</columns>
+    <columns>Client_internal_classification__c</columns>
+    <columns>Last_Transaction__c</columns>
+    <columns>Last_Transaction_Report_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Accounts</label>
+</ListView>

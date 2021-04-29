@@ -1,0 +1,1756 @@
+<apex:component > 
+    
+    
+    <style media="screen" type="text/css">
+        table.xxx td, table.xxx th {
+        width: 200px;
+        height: 15px;
+        border: 1px solid #ccc;
+        text-align: center;
+        }
+        table.xxx th {
+        width: 100px;
+        background: lightblue;
+        border-color: white;
+        }
+        table.xxx body {
+        padding: 1rem;
+        }    
+    </style>            
+
+    
+    <!--
+    ********************************************Start Debug*******************************************
+    ********************************************Start Debug*******************************************
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>p3_BO_Form.bo_percentage_shareholding.$touched = {{p3_BO_Form.bo_percentage_shareholding.$touched}}</div></td></tr>
+    <tr><td><div>p3_BO_Form.bo_percentage_shareholding.$valid = {{p3_BO_Form.bo_percentage_shareholding.$valid}}</div></td></tr>
+    <tr><td><div>BenOwner.Percentage_Shareholder__c = {{BenOwner.Percentage_Shareholder__c}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>BenOwner = {{BenOwner}}</div></td></tr>
+    <tr><td><div>BenOwner.bo_ownerType = {{BenOwner.bo_ownerType}}</div></td></tr>
+    <tr><td><div>registration = {{registration}}</div></td></tr>
+    
+    
+    <tr><td><div>bo_business_country = {{bo_business_country}}</div></td></tr>
+    <tr><td><div>bo_business_region = {{bo_business_region}}</div></td></tr>
+    
+    <tr><td><div>boregions = {{boregions}}</div></td></tr>
+    <tr><td><div>beneficialowners = {{beneficialowners}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>AddressRegions = {{addrregions}}</div></td></tr>
+    <tr><td><div>CurrentAddressRegion = {{registration.RegBusiness_State_Province__c}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>Regions = {{busregions}}</div></td></tr>
+    <tr><td><div>Bus State = {{registration.State_Province__c}}</div></td></tr>
+    
+    <tr><td><div>Regions = {{addrregions}}</div></td></tr>
+    <tr><td><div>Addr State = {{registration.RegBusiness_State_Province__c}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    
+    
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>Countries = {{registration.Business_presence_in_high_risk_country__c}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>Year Touched: {{p3_SD_Form.year.$touched }}</div></td></tr>
+    <tr><td><div>Year Valid: {{p3_SD_Form.year.$valid}}</div></td></tr>
+    <tr><td><div>Month Touched: {{p3_SD_Form.month.$touched }}</div></td></tr>
+    <tr><td><div>Month Valid: {{p3_SD_Form.month.$valid}}</div></td></tr>
+    <tr><td><div>Day Touched: {{p3_SD_Form.day.$touched }}</div></td></tr>
+    <tr><td><div>Day Valid: {{p3_SD_Form.day.$valid}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>RegoID = {{registration.Id}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>year: {{year}}</div></td></tr>
+    <tr><td><div>month: {{month}}</div></td></tr>
+    <tr><td><div>day: {{day}}</div></td></tr>
+    <tr><td><div>DOB: {{fieldValues.dateOfBirth}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    <table>
+    <tbody>
+    <tr><td><div>Stage: {{registration.Registration_Stage__c}}</div></td></tr>
+    <tr><td><div>Sub Stage: {{registration.Registration_Sub_Stage__c}}</div></td></tr>
+    <tr><td><div>MAx Stage: {{registration.Registration_Max_Sub_Stage__c}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>Stage: {{registration.Registration_Stage__c}}</div></td></tr>
+    <tr><td><div>Sub Stage: {{registration.Registration_Sub_Stage__c}}</div></td></tr>
+    <tr><td><div>Number of Ben Owners: {{beneficialowners.length}}</div></td></tr>
+    <tr><td><div>Number of Directors: {{directors.length}}</div></td></tr>
+    <tr><td><div>Business Type: {{registration.Business_Type__c}}</div></td></tr>
+    
+    <tr><td><div>$scope.p3_BD_Form.$invalid: {{p3_BD_Form.$invalid}}</div></td></tr>
+    <tr><td><div>$scope.p3_AD_Form.$invalid: {{p3_AD_Form.$invalid}}</div></td></tr>
+    <tr><td><div>$scope.p3_SD_Form.$invalid: {{p3_SD_Form.$invalid}}</div></td></tr>
+    
+    <tr><td><div>$scope.bo_visible: {{bo_visible}}</div></td></tr>
+    <tr><td><div>$scope.dir_visible: {{dir_visible}}</div></td></tr>
+    <tr><td><div>$scope.tg_visible: {{tg_visible}}</div></td></tr>
+    
+    <tr><td><div>$scope.beneficialowners.length: {{beneficialowners.length}}</div></td></tr>
+    <tr><td><div>$scope.directors.length: {{directors.length}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    <h2>
+    Form Status
+    </h2>            
+    <table class="xxx">
+    <thead>
+    <tr>
+    <td></td>
+    <th>Valid?</th>
+    <th>Pristine</th>
+    <th>Touched</th>
+    <th>Dirty</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+    <th>p3_BD_Form</th>
+    <td>{{p3_BD_Form.$valid}}</td>
+    <td>{{p3_BD_Form.$pristine}}</td>
+    <td>{{p3_BD_Form.$touched}}</td>
+    <td>{{p3_BD_Form.$dirty}}</td>
+    </tr>
+    <tr>
+    <th>p3_AD_Form</th>
+    <td>{{p3_AD_Form.$valid}}</td>
+    <td>{{p3_AD_Form.$pristine}}</td>
+    <td>{{p3_AD_Form.$touched}}</td>
+    <td>{{p3_AD_Form.$dirty}}</td>
+    </tr>
+    <tr>
+    <th>p3_SD_Form</th>
+    <td>{{p3_SD_Form.$valid}}</td>
+    <td>{{p3_SD_Form.$pristine}}</td>
+    <td>{{p3_SD_Form.$touched}}</td>
+    <td>{{p3_SD_Form.$dirty}}</td>
+    </tr>
+    <tr>
+    <th>p3_BO_Form</th>
+    <td>{{p3_BO_Form.$valid}}</td>
+    <td>{{p3_BO_Form.$pristine}}</td>
+    <td>{{p3_BO_Form.$touched}}</td>
+    <td>{{p3_BO_Form.$dirty}}</td>
+    </tr>
+    <tr>
+    <th>p3_BDir_Form</th>
+    <td>{{p3_BDir_Form.$valid}}</td>
+    <td>{{p3_BDir_Form.$pristine}}</td>
+    <td>{{p3_BDir_Form.$touched}}</td>
+    <td>{{p3_BDir_Form.$dirty}}</td>
+    </tr>
+    <tr>
+    <th>p3_TG_Form</th>
+    <td>{{p3_TG_Form.$valid}}</td>
+    <td>{{p3_TG_Form.$pristine}}</td>
+    <td>{{p3_TG_Form.$touched}}</td>
+    <td>{{p3_TG_Form.$dirty}}</td>
+    </tr>
+    </tbody>
+    </table>
+    
+    
+    ********************************************End Debug*******************************************
+    ********************************************End Debug*******************************************
+    -->
+    
+
+    <div class="container">
+        
+        <p class="col-xs-12 col-sm-12 intro-content">Okay, it’s time to get down to the financial nitty-gritty. Please start entering some specifics about your enterprise.</p>
+        
+        
+        
+        <div class="col-xs-12 error-message hidden">
+            <p>There were problems with your entry. <br/>Errors have been highlighted below.</p>
+        </div>
+        
+        
+        <div class="col-xs-12 panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+            
+            <!-- **************************************************************************
+            *
+            *   BUSINESS DETAILS PANEL
+            *
+            **************************************************************************  -->
+            
+            
+            <form name="p3_BD_Form" novalidate="novalidate" class="panel panel-default">
+                
+                <div class="panel-heading progress ng-class:{ 'complete' : p3_BD_Form.$valid };" role="tab" id="headingOne">
+                    <h4 class="panel-title" ng-click="saveRego()"> 
+                        <a  class="accordion-toggle" role="button" data-toggle="collapse" data-parent="#accordion" 
+                           href="#collapseOne" aria-expanded="true" aria-controls="collapseOne"> BUSINESS DETAILS</a>
+                    </h4>
+                </div>
+                
+                
+                
+                
+                <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                    <div id="businessDetails" class="panel-body">
+                        <!-- form element Start-->
+                        
+                        <!-- TRY HERE -->
+                        <fieldset ng-disabled="checkDisable('Disable_Form')">
+                            
+                            <!--    Trading Name (Text/Mandatory/Tooltips)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_BD_Form.business_trading_name.$invalid && p3_BD_Form.business_trading_name.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.Trading_Name__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="business_trading_name" 
+                                           name="business_trading_name"
+                                           ng-model="registration.Trading_Name__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="business_trading_name" data-manditoryfield="Trading Name - mandatory field">Trading Name</label>
+                                    <div class="field_error" ng-messages="p3_BD_Form.business_trading_name.$error" ng-if="p3_BD_Form.business_trading_name.$touched && !p3_BD_Form.business_trading_name.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.BusinessTradingName}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.BusinessTradingName}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Address Line 1 (Text/Mandatory/Tooltips)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_BD_Form.business_address_line_1.$invalid && p3_BD_Form.business_address_line_1.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.Address_Line_1__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="business_address_line_1" 
+                                           name="business_address_line_1"
+                                           ng-model="registration.Address_Line_1__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="business_address_line_1" data-manditoryfield="Address Line 1 - mandatory field">Address Line 1</label>
+                                    <div class="field_error" ng-messages="p3_BD_Form.business_address_line_1.$error" ng-if="p3_BD_Form.business_address_line_1.$touched && !p3_BD_Form.business_address_line_1.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.BusinessAddressLine1}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.BusinessAddressLine1}}</p>
+                                    </div>
+                                    <div class="validation-message hidden">
+                                        <p>This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Address Line 2 (Text/Mandatory/Tooltips)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_BD_Form.business_address_line_2.$invalid && p3_BD_Form.business_address_line_2.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.Address_Line_2__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" 
+                                           id="business_address_line_2" 
+                                           name="business_address_line_2"
+                                           ng-model="registration.Address_Line_2__c" 
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="business_address_line_2" data-manditoryfield="Address Line 2">Address Line 2</label>
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.BusinessAddressLine2}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.BusinessAddressLine2}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- City (Text/Mandatory)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_BD_Form.business_city.$invalid && p3_BD_Form.business_city.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.City__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="business_city" 
+                                           name="business_city"
+                                           ng-model="registration.City__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="business_city" data-manditoryfield="City - mandatory field">City</label>
+                                    <div class="field_error" ng-messages="p3_BD_Form.business_city.$error" ng-if="p3_BD_Form.business_city.$touched && !p3_BD_Form.business_city.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Region (Text-Filtered on Country/Mandatory) BH****
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_BD_Form.business_region.$invalid && p3_BD_Form.business_region.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +  (registration.State_Province__c.length > 0 ? 'input-filled': '') ">           
+                                    <select type="text"
+                                            id="business_region" class="required" style="border: 0px;"
+                                            name="business_region"
+                                            ng-model="registration.State_Province__c"
+                                            ng-options="reg for (reg, id) in busregions"
+                                            ng-required="true"
+                                            ng-class="cssInputClass"
+                                            ng-change="checkCssInput()" >                    
+                                    </select>                                        
+                                    <label for="business_region" data-manditoryfield="{{Business_Region_Label}} - mandatory field">{{Business_Region_Label}}</label>
+                                    <div class="field_error" ng-messages="p3_BD_Form.business_region.$error" ng-if="p3_BD_Form.business_region.$touched && !p3_BD_Form.business_region.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Postcode (Text/Mandatory)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_BD_Form.business_postcode.$invalid && p3_BD_Form.business_postcode.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.Postcode__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="business_postcode" 
+                                           name="business_postcode"
+                                           ng-model="registration.Postcode__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="business_postcode" data-manditoryfield="{{Business_Postcode_Label}} - mandatory field">{{Business_Postcode_Label}}</label>
+                                    <div class="field_error" ng-messages="p3_BD_Form.business_postcode.$error" ng-if="p3_BD_Form.business_postcode.$touched && !p3_BD_Form.business_postcode.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Business Tax Number (Text/Mandatory/Tooltips)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_BD_Form.business_business_tax_number.$invalid && p3_BD_Form.business_business_tax_number.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.Business_Tax_Number__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="business_business_tax_number" 
+                                           name="business_business_tax_number"
+                                           ng-model="registration.Business_Tax_Number__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="business_business_tax_number" data-manditoryfield="{{Tax_Number_Label}} - mandatory field">{{Tax_Number_Label}}</label>
+                                    <div class="field_error" ng-messages="p3_BD_Form.business_business_tax_number.$error" ng-if="p3_BD_Form.business_business_tax_number.$touched && !p3_BD_Form.business_business_tax_number.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.BusinessTaxNumber}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.BusinessTaxNumber}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Business Number (Text/Mandatory/Tooltips)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_BD_Form.business_business_number.$invalid && p3_BD_Form.business_business_number.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.Business_Number__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="business_business_number" 
+                                           name="business_business_number"
+                                           ng-model="registration.Business_Number__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="business_business_number"  data-manditoryfield="{{Business_Number_Label}} - mandatory field">{{Business_Number_Label}}</label>
+                                    <div class="field_error" ng-messages="p3_BD_Form.business_business_number.$error" ng-if="p3_BD_Form.business_business_number.$touched && !p3_BD_Form.business_business_number.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.BusinessBusinessNumber}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.BusinessBusinessNumber}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Established Year (Numeric/Mandatory/Tooltips?) BH**** Validate???
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_BD_Form.bd_established_year.$invalid && p3_BD_Form.bd_established_year.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.Established_Year__c ? 'input-filled': '') ">           
+                                    <input type="number" 
+                                           min="1000"
+                                           max="{{currentYear}}"
+                                           class="required" 
+                                           id="bd_established_year" 
+                                           name="bd_established_year"
+                                           ng-model="registration.Established_Year__c"
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="bd_established_year" data-manditoryfield="Established Year - mandatory field">Established Year</label>
+
+                                    <div class="field_error" ng-messages="p3_BD_Form.bd_established_year.$error" ng-if="p3_BD_Form.bd_established_year.$touched && !p3_BD_Form.bd_established_year.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                        <p ng-message="min">Year should be at least 1000.</p>
+                                        <p ng-message="max">Year can not be in the future.</p>
+                                    </div>
+
+
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.BusinessEstablishedYear}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.BusinessEstablishedYear}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Estimated Transaction Currency (Currency-Picklist/Mandatory
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_AD_Form.bd_est_trans_currency.$invalid && p3_AD_Form.bd_est_trans_currency.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +  (registration.Estimated_Transaction_CurrencyISOCode__c.length > 0 ? 'input-filled': '') ">           
+                                    <select id="bd_est_trans_currency" class="required" style="border: 0px;"
+                                            name="bd_est_trans_currency"
+                                            ng-model="registration.Estimated_Transaction_CurrencyISOCode__c" 
+                                            ng-options="bd_est_trans_currency for bd_est_trans_currency in estcurrencies"
+                                            ng-required="true"
+                                            ng-class="cssInputClass"
+                                            ng-change="checkCssInput()" >                   
+                                    </select>                                        
+                                    <label for="bd_est_trans_currency" data-manditoryfield="Estimated Transaction Currency - mandatory field">Estimated Transaction Currency</label>
+                                    <div class="field_error" ng-messages="p3_AD_Form.bd_est_trans_currency.$error" ng-if="p3_AD_Form.bd_est_trans_currency.$touched && !p3_AD_Form.bd_est_trans_currency.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Estimated Annual Transaction Value (Currency-Picklist/Mandatory & Amount-Numeric/Mandatory)
+							************************************************************************************************    -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_BD_Form.bd_estimated_transaction_amt.$invalid && p3_BD_Form.bd_estimated_transaction_amt.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (p3_BD_Form.Estimated_Annual_Transaction_Value__c ? 'input-filled': '') ">
+
+
+
+                                    <input type="number" class="required" id="bd_estimated_transaction_amt" 
+                                           name="bd_estimated_transaction_amt"
+                                           ng-model="registration.Estimated_Annual_Transaction_Value__c"
+                                           ng-min="1"
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="bd_estimated_transaction_amt" data-manditoryfield="Estimated Annual Transaction Value - mandatory field">Estimated Annual Transaction Value</label>
+                                    <div class="field_error" ng-messages="p3_BD_Form.bd_estimated_transaction_amt.$error" ng-if="p3_BD_Form.bd_estimated_transaction_amt.$touched && !p3_BD_Form.bd_estimated_transaction_amt.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                        <p ng-message="min">This field must be a positive value greater than 0.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Purpose of Use (Text/Mandatory/Tooltip) BH****: OnlyVisible for VANS
+							**************************************************************************  -->
+                            <div class="input-container" ng-if="showHide('VANs')">
+                                <div ng-class="         (p3_BD_Form.purpose_of_use.$invalid && p3_BD_Form.purpose_of_use.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.Purpose_of_VAN_Account__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="purpose_of_use" 
+                                           name="purpose_of_use"
+                                           ng-model="registration.Purpose_of_VAN_Account__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="purpose_of_use" data-manditoryfield="Purpose and Use of VAN - mandatory field">Purpose and Use of VAN</label>
+                                    <div class="field_error" ng-messages="p3_BD_Form.purpose_of_use.$error" ng-if="p3_BD_Form.purpose_of_use.$touched && !p3_BD_Form.purpose_of_use.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.PurposeandUseofVAN}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.PurposeandUseofVAN}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Listed exchange (Text/ Show if Business Type = Public / Mandatory if Business Type = Public and Product = VANs)
+							**************************************************************************************************************************  -->
+                            <div class="input-container" ng-if="showHide('ListedExchange')">
+                                <div ng-class="         (p3_BD_Form.listed_exchange.$invalid && p3_BD_Form.listed_exchange.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.Listed_Exchange__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" 
+                                           ng-class="setClass('ListedExchange')" 
+                                           id="listed_exchange" 
+                                           name="listed_exchange"
+                                           ng-model="registration.Listed_Exchange__c" 
+                                           ng-required="setRequired('ListedExchange')"
+                                           ng-change="checkCssInput()" />
+                                    <label for="listed_exchange" data-manditoryfield="Listed Exchange - mandatory field">Listed Exchange</label>
+                                    <div class="field_error" ng-messages="p3_BD_Form.listed_exchange.$error" ng-if="p3_BD_Form.listed_exchange.$touched && !p3_BD_Form.listed_exchange.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.PublicCompanyExchangeName}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.PublicCompanyExchangeName}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- TRY HERE -->
+                        </fieldset>
+                        
+                    </div>
+                </div>
+                
+                
+                
+                
+                
+            </form> <!-- "p3_BD_Form" -->
+            
+            
+            <!-- **************************************************************************
+            *
+            *   REGISTERED BUSINESS ADDRESS DETAILS PANEL
+            *
+            **************************************************************************  -->
+            
+            <form name="p3_AD_Form" novalidate="novalidate" ng-class="setPanel('AddressDetails')" >
+                
+                <div  class="panel-heading ng-class:{'progress': p3_BD_Form.$valid, 'progress complete': p3_AD_Form.$valid};" 
+                     role="tab" id="headingTwo" ng-click="setStages('Address Details')">
+                    <h4 class="panel-title" ng-click="saveRego()">
+                        <a  class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" 
+                           href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">ADDRESS DETAILS</a>
+                    </h4>
+                </div>
+                
+                
+                <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                    <div id="addressDetails" class="panel-body">
+                        <!-- form element Start-->
+                        
+                        <!-- TRY HERE -->
+                        <fieldset ng-disabled="checkDisable('Disable_Form')">
+                            
+                            <!-- Registered Business Address Same As Above
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <input  type="checkbox" 
+                                       id="sameAddress" 
+                                       class="required" 
+                                       name="sameAsBusiness" 
+                                       ng-model="registration.Registered_Business_is_Same_as_Above__c" 
+                                       ng-change="copyAddress(); getAddrRegions()"
+                                       value="1"/> Registered Business Address is the same as above <br />
+                            </div>
+                            
+                            
+                            <!-- Business Country (Text/Picklist/Mandatory)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_AD_Form.reg_business_country.$invalid && p3_AD_Form.reg_business_country.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +  (registration.RegBusiness_Country__c.length > 0 ? 'input-filled': '') ">           
+                                    <select id="reg_business_country" class="required" style="border: 0px;"
+                                            name="reg_business_country"
+                                            ng-model="registration.RegBusiness_Country__c" 
+                                            ng-options="reg_business_country for reg_business_country in countries"
+                                            ng-required="true"
+                                            ng-class="cssInputClass"
+                                            ng-change="checkCssInput(); changeAddrCountry()" >                    
+                                    </select>                                        
+                                    <label for="reg_business_country" data-manditoryfield="Business Country - mandatory field">Business Country</label>
+                                    <div class="field_error" ng-messages="p3_AD_Form.reg_business_country.$error" ng-if="p3_AD_Form.reg_business_country.$touched && !p3_AD_Form.reg_business_country.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Address Line 1 (Text/Mandatory)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_AD_Form.reg_business_address_line_1.$invalid && p3_AD_Form.reg_business_address_line_1.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.RegBusiness_Address_Line_1__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="reg_business_address_line_1" 
+                                           name="reg_business_address_line_1"
+                                           ng-model="registration.RegBusiness_Address_Line_1__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="reg_business_address_line_1" data-manditoryfield="Address Line 1 - mandatory field">Address Line 1</label>
+                                    <div class="field_error" ng-messages="p3_AD_Form.reg_business_address_line_1.$error" ng-if="p3_AD_Form.reg_business_address_line_1.$touched && !p3_AD_Form.reg_business_address_line_1.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Address Line 2 (Text)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_AD_Form.reg_business_address_line_2.$invalid && p3_AD_Form.reg_business_address_line_2.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.RegBusiness_Address_Line_2__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" 
+                                           id="reg_business_address_line_2" 
+                                           name="reg_business_address_line_2"
+                                           ng-model="registration.RegBusiness_Address_Line_2__c" 
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="reg_business_address_line_2" data-manditoryfield="Address Line 2">Address Line 2</label>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- City (Text/Mandatory)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_AD_Form.reg_business_city.$invalid && p3_AD_Form.reg_business_city.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.RegBusiness_City__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="business_city" 
+                                           name="business_city"
+                                           ng-model="registration.RegBusiness_City__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="business_city" data-manditoryfield="City - mandatory field">City</label>
+                                    <div class="field_error" ng-messages="p3_AD_Form.reg_business_city.$error" ng-if="p3_AD_Form.reg_business_city.$touched && !p3_AD_Form.reg_business_city.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Region (Text/Picklist/Mandatory)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_AD_Form.reg_business_region.$invalid && p3_AD_Form.reg_business_region.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +  (registration.RegBusiness_State_Province__c.length > 0 ? 'input-filled': '') ">           
+                                    <select type="text"
+                                            id="reg_business_region" 
+                                            class="required" 
+                                            style="border: 0px;"
+                                            name="reg_business_region"
+                                            ng-model="registration.RegBusiness_State_Province__c"
+                                            ng-options="reg for (reg, id) in addrregions"
+                                            ng-required="true"
+                                            ng-class="cssInputClass"
+                                            ng-change="checkCssInput()" >                    
+                                    </select>                                        
+                                    <label for="reg_business_region" data-manditoryfield="{{RB_Region_Label}} - mandatory field">{{RB_Region_Label}}</label>
+                                    <div class="field_error" ng-messages="p3_AD_Form.reg_business_region.$error" ng-if="p3_AD_Form.reg_business_region.$touched && !p3_AD_Form.reg_business_region.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Postcode (Text/Mandatory)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_AD_Form.reg_business_postcode.$invalid && p3_AD_Form.reg_business_postcode.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.RegBusiness_Postcode__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="business_postcode" 
+                                           name="business_postcode"
+                                           ng-model="registration.RegBusiness_Postcode__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="business_postcode" data-manditoryfield="{{RB_Postcode_Label}} - mandatory field">{{RB_Postcode_Label}}</label>
+                                    <div class="field_error" ng-messages="p3_AD_Form.reg_business_postcode.$error" ng-if="p3_AD_Form.reg_business_postcode.$touched && !p3_AD_Form.reg_business_postcode.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Jurisdictions (Text/Mandatory)
+							**************************************************************************  -->
+                            <div class="wrapper-checkbox">
+                                <p>Does your business have a presence (headquarters, branch, office or subsidiary) in any of the following jurisdictions?</p>
+                                <ul class="wrapper-listing-checkbox">
+                                    <li ng-repeat="jurisName in jurisdictions">
+                                        <input
+                                               type="checkbox"
+                                               name="selectedJurisdictions[]"
+                                               value="{{jurisName}}"
+                                               ng-checked="selection.indexOf(jurisName) > -1"
+                                               ng-click="toggleSelection(jurisName)"
+                                               /> 
+                                        <label>{{jurisName}}</label>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <!-- TRY HERE -->
+                        </fieldset>
+                        
+                        
+                    </div>
+                    
+                </div>
+                
+                
+                
+            </form> <!-- "p3_AD_Form" -->
+            
+            
+            <!-- **************************************************************************
+            *
+            *   SIGNATORY DETAILS PANEL
+            *
+            **************************************************************************  -->
+            
+            <form name="p3_SD_Form" novalidate="novalidate" ng-class="setPanel('SignatoryDetails')" >
+                
+                <div  class="panel-heading ng-class:{'progress': p3_AD_Form.$valid, 'progress complete': p3_SD_Form.$valid};" 
+                     role="tab" id="headingThree" ng-click="setStages('Signatory Details')">
+                    <h4 class="panel-title" ng-click="saveRego()">
+                        <a  class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" 
+                           href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">SIGNATORY DETAILS</a>
+                    </h4>
+                </div>
+                
+                
+                
+                
+                <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                    <div id="signatoryDetails" class="panel-body">
+                        
+                        <!-- TRY HERE -->
+                        <fieldset ng-disabled="checkDisable('Disable_Form')">
+                            
+                            <!-- Job Title (Text/Mandatory)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_SD_Form.job_title.$invalid && p3_SD_Form.job_title.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.CEO_CFO_Job_Role__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="job_title" 
+                                           name="job_title"
+                                           ng-model="registration.CEO_CFO_Job_Role__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="job_title" data-manditoryfield="Job Title - mandatory field">Job Title</label>
+                                    <div class="field_error" ng-messages="p3_SD_Form.job_title.$error" ng-if="p3_SD_Form.job_title.$touched && !p3_SD_Form.job_title.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.CEOJobTitle}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.CEOJobTitle}}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Title (Text/Picklist/Mandatory) ??? - Mandatory Message
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_SD_Form.CEO_CFO__c.$invalid && p3_SD_Form.CEO_CFO__c.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.CEO_CFO_Job_Role__c.length > 0 ? 'input-filled': '') ">           
+                                    <select id="CEO_CFO__c" 
+                                            style="border: 0px;"
+                                            name="CEO_CFO__c"
+                                            ng-required="true"
+                                            ng-model="registration.CEO_CFO__c" 
+                                            ng-options="salutation for salutation in salutations" >
+                                    </select>
+                                    <label for="CEO_CFO__c" data-manditoryfield="Title - mandatory field">Title</label>
+                                    <div class="field_error" ng-messages="p3_SD_Form.CEO_CFO__c.$error" ng-if="p3_SD_Form.CEO_CFO__c.$touched && !p3_SD_Form.CEO_CFO__c.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- First Name (Text/Mandatory)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_SD_Form.first_name.$invalid && p3_SD_Form.first_name.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.CEO_CFO_First_Name__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="first_name" 
+                                           name="first_name"
+                                           ng-model="registration.CEO_CFO_First_Name__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="first_name" data-manditoryfield="First Name - mandatory field">First Name</label>
+                                    <div class="field_error" ng-messages="p3_SD_Form.first_name.$error" ng-if="p3_SD_Form.first_name.$touched && !p3_SD_Form.first_name.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Middle Name (Text)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_SD_Form.middle_name.$invalid && p3_SD_Form.middle_name.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.CEO_CFO_Middle_Name__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" 
+                                           id="middle_name" 
+                                           name="middle_name"
+                                           ng-model="registration.CEO_CFO_Middle_Name__c" 
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="middle_name" data-manditoryfield="Middle Name">Middle Name</label>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Last Name (Text/Mandatory)
+							**************************************************************************  -->
+                            <div class="input-container">
+                                <div ng-class="         (p3_SD_Form.last_name.$invalid && p3_SD_Form.last_name.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.CEO_CFO_Last_Name__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="last_name" 
+                                           name="last_name"
+                                           ng-model="registration.CEO_CFO_Last_Name__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="last_name" data-manditoryfield="Last Name - mandatory field">Last Name</label>
+                                    <div class="field_error" ng-messages="p3_SD_Form.last_name.$error" ng-if="p3_SD_Form.last_name.$touched && !p3_SD_Form.last_name.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Date Of Birth (Split to Year, Month, Day/Mandatory)
+							**************************************************************************  -->
+                            <div class="row date">
+                                
+                                <div  id="dob-year" class="input-container col-xs-12 col-sm-4">
+                                    <div ng-class="         (p3_SD_Form.year.$invalid && p3_SD_Form.year.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (!p3_SD_Form.year.$error.required ? 'input-filled': '') ">           
+                                        <select id="year" 
+                                                style="border: 0px;"
+                                                name="year"
+                                                ng-required="true"
+                                                ng-change="updateDate('year')" 
+                                                ng-model="year" 
+                                                ng-class="cssInputClass"
+                                                ng-options="year for year in years track by year" >
+                                        </select>
+                                        <label for="year" data-manditoryfield="Birth Year">Birth Year</label>
+                                        <div class="field_error" ng-messages="p3_SD_Form.year.$error" ng-if="p3_SD_Form.year.$touched && !p3_SD_Form.year.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div id="dob-month" class="input-container col-xs-12 col-sm-4">
+                                    <div ng-class="         (p3_SD_Form.month.$invalid && p3_SD_Form.month.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (!p3_SD_Form.month.$error.required ? 'input-filled': '') ">           
+                                        <select id="month" 
+                                                style="border: 0px;"
+                                                name="month"
+                                                ng-required="true"
+                                                ng-change="updateDate('month')" 
+                                                ng-model="month" 
+                                                ng-options="month.name for month in months track by month.name" >
+                                        </select>
+                                        <label for="month" data-manditoryfield="Birth Month">Birth Month</label>
+                                        <div class="field_error" ng-messages="p3_SD_Form.month.$error" ng-if="p3_SD_Form.month.$touched && !p3_SD_Form.month.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <div id="dob-day" class="input-container col-xs-12 col-sm-4">
+                                    <div ng-class="         (p3_SD_Form.day.$invalid && p3_SD_Form.day.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (!p3_SD_Form.day.$error.required ? 'input-filled': '') ">           
+                                        <select id="day" 
+                                                style="border: 0px;"
+                                                name="day"
+                                                ng-required="true"
+                                                ng-model="day"
+                                                ng-options="day for day in days | daysInMonth:year:month track by day" >
+                                        </select>
+                                        <label for="day" data-manditoryfield="Birth Day">Birth Day</label>
+                                        <div class="field_error" ng-messages="p3_SD_Form.day.$error" ng-if="p3_SD_Form.day.$touched && !p3_SD_Form.day.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            
+                            <!-- TRY HERE -->
+                        </fieldset>
+                        
+                        
+                    </div>
+                    
+                    
+                    <!-- *********************************************************************
+                    *
+                    *   Signatory - Drag and drop component
+                    *
+                    *********************************************************************  -->
+                    
+                    <div ng-show="showHide('DragZone')">
+                        <c:DragDropZone />
+                    </div>
+                    
+                </div>
+                
+                
+                
+            </form> <!-- "p3_SD_Form" -->
+            
+            <!-- **************************************************************************
+            *
+            *   BENEFICIAL OWNERS DETAILS PANEL
+            *
+            **************************************************************************  -->
+            
+            <form name="p3_BO_Form" novalidate="novalidate" ng-class="setPanel('BeneficialOwners')" ng-show="showHide('BeneficialOwnersPanel')">
+                
+                <!--
+                <div  class="panel-heading ng-class:{'progress': p3_SD_Form.$valid, 'progress complete': p3_BO_Form.$valid};" 
+                role="tab" id="headingFour" ng-click="setStages('Beneficial Owners')">
+                -->
+                
+                <div  class="panel-heading ng-class:{'progress': p3_SD_Form.$valid, 'progress complete': beneficialowners.length > 0};" 
+                     role="tab" id="headingFour" ng-click="setStages('Beneficial Owners')">
+                    
+                    <h4 class="panel-title" ng-click="saveRego()">
+                        <a  class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" 
+                           href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">PLEASE ADD BUSINESS BENEFICIAL OWNERS</a>
+                    </h4>
+                </div>
+                
+                
+                
+                
+                
+                <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                    <div id="ownersDetails" class="panel-body">
+                        
+                        <!-- TRY HERE -->
+                        <fieldset ng-disabled="checkDisable('Disable_Form')">
+                            
+                            <div ng-show="showHide('BenOwnerEntry')">                    
+                                <!-- Owner Type (Text/Picklist/Mandatory/Tooltip)
+								**************************************************************************  -->
+                                <div class="input-container">
+                                    <div ng-class="         (p3_BO_Form.bo_ownerType.$invalid && p3_BO_Form.bo_ownerType.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +  (BenOwner.Owner_Type__c.length > 0 ? 'input-filled': '') ">           
+                                        <select id="bo_ownerType" class="required" style="border: 0px;"
+                                                name="bo_ownerType"
+                                                ng-model="BenOwner.Owner_Type__c" 
+                                                ng-options="bo_ownerType for bo_ownerType in ownertypes"
+                                                ng-required="true"
+                                                ng-class="cssInputClass"
+                                                ng-change="checkCssInput()" >                    
+                                        </select>                                        
+                                        <label for="bo_ownerType" data-manditoryfield="Owner Type - mandatory field">Owner Type</label>
+                                        <div class="field_error" ng-messages="p3_BO_Form.bo_ownerType.$error" ng-if="p3_BO_Form.bo_ownerType.$touched && !p3_BO_Form.bo_ownerType.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                        <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                        <div class="tooltip-content">
+                                            <h4>{{ttHeaders.BeneficialOwnerOwnerType}}</h4>
+                                            <span class="btn-close"></span>
+                                            <p>{{ttContents.BeneficialOwnerOwnerType}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Salutation/Title (Text/Picklist/Mandatory)
+								**************************************************************************  -->
+                                <div class="input-container" ng-show="BenOwner.Owner_Type__c=='Individual'">
+                                    <div ng-class="         (p3_BO_Form.bo_title.$invalid && p3_BO_Form.bo_title.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +  (BenOwner.Salutation__c.length > 0 ? 'input-filled': '') ">           
+                                        <select id="bo_title" class="required" style="border: 0px;"
+                                                name="bo_title"
+                                                ng-model="BenOwner.Salutation__c"
+                                                ng-options="bo_title for bo_title in bosalutations"
+                                                ng-required="bo_ownerType=='Individual'"
+                                                ng-class="cssInputClass"
+                                                ng-change="checkCssInput()" >                    
+                                        </select>                                        
+                                        <label for="bo_title" data-manditoryfield="Title - mandatory field">Title</label>
+                                        <div class="field_error" ng-messages="p3_BO_Form.bo_title.$error" ng-if="p3_BO_Form.bo_title.$touched && !p3_BO_Form.bo_title.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- First Name (Text/Mandatory)
+								**************************************************************************  -->
+                                <div class="input-container" ng-show="BenOwner.Owner_Type__c=='Individual'">
+                                    <div ng-class="         (p3_BO_Form.bo_first_name.$invalid && p3_BO_Form.bo_first_name.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (BenOwner.First_Name__c.length > 0 ? 'input-filled': '') ">           
+                                        <input type="text" class="required" id="bo_first_name" 
+                                               name="bo_first_name"
+                                               ng-model="BenOwner.First_Name__c" 
+                                               ng-required="bo_ownerType=='Individual'"
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="bo_first_name" data-manditoryfield="First Name - mandatory field">First Name</label>
+                                        <div class="field_error" ng-messages="p3_BO_Form.bo_first_name.$error" ng-if="p3_BO_Form.bo_first_name.$touched && !p3_BO_Form.bo_first_name.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Middle Name (Text)
+								**************************************************************************  -->
+                                <div class="input-container" ng-show="BenOwner.Owner_Type__c=='Individual'">
+                                    <div ng-class="         (p3_BO_Form.bo_middle_name.$invalid && p3_BO_Form.bo_middle_name.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (BenOwner.Middle_Name__c.length > 0 ? 'input-filled': '') ">           
+                                        <input type="text" id="bo_middle_name" 
+                                               name="bo_middle_name"
+                                               ng-model="BenOwner.Middle_Name__c" 
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="bo_middle_name" data-manditoryfield="Middle Name">Middle Name</label>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Last Name (Text/Mandatory)
+								**************************************************************************  -->
+                                <div class="input-container" ng-show="BenOwner.Owner_Type__c=='Individual'">
+                                    <div ng-class="         (p3_BO_Form.bo_last_name.$invalid && p3_BO_Form.bo_last_name.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (BenOwner.Last_Name__c.length > 0 ? 'input-filled': '') ">           
+                                        <input type="text" class="required" id="bo_last_name" 
+                                               name="bo_last_name"
+                                               ng-model="BenOwner.Last_Name__c" 
+                                               ng-required="bo_ownerType=='Individual'"
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="bo_last_name" data-manditoryfield="Last Name">Last Name</label>
+                                        <div class="field_error" ng-messages="p3_BO_Form.bo_last_name.$error" ng-if="p3_BO_Form.bo_last_name.$touched && !p3_BO_Form.bo_last_name.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Registered Business Name (Text/Mandatory/Tooltip)
+								**************************************************************************  -->
+                                <div class="input-container" ng-show="BenOwner.Owner_Type__c=='Business'">
+                                    <div ng-class="         (p3_BO_Form.bo_business_name.$invalid && p3_BO_Form.bo_business_name.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (BenOwner.Registered_Business_Name__c.length > 0 ? 'input-filled': '') ">           
+                                        <input type="text" class="required" id="bo_business_name" 
+                                               name="bo_business_name"
+                                               ng-model="BenOwner.Registered_Business_Name__c" 
+                                               ng-required="bo_ownerType=='Business'"
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="bo_business_name" data-manditoryfield="Registered Business Name">Registered Business Name</label>
+                                        <div class="field_error" ng-messages="p3_BO_Form.bo_business_name.$error" ng-if="p3_BO_Form.bo_business_name.$touched && !p3_BO_Form.bo_business_name.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                        <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                        <div class="tooltip-content">
+                                            <h4>{{ttHeaders.BeneficialOwnerBusinessName}}</h4>
+                                            <span class="btn-close"></span>
+                                            <p>{{ttContents.BeneficialOwnerBusinessName}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Business Number (Text/Mandatory/Tooltip)
+								**************************************************************************  -->
+                                <div class="input-container" ng-show="BenOwner.Owner_Type__c=='Business'">
+                                    <div ng-class="         (p3_BO_Form.bo_business_number.$invalid && p3_BO_Form.bo_business_number.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (BenOwner.Business_Number__c.length > 0 ? 'input-filled': '') ">           
+                                        <input type="text" 
+                                               id="bo_business_number" 
+                                               name="bo_business_number"
+                                               ng-model="BenOwner.Business_Number__c" 
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="bo_business_number" data-manditoryfield="Business Number?">Business Number</label>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Percentage Shareholding (Numeric/Mandatory/Tooltip)
+								**************************************************************************  -->
+                                <div class="input-container">
+                                    <!--
+                                    <div ng-class="         (p3_BO_Form.bo_percentage_shareholding.$invalid && p3_BO_Form.bo_percentage_shareholding.$touched ? 'input-container field_error': 'input-container') 
+                                    + ' ' +    (BenOwner.Percentage_Shareholder__c.length > 0 ? 'input-filled': '') ">    
+                                    -->
+                                    <div ng-class="         (p3_BO_Form.bo_percentage_shareholding.$invalid && p3_BO_Form.bo_percentage_shareholding.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (!p3_BO_Form.bo_percentage_shareholding.$error.required ? 'input-filled': '') ">    
+                                        
+                                        
+                                        <input type="number" class="required" id="bo_percentage_shareholding" 
+                                               ng-min="1" ng-max="100"
+                                               name="bo_percentage_shareholding"
+                                               ng-model="BenOwner.Percentage_Shareholder__c" 
+                                               ng-required="true"
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="bo_percentage_shareholding" data-manditoryfield="Percentage Shareholding - mandatory field">Percentage Shareholding</label>
+                                        <div class="field_error" ng-messages="p3_BO_Form.bo_percentage_shareholding.$error" ng-if="p3_BO_Form.bo_percentage_shareholding.$touched && !p3_BO_Form.bo_percentage_shareholding.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                            <p ng-message="min">This field must have a value between 1 and 100.</p>
+                                            <p ng-message="max">This field must have a value between 1 and 100.</p>
+                                        </div>
+                                        <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                        <div class="tooltip-content">
+                                            <h4>{{ttHeaders.BeneficialOwnerPercentageShareHolding}}</h4>
+                                            <span class="btn-close"></span>
+                                            <p>{{ttContents.BeneficialOwnerPercentageShareHolding}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Business Country (Text/Picklist/Mandatory)
+								**************************************************************************  -->
+                                <div class="input-container">
+                                    <div ng-class="         (p3_BO_Form.bo_business_country.$invalid && p3_BO_Form.bo_business_country.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +  (BenOwner.Country__c.length > 0 ? 'input-filled': '') ">           
+                                        <select id="bo_business_country" class="required" style="border: 0px;"
+                                                name="bo_business_country"
+                                                ng-model="BenOwner.Country__c"
+                                                ng-options="bo_business_country for bo_business_country in countries"
+                                                ng-required="true"
+                                                ng-class="cssInputClass"
+                                                ng-change="checkCssInput(); changeBenCountry()" >                    
+                                        </select>                                        
+                                        <label for="bo_business_country" data-manditoryfield="Country - mandatory field">Country</label>
+                                        <div class="field_error" ng-messages="p3_BO_Form.bo_business_country.$error" ng-if="p3_BO_Form.bo_business_country.$touched && !p3_BO_Form.bo_business_country.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Address Line 1 (Text/Mandatory)
+								**************************************************************************  -->
+                                <div class="input-container">
+                                    <div ng-class="         (p3_BO_Form.bo_business_address_line_1.$invalid && p3_BO_Form.bo_business_address_line_1.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (BenOwner.Address_Line_1__c.length > 0 ? 'input-filled': '') ">           
+                                        <input type="text" class="required" id="bo_business_address_line_1" 
+                                               name="bo_business_address_line_1"
+                                               ng-model="BenOwner.Address_Line_1__c" 
+                                               ng-required="true"
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="bo_business_address_line_1" data-manditoryfield="Address Line 1 - mandatory field">Address Line 1</label>
+                                        <div class="field_error" ng-messages="p3_BO_Form.bo_business_address_line_1.$error" ng-if="p3_BO_Form.bo_business_address_line_1.$touched && !p3_BO_Form.bo_business_address_line_1.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                        <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                        <div class="tooltip-content">
+                                            <h4>{{ttHeaders.BeneficialOwnerAddressLine1}}</h4>
+                                            <span class="btn-close"></span>
+                                            <p>{{ttContents.BeneficialOwnerAddressLine1}}</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Address Line 2 (Text)
+								**************************************************************************  -->
+                                <div class="input-container">
+                                    <div ng-class="         (p3_BO_Form.bo_business_address_line_2.$invalid && p3_BO_Form.bo_business_address_line_2.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (BenOwner.Address_Line_2__c.length > 0 ? 'input-filled': '') ">           
+                                        <input type="text" id="bo_business_address_line_2" 
+                                               name="bo_business_address_line_2"
+                                               ng-model="BenOwner.Address_Line_2__c" 
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="bo_business_address_line_2" data-manditoryfield="Address Line 2">Address Line 2</label>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- City (Text/Mandatory)
+								**************************************************************************  -->
+                                <div class="input-container">
+                                    <div ng-class="         (p3_BO_Form.bo_business_city.$invalid && p3_BO_Form.bo_business_city.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (BenOwner.City__c.length > 0 ? 'input-filled': '') ">           
+                                        <input type="text" class="required" id="bo_business_city" 
+                                               name="bo_business_city"
+                                               ng-model="BenOwner.City__c" 
+                                               ng-required="true"
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="bo_business_city" data-manditoryfield="City - mandatory field">City</label>
+                                        <div class="field_error" ng-messages="p3_BO_Form.bo_business_city.$error" ng-if="p3_BO_Form.bo_business_city.$touched && !p3_BO_Form.bo_business_city.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Region (Text/Picklist/Mandatory)
+								**************************************************************************  -->
+                                <div class="input-container">
+                                    <div ng-class="         (p3_BO_Form.bo_business_region.$invalid && p3_BO_Form.bo_business_region.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +  (BenOwner.State_Province__c.length > 0 ? 'input-filled': '') ">           
+                                        <select type="text"
+                                                id="bo_business_region" 
+                                                class="required" 
+                                                style="border: 0px;"
+                                                name="bo_business_region"
+                                                ng-model="BenOwner.State_Province__c"
+                                                ng-options="reg for (reg, id) in boregions"
+                                                ng-required="true"
+                                                ng-class="cssInputClass"
+                                                ng-change="checkCssInput()" >
+                                        </select>                                        
+                                        <label for="bo_business_region" data-manditoryfield="{{BO_Region_Label}} - mandatory field">{{BO_Region_Label}}</label>
+                                        <div class="field_error" ng-messages="p3_BO_Form.bo_business_region.$error" ng-if="p3_BO_Form.bo_business_region.$touched && !p3_BO_Form.bo_business_region.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Postcode (Text/Mandatory)
+								**************************************************************************  -->
+                                <div class="input-container">
+                                    <div ng-class="         (p3_BO_Form.bo_business_postcode.$invalid && p3_BO_Form.bo_business_postcode.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (BenOwner.Postcode__c.length > 0 ? 'input-filled': '') ">           
+                                        <input type="text" class="required" id="bo_business_postcode" 
+                                               name="bo_business_postcode"
+                                               ng-model="BenOwner.Postcode__c" 
+                                               ng-required="true"
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="bo_business_postcode" data-manditoryfield="{{BO_Postcode_Label}} - mandatory field">{{BO_Postcode_Label}}</label>
+                                        <div class="field_error" ng-messages="p3_BO_Form.bo_business_postcode.$error" ng-if="p3_BO_Form.bo_business_postcode.$touched && !p3_BO_Form.bo_business_postcode.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Add Account Button
+								**************************************************************************  -->
+                                <a class="btn btn-add" href=""   ng-disabled="p3_BO_Form.$invalid" ng-click="createBeneficialOwner()">Add this account</a>
+                                
+                            </div>
+                            
+                            <!-- Beneficial Owner List
+							**************************************************************************  -->
+                            <div class="details-repeater-block">
+                                <h2 class="title-repeater-block">My Beneficial Owners</h2>
+                                <table class="table" style="margin:0; width: 100%" >
+                                    <thead>
+                                        <tr>
+                                            <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Business Name</th>
+                                            <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Owner Type</th>
+                                            <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Share</th>
+                                            <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Country</th>
+                                            <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="item" ng-repeat="current in beneficialowners" height="50">
+                                            <td>{{current.Registered_Business_Name__c}}</td>
+                                            <td>{{current.Owner_Type__c}}</td>
+                                            <td>{{current.Percentage_Shareholder__c}}</td>
+                                            <td>{{current.Country__c}}</td>
+                                            <td ng-show="showHide('DirectorEntry')" width="100">
+                                                <a href="" ng-click="editBeneficialOwner(current)">edit</a>
+                                                <a href="" class="remove" ng-click="deleteBeneficialOwner(current,current.Id,$event)">remove</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- TRY HERE -->
+                        </fieldset>
+                        
+                    </div>
+                    
+                    
+                    <!-- *********************************************************************
+                    *
+                    *   Beneficial Owner - Drag and drop component
+                    *
+                    *********************************************************************  -->
+                    
+                    <div ng-show="showHide('DragZone')">
+                        <c:DragDropZone />
+                    </div>
+                    
+                </div>
+                
+                
+                
+                
+                
+            </form> <!-- "p3_BO_Form" -->    
+            
+            
+            
+            <!-- **************************************************************************
+            *
+            *   BUSINESS DIRECTORS DETAIL PANEL
+            *
+            **************************************************************************  -->
+            
+            <form name="p3_BDir_Form" novalidate="novalidate" ng-class="setPanel('BusinessDirectors')" ng-show="showHide('DirectorsPanel')">
+                
+                <div  class="panel-heading ng-class:{'progress': beneficialowners.length > 0, 'progress complete': directors.length > 0};"
+                     role="tab" id="headingFive" ng-click="setStages('Business Directors')">
+                    <h4 class="panel-title" ng-click="saveRego()">
+                        <a  class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" 
+                           href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">PLEASE LIST YOUR BUSINESS DIRECTORS</a>
+                    </h4>
+                </div>
+                
+                
+                
+                
+                <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                    <div id="directorsDetails" class="panel-body">
+                        
+                        <!-- TRY HERE -->
+                        <fieldset ng-disabled="checkDisable('Disable_Form')">
+                            
+                            <div ng-show="showHide('DirectorEntry')">                    
+                                
+                                <!-- Title (Text/Picklist/Mandatory)
+								**************************************************************************  -->
+                                <div class="input-container">
+                                    <div ng-class="         (p3_BDir_Form.dir_salutation.$invalid && p3_BDir_Form.dir_salutation.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +  (dir_salutation.length > 0 ? 'input-filled': '') ">           
+                                        <select id="dir_salutation" class="required" style="border: 0px;"
+                                                name="dir_salutation"
+                                                ng-model="dir_salutation"
+                                                ng-options="dir_salutation for dir_salutation in dirsalutations"
+                                                ng-required="true"
+                                                ng-class="cssInputClass"
+                                                ng-change="checkCssInput()" >                    
+                                        </select>                                        
+                                        <label for="dir_salutation" data-manditoryfield="Title - mandatory field">Title</label>
+                                        <div class="field_error" ng-messages="p3_BDir_Form.dir_salutation.$error" ng-if="p3_BDir_Form.dir_salutation.$touched && !p3_BDir_Form.dir_salutation.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- First Name (Text/Mandatory)
+								**************************************************************************  -->
+                                <div class="input-container">
+                                    <div ng-class="         (p3_BDir_Form.dir_first_name.$invalid && p3_BDir_Form.dir_first_name.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (dir_first_name.length > 0 ? 'input-filled': '') ">           
+                                        <input type="text" class="required" id="dir_first_name" 
+                                               name="dir_first_name"
+                                               ng-model="dir_first_name" 
+                                               ng-required="true"
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="dir_first_name" data-manditoryfield="First Name - mandatory field">First Name</label>
+                                        <div class="field_error" ng-messages="p3_BDir_Form.dir_first_name.$error" ng-if="p3_BDir_Form.dir_first_name.$touched && !p3_BDir_Form.dir_first_name.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Middle Name (Text)
+								**************************************************************************  -->
+                                <div class="input-container">
+                                    <div ng-class="         (p3_BDir_Form.dir_middle_name.$invalid && p3_BDir_Form.dir_middle_name.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (dir_middle_name.length > 0 ? 'input-filled': '') ">           
+                                        <input type="text" id="dir_middle_name" 
+                                               name="dir_middle_name"
+                                               ng-model="dir_middle_name" 
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="dir_middle_name" data-manditoryfield="Middle Name">Middle Name</label>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Last Name (Text/Mandatory)
+								**************************************************************************  -->
+                                <div class="input-container">
+                                    <div ng-class="         (p3_BDir_Form.dir_last_name.$invalid && p3_BDir_Form.dir_last_name.$touched ? 'input-container field_error': 'input-container') 
+                                                   + ' ' +    (dir_last_name.length > 0 ? 'input-filled': '') ">           
+                                        <input type="text" class="required" id="dir_last_name" 
+                                               name="dir_last_name"
+                                               ng-model="dir_last_name" 
+                                               ng-required="true"
+                                               ng-class="cssInputClass"
+                                               ng-change="checkCssInput()" />
+                                        <label for="dir_last_name" data-manditoryfield="Last Name - mandatory field">Last Name</label>
+                                        <div class="field_error" ng-messages="p3_BDir_Form.dir_last_name.$error" ng-if="p3_BDir_Form.dir_last_name.$touched && !p3_BDir_Form.dir_last_name.$valid">
+                                            <p ng-message="required">This field is required.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                
+                                <!-- Add Director Button
+								**************************************************************************  -->
+                                <a class="btn btn-add" href=""  ng-disabled="p3_BDir_Form.$invalid" ng-click="createDirector()">Add This Director</a>
+                                
+                            </div>
+                            
+                            <!-- Directors List
+							**************************************************************************  -->
+                            <div class="details-repeater-block">
+                                <h2 class="title-repeater-block">My Directors</h2>
+                                <table class="table" style="margin:0; width: 100%" >
+                                    <thead>
+                                        <tr>
+                                            <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Title</th>
+                                            <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">First Name</th>
+                                            <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Middle Name</th>
+                                            <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Last Name</th>
+                                            <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey"></th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr class="item" ng-repeat="current in directors" height="50">
+                                            <td>{{current.Salutation__c}}</td>
+                                            <td>{{current.First_Name__c}}</td>
+                                            <td>{{current.Middle_Name__c}}</td>
+                                            <td>{{current.Last_Name__c}}</td>
+                                            <td ng-show="showHide('DirectorEntry')" width="100">
+                                                <a href="" ng-click="editDirector(current)">edit</a>
+                                                <a href="" class="remove"  ng-click="deleteDirector(current,current.Id,$event)">remove</a>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            
+                            <!-- TRY HERE -->
+                        </fieldset>
+                        
+                    </div>
+                    
+                    
+                    <!-- *********************************************************************
+                    *
+                    *   Business Directors - Drag and drop component
+                    *
+                    *********************************************************************  -->
+                    
+                    <div ng-show="showHide('DragZone')">
+                        <c:DragDropZone />
+                    </div>
+                    
+                    
+                </div>
+                
+                
+                
+                
+            </form> <!-- "p3_BDir_Form"-->    
+            
+            
+            
+            <!-- **************************************************************************
+            *
+            *   TRAVEL GROUP DETAILS PANEL
+            *
+            Listed_Exchange__c,
+            Agency_Group__c,
+            Industry_Type__c,
+            GDS_Details__c,
+            PCC_or_SID__c,
+            IATA_ARC_TIDS_Number__c
+            **************************************************************************  -->
+            
+            <form name="p3_TG_Form" novalidate="novalidate" ng-class="setPanel('TravelGroups')"  ng-show="showHide('TravelGroupPanel')">
+                
+                <div  class="panel-heading ng-class:{'progress': p3_BDir_Form.$valid, 'progress complete': p3_TG_Form.$valid};" 
+                     role="tab" id="headingSix" ng-click="setStages('Travel Group Details')">
+                    <h4 class="panel-title" ng-click="saveRego()">
+                        <a  class="accordion-toggle collapsed" role="button" data-toggle="collapse" data-parent="#accordion" 
+                           href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">Travel Group Details</a>
+                    </h4>
+                </div>
+                
+                
+                
+                
+                <div id="collapseSix" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingSix">
+                    <div id="travelDetails" class="panel-body">
+                        
+                        <!-- TRY HERE -->
+                        <fieldset ng-disabled="checkDisable('Disable_Form')">
+                            
+                            
+                            <!-- Account Group (Text/Picklist/Mandatory if Sector = Agency and Country = Aus/NZ)
+							**************************************************************************  -->
+                            <div class="input-container" ng-if="showHide('accountGroupDiv')">
+                                <div ng-class="         (p3_TG_Form.agency_group.$invalid && p3_TG_Form.agency_group.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +  (registration.Agency_Group__c.length > 0 ? 'input-filled': '') ">           
+                                    <select id="agency_group" class="required" style="border: 0px;"
+                                            name="agency_group"
+                                            ng-model="registration.Agency_Group__c" 
+                                            ng-options="agency_group for agency_group in agencygroups"
+                                            ng-required="true"
+                                            ng-class="cssInputClass"
+                                            ng-change="checkCssInput()" >                    
+                                    </select>                                        
+                                    <label for="agency_group" data-manditoryfield="Agency Group - mandatory field">Agency Group</label>
+                                    <div class="field_error" ng-messages="p3_TG_Form.agency_group.$error" ng-if="p3_TG_Form.agency_group.$touched && !p3_TG_Form.agency_group.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <!-- Industry Type (Text/Mandatory if Sector = Corporate)
+							**************************************************************************  -->
+                            <div class="input-container" ng-if="showHide('industryTypeDiv')">
+                                <div ng-class="         (p3_TG_Form.industry_type.$invalid && p3_TG_Form.industry_type.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.Industry_Type__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" class="required" id="industry_type" 
+                                           name="industry_type"
+                                           ng-model="registration.Industry_Type__c" 
+                                           ng-required="true"
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="industry_type" data-manditoryfield="Industry Type - mandatory field">Industry Type</label>
+                                    <div class="field_error" ng-messages="p3_TG_Form.industry_type.$error" ng-if="p3_TG_Form.industry_type.$touched && !p3_TG_Form.industry_type.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.IndustryType}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.IndustryType}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            
+                            <!-- IATA (Text/Visible if Sector = agency and consolidator or TMC)
+							**************************************************************************  -->
+                            <div class="input-container" ng-if="showHide('IATADiv')">
+                                <div ng-class="         (p3_TG_Form.IATA_Number.$invalid && p3_TG_Form.IATA_Number.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.IATA_ARC_TIDS_Number__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" 
+                                           id="IATA_Number" 
+                                           name="IATA_Number"
+                                           ng-model="registration.IATA_ARC_TIDS_Number__c" 
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="IATA_Number" data-manditoryfield="IATA/ARC/TIDS Number">IATA/ARC/TIDS Number</label>
+                                    <div class="field_error" ng-messages="p3_TG_Form.IATA_Number.$error" ng-if="p3_TG_Form.IATA_Number.$touched && !p3_TG_Form.IATA_Number.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+                            <!-- GDS Details (Text if Sector = Agent, Consolidator or Wholesale)
+                            **************************************************************************  -->
+
+                            <div class="input-container" ng-if="showHide('GDS')">
+                                <div ng-class="         (p3_TG_Form.GDS.$invalid && p3_TG_Form.GDS.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.GDS_Details__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" id="GDS" 
+                                           name="GDS"
+                                           ng-model="registration.GDS_Details__c" 
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="GDS" data-manditoryfield="GDS Details - mandatory field">GDS Details</label>
+                                    <div class="field_error" ng-messages="p3_TG_Form.GDS.$error" ng-if="p3_TG_Form.GDS.$touched && !p3_TG_Form.GDS.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.GDSDetails}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.GDSDetails}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+<!--
+
+                            <div class="input-container" ng-if="showHide('GDS')">
+                                <div ng-class="         (p3_TG_Form.GDS.$invalid && p3_TG_Form.GDS.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.GDS_Details__c.length > 0 ? 'input-filled': '') ">           
+                                    <select multiple="multiple" 
+                                            class="chosen-select" 
+                                            ng-model="registration.GDS_Details__c"
+                                            id="GDS"
+                                            name="GDS"
+                                            ng-options="GDS_vals for GDS_vals in gdsvals"
+                                            ng-class="cssInputClass"
+                                            ng-change="checkCssInput()" >                    
+                                    </select>                                        
+                                    <label for="GDS" data-manditoryfield="GDS Details - mandatory field">GDS Details</label>
+                                    <div class="field_error" ng-messages="p3_TG_Form.GDS.$error" ng-if="p3_TG_Form.GDS.$touched && !p3_TG_Form.GDS.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.GDSDetails}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.GDSDetails}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+-->
+
+
+                            <!-- PCC or SID (Text if Sector = Agent, Consolidator or Wholesale)
+                            **************************************************************************  -->
+                            <div class="input-container" ng-if="showHide('PCC_SID')">
+                                <div ng-class="         (p3_TG_Form.PCC_SID.$invalid && p3_TG_Form.PCC_SID.$touched ? 'input-container field_error': 'input-container') 
+                                               + ' ' +    (registration.PCC_or_SID__c.length > 0 ? 'input-filled': '') ">           
+                                    <input type="text" id="PCC_SID" 
+                                           name="PCC_SID"
+                                           ng-model="registration.PCC_or_SID__c" 
+                                           ng-class="cssInputClass"
+                                           ng-change="checkCssInput()" />
+                                    <label for="PCC_SID" data-manditoryfield="PCC or SID - mandatory field">PCC or SID</label>
+                                    <div class="field_error" ng-messages="p3_TG_Form.PCC_SID.$error" ng-if="p3_TG_Form.PCC_SID.$touched && !p3_TG_Form.PCC_SID.$valid">
+                                        <p ng-message="required">This field is required.</p>
+                                    </div>
+                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                    <div class="tooltip-content">
+                                        <h4>{{ttHeaders.PCCorSID}}</h4>
+                                        <span class="btn-close"></span>
+                                        <p>{{ttContents.PCCorSID}}</p>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+
+
+
+
+
+
+
+                            
+                        </fieldset>
+                        
+                    </div>
+                    
+                    
+                    <!-- *********************************************************************
+                    *
+                    *   Travel Group - Drag and drop component
+                    *
+                    *********************************************************************  -->
+                    
+                    <div ng-show="showHide('DragZone')">
+                        <c:DragDropZone />
+                    </div>
+                    
+                </div>
+                
+                
+                
+            </form> <!-- "p3_TG_Form" -->    
+            
+            
+        </div> <!-- .panel-group -->
+        
+        
+        <div class="btn-footer">
+            <div class="col-xs-12 col-sm-6 col-md-4 item">
+                <div class="col-xs-12 col-sm-4 btn-wrapper btn-next-wrapper">
+                    <a href="#" class="btn btn-primary btn-back anchor-link" data-btnstep="step2"><span>Back</span></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 item">
+                <a href="" ng-click="saveAndContinue()" class="btn btn-primary"><span>Save and continue later</span></a>
+            </div>
+            <!--
+            <div ng-disabled="checkDisable('P3_Next')" class="col-xs-12 col-md-4 item">
+            -->
+            <div class="col-xs-12 col-md-4 item">
+                <div class="col-xs-12 col-sm-4 btn-wrapper btn-next-wrapper">
+                    <a ng-disabled="checkDisable('P3_Next')" href="#" class="btn btn-primary btn-next anchor-link" data-btnstep="step4" ng-click="setStages('Funding Accounts'); saveRego();getBankAccounts();getPayableBankAccounts();getReceivableBankAccounts();getBillingBankAccounts()"><span>Next</span></a>
+                    <input type="button" value="Submit" class="btn-next-submit"/>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+     
+</apex:component>

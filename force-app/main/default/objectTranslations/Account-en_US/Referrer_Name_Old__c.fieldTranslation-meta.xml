@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Referrer Name_Old --></label>
+    <name>Referrer_Name_Old__c</name>
+    <picklistValues>
+        <masterLabel>About Payments Consulting B.V</masterLabel>
+        <translation><!-- About Payments Consulting B.V --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CCRA International</masterLabel>
+        <translation><!-- CCRA International --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Club Travel SA (Pty) Ltd</masterLabel>
+        <translation><!-- Club Travel SA (Pty) Ltd --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Computop GmbH</masterLabel>
+        <translation><!-- Computop GmbH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contac Services Inc</masterLabel>
+        <translation><!-- Contac Services Inc --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dolphin Dynamics Limited</masterLabel>
+        <translation><!-- Dolphin Dynamics Limited --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gant Travel Management Ltd</masterLabel>
+        <translation><!-- Gant Travel Management Ltd --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gateway</masterLabel>
+        <translation><!-- Gateway --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Globa.li</masterLabel>
+        <translation><!-- Globa.li --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Globalcollect</masterLabel>
+        <translation><!-- Globalcollect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Globalstar</masterLabel>
+        <translation><!-- Globalstar --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mastercard</masterLabel>
+        <translation><!-- Mastercard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mr Orange</masterLabel>
+        <translation><!-- Mr Orange --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multicom Products</masterLabel>
+        <translation><!-- Multicom Products --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Navitas Solutions Limited</masterLabel>
+        <translation><!-- Navitas Solutions Limited --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pyton Communication Services B.V.</masterLabel>
+        <translation><!-- Pyton Communication Services B.V. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rezopia Inc.</masterLabel>
+        <translation><!-- Rezopia Inc. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travelport SMO</masterLabel>
+        <translation><!-- Travelport SMO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vibe Software Limited</masterLabel>
+        <translation><!-- Vibe Software Limited --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Voxel Media Srl Bavel</masterLabel>
+        <translation><!-- Voxel Media Srl Bavel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Welcome Travel Group</masterLabel>
+        <translation><!-- Welcome Travel Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>easyJet</masterLabel>
+        <translation><!-- easyJet --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

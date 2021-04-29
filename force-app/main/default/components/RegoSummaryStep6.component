@@ -1,0 +1,30 @@
+<apex:component >
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTweleve">
+        <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTweleve" aria-expanded="true" aria-controls="collapseTweleve"> Business Directors</a></h4>
+    </div>
+    <div id="collapseTweleve" class="panel-collapse collapse wrapper-review" role="tabpanel" aria-labelledby="headingTweleve">
+        <div id="directorsDetails" class="panel-body">
+            <!-- form element Start-->
+          <a class="btn-edit" href="#" data-stepsection="step3::headingFive">edit</a>
+          <ul class="listing-review">
+            <li><a href="#">Title</a></li>
+            <li><a href="#">First name</a></li>
+            <li><a href="3">Middle name</a></li>
+            <li><a href="#">Last name</a></li>
+            <li><a href="#">The name of the exchange your are listed on</a></li>
+            <li>
+              <ul class="listing-files">
+                <li>Uploaded Files:</li>
+                <li><a href="#">File1.jpg</a></li>
+                <li><a href="#">File2.jpg</a></li>
+                <li><a href="#">File3.jpg</a></li>
+              </ul>
+            </li>
+          </ul>
+
+        </div>
+    </div>
+</div>
+
+</apex:component>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DD_Approved__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISPICKVAL(eNett_Contract__r.Account_Name__r.DD_Status__c, &quot;DD Approved&quot;), TRUE, FALSE)</formula>
+    <label>DD Approved</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

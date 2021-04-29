@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Relationship Channel --></label>
+    <name>Relationship_Channel__c</name>
+    <picklistValues>
+        <masterLabel>External Registration</masterLabel>
+        <translation><!-- External Registration --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>F2F (client’s office)</masterLabel>
+        <translation><!-- F2F (client’s office) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>F2F (eNett office, other event)</masterLabel>
+        <translation><!-- F2F (eNett office, other event) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Remote (non face to face)</masterLabel>
+        <translation><!-- Remote (non face to face) --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

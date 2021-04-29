@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Open_Contract_Tasks</fullName>
+    <columns>NAME</columns>
+    <columns>Due_Date_Indicator__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>ECN__c</columns>
+    <columns>Related_Account__c</columns>
+    <columns>Task_Name__c</columns>
+    <columns>eNett_Contract__c</columns>
+    <columns>Status__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Status__c</field>
+        <operation>equals</operation>
+        <value>In Progress,Deferred</value>
+    </filters>
+    <filters>
+        <field>eNett_Contract__c</field>
+        <operation>notEqual</operation>
+    </filters>
+    <label>My Open Contract Tasks</label>
+</ListView>

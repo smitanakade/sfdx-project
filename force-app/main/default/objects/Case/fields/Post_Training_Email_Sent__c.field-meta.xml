@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Post_Training_Email_Sent__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The date when the email was sent to the client following the completion of the training.  The email is automatically sent when the &#39;Training Completed&#39; date is entered.</inlineHelpText>
+    <label>Post Training Email Sent</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

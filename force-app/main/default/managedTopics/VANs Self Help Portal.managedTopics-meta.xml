@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedTopics xmlns="http://soap.sforce.com/2006/04/metadata">
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Featured:Billing</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Billing</name>
+        <parentName/>
+        <position>3</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Featured:Funding</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Funding</name>
+        <parentName/>
+        <position>2</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Featured:Getting Started</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Getting Started</name>
+        <parentName/>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Featured:Integrations/ Third Party Plug-In</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Integrations/ Third Party Plug-In</name>
+        <parentName/>
+        <position>6</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Featured:Reporting</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Reporting</name>
+        <parentName/>
+        <position>4</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Featured:Security</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Security</name>
+        <parentName/>
+        <position>5</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Featured:Using VANs</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Using VANs</name>
+        <parentName/>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:3DS</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>3DS</name>
+        <parentName>Security</parentName>
+        <position>2</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:API</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>API</name>
+        <parentName>Integrations/ Third Party Plug-In</parentName>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Account Changes</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Account Changes</name>
+        <parentName>Getting Started</parentName>
+        <position>4</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Account Funding</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Account Funding</name>
+        <parentName>Funding</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Batch Import</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Batch Import</name>
+        <parentName>Reporting</parentName>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Billing</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Billing</name>
+        <parentName/>
+        <position>3</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Chargebacks</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Chargebacks</name>
+        <parentName>Security</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Currencies</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Currencies</name>
+        <parentName>Funding</parentName>
+        <position>2</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:FX</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>FX</name>
+        <parentName>Funding</parentName>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Funding</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Funding</name>
+        <parentName/>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:GDS</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>GDS</name>
+        <parentName>Integrations/ Third Party Plug-In</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Generating Reports</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Generating Reports</name>
+        <parentName>Reporting</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Getting Started</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Getting Started</name>
+        <parentName/>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Integrations/ Third Party Plug-In</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Integrations/ Third Party Plug-In</name>
+        <parentName/>
+        <position>6</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Issuing VANs</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Issuing VANs</name>
+        <parentName>Using VANs</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Merchant Categories</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Merchant Categories</name>
+        <parentName>Getting Started</parentName>
+        <position>2</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Monthly Billing</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Monthly Billing</name>
+        <parentName>Billing</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:NATs</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>NATs</name>
+        <parentName>Security</parentName>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Non-Standard Reports</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Non-Standard Reports</name>
+        <parentName>Reporting</parentName>
+        <position>2</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Reporting</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Reporting</name>
+        <parentName/>
+        <position>4</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Scheduled Reports</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Scheduled Reports</name>
+        <parentName>Reporting</parentName>
+        <position>3</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Security</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Security</name>
+        <parentName/>
+        <position>5</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Training Videos</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Training Videos</name>
+        <parentName/>
+        <position>7</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:User References</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>User References</name>
+        <parentName>Getting Started</parentName>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Users</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Users</name>
+        <parentName>Getting Started</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:Using VANs</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Using VANs</name>
+        <parentName/>
+        <position>2</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>VANs Self Help Portal.Navigational:VAN Defaults</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>VAN Defaults</name>
+        <parentName>Getting Started</parentName>
+        <position>3</position>
+        <topicDescription/>
+    </managedTopic>
+</ManagedTopics>

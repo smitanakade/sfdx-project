@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Removing_Legal_Parent</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISNEW()), 
+ISCHANGED(Legal_Parent__c), 
+OR(ISPICKVAL(Account_Type__c, &#39;Affiliate&#39;),ISPICKVAL(Account_Type__c, &#39;Additional ECN&#39;)), 
+ISBLANK(Legal_Parent__c)
+)</errorConditionFormula>
+    <errorDisplayField>Legal_Parent__c</errorDisplayField>
+    <errorMessage>You cannot remove the legal parent</errorMessage>
+</ValidationRule>

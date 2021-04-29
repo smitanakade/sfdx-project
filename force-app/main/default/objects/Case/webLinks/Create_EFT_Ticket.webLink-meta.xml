@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_EFT_Ticket</fullName>
+    <availability>online</availability>
+    <description>Used by Delivery for eNett EFT API only</description>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create EFT Ticket</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+
+var profileName = &#39;{!$Profile.Name}&#39;; 
+
+if (profileName.indexOf(&quot;Delivery&quot;) &gt; -1) { 
+
+var accID = &quot;{!Account.Id}&quot;; 
+var queryResult = sforce.connection.query(&quot;SELECT Id, eNett_products__c FROM Account WHERE Id = &#39;&quot; + accID + &quot;&#39; AND eNett_products__c INCLUDES (&#39;eNett&#39;)&quot;); 
+var qResult = sforce.connection.query(&quot;SELECT Id, Delivery_Type__c, AccountId FROM Case WHERE AccountId = &#39;&quot; + accID + &quot;&#39; AND Delivery_Type__c = &#39;Delivery - eNett EFT&#39; LIMIT 1&quot;); 
+
+if (!queryResult.getArray(&quot;records&quot;) || queryResult.getArray(&quot;records&quot;).length == 0) { 
+alert(&quot;Cannot create eNett EFT Delivery Ticket as this Account does not have eNett listed as an eNett Product.&quot;); 
+} else if (qResult.getArray(&quot;records&quot;) == null || qResult.getArray(&quot;records&quot;).length &gt; 0) { 
+alert(&quot;Cannot create EFT Delivery Ticket as this Account already has an EFT Delivery Ticket.&quot;); 
+} else { 
+
+var dtString = &quot;Delivery - eNett EFT&quot;; 
+var subString = &quot;Delivery -&quot;; 
+
+window.location = &#39;/500/e?RecordType=012900000012Is4AAE&amp;cas4={!Account.Name}&amp;cas4={!Account.Id}&amp;00N9000000D03pH=&#39; + dtString + &#39;&amp;cas14=&#39; + subString + &#39;+{!Account.Name}&#39;; 
+
+} 
+} else { 
+alert(&quot;Only users that are a part of a Delivery profile can create Delivery Tickets.&quot;); 
+}</url>
+</WebLink>

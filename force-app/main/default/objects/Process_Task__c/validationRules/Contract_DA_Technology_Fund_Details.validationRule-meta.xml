@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_DA_Technology_Fund_Details</fullName>
+    <active>true</active>
+    <description>The Technology Fund Details field must be populated when the Technology Fund checkbox has been ticked.</description>
+    <errorConditionFormula>AND( 
+RecordType.Name = &quot;Contract_Deal_Arrangement&quot;, 
+Technology_Fund_API_Integration__c = True,
+ISBLANK(Technology_Fund_Details__c )
+)</errorConditionFormula>
+    <errorMessage>The Technology Fund Details field must be populated when the Technology Fund checkbox has been ticked.</errorMessage>
+</ValidationRule>

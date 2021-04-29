@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ECN__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(Director__c)), Director__r.Registration__r.Account__r.ECN__c, (IF(NOT(ISBLANK(Beneficial_Owner__c)), Beneficial_Owner__r.Registration__r.Account__r.ECN__c, Registration__r.Account__r.ECN__c)))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>ECN</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

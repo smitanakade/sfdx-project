@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>NAME</columns>
+    <columns>Account_ECN__c</columns>
+    <columns>Registered_Company_Name__c</columns>
+    <columns>Registration_Type__c</columns>
+    <columns>Registration_Status__c</columns>
+    <columns>Product__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>DD_Status__c</columns>
+    <columns>DD_Revision__c</columns>
+    <columns>Risk_Rating__c</columns>
+    <columns>CREATEDBY_USER</columns>
+    <columns>LAST_UPDATE</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

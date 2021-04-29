@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>APAC_Active_Other_Products</fullName>
+    <columns>ECN__c</columns>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Trading_As__c</columns>
+    <columns>Account_Type__c</columns>
+    <columns>eNett_products__c</columns>
+    <columns>Region__c</columns>
+    <columns>ACCOUNT.ADDRESS1_COUNTRY</columns>
+    <columns>DD_Status__c</columns>
+    <columns>Account_Status__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ECN_Number__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>eNett_products__c</field>
+        <operation>notEqual</operation>
+        <value>VANs</value>
+    </filters>
+    <filters>
+        <field>DD_Status__c</field>
+        <operation>notEqual</operation>
+        <value>DD Declined</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>APAC</value>
+    </filters>
+    <filters>
+        <field>Account_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <label>APAC - Active Other Products</label>
+    <sharedTo>
+        <role>APAC_AU_NZ_Sales</role>
+        <role>APAC_Asia_Sales</role>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Once checked a message will appear at the top of the Account page to alert users not to contact this client. --></help>
+    <label><!-- Do Not Contact --></label>
+    <name>Do_Not_Contact__c</name>
+</CustomFieldTranslation>

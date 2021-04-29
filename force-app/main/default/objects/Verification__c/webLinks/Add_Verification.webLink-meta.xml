@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Add_Verification</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Verification</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/{!$Setup.ObjectReferenceIds__c.Verification_Object_Prefix__c}/e?RecordType={!$Setup.recTypesVer__c.Company_Information_Evidence__c}&amp;CF{!$Setup.ObjectReferenceIds__c.Verification_Registration__c}={!Registration__c.Name}&amp;CF{!$Setup.ObjectReferenceIds__c.Verification_Registration__c}_lkid={!Registration__c.Id}&amp;retURL=%2F{!Registration__c.Id}&amp;nooverride=1</url>
+</WebLink>

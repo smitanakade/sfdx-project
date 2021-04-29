@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_DA_Flat_Not_Entering_Tier</fullName>
+    <active>true</active>
+    <description>Make sure that &quot;Tier&quot; fields are not entered when Rebate Type field is &quot;Flat&quot;</description>
+    <errorConditionFormula>AND( 
+RecordType.DeveloperName = &quot;Contract_Deal_Arrangement&quot;, 
+ISPICKVAL(Rebate_Type__c,&#39;Flat&#39;), 
+OR(
+NOT(ISBLANK(Tier_1_Fixed_Share__c)),
+NOT(ISBLANK(Tier_1_Fixed_Range_From__c)),
+NOT(ISBLANK(Tier_1_Fixed_Range_To__c)),
+NOT(ISBLANK(Tier_1_Int_Range_From__c)),
+NOT(ISBLANK(Tier_1_Int_Range_To__c)),
+NOT(ISBLANK(Tier_2_Interchange_Share__c)),
+NOT(ISBLANK(Tier_2_Fixed_Share__c)),
+NOT(ISBLANK(Tier_2_Fixed_Range_From__c)),
+NOT(ISBLANK(Tier_2_Fixed_Range_To__c)),
+NOT(ISBLANK(Tier_2_Int_Range_From__c)),
+NOT(ISBLANK(Tier_2_Int_Range_To__c)),
+NOT(ISBLANK(Tier_3_Interchange_Share__c)),
+NOT(ISBLANK(Tier_3_BPS__c)),
+NOT(ISBLANK(Tier_3_Fixed_Share__c)),
+NOT(ISBLANK(Tier_3_Fixed_Range_From__c)),
+NOT(ISBLANK(Tier_3_Fixed_Range_To__c)),
+NOT(ISBLANK(Tier_3_Int_Range_From__c)),
+NOT(ISBLANK(Tier_3_Int_Range_To__c)), 
+(ISPICKVAL(Tiered_Rebate_Calculation_Frequency__c, &quot;Monthly&quot;)),
+(ISPICKVAL(Tiered_Rebate_Calculation_Frequency__c, &quot;Yearly&quot;))) 
+)</errorConditionFormula>
+    <errorMessage>Values are not allowed in the fields begins with &quot;Tier&quot;, as you have selected a Rebate Type as Flat.</errorMessage>
+</ValidationRule>

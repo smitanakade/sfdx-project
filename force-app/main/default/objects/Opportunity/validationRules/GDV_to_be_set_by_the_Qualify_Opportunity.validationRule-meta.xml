@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GDV_to_be_set_by_the_Qualify_Opportunity</fullName>
+    <active>true</active>
+    <description>The GDV field is to be set by the Qualify Opportunity upon completion of the Task. After the initial population of the GDV value users can edit the GDV and the justification functionality will apply.</description>
+    <errorConditionFormula>OR(
+AND(NOT(ISNEW()),
+ISPICKVAL(StageName, &#39;1. Prospect&#39;), OR(AND(ISCHANGED(attainable_ttv_monthly__c),NOT(ISBLANK(attainable_ttv_monthly__c))),ISCHANGED(CurrencyIsoCode)),NOT(ISCHANGED(Delivery_Status__c)))
+)</errorConditionFormula>
+    <errorMessage>Please enter the Attainable GDV (monthly) value and Currency in the Qualify Opportunity Task and complete the Task.</errorMessage>
+</ValidationRule>

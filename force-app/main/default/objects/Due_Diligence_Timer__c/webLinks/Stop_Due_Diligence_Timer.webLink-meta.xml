@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Stop_Due_Diligence_Timer</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Stop Due Diligence Timer</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/{!Due_Diligence_Timer__c.Id}/e?00N9000000AbKeM={!NOW()}&amp;saveURL=/{!Account.Id}&amp;cancelURL=/{!Account.Id}</url>
+</WebLink>

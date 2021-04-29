@@ -1,0 +1,690 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObjectTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fieldSets>
+        <label><!-- Account Filter Fields --></label>
+        <name>MC4SF__Account_Filter_Fields</name>
+    </fieldSets>
+    <layouts>
+        <layout>Additional ECN Layout</layout>
+        <sections>
+            <label><!-- Account Hierarchy --></label>
+            <section>Account Hierarchy</section>
+        </sections>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Business Address --></label>
+            <section>Business Address</section>
+        </sections>
+        <sections>
+            <label><!-- Charts --></label>
+            <section>Charts</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Rationalisation --></label>
+            <section>Customer Rationalisation</section>
+        </sections>
+        <sections>
+            <label><!-- Field History --></label>
+            <section>Field History</section>
+        </sections>
+        <sections>
+            <label><!-- General notes --></label>
+            <section>General notes</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label><!-- Settlement Actual Amount --></label>
+            <section>Settlement Actual Amount</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Affiliate Layout</layout>
+        <sections>
+            <label><!-- Account Hierarchy --></label>
+            <section>Account Hierarchy</section>
+        </sections>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Business Address --></label>
+            <section>Business Address</section>
+        </sections>
+        <sections>
+            <label><!-- Charts --></label>
+            <section>Charts</section>
+        </sections>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Rationalisation --></label>
+            <section>Customer Rationalisation</section>
+        </sections>
+        <sections>
+            <label><!-- Due Diligence --></label>
+            <section>Due Diligence</section>
+        </sections>
+        <sections>
+            <label><!-- Field History --></label>
+            <section>Field History</section>
+        </sections>
+        <sections>
+            <label><!-- General notes --></label>
+            <section>General notes</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label><!-- Referrer / Information --></label>
+            <section>Referrer / Information</section>
+        </sections>
+        <sections>
+            <label><!-- Referrer notes --></label>
+            <section>Referrer notes</section>
+        </sections>
+        <sections>
+            <label><!-- Registered Business Address --></label>
+            <section>Registered Business Address</section>
+        </sections>
+        <sections>
+            <label><!-- Settlement Actual Amount --></label>
+            <section>Settlement Actual Amount</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Channel Agreement Layout</layout>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Business Address --></label>
+            <section>Business Address</section>
+        </sections>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- Field History --></label>
+            <section>Field History</section>
+        </sections>
+        <sections>
+            <label><!-- General notes --></label>
+            <section>General notes</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Client Layout</layout>
+        <sections>
+            <label><!-- Account Hierarchy --></label>
+            <section>Account Hierarchy</section>
+        </sections>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Business Address --></label>
+            <section>Business Address</section>
+        </sections>
+        <sections>
+            <label><!-- Charts --></label>
+            <section>Charts</section>
+        </sections>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Rationalisation --></label>
+            <section>Customer Rationalisation</section>
+        </sections>
+        <sections>
+            <label><!-- Due Diligence --></label>
+            <section>Due Diligence</section>
+        </sections>
+        <sections>
+            <label><!-- Field History --></label>
+            <section>Field History</section>
+        </sections>
+        <sections>
+            <label><!-- General notes --></label>
+            <section>General notes</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label><!-- Referrer Information --></label>
+            <section>Referrer Information</section>
+        </sections>
+        <sections>
+            <label><!-- Referrer notes --></label>
+            <section>Referrer notes</section>
+        </sections>
+        <sections>
+            <label><!-- Registered Business Address --></label>
+            <section>Registered Business Address</section>
+        </sections>
+        <sections>
+            <label><!-- Settlement Actual Amount --></label>
+            <section>Settlement Actual Amount</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Historical Account Layout</layout>
+        <sections>
+            <label><!-- Business Address --></label>
+            <section>Business Address</section>
+        </sections>
+        <sections>
+            <label><!-- Charts --></label>
+            <section>Charts</section>
+        </sections>
+        <sections>
+            <label><!-- Client System Hierarchy --></label>
+            <section>Client System Hierarchy</section>
+        </sections>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Rationalisation --></label>
+            <section>Customer Rationalisation</section>
+        </sections>
+        <sections>
+            <label><!-- Due Diligence --></label>
+            <section>Due Diligence</section>
+        </sections>
+        <sections>
+            <label><!-- General notes --></label>
+            <section>General notes</section>
+        </sections>
+        <sections>
+            <label><!-- Introducer / Referrer Information --></label>
+            <section>Introducer / Referrer Information</section>
+        </sections>
+        <sections>
+            <label><!-- Onboarding --></label>
+            <section>Onboarding</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label><!-- Referrer notes --></label>
+            <section>Referrer notes</section>
+        </sections>
+        <sections>
+            <label><!-- Registered Business Address --></label>
+            <section>Registered Business Address</section>
+        </sections>
+        <sections>
+            <label><!-- Settlement Actual Amount --></label>
+            <section>Settlement Actual Amount</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Referrer Layout</layout>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Business Address --></label>
+            <section>Business Address</section>
+        </sections>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- Field History --></label>
+            <section>Field History</section>
+        </sections>
+        <sections>
+            <label><!-- General notes --></label>
+            <section>General notes</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label><!-- Referrer Hierarchy --></label>
+            <section>Referrer Hierarchy</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Sales Account Layout</layout>
+        <sections>
+            <label><!-- Charts --></label>
+            <section>Charts</section>
+        </sections>
+        <sections>
+            <label><!-- Client System Hierarchy --></label>
+            <section>Client System Hierarchy</section>
+        </sections>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- Contact Information --></label>
+            <section>Contact Information</section>
+        </sections>
+        <sections>
+            <label><!-- Due Diligence --></label>
+            <section>Due Diligence</section>
+        </sections>
+        <sections>
+            <label><!-- General notes --></label>
+            <section>General notes</section>
+        </sections>
+        <sections>
+            <label><!-- Introducer / Referrer Information --></label>
+            <section>Introducer / Referrer Information</section>
+        </sections>
+        <sections>
+            <label><!-- Onboarding --></label>
+            <section>Onboarding</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label><!-- Referrer notes --></label>
+            <section>Referrer notes</section>
+        </sections>
+        <sections>
+            <label><!-- Settlement Actual Amount --></label>
+            <section>Settlement Actual Amount</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>Service Provider Layout</layout>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Business Address --></label>
+            <section>Business Address</section>
+        </sections>
+        <sections>
+            <label><!-- Client System Hierarchy --></label>
+            <section>Client System Hierarchy</section>
+        </sections>
+        <sections>
+            <label><!-- Company Information --></label>
+            <section>Company Information</section>
+        </sections>
+        <sections>
+            <label><!-- Customer Rationalisation --></label>
+            <section>Customer Rationalisation</section>
+        </sections>
+        <sections>
+            <label><!-- Due Diligence --></label>
+            <section>Due Diligence</section>
+        </sections>
+        <sections>
+            <label><!-- Field History --></label>
+            <section>Field History</section>
+        </sections>
+        <sections>
+            <label><!-- General notes --></label>
+            <section>General notes</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label><!-- Referrer notes --></label>
+            <section>Referrer notes</section>
+        </sections>
+        <sections>
+            <label><!-- Registered Business Address --></label>
+            <section>Registered Business Address</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>eNett Internal</layout>
+        <sections>
+            <label><!-- Account Hierarchy --></label>
+            <section>Account Hierarchy</section>
+        </sections>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Field History --></label>
+            <section>Field History</section>
+        </sections>
+        <sections>
+            <label><!-- General notes --></label>
+            <section>General notes</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>eNett Internal Non Trans</layout>
+        <sections>
+            <label><!-- Account Approval Status --></label>
+            <section>Account Approval Status</section>
+        </sections>
+        <sections>
+            <label><!-- Account Hierarchy --></label>
+            <section>Account Hierarchy</section>
+        </sections>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Field History --></label>
+            <section>Field History</section>
+        </sections>
+        <sections>
+            <label><!-- General notes --></label>
+            <section>General notes</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label><!-- Settlement Actual Amount --></label>
+            <section>Settlement Actual Amount</section>
+        </sections>
+    </layouts>
+    <layouts>
+        <layout>eNett Internal Trans</layout>
+        <sections>
+            <label><!-- Account Approval Status --></label>
+            <section>Account Approval Status</section>
+        </sections>
+        <sections>
+            <label><!-- Account Hierarchy --></label>
+            <section>Account Hierarchy</section>
+        </sections>
+        <sections>
+            <label><!-- Account Status --></label>
+            <section>Account Status</section>
+        </sections>
+        <sections>
+            <label><!-- Field History --></label>
+            <section>Field History</section>
+        </sections>
+        <sections>
+            <label><!-- General notes --></label>
+            <section>General notes</section>
+        </sections>
+        <sections>
+            <label><!-- Page Messages --></label>
+            <section>Page Messages</section>
+        </sections>
+        <sections>
+            <label><!-- Settlement Actual Amount --></label>
+            <section>Settlement Actual Amount</section>
+        </sections>
+    </layouts>
+    <recordTypes>
+        <description><!-- A business unit within a company under the same legal entity name who require separate ECN --></description>
+        <label><!-- Additional ECN --></label>
+        <name>Additional_ECN</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- A company that is associated to another company (is an affiliate of another company) - Affiliate and the parent have different ABN, ACN and legal entity name --></description>
+        <label><!-- Affiliate --></label>
+        <name>Affiliate</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Used for Archiving Accounts so they are no longer visible to users --></description>
+        <label><!-- Archive --></label>
+        <name>Archive</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- eNett technology partners e.g: Python --></description>
+        <label><!-- Channel Agreement --></label>
+        <name>Channel_Agreement</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- A customer using VAN or EFT- client can be travel or corporate --></description>
+        <label><!-- Customer --></label>
+        <name>Customer</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- Historical Accounts --></description>
+        <label><!-- CustomerOld --></label>
+        <name>CustomerOld</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- A Company (eNett client or non eNett client) refers eNett products to other companies. --></description>
+        <label><!-- Referrer --></label>
+        <name>Referrer</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- A financial services provider. Typically, a payment intermediary will acquire and fund eNett on behalf of a client. Current approved payment intermediaries are: Adyen and Digital River. --></description>
+        <label><!-- Service Provider --></label>
+        <name>Service_Provider</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- This Record type is assigned to all Test Accounts that have been created due to the existence of the associated account in the Client system --></description>
+        <label><!-- Test Account --></label>
+        <name>Test_Account</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- eNett Internal --></label>
+        <name>eNett_Internal</name>
+    </recordTypes>
+    <recordTypes>
+        <description><!-- eNett Internal ECNs --></description>
+        <label><!-- eNett Internal Demo --></label>
+        <name>eNett_Internal_Demo</name>
+    </recordTypes>
+    <recordTypes>
+        <label><!-- eNett Internal Transacting --></label>
+        <name>eNett_Internal_Transacting</name>
+    </recordTypes>
+    <validationRules>
+        <errorMessage><!-- The &apos;Account Name&apos; field is uneditable. --></errorMessage>
+        <name>Account_created_by_unassigned_enett</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot change the products on an additional --></errorMessage>
+        <name>Additional_Prevent_change_of_product</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- For additional ECNs, you can only add products that are active on the parent account. --></errorMessage>
+        <name>Additional_product_filtering</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- All TTV Generation (Air,Hotels &amp; Other ) need be 100 . --></errorMessage>
+        <name>All_three_values_need_to_100</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- &apos;Cannot amend a clients ECN!&apos; --></errorMessage>
+        <name>Cannot_change_Account_ECN</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- A reason must be selected from the &quot;Decline Reason&quot; picklist field when the &quot;Declined&quot; option is selected from the &quot;DD Result&quot; picklist field. --></errorMessage>
+        <name>DD_Decline_Reason_Mandatory</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please provide reason for exclusion in Segment Notes filed --></errorMessage>
+        <name>DS_Excluded_from_Rationalisation_1</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- When Segment Status value is &apos;Excluded from Customer Rationalisation&apos;, Segment Offboarding Date and Segment Area fields must be blank --></errorMessage>
+        <name>DS_Excluded_from_Rationalisation_2</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- When Segment Status value is &apos;Offboarded&apos;, Segment Offboarding Date and Segment Area must be provided. --></errorMessage>
+        <name>DS_Offboarded</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- When Segment Status value is &apos;Scheduled for Offboarding&apos;, Segment Offboarding Date and Segment Area must be provided. --></errorMessage>
+        <name>DS_Scheduled_for_Offboarding</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- When Segment Status value is blank, Segment Offboarding Date and Segment Area fields must be empty --></errorMessage>
+        <name>DS_Status_None</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please complete the &apos;Other Details&apos; field .  This field is required to be populated when the &apos;Other&apos; option is selected from the &apos;Integrators Used&apos; field. --></errorMessage>
+        <name>Other_Details_field_completed_if_Other</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You do not have permission to update this field. If you require any changes to the Legal Parent please contact the Legal team. --></errorMessage>
+        <name>Prevent_LegalParent_Change_ProfileCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Changing the parent will change the parent child relationship in ePP and may impact funding and issuing of VANs for this account! If you still wish to proceed, select the &apos;Allow change to reporting parent&apos; checkbox. --></errorMessage>
+        <name>Prevent_Parent_Name_Change</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You do not have permission to update this field. If you require any changes to the Parent please contact customer support or Delivery team. --></errorMessage>
+        <name>Prevent_Parent_Name_Change_RoleCheck</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You cannot remove the legal parent --></errorMessage>
+        <name>Prevent_Removing_Legal_Parent</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- You must select a product before saving --></errorMessage>
+        <name>Product_cannot_be_blank_for_Additional</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Please enter or modify the Referrer Change Justification --></errorMessage>
+        <name>Referrer_Change_Justification</name>
+    </validationRules>
+    <validationRules>
+        <errorMessage><!-- Registration Information section fields &quot;Trading As&quot; and &quot;Legal Name&quot; must be completed if the Status is &quot;Approved&quot;, &quot;Implementing&quot;, or &quot;Active&quot;. --></errorMessage>
+        <name>Registration_Information_Required</name>
+    </validationRules>
+    <webLinks>
+        <label><!-- Add_Product --></label>
+        <name>Add_Product</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- AltavistaNews --></label>
+        <name>AltavistaNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Attach_Files --></label>
+        <name>Attach_Files</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Additional_Account --></label>
+        <name>Create_Additional_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Affiliate_Account --></label>
+        <name>Create_Affiliate_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_External_Rego --></label>
+        <name>Create_External_Rego</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Internal_Non_Transacting_Account --></label>
+        <name>Create_Internal_Non_Transacting_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Create_Internal_Transacting_Account --></label>
+        <name>Create_Internal_Transacting_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Deactivate --></label>
+        <name>Deactivate</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleMaps --></label>
+        <name>GoogleMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleNews --></label>
+        <name>GoogleNews</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- GoogleSearch --></label>
+        <name>GoogleSearch</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- HooversProfile --></label>
+        <name>HooversProfile</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP --></label>
+        <name>Loop__LOOP</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOP_Merge --></label>
+        <name>Loop__LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- LOOPlus --></label>
+        <name>Loop__LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOP_Merge --></label>
+        <name>Loop__Mass_LOOP_Merge</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Mass_LOOPlus --></label>
+        <name>Loop__Mass_LOOPlus</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- MailChimp_Subscriptions --></label>
+        <name>MC4SF__MailChimp_Subscriptions</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Re_DD --></label>
+        <name>Re_DD</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Reactivate_Account --></label>
+        <name>Reactivate_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Remove_Product --></label>
+        <name>Remove_Product</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- Suspend_Account --></label>
+        <name>Suspend_Account</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- YahooMaps --></label>
+        <name>YahooMaps</name>
+    </webLinks>
+    <webLinks>
+        <label><!-- SpanningAccountRestore --></label>
+        <name>spanning__SpanningAccountRestore</name>
+    </webLinks>
+</CustomObjectTranslation>

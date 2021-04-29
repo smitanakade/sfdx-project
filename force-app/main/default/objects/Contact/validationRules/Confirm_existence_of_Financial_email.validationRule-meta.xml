@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_existence_of_Financial_email</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(INCLUDES(Job_Role__c,&quot;Financial&quot;),ISBLANK( Financial_Email_Address__c ),NOT(Converted_Contact__c))</errorConditionFormula>
+    <errorMessage>Financial email address must be populated if the Financial job role has been set.</errorMessage>
+</ValidationRule>

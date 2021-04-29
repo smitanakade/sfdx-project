@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Category_must_align_to_Type_API</fullName>
+    <active>true</active>
+    <description>The Delivery Category selected must align to the Delivery Type selected</description>
+    <errorConditionFormula>AND(Delivery_Type__c=&quot;Delivery - API&quot;, OR(ISPICKVAL(Delivery_Category__c,&quot;Desktop - Low Touch Self Sufficient&quot;),ISPICKVAL(Delivery_Category__c,&quot;Desktop - High Touch Training / Consultation&quot;)))</errorConditionFormula>
+    <errorDisplayField>Delivery_Category__c</errorDisplayField>
+    <errorMessage>The Delivery Category selected is not a valid selection.  Please select a category aligned to the API Delivery type.</errorMessage>
+</ValidationRule>

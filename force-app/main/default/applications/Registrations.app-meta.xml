@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>Registration__c</defaultLandingTab>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>Registrations</label>
+    <tabs>standard-Chatter</tabs>
+    <tabs>standard-Lead</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>Registration__c</tabs>
+    <tabs>Due_Diligence_Approval__c</tabs>
+    <tabs>Due_Diligence_Escalation__c</tabs>
+    <tabs>DD_Time_Out__c</tabs>
+    <tabs>Registration_Snapshot__c</tabs>
+    <tabs>standard-Case</tabs>
+    <tabs>How_To__c</tabs>
+    <tabs>Post_Refresh</tabs>
+</CustomApplication>

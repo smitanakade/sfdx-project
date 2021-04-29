@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Ticket_cannot_be_Closed_without_Solution</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL(Status,&#39;Closed&#39;),LEN (Final_Solution__c) = 0)</errorConditionFormula>
+    <errorDisplayField>X44CS_settlement_report_email__c</errorDisplayField>
+    <errorMessage>The ticket cannot be closed if the Final Solution field is blank.  If you have selected a Solution Bank option, please make sure that the Add Solution button found on the ticket has been selected.</errorMessage>
+</ValidationRule>

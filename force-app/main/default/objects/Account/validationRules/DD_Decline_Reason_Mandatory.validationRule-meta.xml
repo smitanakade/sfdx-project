@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DD_Decline_Reason_Mandatory</fullName>
+    <active>false</active>
+    <description>Decline Reason field is mandatory if the DD Result field is set to Declined</description>
+    <errorConditionFormula>AND(ISPICKVAL(Due_Diligence_Result__c,&quot;Declined&quot;),ISPICKVAL( Decline_Reason__c,&quot;&quot;))</errorConditionFormula>
+    <errorMessage>A reason must be selected from the &quot;Decline Reason&quot; picklist field when the &quot;Declined&quot; option is selected from the &quot;DD Result&quot; picklist field.</errorMessage>
+</ValidationRule>

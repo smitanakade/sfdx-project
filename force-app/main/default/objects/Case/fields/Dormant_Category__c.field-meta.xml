@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dormant_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Dormant Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Product does not suit business needs</fullName>
+                <default>false</default>
+                <label>Product does not suit business needs</label>
+            </value>
+            <value>
+                <fullName>Did not intend to register for the product</fullName>
+                <default>false</default>
+                <label>Did not intend to register for the product</label>
+            </value>
+            <value>
+                <fullName>On ISR in error</fullName>
+                <default>false</default>
+                <label>On ISR in error</label>
+            </value>
+            <value>
+                <fullName>No Information</fullName>
+                <default>false</default>
+                <label>No Information</label>
+            </value>
+            <value>
+                <fullName>Unable to contact after multiple attempts</fullName>
+                <default>false</default>
+                <label>Unable to contact after multiple attempts</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Dormant</controllingFieldValue>
+            <valueName>Product does not suit business needs</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dormant</controllingFieldValue>
+            <valueName>Did not intend to register for the product</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dormant</controllingFieldValue>
+            <valueName>On ISR in error</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dormant</controllingFieldValue>
+            <valueName>No Information</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Dormant</controllingFieldValue>
+            <valueName>Unable to contact after multiple attempts</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

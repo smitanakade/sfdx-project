@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Customer_Experience_Surveys__c</fullName>
+    <defaultValue>true</defaultValue>
+    <description>This is checked by default to all active clients -- representing the contact&#39;s willingness to receive customer experience surveys.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Represents if this contact wishes to receive customer experience surveys.</inlineHelpText>
+    <label>Customer Experience Surveys</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

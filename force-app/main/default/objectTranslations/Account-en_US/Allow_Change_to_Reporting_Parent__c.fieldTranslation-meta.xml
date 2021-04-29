@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Allow Change to Reporting Parent --></label>
+    <name>Allow_Change_to_Reporting_Parent__c</name>
+</CustomFieldTranslation>

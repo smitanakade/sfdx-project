@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Development_Checkpoint_Start__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Phase 2 Start - The development checkpoint task is created as a reminder for Delivery owner to check in with the client on the progress.</inlineHelpText>
+    <label>Development Checkpoint Start</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

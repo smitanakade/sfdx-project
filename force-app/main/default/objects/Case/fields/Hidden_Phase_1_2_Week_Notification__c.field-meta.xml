@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hidden_Phase_1_2_Week_Notification__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>This checkbox will be checked automatically 2 weeks after the Welcome email has been sent.  It will be used to create a task for the delivery staff member to call the client if the Contact made with client checkbox is not checked.</description>
+    <externalId>false</externalId>
+    <label>Hidden Phase 1 2 Week Notification</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

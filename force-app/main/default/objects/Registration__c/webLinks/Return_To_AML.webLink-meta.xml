@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Return_To_AML</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Return To AML</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)}
+
+var ddstatus = &quot;{!Registration__c.DD_Status__c}&quot;;
+
+if (ddstatus == &#39;Awaiting Client&#39; || ddstatus == &#39;On Hold&#39; || ddstatus == &#39;Non Responsive&#39; || ddstatus == &#39;Needs More Time&#39;) {
+
+// Set Checklist Status to &#39;In Progress&#39;
+var reg = new sforce.SObject(&quot;Registration__c&quot;);
+reg.id = &quot;{!Registration__c.Id}&quot;;
+//reg.RecordTypeId = sforce.connection.query(&quot;SELECT Id from RecordType where DeveloperName = &#39;InProgress&#39;&quot;).getArray(&quot;records&quot;)[0].Id;;
+reg.DD_Status__c = &#39;In Progress&#39;;
+sforce.connection.update([reg]);
+
+// Set DD Time Out ReturnToAML checkbox
+var result = sforce.connection.query(&quot;SELECT Id, Return_to_AML__c, End_Date__c FROM DD_Time_Out__c WHERE Registration__c = &#39;{!Registration__c.Id}&#39; ORDER BY NAME DESC LIMIT 1&quot;);
+var records = result.getArray(&quot;records&quot;);
+if (records != null &amp;&amp; records.length &gt; 0 &amp;&amp; records[0].end_date__c == null) {
+var ddTO = new sforce.SObject(&quot;DD_Time_Out__c&quot;);
+ddTO.id = records[0].Id;
+ddTO.Return_to_AML__c = true;
+sforce.connection.update([ddTO]);
+}
+
+window.location.reload()
+
+}</url>
+</WebLink>

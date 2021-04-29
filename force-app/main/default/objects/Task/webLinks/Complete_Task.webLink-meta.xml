@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Complete_Task</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Complete Task</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/29.0/apex.js&quot;)} 
+
+var task = new sforce.SObject(&quot;Task&quot;);
+task.id = &quot;{!Task.Id}&quot;; 
+task.whatid = &quot;{! Task.What }&quot;;
+var whatidstring = String(task.whatid);
+
+var estEffort = &quot;{!Task.Estimated_Effort_Minutes__c}&quot;; 
+estEffort = estEffort.replace (/,/g, &quot;&quot;); 
+
+task.Estimated_Effort_Minutes__c = &quot;{!Task.Estimated_Effort_Minutes__c}&quot;;
+if(task.Estimated_Effort_Minutes__c == 0) {
+alert(&quot;Please enter Estimated Effort Minutes for this task.&quot;);
+} else { 
+task.status = &quot;{!Task.Status}&quot;; 
+task.status = &#39;Completed&#39;;
+res = sforce.connection.update([task]);
+if (!res[0].getBoolean(&quot;success&quot;)){alert(res[0].getArray(&quot;errors&quot;)[0].message);} else {
+
+window.location.replace(&#39;/&#39; + whatidstring);
+}
+
+}</url>
+</WebLink>

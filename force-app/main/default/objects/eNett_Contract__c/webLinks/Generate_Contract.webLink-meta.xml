@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Generate_Contract</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Generate Contract</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)}
+
+{!REQUIRESCRIPT(&#39;/resource/&#39; &amp; LEFT(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(TEXT(NOW()),&#39;:&#39;,&#39;&#39;),&#39;-&#39;,&#39;&#39;),&#39; &#39;,&#39;&#39;),10) &amp; &#39;000/jsConstants&#39;)}
+{!REQUIRESCRIPT(&#39;/resource/&#39; &amp; LEFT(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(TEXT(NOW()),&#39;:&#39;,&#39;&#39;),&#39;-&#39;,&#39;&#39;),&#39; &#39;,&#39;&#39;),10) &amp; &#39;000/jsUtils&#39;)}
+
+function generateContract(ContractId){
+// Added for SF-1344. Subsription and Chargeback Processing Fees are required.
+	try{    
+	
+    	   var currentContract = sforce.connection.query(&quot;SELECT Id, SLA_Required__c, Subscription_Fee__c, Chargeback_Processing_Fee__c, Contract_Type__c, Contract_Stage__c from eNett_Contract__c where Id = &#39;&quot; + ContractId + &quot;&#39;&quot;);
+
+    	   if(currentContract.getArray(&quot;records&quot;) != null &amp;&amp; currentContract.getArray(&quot;records&quot;).length &gt; 0){
+        	var contractSet = currentContract.getArray(&quot;records&quot;);
+        	if (contractSet[0].Contract_Type__c == &quot;Standard T&amp;Cs&quot;){ 
+        		throw &quot;Generating a contract is only valid for Custom Contracts.&quot;;
+        	}
+
+        	if (!contractSet[0].Subscription_Fee__c || !contractSet[0].Chargeback_Processing_Fee__c){ 
+        		throw &quot;Subscription Fee and Chargeback Processing Fee are required for Contract Generation.&quot;;
+                }
+
+        	if (contractSet[0].Contract_Stage__c == &quot;1. New&quot; || contractSet[0].Contract_Stage__c == &quot;2. Awaiting Approval by Sales&quot; ){ 
+        		throw &quot;Cannot generate Contract unless the Contract is at stage 3. Legal Approval or beyond.&quot;;
+                }
+
+    	   }
+
+
+           var user = sforce.connection.getUserInfo();
+           var userID = user.userId;
+
+
+           //*** SF-1557
+           var LegalUser = &quot;false&quot;;
+           var UserGroups = sforce.connection.query(&quot;select UserOrGroupId FROM GroupMember WHERE UserOrGroupId = &#39;&quot; + userID + &quot;&#39; and group.name = &#39;LOOP_Legal&#39;&quot;);
+           var Groups = UserGroups.getArray(&quot;records&quot;);
+           if(Groups != null &amp;&amp; Groups.length &gt; 0){
+                    LegalUser = &quot;true&quot;;
+           }
+           if (contractSet[0].SLA_Required__c == &quot;true&quot; &amp;&amp; LegalUser == &quot;false&quot;) {
+                throw &quot;Only Legal users can generate SLA Contracts.&quot;;
+           }
+           if (LegalUser == &quot;true&quot;) {
+	      window.open(&quot;/apex/loop__looplus?eid={!eNett_Contract__c.Id}&amp;sessionid={!$Api.Session_ID}&amp;autorun=true&amp;ddpIds=a0t9000000C8ZlY&quot;);
+           } else {
+ 	      window.open(&quot;/apex/loop__looplus?eid={!eNett_Contract__c.Id}&amp;sessionid={!$Api.Session_ID}&amp;autorun=true&amp;ddpIds=a0t9000000C8ZlD&quot;);
+           }
+
+
+       }
+	catch(error){
+		showError(&quot;Error Generating Contract: &quot; + error);
+       }
+}
+
+generateContract(&#39;{!eNett_Contract__c.Id}&#39;);</url>
+</WebLink>

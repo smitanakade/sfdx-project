@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Lead Source --></label>
+    <name>Lead_source__c</name>
+    <picklistValues>
+        <masterLabel>Inbound call</masterLabel>
+        <translation><!-- Inbound call --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Industry Event</masterLabel>
+        <translation><!-- Industry Event --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Partner Campaign</masterLabel>
+        <translation><!-- Partner Campaign --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sales Initiated</masterLabel>
+        <translation><!-- Sales Initiated --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>eNett Campaign</masterLabel>
+        <translation><!-- eNett Campaign --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>eNett Online Registration</masterLabel>
+        <translation><!-- eNett Online Registration --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

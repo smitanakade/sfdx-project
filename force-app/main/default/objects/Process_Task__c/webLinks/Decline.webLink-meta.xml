@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Decline</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Decline</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)}
+{!REQUIRESCRIPT(&#39;/resource/bigiant_dialog__bDialogJs&#39;)}
+
+var pt = new sforce.SObject(&quot;Process_Task__c&quot;);
+pt.id = &quot;{!Process_Task__c.Id}&quot;; 
+
+    BIGIANT_DIALOG.init(this, &#39;Message Dialog&#39;, {id : &#39;{!Process_Task__c.Id}&#39;, controllerExt : &#39;ProcessTask_declineApproveAccountTask&#39;});</url>
+</WebLink>

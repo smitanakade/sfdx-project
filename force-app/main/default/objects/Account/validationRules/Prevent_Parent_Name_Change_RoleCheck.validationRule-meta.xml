@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Prevent_Parent_Name_Change_RoleCheck</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+	NOT(ISNEW()), 
+	ISCHANGED(ParentId), 
+	OR(
+		ISPICKVAL(Account_Type__c, &#39;Additional ECN&#39;), 
+		ISPICKVAL(Account_Type__c, &#39;Affiliate&#39;), 
+		ISPICKVAL(Account_Type__c, &#39;Customer&#39;),
+		ISBLANK(TEXT(Account_Type__c))
+	  ), 
+	NOT(
+		OR(
+			$UserRole.DeveloperName = &#39;Global_Service_Desk_Level_2&#39;, 
+			$UserRole.DeveloperName = &#39;Global_Service_Desk_Level_3_Delivery&#39;)
+		),
+	NOT(
+		OR(
+			CONTAINS($Profile.Name, &#39;System Admin&#39;), 
+			CONTAINS($Profile.Name, &#39;Deployment Automation&#39;)
+		  )
+	)
+)</errorConditionFormula>
+    <errorDisplayField>ParentId</errorDisplayField>
+    <errorMessage>You do not have permission to update this field. If you require any changes to the Parent please contact customer support or Delivery team.</errorMessage>
+</ValidationRule>

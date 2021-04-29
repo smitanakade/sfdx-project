@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Week_2_Notification_Sent_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This email will be sent to the client is no contact has been made following an email after 1 week and a call after 2 weeks.  This field is automatically set.</inlineHelpText>
+    <label>Week 2 Notification Sent Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

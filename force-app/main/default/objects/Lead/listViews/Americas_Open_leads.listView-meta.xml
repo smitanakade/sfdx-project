@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Americas_Open_leads</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.TITLE</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.PHONE</columns>
+    <columns>LEAD.MOBILE_PHONE</columns>
+    <columns>Region__c</columns>
+    <columns>LEAD.COUNTRY</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>notEqual</operation>
+        <value>Converted,Abandoned</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>Americas</value>
+    </filters>
+    <label>Americas - Open leads</label>
+    <sharedTo>
+        <role>AML</role>
+        <role>Americas_Finance</role>
+        <role>Americas_Managers</role>
+        <role>Americas_Sales</role>
+        <role>Americas_Sales_Manager</role>
+        <role>Americas_Salespeople</role>
+        <role>Corporate</role>
+        <role>Finance</role>
+        <role>Global_Manager</role>
+        <role>Global_Service_Desk_Level_1</role>
+        <role>Global_Service_Desk_Level_2</role>
+        <role>Global_Service_Desk_Level_3_Delivery</role>
+        <role>Global_Service_Desk_Level_3_IT</role>
+        <role>Legal</role>
+        <role>Service_Desk_Administrator</role>
+        <role>Stefanini_Management</role>
+    </sharedTo>
+</ListView>

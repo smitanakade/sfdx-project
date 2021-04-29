@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Alternative_Email_Adress__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This email address should be filled in when a contact has more than 1 email address setting, which needs to be recorded</inlineHelpText>
+    <label>Alternative Email Address</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Email</type>
+    <unique>false</unique>
+</CustomField>

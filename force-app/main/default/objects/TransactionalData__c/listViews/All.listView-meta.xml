@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All</fullName>
+    <columns>ECN__c</columns>
+    <columns>NAME</columns>
+    <columns>ReportDate__c</columns>
+    <columns>DaySettledValue__c</columns>
+    <columns>DayTotalSettledTargetValue__c</columns>
+    <columns>Flag_for_delete__c</columns>
+    <columns>UPDATEDBY_USER</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All</label>
+</ListView>

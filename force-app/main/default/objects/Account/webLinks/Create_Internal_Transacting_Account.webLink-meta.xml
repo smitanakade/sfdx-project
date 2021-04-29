@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Internal_Transacting_Account</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create Internal Transacting Account</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)}
+
+//if ({!OR(CONTAINS($Profile.Name, &#39;AML&#39;),CONTAINS($Profile.Name, &#39;System Administrator&#39;))}) {
+var theName = prompt(&quot;Please enter a Name for the eNett Internal Transacting Account. This name will be appended to the eNett Parent Account Name.&quot;); 
+
+if (theName) {
+var theTradingAs = prompt(&quot;Please enter the Trading Name for the Internal Account.&quot;); 
+if (theTradingAs) { 
+var theLegalName = prompt (&quot;Please enter the Legal Name for the eNett Internal Account.&quot;); 
+if (theLegalName) { 
+var theReason = prompt(&quot;Please enter Account Creation Reason for the eNett Internal Transacting Account.&quot;);
+    if(theReason) {
+        var acc = new sforce.SObject(&quot;Account&quot;); 
+        acc.creation_type__c = &#39;Internal&#39;;
+        acc.name = &#39;{!Account.Name}&#39; + &#39; - &#39; + theName;
+        acc.Account_Creation_Reason__c = theReason;
+        acc.Trading_As__c = theTradingAs; 
+        acc.Legal_Name__c = theLegalName; 
+        acc.Region__c = &#39;{!Account.Region__c}&#39;;
+        acc.Account_Type__c = &#39;eNett Internal Transacting&#39;;
+        acc.ParentId = &#39;{!Account.Id}&#39;;
+        acc.RecordTypeId = &#39;{!$Setup.recTypesAccount__c.eNett_Internal_Transacting__c}&#39;;
+        var result = sforce.connection.create([acc]); 
+
+        if (result[0].getBoolean(&quot;success&quot;)) {
+            window.location.replace(&quot;/&quot; + result[0].id);
+        } else { 
+alert(&#39;Could not create record &#39;+ result); 
+} 
+} else { 
+alert(&#39;Please enter a valid reason&#39;); 
+} 
+} else { 
+alert(&#39;Please enter a valid Legal name&#39;); 
+} 
+}else { 
+alert(&#39;Please enter a valid Trading As name&#39;); 
+} 
+} else { 
+alert(&#39;Please enter a valid Name&#39;); 
+}
+//} else { 
+//    alert(&#39;Only users with AML profile can create a new account.&#39;); 
+//}</url>
+</WebLink>

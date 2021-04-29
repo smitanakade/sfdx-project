@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Receivable_Account_Count__c</fullName>
+    <externalId>false</externalId>
+    <label>Active Receivable Account Count</label>
+    <summaryFilterItems>
+        <field>Registration_Bank_Account__c.Active__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Registration_Bank_Account__c.Account_Type__c</field>
+        <operation>equals</operation>
+        <value>Receivable</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Registration_Bank_Account__c.Registration__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

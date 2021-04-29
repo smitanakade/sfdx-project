@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_DA_Exclusivity_Not_Mandatory</fullName>
+    <active>true</active>
+    <description>The Exclusivity % field should not be populated when the Exclusivity Clause picklist has been set to No, Yes - All Cards or Yes - Virtual Cards.</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &quot;Contract_Deal_Arrangement&quot;, 
+NOT(ISPICKVAL(Exclusivity_Clause__c, &quot;Yes - Percentage&quot;)),
+NOT(ISBLANK(Exclusivity__c ))
+)</errorConditionFormula>
+    <errorMessage>The Exclusivity % field should not be be populated unless the Exclusivity Clause picklist has been set to Yes - Percentage.</errorMessage>
+</ValidationRule>

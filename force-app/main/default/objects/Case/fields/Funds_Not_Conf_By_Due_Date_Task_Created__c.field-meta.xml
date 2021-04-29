@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funds_Not_Conf_By_Due_Date_Task_Created__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the date when the Task was created.  The Task is created if the funds have not been confirmed 24 hours prior to the &quot;Enter Funding Due Date&quot; field date.  This is automatically populated.</inlineHelpText>
+    <label>Funds Not Conf By Due Date Task Created</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

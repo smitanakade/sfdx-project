@@ -1,0 +1,488 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Account_Approval_Record_Type</fullName>
+    <active>true</active>
+    <label>Internal Account Approval Record Type</label>
+    <picklistValues>
+        <picklist>AML_Contact_Creation__c</picklist>
+        <values>
+            <fullName>Completed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call_Type__c</picklist>
+        <values>
+            <fullName>Anniversary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Due Diligence</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Info</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales Call</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Thank you</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Welcome</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Outcome__c</picklist>
+        <values>
+            <fullName>Deal Approved by Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Rejected by Legal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Required__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Type__c</picklist>
+        <values>
+            <fullName>Affiliate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel Agreement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Transacting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referrer</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DCPRE_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DCPRF_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Phase__c</picklist>
+        <values>
+            <fullName>0 - Pre-Implementation Kick-off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 - Planning %26 Preparation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 - Set Up and Configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Development %28 API integration%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - VAN Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - UAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - Live testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - VAN Reporting and Reconciliation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 - Production cut over</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unassigned Delivery</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Type__c</picklist>
+        <values>
+            <fullName>Delivery - API</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivery - Desktop</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delivery Not Required</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Exclusivity_Clause__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes - All Cards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes - Percentage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes - Virtual Cards</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FARRE_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FARRF_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Funding_Model__c</picklist>
+        <values>
+            <fullName>Funding on Activation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funding on Authorisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funding on Settlement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Incentive_Type__c</picklist>
+        <values>
+            <fullName>%25 of Interchange</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fixed %25</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Internal_Account_Approval__c</picklist>
+        <values>
+            <fullName>Approved</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Declined</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pending</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Job_Role__c</picklist>
+        <values>
+            <fullName>Financial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Secondary</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rebate_Type__c</picklist>
+        <values>
+            <fullName>Flat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tiered</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Registration_Type__c</picklist>
+        <values>
+            <fullName>AML Internal Registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registration not required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eNett Online Registration</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Select_Whether_Reports_Are_Needed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>In Progress</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Waiting on someone else</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Task_Type__c</picklist>
+        <values>
+            <fullName>Call - Connected</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Call - Left Voicemail</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email Task</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Task</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tiered_Rebate_Calculation_Frequency__c</picklist>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yearly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>WUBS__c</picklist>
+        <values>
+            <fullName>WUBS - No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WUBS - No %28Client paying%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WUBS - Yes %28eNett paying%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Won_Lost_Reason__c</picklist>
+        <values>
+            <fullName>Change of Contract</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change of Delivery Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client does not want to pay API fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client not ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client unresponsive%2FNever transacted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Opportunity</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FX %2F Currency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Failed DD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>High risk vs GDV</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Lost to competitor</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Competition</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No pilot customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No response - DD</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No response - Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pricing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product %2F Solution</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Speed of Service</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Stopped Using eNett</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X44F_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X44_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

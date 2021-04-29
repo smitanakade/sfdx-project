@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomObject xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customSettingsType>List</customSettingsType>
+    <description>This is a list of record type Ids which the due date will not appear in task</description>
+    <enableFeeds>false</enableFeeds>
+    <label>Task Recordtypes to not put Due Date in</label>
+    <visibility>Public</visibility>
+</CustomObject>

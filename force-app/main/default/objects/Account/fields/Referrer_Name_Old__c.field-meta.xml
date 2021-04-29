@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Referrer_Name_Old__c</fullName>
+    <externalId>false</externalId>
+    <label>Referrer Name_Old</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>About Payments Consulting B.V</fullName>
+                <default>false</default>
+                <label>About Payments Consulting B.V</label>
+            </value>
+            <value>
+                <fullName>CCRA International</fullName>
+                <default>false</default>
+                <label>CCRA International</label>
+            </value>
+            <value>
+                <fullName>Club Travel SA (Pty) Ltd</fullName>
+                <default>false</default>
+                <label>Club Travel SA (Pty) Ltd</label>
+            </value>
+            <value>
+                <fullName>Computop GmbH</fullName>
+                <default>false</default>
+                <label>Computop GmbH</label>
+            </value>
+            <value>
+                <fullName>Contac Services Inc</fullName>
+                <default>false</default>
+                <label>Contac Services Inc</label>
+            </value>
+            <value>
+                <fullName>Dolphin Dynamics Limited</fullName>
+                <default>false</default>
+                <label>Dolphin Dynamics Limited</label>
+            </value>
+            <value>
+                <fullName>easyJet</fullName>
+                <default>false</default>
+                <label>easyJet</label>
+            </value>
+            <value>
+                <fullName>Gant Travel Management Ltd</fullName>
+                <default>false</default>
+                <label>Gant Travel Management Ltd</label>
+            </value>
+            <value>
+                <fullName>Gateway</fullName>
+                <default>false</default>
+                <label>Gateway</label>
+            </value>
+            <value>
+                <fullName>Globa.li</fullName>
+                <default>false</default>
+                <label>Globa.li</label>
+            </value>
+            <value>
+                <fullName>Globalcollect</fullName>
+                <default>false</default>
+                <label>Globalcollect</label>
+            </value>
+            <value>
+                <fullName>Globalstar</fullName>
+                <default>false</default>
+                <label>Globalstar</label>
+            </value>
+            <value>
+                <fullName>Mastercard</fullName>
+                <default>false</default>
+                <label>Mastercard</label>
+            </value>
+            <value>
+                <fullName>Mr Orange</fullName>
+                <default>false</default>
+                <label>Mr Orange</label>
+            </value>
+            <value>
+                <fullName>Multicom Products</fullName>
+                <default>false</default>
+                <label>Multicom Products</label>
+            </value>
+            <value>
+                <fullName>Navitas Solutions Limited</fullName>
+                <default>false</default>
+                <label>Navitas Solutions Limited</label>
+            </value>
+            <value>
+                <fullName>Pyton Communication Services B.V.</fullName>
+                <default>false</default>
+                <label>Pyton Communication Services B.V.</label>
+            </value>
+            <value>
+                <fullName>Rezopia Inc.</fullName>
+                <default>false</default>
+                <label>Rezopia Inc.</label>
+            </value>
+            <value>
+                <fullName>Travelport SMO</fullName>
+                <default>false</default>
+                <label>Travelport SMO</label>
+            </value>
+            <value>
+                <fullName>Vibe Software Limited</fullName>
+                <default>false</default>
+                <label>Vibe Software Limited</label>
+            </value>
+            <value>
+                <fullName>Voxel Media Srl Bavel</fullName>
+                <default>false</default>
+                <label>Voxel Media Srl Bavel</label>
+            </value>
+            <value>
+                <fullName>Welcome Travel Group</fullName>
+                <default>false</default>
+                <label>Welcome Travel Group</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Template_Exclusivity_Clause__c</fullName>
+    <externalId>false</externalId>
+    <formula>If(
+OR(ISPICKVAL(Exclusivity_Clause__c,&#39;Yes - All&#39;),ISPICKVAL(Exclusivity_Clause__c,&#39;Yes - BSP&#39;),ISPICKVAL(Exclusivity_Clause__c,&#39;Yes - Percentage&#39;)),
+&quot;During the Term of this Agreement, You will not (and shall not permit or procure a third party to, either directly or indirectly) maintain or enter into any other arrangement or agreement in relation to the integration, license or use of any Equivalent Product or use an Equivalent Product except in the event that ENI is unable to provide eNett VANs in a country or in a currency required by You until such time that ENI is able to offer eNett VANs in a country or in a currency to You. If You elect to use an Equivalent Product and such use does not fall into the foregoing exception, such election shall be deemed to be a material breach by You of this Agreement and ENI may at its discretion either modify the Rebate upon ten (10) days’ prior written notice to You or terminate this Agreement by providing You sixty (60) days’ prior written notice.           &#39;Equivalent Product&#39; means any product similar to or substitutable for, or which provides the same functionality as, eNett VANs or the eNett Payments Platform for the issuance or use of virtual credit or debit cards or physical credit or debit cards which can be used for card not-present transactions.&quot;,
+&quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Template Exclusivity Clause</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

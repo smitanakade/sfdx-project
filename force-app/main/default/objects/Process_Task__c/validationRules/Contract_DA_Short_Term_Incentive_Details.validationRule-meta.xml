@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_DA_Short_Term_Incentive_Details</fullName>
+    <active>true</active>
+    <description>The Short Term Incentive Details field must be populated when the Short Term Incentive checkbox has been ticked.</description>
+    <errorConditionFormula>AND( 
+RecordType.DeveloperName = &quot;Contract_Deal_Arrangement&quot;, 
+Short_Term_Incentive__c = True,
+ISBLANK(Short_Term_Incentive_Details__c)
+)</errorConditionFormula>
+    <errorMessage>The Short Term Incentive Details field must be populated when the Short Term Incentive checkbox has been ticked.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GDPR_Cannot_Opt_In</fullName>
+    <active>true</active>
+    <description>SF-4987 : Cannot Opt In of the eNett communications when related Account is Active.</description>
+    <errorConditionFormula>AND( 
+ISPICKVAL( Account.Account_Status__c , &#39;Active&#39;),  (GDPR_Opt_In__c = true)
+)</errorConditionFormula>
+    <errorDisplayField>GDPR_Opt_In__c</errorDisplayField>
+    <errorMessage>Cannot Opt in of the eNett communications when the related Account is Active.</errorMessage>
+</ValidationRule>

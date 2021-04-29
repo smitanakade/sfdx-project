@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Affiliate_Account</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create Affiliate Account</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>var url = &#39;/001/e?RecordType={!$Setup.recTypesAccount__c.Affiliate__c}&#39;;
+url += &#39;&amp;CF{!$Setup.ObjectReferenceIds__c.Account_Account_Type__c}=&quot;Affiliate&quot;&#39;;
+url += &#39;&amp;CF{!$Setup.ObjectReferenceIds__c.Account_Account_Status__c}=&quot;Not Active&quot;&#39;;
+url += &#39;&amp;CF{!$Setup.ObjectReferenceIds__c.Account_Legal_Parent__c}={!Account.Name}&#39;; 
+url += &#39;&amp;CF{!$Setup.ObjectReferenceIds__c.Account_Legal_Parent__c}_lkid={!Account.Id}&#39;;
+url += &#39;&amp;CF{!$Setup.ObjectReferenceIds__c.Account_Commercial_Parent_Account__c}={!Account.Name}&#39;;
+url += &#39;&amp;CF{!$Setup.ObjectReferenceIds__c.Account_Commercial_Parent_Account__c}_lkid={!Account.Id}&#39;;
+url += &#39;&amp;acc3={!Account.Name}&#39;; 
+url += &#39;&amp;retURL=%2F{!Account.Id}&amp;nooverride=1&#39;; 
+window.location.href = url;</url>
+</WebLink>

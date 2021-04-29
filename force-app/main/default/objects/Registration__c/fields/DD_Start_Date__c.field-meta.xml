@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DD_Start_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Automatically populated based on the user pressing the &#39;Start DD&#39; button which sets the DD status to &#39;In Progress&#39;</inlineHelpText>
+    <label>DD Start Date</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

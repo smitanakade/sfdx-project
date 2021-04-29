@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Action</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Action</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/a0S/e?CF00N9000000BF3L6={!Case.CaseNumber}&amp;CF00N9000000BF3L6_lkid={!Action__c.Related_ToId__c}&amp;CF00N9000000BF3Kw={!$User.FirstName&amp;&quot; &quot;&amp;$User.LastName}&amp;CF00N9000000BF3Kw_lkid={!$User.Id}&amp;saveURL=%2F{!Case.Id}&amp;retURL=%2F{!Case.Id}</url>
+</WebLink>

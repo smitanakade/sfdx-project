@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Details_field_completed_if_Other</fullName>
+    <active>true</active>
+    <description>The Other Details field will need to be completed if the &quot;Referrer Integrators Used&#39;  field is set to &#39;Other&#39;</description>
+    <errorConditionFormula>AND(INCLUDES(Integrators_Used__c,&quot;Other&quot;),ISBLANK( Other_Details__c ))</errorConditionFormula>
+    <errorMessage>Please complete the &#39;Other Details&#39; field .  This field is required to be populated when the &#39;Other&#39; option is selected from the &#39;Integrators Used&#39; field.</errorMessage>
+</ValidationRule>

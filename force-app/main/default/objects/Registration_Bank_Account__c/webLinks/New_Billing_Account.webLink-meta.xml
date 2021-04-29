@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Billing_Account</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>EFT - New Billing Account</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>var regType = &#39;{!Registration__c.Registration_Type__c}&#39;; 
+
+if ({!Registration__c.DD_Completion_Count__c} &gt; 0 &amp;&amp; regType != &#39;Internal Registration - Re Reg&#39;) { 
+
+alert(&#39;You cannot add a new billing account to a DD Approved Registration.&#39;); 
+
+} else { 
+
+if (&#39;{!Registration__c.Active_Billing_Account_Count__c}&#39;!=&#39;0&#39;) { 
+alert(&#39;You can only have one active billing account.&#39;); 
+
+} else { 
+window.location.href = &#39;/a1S/e?RecordType={!$Setup.recTypesRBA__c.Other__c}&amp;CF00N9000000Eo5WR=&#39;+&#39;{!Registration__c.Name}&#39;+&#39;&amp;CF00N9000000Eo5Rg=&#39; + &#39;{!Registration__c.Name}&#39; + &#39;&amp;CF00N9000000Eo5Rg_lkid=&#39; + &#39;{!Registration__c.Id}&#39; + &#39;&amp;00N9000000Eo5SB=Billing&amp;retURL=/&#39; + &#39;{!Registration__c.Id}&amp;saveURL=/&#39; + &#39;{!Registration__c.Id}&amp;nooverride=1&#39;; 
+}
+}</url>
+</WebLink>

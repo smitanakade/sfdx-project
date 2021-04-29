@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Assignee_is_a_Service_Desk_User</fullName>
+    <active>true</active>
+    <description>This Validation rule is used to confirm that the new user assigned to the Ticket is a member of the eNett Service Desk profile, the Service Desk Queues (1,2,3) or the System Administrator.</description>
+    <errorConditionFormula>If(Owner:User.Profile.Name  = NULL,false,
+If(Owner:Queue.QueueName  = NULL,false,
+If(Owner:User.Profile.Name =&quot;eNett Service Desk User&quot;,False,
+    If(Owner:User.Profile.Name =&quot;eNett Service Desk Administrator&quot;,False,
+        If(Owner:User.Profile.Name =&quot;eNett Sales Service and Delivery Administrator&quot;,False,          
+If(Owner:User.Profile.Name =&quot;eNett Sales Service and Delivery (Manage Public List Views Enabled)&quot;,False,
+If(Owner:User.Profile.Name =&quot;eNett Service Desk User (Sales Contact Page Layout)&quot;, False,
+If(Owner:User.Profile.Name =&quot;eNett Deliveries&quot;,False,
+If(CONTAINS(Owner:User.Profile.Name,&quot;System Admin&quot;),False,
+If(Owner:User.Profile.Name =&quot;Stefanini Service Desk User&quot;, False,
+If(Owner:User.Profile.Name = &quot;eNett Sales Service and Delivery&quot;, false,
+If(Owner:Queue.QueueName = &quot;Stefanini EMEA Service Desk Level 1&quot;, false,
+If(Owner:Queue.QueueName = &quot;Global Service Desk Level 1&quot;,False,
+If(Owner:Queue.QueueName = &quot;Global Service Desk Level 2&quot;,False,
+If(Owner:Queue.QueueName = &quot;Global Service Desk Level 3 Delivery&quot;,False,
+If(Owner:Queue.QueueName = &quot;Global Service Desk Level 3 Finance&quot;,False,
+If(Owner:Queue.QueueName = &quot;Global Service Desk Level 3 IT&quot;,False,
+If(Owner:Queue.QueueName = &quot;New Ticket Queue&quot;,false,
+If(Owner:Queue.QueueName = &quot;APAC Service Desk Level 1&quot;,False,
+If(Owner:Queue.QueueName =&quot;APAC Service Desk Level 2&quot;,False,
+If(Owner:Queue.QueueName =&quot;EMEA Service Desk Level 2&quot;,False,
+If(Owner:Queue.QueueName =&quot;APAC Delivery Queue&quot;,False, 
+If(Owner:Queue.QueueName =&quot;EMEA/Americas Delivery Queue&quot;,False,
+If(Owner:Queue.QueueName =&quot;Quarterly Enhancements&quot;,False,
+If(Owner:Queue.QueueName =&quot;Service Desk Level 3&quot;,False, 
+If(Owner:Queue.QueueName =&quot;VANs Billing Queue&quot;,False, 
+If(CONTAINS(Owner:Queue.QueueName, &quot;Service Desk&quot;),False,
+if(CONTAINS(Owner:User.Profile.Name,&quot;Community&quot;),false,
+True))))))))))))))))))))))))))))</errorConditionFormula>
+    <errorMessage>The Assignee defined is not a member of the Service Desk.  Please re assign the ticket to a valid Service Desk user.</errorMessage>
+</ValidationRule>

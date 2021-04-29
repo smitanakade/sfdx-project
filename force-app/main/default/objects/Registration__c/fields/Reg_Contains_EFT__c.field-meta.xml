@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reg_Contains_EFT__c</fullName>
+    <externalId>false</externalId>
+    <formula>INCLUDES(Product__c , &#39;eNett EFT&#39;)</formula>
+    <label>Reg Contains EFT</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

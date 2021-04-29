@@ -1,0 +1,72 @@
+<apex:component >
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFifteen">
+        <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFifteen" aria-expanded="true" aria-controls="collapseFourteen">Add Funding to VANS</a></h4>
+    </div>
+    <div id="collapseFifteen" class="panel-collapse collapse wrapper-review" role="tabpanel" aria-labelledby="headingFifteen">
+        <div id="accountsPayable" class="panel-body">
+
+        <a class="btn-edit" href="#" data-stepsection="step4-headingFive">edit</a>
+
+          <div class="panel-group" id="accordion4">
+            <div class="panel panel-default">
+             <div class="panel-heading">
+               <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerFifteenOne">
+                 Payable
+               </a></h4>
+             </div>
+             <div id="collapseInnerFifteenOne" class="panel-collapse collapse in">
+               <div class="panel-body">
+                 <ul class="listing-review">
+                   <li><a href="#">SWIFT/BIC</a></li>
+                   <li><a href="#">Iban</a></li>
+                   <li><a href="#">Account currency</a></li>
+                   <li><a href="3">Account name</a></li>
+                   <li><a href="#">Account country</a></li>
+                 </ul>
+               </div>
+             </div>
+            </div>
+            <div class="panel panel-default">
+             <div class="panel-heading">
+               <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerFifteenTwo">
+                 Receivable
+               </a></h4>
+             </div>
+             <div id="collapseInnerFifteenTwo" class="panel-collapse collapse">
+               <div class="panel-body">
+                 <ul class="listing-review">
+                   <li><a href="#">SWIFT/BIC</a></li>
+                   <li><a href="#">Iban</a></li>
+                   <li><a href="#">Account currency</a></li>
+                   <li><a href="3">Account name</a></li>
+                   <li><a href="#">Account country</a></li>
+                 </ul>
+               </div>
+             </div>
+            </div>
+            <div class="panel panel-default">
+             <div class="panel-heading">
+               <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerFifteenThree">
+                 Billing
+               </a></h4>
+             </div>
+             <div id="collapseInnerFifteenThree" class="panel-collapse collapse">
+               <div class="panel-body">
+                 <ul class="listing-review">
+                   <li><a href="#">SWIFT/BIC</a></li>
+                   <li><a href="#">Iban</a></li>
+                   <li><a href="#">Account currency</a></li>
+                   <li><a href="3">Account name</a></li>
+                   <li><a href="#">Account country</a></li>
+                 </ul>
+               </div>
+             </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+</apex:component>

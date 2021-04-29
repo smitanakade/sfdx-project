@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tiered_Contract_Incentive_Fixed</fullName>
+    <active>false</active>
+    <description>You must enter a &#39;Tier Fixed % Share&#39; and NO &#39;Tier % Interchange Share&#39;.</description>
+    <errorConditionFormula>AND( 
+ RecordType.DeveloperName =&#39;Contract_Deal_Arrangement&#39;,
+ISPICKVAL(00N9000000EBgfb,&#39;Tiered&#39;),
+ISPICKVAL( 00N9000000EBgfV , &#39;Fixed %&#39;),
+OR(NOT(ISBLANK(00N9000000EBgfr)),
+ISBLANK(00N9000000EBgfo))
+)</errorConditionFormula>
+    <errorMessage>You must enter a &#39;Tier Fixed % Share&#39; and NO &#39;Tier % Interchange Share&#39;.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This field is mandatory if the re DD button is pressed on the account. --></help>
+    <label><!-- Re DD Reason --></label>
+    <name>Re_DD_Reason__c</name>
+</CustomFieldTranslation>

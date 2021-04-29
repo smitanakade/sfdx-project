@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Not_Transacting_Email</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Send Not Transacting Email</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/_ui/core/email/author/EmailAuthor?rtype=003
+&amp;retURL=%2F{!Process_Task__c.Id}
+&amp;saveURL=%2F{!Process_Task__c.Id}
+&amp;p2={!Process_Task__c.Related_Delivery_Contact__c}
+&amp;p2_lkid={!Process_Task__c.Related_Delivery_Contact__c}
+&amp;p3_lkid={!Process_Task__c.Delivery_TicketId__c} 
+&amp;template_id=00X90000001BKQq
+&amp;p26=delivery@enett.com</url>
+</WebLink>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Test_Scenario_Documents</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Send Test Scenario Documents</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/_ui/core/email/author/EmailAuthor?rtype=003&amp;retURL=%2F{!Process_Task__c.Id}&amp;saveURL=%2F{!Process_Task__c.Id}&amp;p2={!Case.Contact}&amp;p2_lkid={!Case.ContactId}&amp;p3_lkid={!Case.Id}&amp;template_id=00X90000001BKQg&amp;p26=delivery@enett.com</url>
+</WebLink>

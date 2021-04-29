@@ -1,0 +1,434 @@
+<apex:component >
+    
+    
+    <style media="screen" type="text/css">
+        table.xxx td, table.xxx th {
+        width: 200px;
+        height: 15px;
+        border: 1px solid #ccc;
+        text-align: center;
+        }
+        table.xxx th {
+        width: 100px;
+        background: lightblue;
+        border-color: white;
+        }
+        table.xxx body {
+        padding: 1rem;
+        }
+        
+        
+        .row .special-span{
+        padding: 10px !important;
+        }
+    </style>            
+
+    <!--
+    ********************************************Start Debug*******************************************
+    ********************************************Start Debug*******************************************
+    
+    
+    <table>
+        <tbody>
+            <tr><td><div>Email pristine = {{p1Form.emailAddress.$pristine}}</div></td></tr>
+            <tr><td><div>Name pristine = {{p1Form.businessname.$pristine}}</div></td></tr>
+        </tbody>
+    </table>
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>Regions = {{busregions}}</div></td></tr>
+    <tr><td><div>Selected = {{registration.State_Province__c}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>Van Label: {{VANLabel}}</div></td></tr>
+    <tr><td><div>Country: {{registration.Country__c}}</div></td></tr>
+    <tr><td><div>Product: {{registration.Product__c}}</div></td></tr>
+    <tr><td><div>Contains VANs: {{registration.Reg_Contains_VANs__c}}</div></td></tr>
+    <tr><td><div>Contains EFT: {{registration.Reg_Contains_EFT__c}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>RegoID = {{registration.Id}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>Stage: {{registration.Registration_Stage__c}}</div></td></tr>
+    <tr><td><div>Sub Stage: {{registration.Registration_Sub_Stage__c}}</div></td></tr>
+    <tr><td><div>Product: {{registration.Product__c}}</div></td></tr>
+    <tr><td><div>Max Sub Stage: {{registration.Registration_Max_Sub_Stage__c}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    ********************************************End Debug*******************************************
+    ********************************************End Debug*******************************************
+    -->
+    
+    
+    <form name="p1Form" novalidate="novalidate">
+        <div class="container">
+            
+            
+            
+            <!-- TRY HERE -->
+            <fieldset ng-disabled="checkDisable('Disable_Form')">
+                
+                <p class="col-xs-12 col-sm-8 intro-content">Ready to supercharge your payments? Enter a few basic details and we’ll get the ball rolling.</p>
+                
+                 
+                
+                
+                <div class="form-container">
+                    
+                    <div id="form-start" class="col-xs-12 form-column">
+                        <h2 class="form-title">Your Details</h2>
+                        
+                        
+                        <!-- Salutation (Picklist/Mandatory) 
+						**************************************************************************  -->
+                        <div ng-class="         (p1Form.salutation.$invalid && p1Form.salutation.$touched ? 'input-container field_error': 'input-container') 
+                                       + ' ' +  (registration.Salutation__c.length > 0 ? 'input-filled': '') ">
+                            <select id="salutation"  class="required" style="border: 0px;"
+                                    name="salutation"
+                                    ng-model="registration.Salutation__c" 
+                                    ng-options="salutation for salutation in salutations" 
+                                    ng-required="true"
+                                    ng-class="cssInputClass"
+                                    ng-change="checkCssInput()" >                    
+                            </select>                                        
+                            <label for="salutation" data-manditoryfield="Title - mandatory field">Title</label>
+                            <div class="field_error" ng-messages="p1Form.salutation.$error" ng-if="p1Form.salutation.$touched && !p1Form.salutation.$valid">
+                                <p ng-message="required">This field is required.</p>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- First Name (Text/Mandatory)
+						**************************************************************************  -->
+                        <div ng-class="         (p1Form.firstname.$invalid && p1Form.firstname.$touched ? 'input-container field_error': 'input-container') 
+                                       + ' ' +  (registration.First_Name__c.length > 0 ? 'input-filled': '') ">           
+                            <input type="text" class="required" id="firstname" 
+                                   name="firstname"
+                                   ng-model="registration.First_Name__c" 
+                                   ng-required="true"
+                                   ng-class="cssInputClass"
+                                   ng-change="checkCssInput()" />
+                            <label for="firstname" data-manditoryfield="First Name - mandatory field">First Name</label>
+                            <div class="field_error" ng-messages="p1Form.firstname.$error" ng-if="p1Form.firstname.$touched && !p1Form.firstname.$valid">
+                                <p ng-message="required">This field is required.</p>
+                            </div>
+                        </div>            
+                        
+                        
+                        <!-- Last Name (Text/Mandatory)
+						**************************************************************************  -->
+                        <div ng-class="         (p1Form.lastname.$invalid && p1Form.lastname.$touched ? 'input-container field_error': 'input-container') 
+                                       + ' ' +  (registration.Last_Name__c.length > 0 ? 'input-filled': '') ">           
+                            <input type="text" class="required" id="lastname" 
+                                   name="lastname"
+                                   ng-model="registration.Last_Name__c" 
+                                   ng-required="true"
+                                   ng-class="cssInputClass"
+                                   ng-change="checkCssInput()" />
+                            <label for="lastname" data-manditoryfield="Last Name - mandatory field">Last Name</label>
+                            <div class="field_error" ng-messages="p1Form.lastname.$error" ng-if="p1Form.lastname.$touched && !p1Form.lastname.$valid">
+                                <p ng-message="required">This field is required.</p>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Email (Text/Mandatory/Tooltip)
+						**************************************************************************  -->
+                        <div ng-class="         (p1Form.emailAddress.$invalid && p1Form.emailAddress.$touched ? 'input-container field_error': 'input-container') 
+                                       + ' ' +  (registration.Email__c.length > 0 ? 'input-filled': '') ">           
+                            <input type="email" 
+                                   class="required" id="emailAddress" 
+                                   name="emailAddress"
+                                   ng-model="registration.Email__c" 
+                                   ng-required="true"
+                                   ng-class="cssInputClass"
+                                   ng-change="checkCssInput()" 
+                                   ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/i" />
+                            <label for="emailAddress" data-manditoryfield="Email Address - mandatory field">Email Address</label>
+                            <div  class="field_error" ng-messages="p1Form.emailAddress.$error" ng-if="p1Form.emailAddress.$touched && !p1Form.emailAddress.$valid">
+                                <div ng-message="required">This field is required</div>
+                                <div ng-message="email">You did not enter your email address correctly...</div>
+                                <div ng-message="pattern">You did not enter your email address correctly...</div>
+                            </div>
+                            <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                            <div class="tooltip-content">
+                                <h4>{{ttHeaders.ContactEmail}}</h4>
+                                <span class="btn-close"></span>
+                                <p>{{ttContents.ContactEmail}}</p>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- No Business Email Reason (Text/Mandatory/Tooltip)
+						**************************************************************************  -->
+
+                        <div ng-if="p1Form.emailAddress.$valid && businessEmail(registration.Email__c)"
+                             ng-class="         (p1Form.no_business_email_reason.$invalid && p1Form.no_business_email_reason.$touched ? 'input-container field_error': 'input-container') 
+                                       + ' ' +    (registration.No_business_email_reason__c.length > 0 ? 'input-filled': '') ">           
+                            <input type="text" 
+                                   class="required" 
+                                   id="no_business_email_reason" 
+                                   name="no_business_email_reason"
+                                   ng-model="registration.No_business_email_reason__c" 
+                                   ng-required="true"
+                                   ng-class="cssInputClass"
+                                   ng-change="checkCssInput()" />
+                            <label for="no_business_email_reason" data-manditoryfield="No Business email reason - mandatory field">No Business email reason</label>
+                            <div class="field_error" ng-messages="p1Form.no_business_email_reason.$error" ng-if="p1Form.no_business_email_reason.$touched && !p1Form.no_business_email_reason.$valid">
+                                <p ng-message="required">This field is required.</p>
+                            </div>
+                            <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                            <div class="tooltip-content">
+                                <h4>{{ttHeaders.NoBusinessemailreason}}</h4>
+                                <span class="btn-close"></span>
+                                <p>{{ttContents.NoBusinessemailreason}}</p>
+                            </div>
+                        </div>
+
+                        
+                        <!-- Contact Number (Text)
+            **************************************************************************  -->
+                        <div ng-class="         (p1Form.number.$invalid && p1Form.number.$touched ? 'input-container field_error': 'input-container') 
+                                       + ' ' +  (registration.Phone__c.length > 0 ? 'input-filled': '') ">           
+                            <input type="text" class="required" id="number" 
+                                   name="number"
+                                   ng-model="registration.Phone__c" 
+                                   ng-required="true"
+                                   ng-class="cssInputClass"
+                                   ng-change="checkCssInput()" />
+                            <label for="number" data-manditoryfield="Telephone Number - mandatory field">Telephone Number</label>
+                            <div class="field_error" ng-messages="p1Form.number.$error" ng-if="p1Form.number.$touched && !p1Form.number.$valid">
+                                <p ng-message="required">This field is required.</p>
+                            </div>
+                        </div>
+                                                
+                        
+                        <!-- Country (Picklist/Mandatory/Tooltip)
+						**************************************************************************  -->
+                        <div ng-class="         (p1Form.country.$invalid && p1Form.country.$touched ? 'input-container field_error': 'input-container') 
+                                       + ' ' +  (registration.Country__c.length > 0 ? 'input-filled': '') ">           
+                            <select id="country" class="required" style="border: 0px;"
+                                    name="country"
+                                    ng-model="registration.Country__c" 
+                                    ng-options="country for country in countries"
+                                    ng-required="true"
+                                    ng-class="cssInputClass"
+                                    ng-change="checkCssInput(); setProductValues(); SetLabels(); changeBusCountry(); setPrices()" >                    
+                            </select>                                        
+                            <label for="country" data-manditoryfield="Country - mandatory field">Country</label>
+                            <div class="field_error" ng-messages="p1Form.country.$error" ng-if="p1Form.country.$touched && !p1Form.country.$valid">
+                                <p ng-message="required">This field is required.</p>
+                            </div>
+                            <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                            <div class="tooltip-content">
+                                <h4>{{ttHeaders.BusinessRegisteredCountry}}</h4>
+                                <span class="btn-close"></span>
+                                <p>{{ttContents.BusinessRegisteredCountry}}</p>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Business Name (Text/Mandatory/Tooltip)
+						**************************************************************************  -->
+                        <div ng-class="         (p1Form.businessname.$invalid && p1Form.businessname.$touched ? 'input-container field_error': 'input-container') 
+                                       + ' ' +  (registration.Registered_Company_Name__c.length > 0 ? 'input-filled': '') ">           
+                            <input type="text" class="required" id="businessname" 
+                                   name="businessname"
+                                   ng-model="registration.Registered_Company_Name__c" 
+                                   ng-required="true"
+                                   ng-class="cssInputClass"
+                                   ng-change="checkCssInput()" />
+                            <label for="businessname" data-manditoryfield="{{Company_Name_Label}} - mandatory field">{{Company_Name_Label}}</label>
+                            
+                            <div class="field_error" ng-messages="p1Form.businessname.$error" ng-if="p1Form.businessname.$touched && !p1Form.businessname.$valid">
+                                <p ng-message="required">This field is required.</p>
+                            </div>
+                            <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                            <div class="tooltip-content">
+                                <h4>{{ttHeaders.BusinessRegisteredCompanyName}}</h4>
+                                <span class="btn-close"></span>
+                                <p>{{ttContents.BusinessRegisteredCompanyName}}</p>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Job Title (Text/Mandatory/Tooltip) ***BH - Tooltip & ng-req
+						**************************************************************************  -->            
+                        <div ng-class="         (p1Form.jobtitle.$invalid && p1Form.jobtitle.$touched ? 'input-container field_error': 'input-container') 
+                                       + ' ' +  (registration.Job_Role__c.length > 0 ? 'input-filled': '') ">           
+                            <input type="text" class="required" id="jobtitle" 
+                                   name="jobtitle"
+                                   ng-model="registration.Job_Role__c" 
+                                   ng-required="true"
+                                   ng-class="cssInputClass"
+                                   ng-change="checkCssInput()" />
+                            <label for="jobtitle" data-manditoryfield="Job Title - mandatory field">Job Title</label>
+                            <div class="field_error" ng-messages="p1Form.jobtitle.$error" ng-if="p1Form.jobtitle.$touched && !p1Form.jobtitle.$valid">
+                                <p ng-message="required">This field is required.</p>
+                            </div>
+                            <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                            <div class="tooltip-content">
+                                <h4>{{ttHeaders.RegoJobTitle}}</h4>
+                                <span class="btn-close"></span>
+                                <p>{{ttContents.RegoJobTitle}}</p>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Business Type (Picklist/Mandatory/Tooltip) ***BH - Tooltip??? & ng-req
+						**************************************************************************  -->
+                        <div ng-class="         (p1Form.businesstype.$invalid && p1Form.businesstype.$touched ? 'input-container field_error': 'input-container') 
+                                       + ' ' +  (registration.Business_Type__c.length > 0 ? 'input-filled': '') ">           
+                            <select id="businesstype" class="required" style="border: 0px;"
+                                    name="businesstype"
+                                    ng-model="registration.Business_Type__c" 
+                                    ng-options="businesstype for businesstype in businesstypes"
+                                    ng-required="true"
+                                    ng-class="cssInputClass"
+                                    ng-change="checkCssInput()" >                    
+                            </select>                                  
+                            <label for="businesstype" data-manditoryfield="{{Business_Type_Label}} - mandatory field">{{Business_Type_Label}}</label>
+                            <div class="field_error" ng-messages="p1Form.businesstype.$error" ng-if="p1Form.businesstype.$touched && !p1Form.businesstype.$valid">
+                                <p ng-message="required">This field is required.</p>
+                            </div>
+                            <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                            <div class="tooltip-content">
+                                <h4>{{ttHeaders.BusinessType}}</h4>
+                                <span class="btn-close"></span>
+                                <p>{{ttContents.BusinessType}}</p>
+                            </div>
+                        </div>
+                        
+                        
+                        <!-- Sector (Picklist/Mandatory/Tooltip)
+						**************************************************************************  -->
+                        <div ng-class="         (p1Form.sector.$invalid && p1Form.sector.$touched ? 'input-container field_error': 'input-container') 
+                                       + ' ' +  (registration.Sector__c.length > 0 ? 'input-filled': '') ">           
+                            <select id="sector" class="required" style="border: 0px;"
+                                    name="sector"
+                                    ng-model="registration.Sector__c" 
+                                    ng-options="sector for sector in sectors"
+                                    ng-required="true"
+                                    ng-class="cssInputClass"
+                                    ng-change="checkCssInput()" >                    
+                            </select>                                        
+                            <label for="sector" data-manditoryfield="Sector - mandatory field">Sector</label>
+                            <div class="field_error" ng-messages="p1Form.sector.$error" ng-if="p1Form.sector.$touched && !p1Form.sector.$valid">
+                                <p ng-message="required">This field is required.</p>
+                            </div>
+                            <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                            <div class="tooltip-content">
+                                <h4>{{ttHeaders.BusinessSector}}</h4>
+                                <span class="btn-close"></span>
+                                <p>{{ttContents.BusinessSector}}</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <div class="col-xs-12 col-sm-6 form-column form-content">
+                        <h2 class="form-title">Select the product you would like to use</h2>
+                        <ul class="content-wrapper">
+                            
+                            <!-- Add VANs Button
+							**************************************************************************  -->
+                            <li class="item">
+                                <div class="col-xs-12 title">
+                                    <h3>VANs</h3>                            
+                                    <div ng-class="(registration.Reg_Contains_VANs__c ? 'checkbox-wrapper remove': 'checkbox-wrapper') ">
+                                        <input ng-disabled="checkDisable('VANs')" 
+                                               type="checkbox" 
+                                               value="add" 
+                                               class="add"
+                                               name="van_add"
+                                               ng-model="registration.Reg_Contains_VANs__c"
+                                               ng-change="setProducts()"/>
+                                        <label for="van_add" ng-switch="showHide('VANs')">
+                                            <span ng-switch-when="true">Remove</span>
+                                            <span ng-switch-when="false">Add</span>
+                                        </label>                            
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 content">
+                                    <p>An eNett Virtual Account Number (VAN) is an automatically generated MasterCard number that you can use to make supplier payments. A unique number is used for each new booking orpayment transaction, which makes it a highly safe and secure way to pay, or to be paid.</p>
+                                    <a href="#" class="btn btn-default">read more</a>
+                                </div>
+                                <div class="col-xs-4 pricing">
+                                    <p class="price">{{registration.Subscription_Fee_Symbol__c}}{{registration.VANs_Subscription_Fee__c}}</p>
+                                    <p>Per month ({{registration.Subscription_Fee_Currency__c}})</p>
+                                </div>
+                            </li>
+                            
+                            <!-- Add EFT Button
+							**************************************************************************  -->
+                            <li class="item" ng-if="showHide('EFTProductSelection')">
+                                <div class="col-xs-12 title">
+                                    <h3>eNett EFT</h3>
+                                    <div ng-class="(registration.Reg_Contains_EFT__c ? 'checkbox-wrapper remove': 'checkbox-wrapper') ">
+                                        <input type="checkbox" value="add" class="add"
+                                               name="eft_add"
+                                               ng-model="registration.Reg_Contains_EFT__c"
+                                               ng-change="setProducts()"/>
+                                        <label for="van_add" ng-switch="showHide('EFT')">
+                                            <span ng-switch-when="true">Remove</span>
+                                            <span ng-switch-when="false">Add</span>
+                                        </label>                            
+                                    </div>
+                                </div>
+                                <div class="col-xs-8 content">
+                                    <p>The eNett EFT system is designed purely for the travel industry, and integrates your accounts payable and receivable in one easy to use system. As well as the ability to send and receive payments to and from your travel suppliers you'll have access to criticalmanagement and financial reports online, in real-time.</p>
+                                    <a href="#" class="btn btn-default">read more</a>
+                                </div>
+                                <div class="col-xs-4 pricing">
+                                    <p class="price">{{registration.Subscription_Fee_Symbol__c}}{{registration.EFT_Subscription_Fee__c}}</p>
+                                    <p>Per month ({{registration.Subscription_Fee_Currency__c}})</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                </div>
+                
+                <!--  TRY HERE -->
+            </fieldset>
+            
+            
+            <fieldset ng-disabled="p1Form.$invalid" class="col-xs-12 col-sm-4 btn-wrapper btn-start" > 
+                <a href="" class="btn btn-primary btn-next btn-start" id="StartButton" ng-click="checkDuplicates()" ><span>Start</span></a>
+<!--
+                <a href="" class="btn btn-primary btn-next btn-start" id="StartButton" ng-click="checkDuplicateLead()" ><span>Start</span></a>
+                <a href="index.html#" class="btn btn-primary btn-next btn-start" ng-click="checkDuplicateLead()" ><span>Start</span></a>
+                <a href="index.html#" class="btn btn-primary btn-next btn-start" ng-click="setStages('Product Selection'); saveRego()" ><span>Start</span></a>
+-->
+            </fieldset>
+            
+            
+            <fieldset ng-disabled="p1Form.$invalid" id="btn-next" class="col-xs-12 col-sm-4 btn-wrapper hidden btn-next-wrapper">
+                <a href="" class="btn btn-primary btn-next anchor-link" data-btnstep="step2" ng-click="setStages('Overview'); saveRego()" ><span>Next</span></a>
+                <input type="button" value="Submit" class="btn-next-submit"/>
+            </fieldset>       
+            
+        </div>
+        
+    </form>
+    
+</apex:component>

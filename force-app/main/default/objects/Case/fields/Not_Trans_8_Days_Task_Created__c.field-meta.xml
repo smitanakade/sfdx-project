@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_Trans_8_Days_Task_Created__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the date when a Task was created and assigned to the delivery owner to contact the client and confirm everything is ok. This date is automatically set. The reference date is taken from the &#39;Funding Confirmed&#39; date.</inlineHelpText>
+    <label>Not Trans-8 Days Task Created</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

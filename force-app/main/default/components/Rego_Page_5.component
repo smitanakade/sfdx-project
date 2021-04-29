@@ -1,0 +1,130 @@
+<apex:component > 
+    
+    
+    
+    
+    <!--
+    ********************************************Start Debug*******************************************
+    ********************************************Start Debug*******************************************
+    
+    
+    
+    <style media="screen" type="text/css">
+    table.xxx td, table.xxx th {
+    width: 200px;
+    height: 15px;
+    border: 1px solid #ccc;
+    text-align: center;
+    }
+    table.xxx th {
+    width: 100px;
+    background: lightblue;
+    border-color: white;
+    }
+    table.xxx body {
+    padding: 1rem;
+    }    
+    </style>            
+    
+    <table>
+    <tbody>
+    <tr><td><div>TandC: {{registration.Accept_Terms_and_Conditions__c}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    ********************************************End Debug*******************************************
+    ********************************************End Debug*******************************************
+    -->
+    
+    
+    <style type="text/css">
+        .divTextArea {
+        padding: 2px;
+        width: 100%;
+        height: 500px;
+        border: solid 1px black;
+        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
+        }
+    </style>
+    
+    
+    
+    
+    <div class="container">
+        <h2>Review and submit</h2>
+        <p>
+            The finish line is just up ahead. All that’s left is to review your details and go over some terms and conditions, then you’re on your way.
+        </p>
+        
+        
+        <br/>
+        <br/>
+        <p>
+            <b>This is some text regarding the Client Agreement Form!</b>
+        </p>
+        <div class="divTextArea" id="theAgreement" ng-bind-html="theAgreementForm"></div>
+        
+        <br/>
+        <br/>
+        <p>
+            <b>This is some text regarding the Terms and Conditions!</b>
+        </p>
+        <div class="divTextArea" ng-bind-html="theText"></div>
+        
+        
+        
+        
+        <!-- Accept Terms and Conditions
+		**************************************************************************  -->
+        <br/>
+        <br/>
+        <div style="text-align: center;" class="input-container">
+            <input  type="checkbox" 
+                   id="TandC" 
+                   name="TandCAccepted" 
+                   ng-model="registration.Accept_Terms_and_Conditions__c" 
+                   value="1"/> Accept Terms and Conditions <br />
+        </div>
+        
+        <!--
+        <div class="col-xs-12 col-md-4 item">
+        <div class="col-xs-12 col-sm-4 btn-wrapper btn-next-wrapper">
+        <a href="#" class="btn btn-primary btn-next anchor-link" onClick="PrintElem('theAgreement')"><span>Print</span></a>
+        <input type="button" value="Submit" class="btn-next-submit"/>
+        </div>
+        </div>
+        
+        
+        <div class="col-xs-12 col-md-4 btn-wrapper btn-next-wrapper">
+        <a href="index.html#" class="btn btn-primary btn-next"><span>Submit</span></a>
+        <input type="button" value="Submit" class="btn-next-submit"/>
+        </div>
+        -->
+        
+        <div class="btn-footer">
+            
+            <div class="col-xs-12 col-sm-6 col-md-4 item">
+                <div class="col-xs-12 col-sm-4 btn-wrapper btn-back-wrapper">
+                    <a href="#" class="btn btn-primary btn-back anchor-link"><span>Back</span></a>
+                </div>
+            </div>
+            
+            <div class="col-xs-12 col-sm-6 col-md-4 item">
+                <a href="#" class="btn btn-primary" onClick="PrintElem('theAgreement')"><span>Print Agreement</span></a>
+            </div>
+            
+            <div class="col-xs-12 col-md-4 item">
+                <div class="col-xs-12 col-sm-4 btn-wrapper btn-next-wrapper">
+                    <a ng-disabled="checkDisable('TCChecked')" href="#" class="btn btn-primary btn-next" ng-click="saveRego()"><span>Submit</span></a>
+                    <input type="button" value="Submit" class="btn-next-submit"/>
+                </div>
+            </div>
+            
+        </div>
+        
+    </div>
+    
+</apex:component>

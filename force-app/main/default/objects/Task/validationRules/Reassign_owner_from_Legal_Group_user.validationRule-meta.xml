@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reassign_owner_from_Legal_Group_user</fullName>
+    <active>false</active>
+    <description>This validation is required so Legal will make themselves the owner of a Legal Task before completing the Legal Contract Tasks.</description>
+    <errorConditionFormula>AND(ISPICKVAL(Status, &quot;Completed&quot;), $User.Id &lt;&gt; OwnerId, OR( 00N9000000Duk79 = &quot;Contract Legal Approval&quot;, 00N9000000Duk79 = &quot;Contract_eNett_Sign_off&quot;, 00N9000000Duk79 = &quot;Contract_Upload_PDF_Copy_of_Contract&quot;))</errorConditionFormula>
+    <errorMessage>Please re assign the ticket to a valid Legal user before you complete the task.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registered_Business_is_Same_as_Above</fullName>
+    <active>true</active>
+    <errorConditionFormula>!ISNEW() &amp;&amp; Registered_Business_is_Same_as_Above__c &amp;&amp; ((ISCHANGED(RegBusiness_Address_Line_1__c) &amp;&amp; RegBusiness_Address_Line_1__c != Address_Line_1__c)||
+(ISCHANGED(RegBusiness_Address_Line_2__c) &amp;&amp; RegBusiness_Address_Line_2__c != Address_Line_2__c) ||
+(ISCHANGED(RegBusiness_City__c) &amp;&amp; RegBusiness_City__c != City__c) ||
+(ISCHANGED(RegBusiness_Postcode__c) &amp;&amp; RegBusiness_Postcode__c != Postcode__c) ||
+(ISCHANGED(RegBusiness_State_Province__c) &amp;&amp; RegBusiness_State_Province__c != State_Province__c) ||
+(ISCHANGED(RegBusiness_Country__c) &amp;&amp; TEXT(RegBusiness_Country__c) != TEXT(Country__c)))</errorConditionFormula>
+    <errorMessage>You cannot modify the Registered Business Address since the &#39;Address Same As Business&#39; checkbox is selected</errorMessage>
+</ValidationRule>

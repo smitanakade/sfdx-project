@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>T_C_Modifications__c</fullName>
+    <description>This field should be set to TRUE if any of the Non-Standard details (except for Subscription Fee &amp; Chargeback Processing Fee) or the Trial Period, Trial Period Term or Review Period are filled. This field controls whether Legal need to see the contract.</description>
+    <externalId>false</externalId>
+    <formula>IF(AND ( 
+(OR(ISBLANK(Review_Period_Months_if_applicable__c),Review_Period_Months_if_applicable__c=0)), 
+ISBLANK(Trial_Period_Term_Months__c), 
+SLA_Required__c = False, 
+Trial_Period__c = false, 
+Non_local_Settlement_Currency__c = false, 
+Deletion_of_Marketing_Clause__c = false, 
+Cross_Currency_Fee_0_81__c = false, 
+ISBLANK(Cross_Currency_Details__c), 
+ISBLANK(Waive_Subscription_Fee_Details__c), 
+Non_standard_Funding_Fund_on_Auth__c = FALSE, 
+Short_Term_Incentive__c = false, 
+ISBLANK(Short_Term_Incentive_Details__c), 
+Technology_Fund_API_Integration__c = false, 
+ISBLANK(Technology_Fund_Details__c), 
+Volume_Commitments__c = false, 
+ISBLANK(Volume_Commitments_Details__c), 
+ISBLANK(T_C_Modification_Details__c), 
+OR( ISBLANK(Agreement_Term_Years__c), Agreement_Term_Years__c = 1,Agreement_Term_Years__c = 2,Agreement_Term_Years__c = 3,Agreement_Term_Years__c = 4,Agreement_Term_Years__c = 5), 
+OR( ISBLANK(TEXT(WUBS__c)), ISPICKVAL(WUBS__c, &quot;WUBS - no&quot;) ) 
+) 
+, false, true)</formula>
+    <label>T&amp;C Modifications</label>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

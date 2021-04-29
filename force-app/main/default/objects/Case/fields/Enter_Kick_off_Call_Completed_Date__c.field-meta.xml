@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enter_Kick_off_Call_Completed_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is manually filled in, when the kick-off call is completed</inlineHelpText>
+    <label>Kick-off Call Completed Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>T_Cs_Template__c</fullName>
+    <description>Displays the terms and conditions document name and version number based on the linked document template. If this is blank and the contract is In Flight, then pull through the terms and conditions reference from the Registration record.</description>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(Terms_and_Conditions__c)), Terms_and_Conditions__r.Document_Name__c + &#39; (Version: &#39; + TEXT(Terms_and_Conditions__r.Version__c) + &#39;)&#39;, IF(AND(ISPICKVAL(Status__c, &#39;In Flight&#39;),ISPICKVAL(eNett_Product__c, &#39;VANs&#39;)), Account_Name__r.Reference_Registration__r.Standard_TCs_template_VANs__r.Document_Name__c + &#39; (Version: &#39; + TEXT(Account_Name__r.Reference_Registration__r.Standard_TCs_template_VANs__r.Version__c) + &#39;)&#39;, IF(AND(ISPICKVAL(Status__c, &#39;In Flight&#39;), ISPICKVAL(eNett_Product__c, &#39;eNett EFT&#39;)),Account_Name__r.Reference_Registration__r.Standard_TCs_Template_EFT__r.Document_Name__c + &#39; (Version: &#39; + TEXT(Account_Name__r.Reference_Registration__r.Standard_TCs_Template_EFT__r.Version__c) + &#39;)&#39;,&#39;&#39;)))</formula>
+    <label>T&amp;Cs Template</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

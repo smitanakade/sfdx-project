@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- VAN Transactional Status --></label>
+    <name>VAN_Transactional_Status__c</name>
+    <picklistValues>
+        <masterLabel>Non-Current</masterLabel>
+        <translation><!-- Non-Current --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Non-Transacting</masterLabel>
+        <translation><!-- Non-Transacting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transacting</masterLabel>
+        <translation><!-- Transacting --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

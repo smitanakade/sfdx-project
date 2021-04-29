@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Re_DD_Due_ECN__c</fullName>
+    <externalId>false</externalId>
+    <formula>TODAY() &gt; X3_Months_to_Re_DD_Due__c</formula>
+    <label>Re DD Due ECN</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

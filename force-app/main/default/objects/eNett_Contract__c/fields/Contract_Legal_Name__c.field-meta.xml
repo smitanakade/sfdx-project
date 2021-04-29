@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Legal_Name__c</fullName>
+    <externalId>false</externalId>
+    <formula>Account_ECN__c &amp;&quot; - &quot; &amp; Account_Name__r.Name &amp; &quot; - &quot; &amp; SUBSTITUTE(TRIM(
+IF(INCLUDES( Account_Name__r.eNett_products__c  , &quot;VANs&quot;), &quot;VANs &quot;, NULL)&amp;
+IF(INCLUDES( Account_Name__r.eNett_products__c , &quot;eNett&quot;), &quot;eNett &quot;, NULL)&amp;
+IF(INCLUDES( Account_Name__r.eNett_products__c , &quot;feeNett&quot;), &quot;feeNett &quot;, NULL)&amp; 
+IF(INCLUDES( Account_Name__r.eNett_products__c , &quot;airNett&quot;), &quot;airNett &quot;, NULL)&amp;
+IF(INCLUDES( Account_Name__r.eNett_products__c , &quot;hotelNett&quot;), &quot;hotelNett &quot;, NULL)&amp;
+IF(INCLUDES( Account_Name__r.eNett_products__c , &quot;VirtualTerminal&quot;), &quot;VirtualTerminal &quot;, NULL)
+),&quot; &quot;,&quot;,&quot;) &amp; IF(ISBLANK(TEXT(Contact_Signed_by_eNett_Date__c)),&quot;&quot;, &quot; - &quot; &amp;TEXT(Contact_Signed_by_eNett_Date__c))</formula>
+    <label>Contract Legal Name</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

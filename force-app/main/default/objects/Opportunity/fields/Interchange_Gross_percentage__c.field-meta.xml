@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Interchange_Gross_percentage__c</fullName>
+    <externalId>false</externalId>
+    <formula>interchange_bank_fee_percentage__c + Interchange_Client_rebate_percentage__c +  Interchange_eNett_margin_percentage__c + Interchange_Referrer_fee_percent__c</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Interchange - Gross (%)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <type>Percent</type>
+</CustomField>

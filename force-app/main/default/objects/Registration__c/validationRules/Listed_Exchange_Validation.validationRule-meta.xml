@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Listed_Exchange_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>DD_Checkboxes_incomplete__c =False
+&amp;&amp; ISPICKVAL(Registration_Type__c, &#39;Internal Registration&#39;) 
+&amp;&amp; ISPICKVAL(Business_Type__c, &#39;Public Company&#39;) 
+&amp;&amp; INCLUDES(Product__c, &#39;VANs&#39;) 
+&amp;&amp; ISBLANK(Listed_Exchange__c)</errorConditionFormula>
+    <errorDisplayField>Listed_Exchange__c</errorDisplayField>
+    <errorMessage>Please enter the Listed Exchange</errorMessage>
+</ValidationRule>

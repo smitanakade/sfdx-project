@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_DA_Tier_Required</fullName>
+    <active>true</active>
+    <description>This Validation prevents users from being able to set a Task to complete when Tiered Rebate Calculation Frequency field is left blank for eNett Contract.</description>
+    <errorConditionFormula>AND( 
+RecordType.DeveloperName = &quot;Contract_Deal_Arrangement&quot;,
+ISPICKVAL(Rebate_Type__c, &quot;Tiered&quot;),
+ISPICKVAL(Tiered_Rebate_Calculation_Frequency__c, &quot;&quot;)
+)</errorConditionFormula>
+    <errorMessage>Please complete the Tiered Rebate Calculation Frequency field.</errorMessage>
+</ValidationRule>

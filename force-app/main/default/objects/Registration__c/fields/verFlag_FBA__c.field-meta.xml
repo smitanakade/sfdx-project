@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>verFlag_FBA__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Flag values: 
+0 - No verification 
+1 - Each Funding Account has one or more verifications but at least one verification has no attachments 
+2 - Each Funding Account has at least one verification and all verifications contain at least one attachment</inlineHelpText>
+    <label>verFlag_FBA</label>
+    <summarizedField>Registration_Bank_Account__c.verFlag__c</summarizedField>
+    <summaryFilterItems>
+        <field>Registration_Bank_Account__c.Active__c</field>
+        <operation>equals</operation>
+        <value>True</value>
+    </summaryFilterItems>
+    <summaryFilterItems>
+        <field>Registration_Bank_Account__c.Account_Type__c</field>
+        <operation>equals</operation>
+        <value>Funding</value>
+    </summaryFilterItems>
+    <summaryForeignKey>Registration_Bank_Account__c.Registration__c</summaryForeignKey>
+    <summaryOperation>min</summaryOperation>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

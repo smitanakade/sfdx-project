@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AML_Marker__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Automatically populated. This is defined by the AML team during the due diligence process.</inlineHelpText>
+    <label>AML Marker</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Acquirer</fullName>
+                <default>false</default>
+                <label>Acquirer</label>
+            </value>
+            <value>
+                <fullName>Corporate Group</fullName>
+                <default>false</default>
+                <label>Corporate Group</label>
+            </value>
+            <value>
+                <fullName>External Nominated User</fullName>
+                <default>false</default>
+                <label>External Nominated User</label>
+            </value>
+            <value>
+                <fullName>Pilot</fullName>
+                <default>false</default>
+                <label>Pilot</label>
+            </value>
+            <value>
+                <fullName>Resuscitated</fullName>
+                <default>false</default>
+                <label>Resuscitated</label>
+            </value>
+            <value>
+                <fullName>Sanction</fullName>
+                <default>false</default>
+                <label>Sanction</label>
+            </value>
+            <value>
+                <fullName>Supplier</fullName>
+                <default>false</default>
+                <label>Supplier</label>
+            </value>
+            <value>
+                <fullName>Transaction Monitoring</fullName>
+                <default>false</default>
+                <label>Transaction Monitoring</label>
+            </value>
+            <value>
+                <fullName>WUBS Pilot</fullName>
+                <default>false</default>
+                <label>WUBS Pilot</label>
+            </value>
+            <value>
+                <fullName>IATA Pilot</fullName>
+                <default>false</default>
+                <label>IATA Pilot</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

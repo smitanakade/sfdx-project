@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>verPEPFlag_BO__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Flag values: 
+0 - No verification 
+1 - Each Beneficial Owner has at least one PEP verifications but one or more verifications has no attachments 
+2 - Each Beneficial Owner has at least one PEP verifications which each contain at least one attachment</inlineHelpText>
+    <label>verPEPFlag_BO</label>
+    <summaryForeignKey>Snapshot_Director_Association__c.Registration_Snapshot__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

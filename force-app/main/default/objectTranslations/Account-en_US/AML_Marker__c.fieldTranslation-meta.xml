@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Automatically populated. This is defined by the AML team during the due diligence process. --></help>
+    <label><!-- AML Marker --></label>
+    <name>AML_Marker__c</name>
+    <picklistValues>
+        <masterLabel>Acquirer</masterLabel>
+        <translation><!-- Acquirer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corporate Group</masterLabel>
+        <translation><!-- Corporate Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>External Nominated User</masterLabel>
+        <translation><!-- External Nominated User --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IATA Pilot</masterLabel>
+        <translation><!-- IATA Pilot --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pilot</masterLabel>
+        <translation><!-- Pilot --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Resuscitated</masterLabel>
+        <translation><!-- Resuscitated --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sanction</masterLabel>
+        <translation><!-- Sanction --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Supplier</masterLabel>
+        <translation><!-- Supplier --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Transaction Monitoring</masterLabel>
+        <translation><!-- Transaction Monitoring --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WUBS Pilot</masterLabel>
+        <translation><!-- WUBS Pilot --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

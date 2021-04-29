@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Enter_Subscription_Fee_Details</fullName>
+    <active>true</active>
+    <description>User is required to enter a comment in the Waive Subscription Fee Details if the value has been set to &quot;0&quot;</description>
+    <errorConditionFormula>AND(Subscription_Fee__c =0,ISBLANK( Waive_Subscription_Fee_Details__c ))</errorConditionFormula>
+    <errorMessage>You entered &quot;0&quot; in the Subscription Fee field so you must enter a comment in the &quot;Waive Subscription Fee Details&quot; field.</errorMessage>
+</ValidationRule>

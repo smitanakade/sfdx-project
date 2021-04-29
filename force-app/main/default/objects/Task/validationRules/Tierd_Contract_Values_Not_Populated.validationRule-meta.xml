@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tierd_Contract_Values_Not_Populated</fullName>
+    <active>false</active>
+    <description>Ensures that if the Tiered Rebate Type has been selected, neither the % Interchange Amount nor the Fixed % Amount fields can be populated</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName=&#39;Contract_Deal_Arrangement&#39;,
+ISPICKVAL(00N9000000EBgfb,&#39;Tiered&#39;),
+OR(NOT(ISBLANK(00N9000000EBgfW)),NOT(ISBLANK( 00N9000000EBgfT)))
+)</errorConditionFormula>
+    <errorMessage>You are not able to enter a value in the %Interchange Amount or the Fixed % Amount fields if you have selected a Rebate Type of Tiered.</errorMessage>
+</ValidationRule>

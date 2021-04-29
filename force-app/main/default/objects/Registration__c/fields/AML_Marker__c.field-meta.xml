@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AML_Marker__c</fullName>
+    <externalId>false</externalId>
+    <label>AML Marker</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>MultiselectPicklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Acquirer</fullName>
+                <default>false</default>
+                <label>Acquirer</label>
+            </value>
+            <value>
+                <fullName>Corporate Group</fullName>
+                <default>false</default>
+                <label>Corporate Group</label>
+            </value>
+            <value>
+                <fullName>External Nominated User</fullName>
+                <default>false</default>
+                <label>External Nominated User</label>
+            </value>
+            <value>
+                <fullName>Pilot</fullName>
+                <default>false</default>
+                <label>Pilot</label>
+            </value>
+            <value>
+                <fullName>Resuscitated</fullName>
+                <default>false</default>
+                <label>Resuscitated</label>
+            </value>
+            <value>
+                <fullName>Sanction</fullName>
+                <default>false</default>
+                <label>Sanction</label>
+            </value>
+            <value>
+                <fullName>Supplier</fullName>
+                <default>false</default>
+                <label>Supplier</label>
+            </value>
+            <value>
+                <fullName>Transaction Monitoring</fullName>
+                <default>false</default>
+                <label>Transaction Monitoring</label>
+            </value>
+            <value>
+                <fullName>WUBS Pilot</fullName>
+                <default>false</default>
+                <label>WUBS Pilot</label>
+            </value>
+            <value>
+                <fullName>IATA Pilot</fullName>
+                <default>false</default>
+                <label>IATA Pilot</label>
+            </value>
+            <value>
+                <fullName>Adyen 403054</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Adyen 403054</label>
+            </value>
+            <value>
+                <fullName>Corporate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporate</label>
+            </value>
+            <value>
+                <fullName>Corporate Tax</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporate Tax</label>
+            </value>
+            <value>
+                <fullName>Corporate Travel</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Corporate Travel</label>
+            </value>
+            <value>
+                <fullName>Country Risk</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Country Risk</label>
+            </value>
+            <value>
+                <fullName>Digital River 404071</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Digital River 404071</label>
+            </value>
+            <value>
+                <fullName>Duplicate</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Duplicate</label>
+            </value>
+            <value>
+                <fullName>EFT to VAN</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>EFT to VAN</label>
+            </value>
+            <value>
+                <fullName>Folio Wallet Pilot</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Folio Wallet Pilot</label>
+            </value>
+            <value>
+                <fullName>Fraud</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Fraud</label>
+            </value>
+            <value>
+                <fullName>Funds eNett</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Funds eNett</label>
+            </value>
+            <value>
+                <fullName>GlobalCollect ECN</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GlobalCollect ECN</label>
+            </value>
+            <value>
+                <fullName>Government</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Government</label>
+            </value>
+            <value>
+                <fullName>Group</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Group</label>
+            </value>
+            <value>
+                <fullName>Internal</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Internal</label>
+            </value>
+            <value>
+                <fullName>Non-Disclosure Agreement (NDA)</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Non-Disclosure Agreement (NDA)</label>
+            </value>
+            <value>
+                <fullName>Original</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Original</label>
+            </value>
+            <value>
+                <fullName>PEP</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>PEP</label>
+            </value>
+            <value>
+                <fullName>Payment intermediary</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Payment intermediary</label>
+            </value>
+            <value>
+                <fullName>Referrer</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Referrer</label>
+            </value>
+            <value>
+                <fullName>Suspicion</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Suspicion</label>
+            </value>
+            <value>
+                <fullName>TMC</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>TMC</label>
+            </value>
+            <value>
+                <fullName>Testing</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>Testing</label>
+            </value>
+            <value>
+                <fullName>eNett Funds</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>eNett Funds</label>
+            </value>
+            <value>
+                <fullName>re-DD</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>re-DD</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+    <visibleLines>4</visibleLines>
+</CustomField>

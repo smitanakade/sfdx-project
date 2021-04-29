@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Completed_Legal_Approval_Task__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This date is automatically set on completion of the Legal Approval task</inlineHelpText>
+    <label>Completed Legal Approval Task</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

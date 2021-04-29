@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flat_Contract_not_entering_Tier_fields</fullName>
+    <active>false</active>
+    <description>Make sure that &quot;Tier&quot; fields are not entered when Rebate Type field is &quot;Flat&quot;</description>
+    <errorConditionFormula>AND( 
+RecordType.DeveloperName=&#39;Contract_Deal_Arrangement&#39;, 
+ISPICKVAL(00N9000000EBgfb,&#39;Flat&#39;), 
+OR(
+NOT(ISBLANK(00N9000000EBgfo)),
+NOT(ISBLANK(00N9000000EBgfm)),
+NOT(ISBLANK(00N9000000EBgfn)),
+NOT(ISBLANK(00N9000000EBgfp)),
+NOT(ISBLANK(00N9000000EBgfq)),
+NOT(ISBLANK(00N9000000EBgfy)),
+NOT(ISBLANK(00N9000000EBgfv)),
+NOT(ISBLANK(00N9000000EBgft)),
+NOT(ISBLANK(00N9000000EBgfu)),
+NOT(ISBLANK(00N9000000EBgfw)),
+NOT(ISBLANK(00N9000000EBgfx)),
+NOT(ISBLANK(00N9000000EBgg5)),
+NOT(ISBLANK(00N9000000EBgfz)),
+NOT(ISBLANK(00N9000000EBgg2)),
+NOT(ISBLANK(00N9000000EBgg0)),
+NOT(ISBLANK(00N9000000EBgg1)),
+NOT(ISBLANK(00N9000000EBgg3)),
+NOT(ISBLANK(00N9000000EBgg4)), 
+(ISPICKVAL(00N9000000EBgg6, &quot;Monthly&quot;)),
+(ISPICKVAL(00N9000000EBgg6, &quot;Yearly&quot;))) 
+)</errorConditionFormula>
+    <errorMessage>&quot;Values are not allowed in the fields begins with &quot;Tier&quot;, as you have selected a Rebate Type as Flat&quot;</errorMessage>
+</ValidationRule>

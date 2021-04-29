@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Record_Need_Won_Lost_Reason</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Record_Type__c = &#39;Opportunity_Record_Opportunity_Outcome&#39;,
+NOT(ISPICKVAL(Contract_Outcome__c, &quot;&quot;)), ISPICKVAL(Won_Lost_Reason__c,&quot;&quot;))</errorConditionFormula>
+    <errorMessage>Cannot complete task. Please enter a Won/Lost Reason.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Onboarding Status --></label>
+    <name>Onboarding_Status__c</name>
+    <picklistValues>
+        <masterLabel>Awaiting Approval</masterLabel>
+        <translation><!-- Awaiting Approval --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Awaiting Authorisation</masterLabel>
+        <translation><!-- Awaiting Authorisation --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Awaiting Citi</masterLabel>
+        <translation><!-- Awaiting Citi --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Awaiting EFT deposit form</masterLabel>
+        <translation><!-- Awaiting EFT deposit form --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Awaiting Legal</masterLabel>
+        <translation><!-- Awaiting Legal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Awaiting Terms and Conditions</masterLabel>
+        <translation><!-- Awaiting Terms and Conditions --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DD Complete</masterLabel>
+        <translation><!-- DD Complete --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Deleted</masterLabel>
+        <translation><!-- Deleted --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Due Diligence In Progress</masterLabel>
+        <translation><!-- Due Diligence In Progress --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Due Diligence</masterLabel>
+        <translation><!-- New Due Diligence --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New registration</masterLabel>
+        <translation><!-- New registration --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Periodic review</masterLabel>
+        <translation><!-- Periodic review --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Referred</masterLabel>
+        <translation><!-- Referred --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registration Approved</masterLabel>
+        <translation><!-- Registration Approved --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registration Complete</masterLabel>
+        <translation><!-- Registration Complete --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registration Completed Input</masterLabel>
+        <translation><!-- Registration Completed Input --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registration Declined</masterLabel>
+        <translation><!-- Registration Declined --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Registration In Progress</masterLabel>
+        <translation><!-- Registration In Progress --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

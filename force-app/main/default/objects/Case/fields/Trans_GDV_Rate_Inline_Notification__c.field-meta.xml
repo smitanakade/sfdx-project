@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trans_GDV_Rate_Inline_Notification__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The is the date when a notification email was sent to the account manager informing them that the account is transacting to the levels defined in the GDV. This date is set automatically.</inlineHelpText>
+    <label>Trans GDV Rate Inline Notification</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

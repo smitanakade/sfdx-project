@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registration_Sub_Stage__c</fullName>
+    <externalId>false</externalId>
+    <label>Registration Sub Stage</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Contact Details</fullName>
+                <default>false</default>
+                <label>Contact Details</label>
+            </value>
+            <value>
+                <fullName>Product Selection</fullName>
+                <default>false</default>
+                <label>Product Selection</label>
+            </value>
+            <value>
+                <fullName>Overview</fullName>
+                <default>false</default>
+                <label>Overview</label>
+            </value>
+            <value>
+                <fullName>Business Details</fullName>
+                <default>false</default>
+                <label>Business Details</label>
+            </value>
+            <value>
+                <fullName>Address Details</fullName>
+                <default>false</default>
+                <label>Address Details</label>
+            </value>
+            <value>
+                <fullName>Signatory Details</fullName>
+                <default>false</default>
+                <label>Signatory Details</label>
+            </value>
+            <value>
+                <fullName>Beneficial Owners</fullName>
+                <default>false</default>
+                <label>Beneficial Owners</label>
+            </value>
+            <value>
+                <fullName>Business Directors</fullName>
+                <default>false</default>
+                <label>Business Directors</label>
+            </value>
+            <value>
+                <fullName>Travel Group Details</fullName>
+                <default>false</default>
+                <label>Travel Group Details</label>
+            </value>
+            <value>
+                <fullName>Financial Accounts</fullName>
+                <default>false</default>
+                <label>Financial Accounts</label>
+            </value>
+            <value>
+                <fullName>Review/Confirmation</fullName>
+                <default>false</default>
+                <label>Review/Confirmation</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

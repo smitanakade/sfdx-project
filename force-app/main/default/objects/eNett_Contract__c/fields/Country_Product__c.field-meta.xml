@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Country_Product__c</fullName>
+    <description>Used for filtering the Drawloop Client Agreements.  Note: the asterisk is used to save a client agreement against only the VANs contract when both VANs and EFT contracts are generated.</description>
+    <externalId>false</externalId>
+    <formula>CASE(Account_Name__r.Reference_Registration__r.Country__c, &#39;Australia&#39;, &#39;A&#39;, &#39;New Zealand&#39;, &#39;NZ&#39;, &#39;Other&#39;) 
++ &#39;-&#39; 
++ IF(INCLUDES(Account_Name__r.Reference_Registration__r.Product__c, &#39;eNett EFT&#39;), &#39;E&#39;, &#39;&#39;)
++ IF(INCLUDES(Account_Name__r.Reference_Registration__r.Product__c, &#39;VANs&#39;), &#39;V&#39;, &#39;&#39;)
++ IF(AND(INCLUDES(Account_Name__r.Reference_Registration__r.Product__c, &#39;eNett EFT&#39;),INCLUDES(Account_Name__r.Reference_Registration__r.Product__c, &#39;VANs&#39;), ISPICKVAL(eNett_Product__c, &#39;VANs&#39;)),&#39;*&#39;,&#39;&#39;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Country / Product</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

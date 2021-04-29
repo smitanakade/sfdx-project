@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Primary_Challenge__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>What is the primary adoption challenge faced in order to win business?</inlineHelpText>
+    <label>Primary Adoption Challenge</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Business Model Change</fullName>
+                <default>false</default>
+                <label>Business Model Change</label>
+            </value>
+            <value>
+                <fullName>Commercials (Rebate)</fullName>
+                <default>false</default>
+                <label>Commercials (Rebate)</label>
+            </value>
+            <value>
+                <fullName>Competitor Solution / Offer</fullName>
+                <default>false</default>
+                <label>Competitor Solution / Offer</label>
+            </value>
+            <value>
+                <fullName>Customer Apathy</fullName>
+                <default>false</default>
+                <label>Customer Apathy</label>
+            </value>
+            <value>
+                <fullName>Funding / Credit / Cashflow</fullName>
+                <default>false</default>
+                <label>Funding / Credit / Cashflow</label>
+            </value>
+            <value>
+                <fullName>IATA890</fullName>
+                <default>false</default>
+                <label>IATA890</label>
+            </value>
+            <value>
+                <fullName>Org. Buy-In / Business Priority</fullName>
+                <default>false</default>
+                <label>Org. Buy-In / Business Priority</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Process Challenge-Billback</fullName>
+                <default>false</default>
+                <label>Process Challenge-Billback</label>
+            </value>
+            <value>
+                <fullName>Process Challenge-Retraining</fullName>
+                <default>false</default>
+                <label>Process Challenge-Retraining</label>
+            </value>
+            <value>
+                <fullName>Process Challenge-System Complexity</fullName>
+                <default>false</default>
+                <label>Process Challenge-System Complexity</label>
+            </value>
+            <value>
+                <fullName>Product Deficiency-Functionality</fullName>
+                <default>false</default>
+                <label>Product Deficiency-Functionality</label>
+            </value>
+            <value>
+                <fullName>Product Deficiency-Local Currency</fullName>
+                <default>false</default>
+                <label>Product Deficiency-Local Currency</label>
+            </value>
+            <value>
+                <fullName>Supplier Accept.-General</fullName>
+                <default>false</default>
+                <label>Supplier Accept.-General</label>
+            </value>
+            <value>
+                <fullName>Supplier Accept.-Hotel Recontracting</fullName>
+                <default>false</default>
+                <label>Supplier Accept.-Hotel Recontracting</label>
+            </value>
+            <value>
+                <fullName>Tech. Challenge-3rd Party Reliance</fullName>
+                <default>false</default>
+                <label>Tech. Challenge-3rd Party Reliance</label>
+            </value>
+            <value>
+                <fullName>Tech. Challenge-Backoffice/Downstream</fullName>
+                <default>false</default>
+                <label>Tech. Challenge-Backoffice/Downstream</label>
+            </value>
+            <value>
+                <fullName>Tech. Challenge-Legacy Systems</fullName>
+                <default>false</default>
+                <label>Tech. Challenge-Legacy Systems</label>
+            </value>
+            <value>
+                <fullName>Tech. Challenge-Roadmap</fullName>
+                <default>false</default>
+                <label>Tech. Challenge-Roadmap</label>
+            </value>
+            <value>
+                <fullName>VCC Familiarity</fullName>
+                <default>false</default>
+                <label>VCC Familiarity</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

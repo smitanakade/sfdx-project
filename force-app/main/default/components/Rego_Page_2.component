@@ -1,0 +1,217 @@
+<apex:component >
+
+
+    
+    <style media="screen" type="text/css">
+        table.xxx td, table.xxx th {
+        width: 200px;
+        height: 15px;
+        border: 1px solid #ccc;
+        text-align: center;
+        }
+        table.xxx th {
+        width: 100px;
+        background: lightblue;
+        border-color: white;
+        }
+        table.xxx body {
+        padding: 1rem;
+        }
+        
+        
+        .row .special-span{
+        padding: 10px !important;
+        }        
+    </style>            
+
+
+
+
+    <!--
+    ********************************************Start Debug*******************************************
+    ********************************************Start Debug*******************************************
+
+    <table>
+        <tbody>
+            <tr><td><div>registration.Country__c = {{registration.Country__c}}</div></td></tr>
+            <tr><td><div>getPercentage = {{getPercentage()}}</div></td></tr>
+        </tbody>
+    </table>
+
+
+    ********************************************End Debug*******************************************
+    ********************************************End Debug*******************************************
+    -->
+    
+
+
+
+
+
+    <div class="container">
+        <p class="col-xs-12 col-sm-12 intro-content">Time to get to know you better. Here’s a handy checklist of the info you’ll need to complete your application.  Feel free to click the button if you want to save here and come back later.</p>
+        
+        <div ng-if="checkOverview('VANSole')">            
+            <ul class="col-xs-12 checklist">
+                <li>General business details including your registered business address, tax file number or business/company number.</li>
+
+                <li>Details of your principal signatory (someone who’s authorised to make transactions on your business’ behalf). </li>
+
+                <li>Photo ID of your principal signatory. This might be a valid driver’s licence or passport.</li>
+
+                <li>Details of the bank account you’ll be funding from. You’ll need to specify your account name, country and currency, BIC/SWIFT and IBAN or your branch number, account number and BIC/SWIFT.</li>
+            </ul>
+            
+            <p class="col-xs-12 col-sm-12 intro-content"><br/><br/>A quick heads-up: Sometimes, we may need to see additional paperwork such as recent bank statements showing your business name and account number (think of this as giving us a corporate hug). We’ll let you know if this is necessary.</p>        
+        </div>
+
+        <div  ng-if="checkOverview('VANPartnership')">            
+            <ul class="col-xs-12 checklist">
+                <li>General business details including your registered business address, tax file number or business/company number.</li>
+
+                <li>Details of your principal signatory (someone who’s authorised to make transactions on your business’ behalf). This may be a business owner, the managing director, or your CEO/CFO.</li>
+
+                <li>Photo ID of your business’ primary partner. This might be a valid driver’s licence or passport</li>
+
+                <li>Some evidence of your ownership structure. This might be an organisational chart.</li>
+
+                <li>Details of the bank account you’ll be funding from. You’ll need to specify your account name, country and currency, BIC/SWIFT and IBAN or your branch number, account number and BIC/SWIFT.</li>
+
+                <li>An outline of your business’ ownership structure. We’ll need details of any person or entity who owns {{getPercentage()}}% or more of your business. In most cases, the information we need is pretty straightforward.
+
+                    <br/><br/>
+                    <p  style="padding-left: 20px; display=inline-block;">If the ≥ {{getPercentage()}}% owner is a person, please provide his or her full name, residential address, and the percentage of your business that he or she owns.</p>
+
+                    <p style="padding-left: 20px; display=inline-block;">If the ≥ {{getPercentage()}}% owner is a company, please provide its registered company name, its registered business address, its percentage ownership in your business, and a list of its shareholders/owners with a {{getPercentage()}}% or greater financial interest.</p>
+
+                    <p  style="padding-left: 20px; display=inline-block;">If the ≥ {{getPercentage()}}% owner is a chain of companies, please provide the same information as above for all entities, until each owner is identified either as a person or a publicly listed company.</p>
+
+                    <p  style="padding-left: 20px; display=inline-block;">If the ≥ {{getPercentage()}}% owner is a trust, please provide details of all people who are owners of the trust as well as the beneficiaries of the trust.</p>
+                </li>
+            </ul>
+            
+            <p class="col-xs-12 col-sm-12 intro-content"><br/><br/>A quick heads-up: Sometimes, we may need to see additional paperwork such as recent bank statements showing your business name and account number (think of this as giving us a fiscal hug). We’ll let you know if this is necessary.</p>        
+        </div>
+
+
+        <div  ng-if="checkOverview('VANPublic')">            
+            <ul class="col-xs-12 checklist">
+                <li>General business details including your registered business address, tax file number or business/company number.</li>
+                <li>Details of your principal signatory (someone who’s authorised to make transactions on your company’s behalf). This may be your managing director, CEO/CFO, or chairperson.</li>
+                <li>Photo ID of your principal signatory. This might be a valid driver’s licence or passport.</li>
+                <li>The name of your company as listed on the stock exchange.</li>
+                <li>The full names of all company directors.</li>
+                <li>Details of the bank account you’ll be funding from. You’ll need to specify your account name, country and currency, BIC/SWIFT and IBAN or your branch number, account number and BIC/SWIFT.</li>
+            </ul>
+            
+            <p class="col-xs-12 col-sm-12 intro-content"><br/><br/>A quick heads-up: Sometimes, we may need to see additional paperwork such as recent bank statements showing your business name and account number (think of this as giving us a fiscal hug). We’ll let you know if this is necessary.</p>        
+        </div>
+
+
+        <div  ng-if="checkOverview('VANPrivate')">            
+            <ul class="col-xs-12 checklist">
+                <li>General business details including your registered business address, tax file number or business/company number.</li>
+
+                <li>Details of your principal signatory (someone who’s authorised to make transactions on your business’ behalf). This may be a company director, the managing director, or your CEO/CFO.</li>
+
+                <li>Photo ID of your principal signatory. This might be a valid driver’s licence or passport.</li>
+
+                <li>Some evidence of your ownership structure. This might be an organisational chart.</li>
+
+                <li>Details of the bank account you’ll be funding from. You’ll need to specify your account name, country and currency, BIC/SWIFT and IBAN or your branch number, account number and BIC/SWIFT.</li>
+
+                <li>   An outline of your company’s ownership structure. We’ll need details of any person or entity who owns {{getPercentage()}}% or more of your company. In most cases, the information we need is pretty straightforward.
+
+                    <br/><br/>
+                    <p  style="padding-left: 20px; display=inline-block;">If the ≥ {{getPercentage()}}% owner is a person, please provide his or her full name, residential address, and the percentage of your business that he or she owns.</p>
+
+                    <p style="padding-left: 20px; display=inline-block;">If the ≥ {{getPercentage()}}% owner is a company, please provide its registered company name, its registered business address, its percentage ownership in your business, and a list of its shareholders/owners with a {{getPercentage()}}% or greater financial interest.</p>
+
+                    <p  style="padding-left: 20px; display=inline-block;">If the ≥ {{getPercentage()}}% owner is a chain of companies, please provide the same information as above for all entities, until each owner is identified either as a person or a publicly listed company.</p>
+
+                    <p  style="padding-left: 20px; display=inline-block;">If the ≥ {{getPercentage()}}% owner is a trust, please provide details of all people who are owners of the trust as well as the beneficiaries of the trust.</p>
+                </li>
+            </ul>
+            
+            <p class="col-xs-12 col-sm-12 intro-content"><br/><br/>A quick heads-up: Sometimes, we may need to see additional paperwork such as recent bank statements showing your business name and account number (think of this as giving us a fiscal hug). We’ll let you know if this is necessary.</p>        
+        </div>
+
+
+        <div  ng-if="checkOverview('EFTSolePartner')">            
+            <ul class="col-xs-12 checklist">
+                <li>General business details including your registered business address, tax file number or business/company number.</li>
+
+                <li>Details of your principal signatory (someone who’s authorised to make transactions on your business’ behalf).</li>
+
+                <li>Photo ID of your principal signatory. This might be a valid driver’s licence or passport.</li>
+
+                <li>Billing, Payable and Receivable account details. You’ll need to specify your account name, BSB and account number as well as your branch address.</li>
+            </ul>
+        </div>
+
+
+        <div  ng-if="checkOverview('EFTPublic')">            
+            <ul class="col-xs-12 checklist">
+                <li>General business details including your registered business address, tax file number or business/company number.</li>
+
+                <li>Details of your principal signatory (someone who’s authorised to make transactions on your company’s behalf). This may be your managing director, CEO/CFO, or chairperson.</li>
+
+                <li>Photo ID of your principal signatory. This might be a valid driver’s licence or passport.</li>
+
+                <li>The name of your company as listed on the stock exchange.</li>
+
+                <li>The full names of all company directors.</li>
+
+                <li>Billing, Payable and Receivable account details. You’ll need to specify your account name, BSB and account number as well as your branch address.</li>
+            </ul>
+        </div>
+
+
+        <div  ng-if="checkOverview('EFTPrivate')">            
+            <ul class="col-xs-12 checklist">
+                <li>General business details including your registered business address, tax file number or business/company number.</li>
+
+                <li>Details of your principal signatory (someone who’s authorised to make transactions on your company’s behalf). This may be a business owner, the managing director, or your CEO/CFO.</li>
+
+                <li>Photo ID of your principal signatory. This might be a valid driver’s licence or passport.</li>
+
+                <li>The full names of all company directors.</li>
+
+                <li>Billing, Payable and Receivable account details. You’ll need to specify your account name, BSB and account number as well as your branch address.</li>
+            </ul>
+        </div>
+
+
+        <div class="btn-footer">
+            <div class="row">
+                <div class="col-xs-12 col-sm-4  col-md-4 item">
+                    <h3>Don't have everything right now?</h3>
+                    <p>Simply press the button below. We’ll email you a secure link and you can resume your application whenever you’re ready.</p>
+                </div>
+                <div class="col-xs-12 col-sm-4  col-md-4 item">
+                    <h3>Need some help along the way?</h3>
+                    <p>No problem! Just contact one of our brilliant customer service staff and we’ll give you a hand with any aspect of your application.</p>
+                </div>
+                <div class="col-xs-12 col-sm-4  col-md-4 item">
+                    <h3>Ready to keep going?</h3>
+                    <p>Got all the necessary information at your fingertips? That’s what we call efficiency. Let’s continue on with your application.</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-4  col-md-4 item">
+                    <a href="" class="btn btn-primary" ng-click="saveAndContinue()"><span>Save and continue later</span></a>
+                </div>
+                <div class="col-xs-12 col-sm-4  col-md-4 item">
+                    <a href="https://www.enett.com/contact-us" target="_blank" class="btn btn-primary"><span>contact us</span></a>
+                </div>
+                <div class="col-xs-12 col-sm-4  col-md-4 item">
+                    <div class="btn-wrapper btn-next-wrapper">
+                        <a href="" class="btn btn-primary btn-next anchor-link" data-btnstep="step3" ng-click="setStages('Business Details'); getBeneficialOwners(); getDirectors()"><span>Next</span></a>
+                        <input type="button" value="Submit" class="btn-next-submit"/>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</apex:component>

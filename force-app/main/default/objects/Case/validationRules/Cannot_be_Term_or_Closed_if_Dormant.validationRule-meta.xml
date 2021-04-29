@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_be_Term_or_Closed_if_Dormant</fullName>
+    <active>true</active>
+    <description>This validation rule prohibits the user from setting the record to a Terminated or Closed/Lost if the Ticket is in a Dormant state</description>
+    <errorConditionFormula>AND(OR(ISPICKVAL(Status,&#39;Closed/Lost Delivery&#39;),ISPICKVAL(Status,&#39;Terminate&#39;)), 
+ISPICKVAL(PRIORVALUE(Status),&#39;Dormant&#39;))</errorConditionFormula>
+    <errorMessage>The record cannot be set to Terminate or Closed/Lost while in a Dormant state.  Return this delivery ticket to the Active state by entering the Dormant End Date before selecting the Closed/Lost or Terminate buttons.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- This field is automatically populated based on the Due Diligence Completed date and the Risk Rating field. 
+Low + 3 Years, Medium + 2 Years, High + 1 Year.By default, the date is the last day of the month. --></help>
+    <label><!-- Re-DD Due Date --></label>
+    <name>Re_DD_Due_Date__c</name>
+</CustomFieldTranslation>

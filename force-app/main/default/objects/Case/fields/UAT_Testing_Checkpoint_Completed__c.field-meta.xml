@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UAT_Testing_Checkpoint_Completed__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please enter he date when the UAT Testing was completed.</inlineHelpText>
+    <label>UAT Testing Checkpoint Completed</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>T_C_Modification_Details__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Please use this for other clauses that are not highlighted above, such as Virtual Terminal exemption. Please ensure that the above T&amp;C modification box is ticked to ensure that this flows through the deal approval process.</inlineHelpText>
+    <label>Other T&amp;C Modifications</label>
+    <length>255</length>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

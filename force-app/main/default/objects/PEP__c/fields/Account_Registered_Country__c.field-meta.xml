@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Registered_Country__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(NOT(ISBLANK(Director__c)), TEXT(Director__r.Registration__r.RegBusiness_Country__c), (IF(NOT(ISBLANK(Beneficial_Owner__c)), TEXT(Beneficial_Owner__r.Registration__r.RegBusiness_Country__c), TEXT(Registration__r.RegBusiness_Country__c))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Account Registered Country</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

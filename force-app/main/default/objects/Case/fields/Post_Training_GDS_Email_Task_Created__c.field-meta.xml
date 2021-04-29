@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Post_Training_GDS_Email_Task_Created__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the date when the Post Training GDS Notification Task was created</inlineHelpText>
+    <label>Post Training GDS Email Task Created</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

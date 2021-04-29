@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Open_Opportunities</fullName>
+    <booleanFilter>1 AND (2 AND 3 AND 4)</booleanFilter>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>CORE.USERS.FULL_NAME</columns>
+    <columns>Product__c</columns>
+    <columns>Delivery_Owner__c</columns>
+    <columns>OPPORTUNITY.STAGE_NAME</columns>
+    <columns>OPPORTUNITY.PROBABILITY</columns>
+    <columns>OPPORTUNITY.CLOSE_DATE</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>Delivery_Status__c</field>
+        <operation>notEqual</operation>
+        <value>Dormant</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>5. Closed/Won - GDV Met</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>6. Closed/Won - GDV Not Met</value>
+    </filters>
+    <filters>
+        <field>OPPORTUNITY.STAGE_NAME</field>
+        <operation>notEqual</operation>
+        <value>7. Closed/Lost</value>
+    </filters>
+    <label>My Open Opportunities</label>
+    <sharedTo>
+        <role>APAC_Managers</role>
+        <role>APAC_Salespeople</role>
+        <role>Americas_Managers</role>
+        <role>Americas_Salespeople</role>
+        <role>EMEA_Managers</role>
+        <role>EMEA_Salespeople</role>
+        <role>Global_Manager</role>
+    </sharedTo>
+</ListView>

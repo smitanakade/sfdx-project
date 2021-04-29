@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>interchange_bank_fee_bps__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Average based on understanding of the client&#39;s transaction mix.  Add in Euram Bank fee if card issued by Citi or another bank.</inlineHelpText>
+    <label>Interchange - Bank fee (bps)</label>
+    <precision>4</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

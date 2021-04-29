@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Transaction_Confirmed_Email</fullName>
+    <availability>online</availability>
+    <description>Desktop Delivery - this button opens the &#39;Send Email&#39; window and assigns the &#39;Phase 4 - Confirm Transaction Email&#39; email template to the related Contact.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Transaction Confirmed Email</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/_ui/core/email/author/EmailAuthor?rtype=003
+&amp;retURL=%2F{!Process_Task__c.Id}
+&amp;saveURL=%2F{!Process_Task__c.Id}
+&amp;p2={!Case.Contact}&amp;p2_lkid={!Case.ContactId}
+&amp;p3_lkid={!Case.Id}
+&amp;template_id=00X90000001BKQr&amp;p26=service@enett.com</url>
+</WebLink>

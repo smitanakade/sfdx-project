@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funding_Account_Is_IBAN</fullName>
+    <active>true</active>
+    <description>Used for Funding Bank Accounts to ensure all required fields are captured.</description>
+    <errorConditionFormula>AND(Is_IBAN__c = true, OR(ISBLANK(SWIFT_BIC__c), ISBLANK(IBAN__c)))</errorConditionFormula>
+    <errorMessage>You must have the following information if Is IBAN is selected: 
+
+1. SWIFT/BIC 
+2. IBAN.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Account_Contact_Information</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISPICKVAL( AML_Contact_Creation__c,&quot;Completed&quot;),
+OR(ISBLANK(First_Name__c),ISBLANK(Last_Name__c),ISBLANK( Email__c))
+)</errorConditionFormula>
+    <errorMessage>This task cannot be Approved until the all required fields in the Contract Details have been completed.  Please complete the following fields: First Name, Last Name, Email.  The Phone and Mobile Phone fields are optional.</errorMessage>
+</ValidationRule>

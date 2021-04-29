@@ -1,0 +1,68 @@
+<apex:component controller="eNettRegistrationFallbackController">
+	  <!-- **************************************************************************
+      *
+      *     Terms &amp; Conditions - Start
+      *
+      **************************************************************************  -->
+		
+		<!-- **************************************************************************
+        *   ClientAgreement
+        **************************************************************************  -->
+        <h3>Read full Agreement</h3>
+		<p class="intro-content">Please take a moment to review your agreement with us.</p>
+		<div class="divTextArea" id="theAgreement" >
+			<apex:outputText value="{!ClientAgreementHTML}" escape="false" />
+		</div>
+
+		<!-- **************************************************************************
+        *   Terms &amp; Conditions
+        **************************************************************************  -->
+		<h3>Review all Terms &amp; Conditions</h3>
+		<p class="intro-content">Please take a moment to review your details and go through some important terms and conditions.</p>
+		<div class="divTextArea"  id="TandC">
+			<apex:outputText value="{!TandCHTML}" escape="false" />
+		</div>
+
+		<!-- **************************************************************************
+        *  Print TandC and Send Email
+        **************************************************************************  -->
+		<div class="wrapper-print">
+			<a href="#" class="btn btn-print" onClick="PrintElem('theAgreement','TandC');return false"><span>Print</span></a>
+			<a href="#" class="btn btn-email" onClick="updateEmailTANDC();return false"><span>Email</span></a>
+		</div>
+		<div class='tc-pdf-email-send hidden'>
+			<p>Please check your inbox. We've sent an email to <span class="emial-send-to"> </span>. If you don't see the email, check your junk or spam folders. </p>
+		</div>
+
+		<!-- **************************************************************************
+        * Final Checkbox for terms and condition 
+        **************************************************************************  -->
+		<div class="wrapper-checkbox input-container">
+			<input  type="checkbox" 
+				id="TandCAccepted" 
+				name="TandCAccepted" 
+				value="1" class="required"
+				data-errorCaption="terms and condition"/> 
+				
+				<div class="field_error">
+		            <p data-error-message="required" class="hidden"><span data-label="TandCAccepted">Terms and Condition </span> is required.</p>
+		        </div>
+				<span>I accept eNett's terms and condition and confirm that the information provide is true and correct</span> <br />
+				
+				
+		</div>
+		<div class="wrapper-checkbox input-container">
+			<input  type="checkbox" 
+				id="MarketingTandC" 
+				name="MarketingTandC" 
+				value="1"/> <span>I would like to receive news and updates from eNett</span> <br />
+		</div>
+
+
+	<!-- **************************************************************************
+    *   Error 
+    **************************************************************************  -->
+    <div class="wrapper-validation" id="terms-and-conditions-accepted-error-msg">
+           
+     </div>
+</apex:component>

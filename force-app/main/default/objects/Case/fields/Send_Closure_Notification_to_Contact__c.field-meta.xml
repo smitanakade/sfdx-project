@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Closure_Notification_to_Contact__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Checked = Closure Solution Notification sent to Contact
+Unchecked = Closure Solution Notification NOT sent to Contact</description>
+    <externalId>false</externalId>
+    <label>Send Closure Notification to Contact</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

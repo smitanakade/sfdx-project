@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Prop_Neg_Modification_Detail</fullName>
+    <active>true</active>
+    <description>This validation makes sure that Further Details is provided if the outcome of a Proposal/Negotiation task is &quot;Modifications made&quot;.</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &quot;Contract_Proposal_Negotiation&quot;,
+ISPICKVAL(Contract_Outcome__c, &quot;Modifications made&quot;),
+ISBLANK(Contract_Further_Details__c) 
+)</errorConditionFormula>
+    <errorMessage>Further Details must be provided when Modifications have been made.</errorMessage>
+</ValidationRule>

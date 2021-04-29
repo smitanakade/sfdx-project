@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DS_Status_None</fullName>
+    <active>true</active>
+    <description>When Segment Status value is blank, Segment Offboarding Date and Segment Area fields must be empty</description>
+    <errorConditionFormula>OR(
+   AND( 
+       ISBLANK( TEXT (Segment_Status__c) ), 
+        NOT( ISBLANK(Segment_Offboarding_Date__c) ) 
+      ),
+   AND( 
+       ISBLANK(TEXT(Segment_Status__c)), 
+       NOT( ISBLANK( TEXT( Segment_Area__c ) ) )
+      )	
+  )</errorConditionFormula>
+    <errorMessage>When Segment Status value is blank, Segment Offboarding Date and Segment Area fields must be empty</errorMessage>
+</ValidationRule>

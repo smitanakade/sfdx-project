@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registration_Type__c</fullName>
+    <description>This holds the Registration saved on the Completion of the Opportunity Qualify Task</description>
+    <externalId>false</externalId>
+    <label>Registration Type</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>AML Internal Registration</fullName>
+                <default>false</default>
+                <label>AML Internal Registration</label>
+            </value>
+            <value>
+                <fullName>eNett Online Registration</fullName>
+                <default>false</default>
+                <label>eNett Online Registration</label>
+            </value>
+            <value>
+                <fullName>Registration not required</fullName>
+                <default>false</default>
+                <label>Registration not required</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

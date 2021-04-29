@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Doc_Business_Address__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK( Address_Line_1__c ), &quot;&quot;, Address_Line_1__c &amp; &quot; &quot;) &amp; 
+IF(ISBLANK( Address_Line_2__c ), &quot;&quot;, Address_Line_2__c &amp; &quot; &quot;) &amp; 
+IF(ISBLANK( City__c ), &quot;&quot;, City__c &amp; &quot; &quot;) &amp; 
+IF(ISBLANK( Postcode__c ), &quot;&quot;, Postcode__c &amp; &quot; &quot;) &amp; 
+IF(ISBLANK( State_Province__r.Name ), &quot;&quot;, State_Province__r.Name &amp; &quot; &quot;) &amp; 
+IF(ISBLANK( TEXT( Country__c )), &quot;&quot;, TEXT( Country__c ))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Doc Business Address</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>GDS__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF( INCLUDES(Account.GDS_multi_select__c , &quot;Abacus&quot;), &quot;Abacus; &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES(Account.GDS_multi_select__c , &quot;Amadeus&quot;), &quot;Amadeus; &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Account.GDS_multi_select__c , &quot;Apollo&quot;), &quot;Apollo; &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Account.GDS_multi_select__c , &quot;Axess&quot;), &quot;Axess; &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Account.GDS_multi_select__c , &quot;Galileo&quot;), &quot;Galileo; &quot;,&quot;&quot;)
+&amp;
+IF( INCLUDES(Account.GDS_multi_select__c , &quot;Infini&quot;), &quot;Infini; &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Account.GDS_multi_select__c , &quot;Sabre&quot;), &quot;Sabre; &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Account.GDS_multi_select__c , &quot;Sirena&quot;), &quot;Sirena; &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Account.GDS_multi_select__c , &quot;Topas&quot;), &quot;Topas; &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Account.GDS_multi_select__c , &quot;Travelsky&quot;), &quot;Travelsky; &quot;, &quot;&quot;)
+&amp;
+IF( INCLUDES(Account.GDS_multi_select__c , &quot;Worldspan&quot;), &quot;Worldspan; &quot;, &quot;&quot;)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>GDS</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

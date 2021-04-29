@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_DA_Volume_Commitments_Details</fullName>
+    <active>true</active>
+    <description>The Volume Commitments Details field must be populated when the Volume Commitments checkbox has been ticked.</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &quot;Contract Deal Arrangement&quot;, 
+Volume_Commitments__c = True,
+ISBLANK(Volume_Commitments_Details__c)
+)</errorConditionFormula>
+    <errorMessage>The Volume Commitments Details field must be populated when the Volume Commitments checkbox has been ticked.</errorMessage>
+</ValidationRule>

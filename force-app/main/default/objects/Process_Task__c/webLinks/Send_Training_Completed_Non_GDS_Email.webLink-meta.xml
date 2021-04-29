@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Training_Completed_Non_GDS_Email</fullName>
+    <availability>online</availability>
+    <description>Desktop Delivery - this button navigates the User to the &#39;Send Email&#39; window and selects the &#39;Training Completed Non GDS&#39; email template.</description>
+    <displayType>button</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>Send Training Completed Non GDS Email</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <url>/_ui/core/email/author/EmailAuthor?rtype=003&amp;retURL=%2F{!Process_Task__c.Id}&amp;saveURL=%2F{!Process_Task__c.Id}&amp;p2={!Case.Contact}&amp;p2_lkid={!Case.ContactId}&amp;p3_lkid={!Case.Id}&amp;template_id=00X90000001BKQo&amp;p26=delivery@enett.com</url>
+</WebLink>

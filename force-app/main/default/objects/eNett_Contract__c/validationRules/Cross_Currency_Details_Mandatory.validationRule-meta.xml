@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cross_Currency_Details_Mandatory</fullName>
+    <active>true</active>
+    <description>The Cross Currency Details field must be populated when the Cross Currency Fee checkbox has been ticked.</description>
+    <errorConditionFormula>AND( Cross_Currency_Fee_0_81__c =True,ISBLANK( Cross_Currency_Details__c ))</errorConditionFormula>
+    <errorMessage>The Cross Currency Fee Details field must be populated when the Cross Currency Fee checkbox has been ticked.</errorMessage>
+</ValidationRule>

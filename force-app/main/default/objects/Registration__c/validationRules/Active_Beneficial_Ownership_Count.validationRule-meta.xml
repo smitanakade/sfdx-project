@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Beneficial_Ownership_Count</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND
+(OR(ISPICKVAL( Business_Type__c,&quot;Partnership&quot;),ISPICKVAL( Business_Type__c,&quot;Private Company&quot;), ISPICKVAL( Business_Type__c,&quot;Association/Club&quot;), ISPICKVAL( Business_Type__c,&quot;Trusts/Foundation&quot;)),
+INCLUDES(Product__c,&quot;VANs&quot;),
+ISCHANGED(Beneficial_Ownership__c),Beneficial_Ownership__c =TRUE, 
+Active_BO_Count__c =0
+)</errorConditionFormula>
+    <errorMessage>At least one active Beneficial Owner is required for this business type.</errorMessage>
+</ValidationRule>

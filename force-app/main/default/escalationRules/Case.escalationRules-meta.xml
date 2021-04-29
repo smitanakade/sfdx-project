@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EscalationRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <escalationRule>
+        <fullName>Time Zone%2FBusiness times escalation</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <businessHours>Australian Eastern Seaboard</businessHours>
+            <businessHoursSource>Static</businessHoursSource>
+            <escalationStartTime>CaseCreation</escalationStartTime>
+            <formula>Account_Region__c = &quot;APAC&quot;</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <businessHours>London</businessHours>
+            <businessHoursSource>Static</businessHoursSource>
+            <escalationStartTime>CaseCreation</escalationStartTime>
+            <formula>Account_Region__c = &quot;EMEA&quot;</formula>
+        </ruleEntry>
+        <ruleEntry>
+            <businessHours>San Fransisco</businessHours>
+            <businessHoursSource>Static</businessHoursSource>
+            <escalationStartTime>CaseCreation</escalationStartTime>
+            <formula>Account_Region__c = &quot;Americas&quot;</formula>
+        </ruleEntry>
+    </escalationRule>
+</EscalationRules>

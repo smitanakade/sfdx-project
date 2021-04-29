@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- To be selected if the client has specific non disclosure agreements with eNett. --></help>
+    <label><!-- Non Disclosure Agreement --></label>
+    <name>Non_Disclosure_Agreement__c</name>
+</CustomFieldTranslation>

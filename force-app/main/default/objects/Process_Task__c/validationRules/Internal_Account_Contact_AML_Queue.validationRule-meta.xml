@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Internal_Account_Contact_AML_Queue</fullName>
+    <active>true</active>
+    <description>This validation is required so a member of the AML team will make themselves the owner of the Contact Task before Completing the Task.</description>
+    <errorConditionFormula>AND(ISPICKVAL(AML_Contact_Creation__c,&quot;Completed&quot;),
+NOT(ISBLANK(Owner:Queue.Id)),
+RecordType.DeveloperName = &quot;Internal_Account_Contact_Record_Type&quot;)</errorConditionFormula>
+    <errorMessage>Please re assign the ticket to a valid AML user before you complete the task.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Confirm_existence_of_related_email_value</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(INCLUDES(Job_Role__c,&quot;Primary&quot;),ISBLANK( Primary_Email_Address__c ),NOT(Converted_Contact__c))</errorConditionFormula>
+    <errorMessage>Primary email address must be populated if the Primary job role has been set.</errorMessage>
+</ValidationRule>

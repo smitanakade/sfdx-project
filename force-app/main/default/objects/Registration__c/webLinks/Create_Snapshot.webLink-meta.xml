@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Snapshot</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Generate Snapshot</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/30.0/apex.js&quot;)}
+
+
+alert(&quot;Nuclear warheads engaged. Are you sure about this? Press OK to deploy missiles !!!&quot;);
+
+//sforce.apex.execute(&quot;RegistrationUtilities&quot;,&quot;CreateRegoSnapshot&quot;, {theRegId:&quot;{!Registration__c.Id}&quot;, setExcluded:&quot;&quot;});
+sforce.apex.execute(&quot;RegistrationUtilities&quot;,&quot;CreateRegoSnapshot&quot;, {theRegId:&quot;{!Registration__c.Id}&quot;});
+
+alert(&quot;Ka-BOOM !!!&quot;);
+
+document.location.reload(true);</url>
+</WebLink>

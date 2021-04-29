@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Qualify_Opportunity_need_Delivery_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+Record_Type__c = &#39;Opportunity_Qualify_Opportunity&#39;,
+ISPICKVAL(Status__c, &#39;Completed&#39;), 
+ISPICKVAL(Delivery_Type__c, &quot;&quot;))</errorConditionFormula>
+    <errorMessage>Cannot complete task. Please enter a value for Delivery Type.</errorMessage>
+</ValidationRule>

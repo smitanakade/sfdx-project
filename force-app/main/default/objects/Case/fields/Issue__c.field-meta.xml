@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Issue__c</fullName>
+    <externalId>false</externalId>
+    <label>Issue</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Description__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Funds Not Received</fullName>
+                <default>false</default>
+                <label>Funds Not Received</label>
+            </value>
+            <value>
+                <fullName>Funds Delayed</fullName>
+                <default>false</default>
+                <label>Funds Delayed</label>
+            </value>
+            <value>
+                <fullName>Funds Returned</fullName>
+                <default>false</default>
+                <label>Funds Returned</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Banking</controllingFieldValue>
+            <valueName>Funds Not Received</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Banking</controllingFieldValue>
+            <valueName>Funds Delayed</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Banking</controllingFieldValue>
+            <valueName>Funds Returned</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

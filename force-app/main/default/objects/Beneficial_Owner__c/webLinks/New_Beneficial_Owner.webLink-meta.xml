@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Beneficial_Owner</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Beneficial Owner</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>true</requireRowSelection>
+    <url>/setup/ui/recordtypeselect.jsp?ent={!$Setup.ObjectReferenceIds__c.Beneficial_Owner_Object_Id__c}&amp;retURL=/%2F{!Registration__c.Id}&amp;save_new_url=%2F{!$Setup.ObjectReferenceIds__c.Beneficial_Owner_Object_Prefix__c}%2Fe%3FCF{!$Setup.ObjectReferenceIds__c.Beneficial_Owner_Active_Registration__c}%3D{!Registration__c.Name}%26CF{!$Setup.ObjectReferenceIds__c.Beneficial_Owner_Active_Registration__c}_lkid%3D{!Registration__c.Id}%26CF{!$Setup.ObjectReferenceIds__c.Beneficial_Owner_Registration__c}%3D{!Registration__c.Name}%26CF{!$Setup.ObjectReferenceIds__c.Beneficial_Owner_Registration__c}_lkid%3D{!Registration__c.Id}%26retURL%3D{!Registration__c.Id}&amp;nooverride=1</url>
+</WebLink>

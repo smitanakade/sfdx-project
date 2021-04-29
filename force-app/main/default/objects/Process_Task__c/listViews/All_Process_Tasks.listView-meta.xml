@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_Process_Tasks</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>Due_Date_Indicator__c</columns>
+    <columns>ECN__c</columns>
+    <columns>Task_Name__c</columns>
+    <columns>Delivery_Ticket__c</columns>
+    <columns>Opportunity__c</columns>
+    <columns>eNett_Contract__c</columns>
+    <columns>Status__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <label>All Process Tasks</label>
+</ListView>

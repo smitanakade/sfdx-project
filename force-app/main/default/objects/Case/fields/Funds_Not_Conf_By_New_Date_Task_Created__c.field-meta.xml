@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funds_Not_Conf_By_New_Date_Task_Created__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>The date that the &quot;Desktop Delivery - No Funds after 1 Week revised Due Date&quot; Task was created.</inlineHelpText>
+    <label>Funds Not Conf By New Date Task Created</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

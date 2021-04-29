@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Not_Close_Opp_if_Active_Dormant_Delivery</fullName>
+    <active>true</active>
+    <description>The user is not able to close the Opportunity 4,5,6 or 7 if there is an associated Active, Dormant delivery ticket</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL(StageName,&#39;4. Delivery Complete / GDV Ramp Up&#39;),
+ISPICKVAL(StageName,&#39;5.	Closed/Won – GDV Met&#39;),
+ISPICKVAL(StageName,&#39;6.	Closed/Won – GDV Not Met&#39;),
+ISPICKVAL(StageName,&#39;7. Closed/Lost&#39;)),
+OR(Delivery_Status__c=&quot;Active&quot;,Delivery_Status__c=&quot;Dormant&quot;),
+NOT(ISPICKVAL(Delivery_type__c, &#39;Delivery Not Required&#39;)),
+NOT(ISPICKVAL(Won_Lost_Reason__c, &#39;Product deactivation&#39;)) 
+)</errorConditionFormula>
+    <errorMessage>Setting the Opportunity to &quot;4. Delivery Complete / GDV Ramp Up &quot;,&quot;5.	Closed/Won – GDV Met&quot;,&quot;6.	Closed/Won – GDV Not Met&quot;,&quot;7. Closed/Lost&quot;  is prohibited while there is an associated Active or Dormant delivery.
+Please Contact the Delivery Owner</errorMessage>
+</ValidationRule>

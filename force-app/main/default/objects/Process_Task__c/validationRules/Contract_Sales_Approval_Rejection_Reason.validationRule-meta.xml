@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_Sales_Approval_Rejection_Reason</fullName>
+    <active>true</active>
+    <description>This validation makes sure that a Rejection Reason is provided if the outcome of a Sales Approval task is &quot;Deal Rejected by Sales&quot;.</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName = &quot;Contract_Sales_Approval&quot;,
+ISPICKVAL(Contract_Outcome__c, &quot;Deal Rejected by Sales&quot;),
+ISBLANK(Contract_Rejection_Reason__c) 
+)</errorConditionFormula>
+    <errorMessage>A Rejection Reason must be provided when a deal has been rejected.</errorMessage>
+</ValidationRule>

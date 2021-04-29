@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flat_Fixed_Amount_Values</fullName>
+    <active>true</active>
+    <description>Ensures % Fixed Amount is a whole number no greater than 10</description>
+    <errorConditionFormula>AND( RecordType.DeveloperName =&#39;eNett_Contract_Flat&#39;, Fixed_Amount__c &gt; 10 )</errorConditionFormula>
+    <errorMessage>Fixed % Amount appears to be excessive.  This is a percentage amount, not the BPS amount.  Please amend and Save.</errorMessage>
+</ValidationRule>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Approve</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Approve</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+
+var sub = &quot;{!Due_Diligence_Escalation__c.Submitted_By__c}&quot;; 
+var user = &quot;{!User.Name}&quot;; 
+var userid = &quot;{!User.Id}&quot;; 
+var owner = &quot;{!Due_Diligence_Escalation__c.OwnerId}&quot;; 
+
+if (sub == user) { 
+alert(&#39;You cannot work on a Due Diligence Escalation that has been submitted by you.&#39;);
+} else if (owner != userid) { 
+alert(&#39;Please take Due Diligence Escalation ownership before you can approve the record.&#39;);
+
+} else if ({!Due_Diligence_Escalation__c.Resolved__c}) { 
+alert(&#39;This escalation record has already been resolved.&#39;); 
+
+} else { 
+
+var reason = prompt(&quot;Please enter a comment&quot;); 
+var dde = new sforce.SObject(&quot;Due_Diligence_Escalation__c&quot;); 
+dde.id = &quot;{!Due_Diligence_Escalation__c.Id}&quot;; 
+dde.Risk_Rating_Downgrade_Status__c = &#39;Approved&#39;; 
+dde.Risk_Rating_Downgrade_Comment__c = reason; 
+dde.Resolved__c = true; 
+result = sforce.connection.update([dde]); 
+
+if (result[0].getBoolean(&quot;success&quot;) == false ) { 
+alert(result[0].errors.message); 
+} else { 
+
+var reg = new sforce.SObject(&quot;Registration__c&quot;); 
+reg.id = &quot;{!Due_Diligence_Escalation__c.RegistrationId__c}&quot;; 
+reg.DD_Status__c = &#39;Awaiting Approval&#39;; 
+result = sforce.connection.update([reg]); 
+
+if (result[0].getBoolean(&quot;success&quot;) == false ) { 
+alert(result[0].errors.message); 
+} 
+
+window.top.location.href = &#39;{!URLFOR($Action.Registration__c.View, Due_Diligence_Escalation__c.RegistrationId__c)}&#39;; 
+} 
+}</url>
+</WebLink>

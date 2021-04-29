@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_change_Account_ECN</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(
+NOT(ISNEW()), 
+(PRIORVALUE(ECN__c))&lt;&gt;&quot;&quot;, 
+ISCHANGED(ECN__c) 
+)</errorConditionFormula>
+    <errorMessage>&#39;Cannot amend a clients ECN!&#39;</errorMessage>
+</ValidationRule>

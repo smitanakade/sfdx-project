@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC_Modifications_Details_Mandatory</fullName>
+    <active>false</active>
+    <description>The T&amp;C Modifications Details field must be populated when the T&amp;C Modifications checkbox has been ticked.</description>
+    <errorConditionFormula>AND(
+RecordType.Name=&#39;Contract Deal Arrangement&#39;, 
+00N9000000EBgfi=True,
+ISBLANK( 00N9000000EBgfh )
+)</errorConditionFormula>
+    <errorMessage>The T&amp;C Modifications Details field must be populated when the T&amp;C Modifications checkbox has been ticked.</errorMessage>
+</ValidationRule>

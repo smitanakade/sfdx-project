@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Date_left_office_required</fullName>
+    <active>true</active>
+    <description>Date left office is required is the In Office checkbox is false.</description>
+    <errorConditionFormula>AND(In_office__c = false, ISBLANK(Date_left_office__c))</errorConditionFormula>
+    <errorMessage>Enter the Date left office if  PEP is no longer In Office</errorMessage>
+</ValidationRule>

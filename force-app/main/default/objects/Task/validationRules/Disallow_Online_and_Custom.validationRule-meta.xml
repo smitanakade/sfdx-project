@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Disallow_Online_and_Custom</fullName>
+    <active>false</active>
+    <description>This rule prevents a Registration Type of &quot;eNett Online Registration&quot;, and a Contract Type of &quot;Custom&quot;.</description>
+    <errorConditionFormula>AND (
+ISPICKVAL(00N9000000EBgfc ,&quot;eNett Online Registration&quot;)
+,ISPICKVAL( 00N9000000EBgfN ,&quot;Custom&quot;)
+)</errorConditionFormula>
+    <errorMessage>Accounts that have been registered via eNett Online cannot have a Contract Type of Custom.</errorMessage>
+</ValidationRule>

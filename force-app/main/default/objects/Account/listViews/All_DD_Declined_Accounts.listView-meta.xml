@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_DD_Declined_Accounts</fullName>
+    <columns>ACCOUNT.NAME</columns>
+    <columns>Account_Status__c</columns>
+    <columns>Account_Type__c</columns>
+    <columns>eNett_products__c</columns>
+    <columns>Registration_Status__c</columns>
+    <columns>DD_Status__c</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>ACCOUNT.CREATED_DATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>DD_Status__c</field>
+        <operation>equals</operation>
+        <value>DD Declined</value>
+    </filters>
+    <label>All DD Declined</label>
+</ListView>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Potential_GDV__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>An estimate of total virtual card wallet size for a prospective customer; potential GDV will define which Customer Tier they fall into.</inlineHelpText>
+    <label>Potential Monthly GDV</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <type>Currency</type>
+</CustomField>

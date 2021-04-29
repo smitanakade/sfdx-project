@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Name</fullName>
+    <inlineHelpText>Use a consistent naming convention to enable efficient searching in the following format: [Full Legal Client Name] – [Product] [(Year closed)]
+
+e.g. Interpark Int Inc – VANs (2013)</inlineHelpText>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+</CustomField>

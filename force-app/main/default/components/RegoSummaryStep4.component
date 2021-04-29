@@ -1,0 +1,24 @@
+<apex:component >
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingTen">
+        <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTen" aria-expanded="true" aria-controls="collapseTen"> Signatory Details</a></h4>
+    </div>
+    <div id="collapseTen" class="panel-collapse collapse wrapper-review" role="tabpanel" aria-labelledby="headingTen">
+        <div id="signatoryDetails" class="panel-body">
+            <!-- form element Start-->
+          <a class="btn-edit" href="#" data-stepsection="step3::headingThree">edit</a>
+          <ul class="listing-review">
+            <li><a href="#">Job title</a></li>
+            <li><a href="#">Title</a></li>
+            <li><a href="#">First name</a></li>
+            <li><a href="3">Middle name</a></li>
+            <li><a href="#">Last name</a></li>
+            <li><a href="#">Date of Birth</a></li>
+            <li><a href="#"><img src="assest/img/cc.jpg" alt="Signature" /></a></li>
+          </ul>
+
+        </div>
+    </div>
+</div>
+
+</apex:component>

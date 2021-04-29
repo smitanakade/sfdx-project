@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Re DD Due ECN --></label>
+    <name>Re_DD_Due_ECN__c</name>
+</CustomFieldTranslation>

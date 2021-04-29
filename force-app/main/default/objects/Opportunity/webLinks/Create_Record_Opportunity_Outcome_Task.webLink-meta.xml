@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_Record_Opportunity_Outcome_Task</fullName>
+    <availability>online</availability>
+    <description>Temporary button to allow users to close existing Opportunities.</description>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create Record Opportunity Outcome Task</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+
+var RT = sforce.connection.query(&quot;SELECT Id from RecordType where SobjectType = &#39;Process_Task__c&#39; and DeveloperName = &#39;Opportunity_Record_Opportunity_Outcome&#39; LIMIT 1&quot;); 
+RTRecords = RT.getArray(&quot;records&quot;); 
+
+var vOwnerId = &quot;{!Opportunity.OwnerId}&quot;; 
+var vRO_RecType = RTRecords[0].Id; 
+var vAccountName = &quot;{!Opportunity.Account_Name__c}&quot;; 
+var vAccountId = &quot;{!Opportunity.AccountId}&quot;; 
+var vECN = &quot;{!Opportunity.ECN__c}&quot;; 
+var vSubject = &#39;Opportunity - Record Opportunity Outcome&#39;; 
+var vGDV; 
+
+var vDate = new Date(); 
+vDate.setDate(vDate.getDate() + 2); 
+
+var vOppId = &quot;{!Opportunity.Id}&quot;; 
+var PT = sforce.connection.query(&quot;SELECT Id, Subject__c, Opportunity__c from Process_Task__c WHERE Subject__c = &#39;Opportunity - Record Opportunity Outcome&#39; and Opportunity__c = &#39;&quot; + vOppId + &quot;&#39; LIMIT 1&quot;); 
+
+if(PT.getArray(&quot;records&quot;) == null || PT.getArray(&quot;records&quot;).length &gt; 0) { 
+alert(&quot;Cannot create Record Opportunity Outcome Task as this Opportunity already has one.&quot;); 
+} 
+else { 
+
+var newROTask = new sforce.SObject(&quot;Process_Task__c&quot;); 
+
+newROTask.OwnerId = vOwnerId; 
+newROTask.Account__c = vAccountId; 
+newROTask.RecordTypeId = vRO_RecType; 
+newROTask.Related_Account__c = vAccountName; 
+newROTask.ECN__c = vECN; 
+newROTask.Status__c = &#39;In Progress&#39;; 
+newROTask.Subject__c = vSubject; 
+newROTask.Task_Type__c = &#39;Task&#39;; 
+newROTask.Opportunity__c = vOppId; 
+newROTask.Opportunity_Task_Open__c = vOppId; 
+
+var result = sforce.connection.create([newROTask]); 
+
+if(result[0].getBoolean(&quot;success&quot;)){ 
+window.location.replace(&#39;/&#39; + result[0].id); 
+}else{ 
+alert(&#39;Could not create record &#39;+ result); 
+} 
+}</url>
+</WebLink>

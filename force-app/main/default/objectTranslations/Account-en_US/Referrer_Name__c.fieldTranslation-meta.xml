@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Introducer / Referrer Name --></label>
+    <name>Referrer_Name__c</name>
+    <picklistValues>
+        <masterLabel>About Payments</masterLabel>
+        <translation><!-- About Payments --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Adyen</masterLabel>
+        <translation><!-- Adyen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Agoda</masterLabel>
+        <translation><!-- Agoda --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Air Asia</masterLabel>
+        <translation><!-- Air Asia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Axess International Network, Inc</masterLabel>
+        <translation><!-- Axess International Network, Inc --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Blue Team Travel Network SRL</masterLabel>
+        <translation><!-- Blue Team Travel Network SRL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CCRA International</masterLabel>
+        <translation><!-- CCRA International --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CEE Travel System</masterLabel>
+        <translation><!-- CEE Travel System --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Club Travel SA</masterLabel>
+        <translation><!-- Club Travel SA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Computop</masterLabel>
+        <translation><!-- Computop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Conferma</masterLabel>
+        <translation><!-- Conferma --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Contac Services</masterLabel>
+        <translation><!-- Contac Services --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Cornerstone</masterLabel>
+        <translation><!-- Cornerstone --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Dolphin Dynamics</masterLabel>
+        <translation><!-- Dolphin Dynamics --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flightgenius</masterLabel>
+        <translation><!-- Flightgenius --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gant Travel Management</masterLabel>
+        <translation><!-- Gant Travel Management --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Gateway</masterLabel>
+        <translation><!-- Gateway --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Geo Travel Network Di Geo Spa</masterLabel>
+        <translation><!-- Geo Travel Network Di Geo Spa --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Globalcollect</masterLabel>
+        <translation><!-- Globalcollect --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Globalstar</masterLabel>
+        <translation><!-- Globalstar --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hitchhiker</masterLabel>
+        <translation><!-- Hitchhiker --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hotelzon</masterLabel>
+        <translation><!-- Hotelzon --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IGA Voyages</masterLabel>
+        <translation><!-- IGA Voyages --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Juniper</masterLabel>
+        <translation><!-- Juniper --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Manor</masterLabel>
+        <translation><!-- Manor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mastercard</masterLabel>
+        <translation><!-- Mastercard --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mr Orange</masterLabel>
+        <translation><!-- Mr Orange --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Multicom</masterLabel>
+        <translation><!-- Multicom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Navitas</masterLabel>
+        <translation><!-- Navitas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Orchestra</masterLabel>
+        <translation><!-- Orchestra --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PRIMARETE VIAGGI E VACANZE SRL</masterLabel>
+        <translation><!-- PRIMARETE VIAGGI E VACANZE SRL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PayU</masterLabel>
+        <translation><!-- PayU --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Pyton</masterLabel>
+        <translation><!-- Pyton --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Rezopia</masterLabel>
+        <translation><!-- Rezopia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sapeig Viaxoft</masterLabel>
+        <translation><!-- Sapeig Viaxoft --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SkyAirTeam</masterLabel>
+        <translation><!-- SkyAirTeam --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sure Group</masterLabel>
+        <translation><!-- Sure Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TicTas</masterLabel>
+        <translation><!-- TicTas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travelgate XML</masterLabel>
+        <translation><!-- Travelgate XML --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travelport</masterLabel>
+        <translation><!-- Travelport --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travelport Desktop</masterLabel>
+        <translation><!-- Travelport Desktop --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Traveltek</masterLabel>
+        <translation><!-- Traveltek --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Vibe</masterLabel>
+        <translation><!-- Vibe --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Voxel (Bavel)</masterLabel>
+        <translation><!-- Voxel (Bavel) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WTG</masterLabel>
+        <translation><!-- WTG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WUBS</masterLabel>
+        <translation><!-- WUBS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>XL Group</masterLabel>
+        <translation><!-- XL Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ypsilon</masterLabel>
+        <translation><!-- Ypsilon --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Zoon 8</masterLabel>
+        <translation><!-- Zoon 8 --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Automatically populated. Defined by the AML team during the Due diligence process. Assists the AML team to categorise client&apos;s use of VAN. --></help>
+    <label><!-- Spend Type --></label>
+    <name>Spend_Type__c</name>
+    <picklistValues>
+        <masterLabel>Client Testing</masterLabel>
+        <translation><!-- Client Testing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corporate - General Payables</masterLabel>
+        <translation><!-- Corporate - General Payables --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corporate - Tax Only</masterLabel>
+        <translation><!-- Corporate - Tax Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corporate – Advertising</masterLabel>
+        <translation><!-- Corporate – Advertising --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corporate – Google</masterLabel>
+        <translation><!-- Corporate – Google --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Demonstration</masterLabel>
+        <translation><!-- Demonstration --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Funding Only</masterLabel>
+        <translation><!-- Funding Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Mixed - Travel and Corporate Spend</masterLabel>
+        <translation><!-- Mixed - Travel and Corporate Spend --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Office Supplies</masterLabel>
+        <translation><!-- Office Supplies --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Telecom</masterLabel>
+        <translation><!-- Telecom --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travel - Accommodation Only</masterLabel>
+        <translation><!-- Travel - Accommodation Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travel - Airlines Only</masterLabel>
+        <translation><!-- Travel - Airlines Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travel - Cruises Only</masterLabel>
+        <translation><!-- Travel - Cruises Only --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travel – General</masterLabel>
+        <translation><!-- Travel – General --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>eNett IT Testing</masterLabel>
+        <translation><!-- eNett IT Testing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>eNett Internal</masterLabel>
+        <translation><!-- eNett Internal --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fields2__c</fullName>
+    <description>Additional fields (to overcome 255 character custom setting limit)</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Additional fields (to overcome 255 character custom setting limit)</inlineHelpText>
+    <label>Fields2</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

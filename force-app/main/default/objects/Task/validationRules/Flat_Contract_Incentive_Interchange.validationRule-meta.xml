@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flat_Contract_Incentive_Interchange</fullName>
+    <active>false</active>
+    <description>For &#39;Flat&#39; Rebate, &#39;% of Interchange&#39; Incentive Contracts, you must enter a &#39;% Interchange Amount&#39; value and NO &#39;Fixed % Amount&#39;.</description>
+    <errorConditionFormula>AND( 
+RecordType.Name=&#39;Contract Deal Arrangement&#39;,
+ISPICKVAL( 00N9000000EBgfb , &#39;Flat&#39;),
+ISPICKVAL( 00N9000000EBgfV , &#39;% of Interchange&#39;), 
+OR(NOT(ISBLANK(00N9000000EBgfT)),ISBLANK(00N9000000EBgfW))
+)</errorConditionFormula>
+    <errorMessage>You must enter a &#39;% Interchange Amount&#39; value and NO &#39;Fixed % Amount&#39;.</errorMessage>
+</ValidationRule>

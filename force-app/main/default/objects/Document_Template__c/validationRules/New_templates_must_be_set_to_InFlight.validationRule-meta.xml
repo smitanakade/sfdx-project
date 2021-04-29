@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_templates_must_be_set_to_InFlight</fullName>
+    <active>true</active>
+    <errorConditionFormula>ISNEW() &amp;&amp; NOT(ISPICKVAL(Status__c, &#39;In Flight&#39;))</errorConditionFormula>
+    <errorMessage>New or cloned templates must be set to &#39;In Flight&#39; status</errorMessage>
+</ValidationRule>

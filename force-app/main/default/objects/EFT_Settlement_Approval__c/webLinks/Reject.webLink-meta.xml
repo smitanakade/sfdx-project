@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Reject</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Reject</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+
+if (&#39;{!$Profile.Name}&#39;!=&#39;System Administrator (no expiry)&#39; &amp;&amp; &#39;{!$Profile.Name}&#39;!=&#39;eNett Service Desk User&#39; &amp;&amp; &#39;{!$Profile.Name}&#39;!=&#39;eNett Sales Service and Delivery&#39;) { 
+
+alert(&#39;Only eNett Service Desk Users can approve / reject EFT Settlements.&#39;); 
+
+} else if (&quot;{!EFT_Settlement_Approval__c.OwnerId}&quot; != &quot;{!User.Id}&quot;) {
+
+alert(&#39;Please take ownership of the record before pressing Approve or Reject.&#39;); 
+
+} else {
+
+if(&#39;{!EFT_Settlement_Approval__c.Status__c}&#39;==&#39;Approved&#39; || &#39;{!EFT_Settlement_Approval__c.Status__c}&#39;==&#39;Rejected&#39;) { 
+alert(&#39;The EFT Settlement Approval has already been completed&#39;); 
+} else { 
+var reason = prompt(&quot;Please enter the Rejected Reason&quot;); 
+var a = new sforce.SObject(&quot;EFT_Settlement_Approval__c&quot;); 
+a.id = &#39;{!EFT_Settlement_Approval__c.Id}&#39;; 
+a.Status__c = &#39;Rejected&#39;; 
+a.Rejection_Reason__c = reason; 
+a.Completed_Date__c = new Date().toISOString(); 
+result = sforce.connection.update([a]); 
+window.top.location.href = &#39;{!URLFOR($Action.Account.View, EFT_Settlement_Approval__c.AccountId__c)}&#39;; 
+}
+ 
+}</url>
+</WebLink>

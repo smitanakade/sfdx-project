@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>PEP_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Association with Client</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Beneficial Owner Direct PEP</fullName>
+                <default>false</default>
+                <label>Beneficial Owner Direct PEP</label>
+            </value>
+            <value>
+                <fullName>Beneficial Owner Indirect PEP</fullName>
+                <default>false</default>
+                <label>Beneficial Owner Indirect PEP</label>
+            </value>
+            <value>
+                <fullName>Director Direct PEP</fullName>
+                <default>false</default>
+                <label>Director Direct PEP</label>
+            </value>
+            <value>
+                <fullName>Director Indirect PEP</fullName>
+                <default>false</default>
+                <label>Director Indirect PEP</label>
+            </value>
+            <value>
+                <fullName>Registration Direct PEP</fullName>
+                <default>false</default>
+                <label>Registration Direct PEP</label>
+            </value>
+            <value>
+                <fullName>Registration Indirect PEP</fullName>
+                <default>false</default>
+                <label>Registration Indirect PEP</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

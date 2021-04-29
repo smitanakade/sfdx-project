@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-Case</defaultLandingTab>
+    <description>For eNett Service Desk People</description>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <label>eNett Service Desk</label>
+    <logo>SharedDocuments/eNett_Logo.gif</logo>
+    <tabs>standard-Case</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>How_To__c</tabs>
+    <tabs>standard-File</tabs>
+    <tabs>standard-Solution</tabs>
+    <tabs>Action__c</tabs>
+    <tabs>MC4SF__MC_Campaign__c</tabs>
+    <tabs>MC4SF__MC_Setup</tabs>
+    <tabs>Monthly_eNett_Service_Cloud_Snapshot__c</tabs>
+    <tabs>Weekly_eNett_Service_Cloud_Snapshot__c</tabs>
+    <tabs>Inbound_Email__c</tabs>
+    <tabs>Report_Type__c</tabs>
+    <tabs>Process_Task__c</tabs>
+    <tabs>Post_Refresh</tabs>
+</CustomApplication>

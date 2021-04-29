@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Training_Booking_Created__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>On completion of the task &quot;Desktop Delivery - Create Desktop Training Session Event&quot;, this field will be automatically updated</inlineHelpText>
+    <label>Training Booking Created</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

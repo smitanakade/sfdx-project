@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Client_Survey</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Send Client Survey</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+
+var ticketObj = new sforce.SObject(&quot;Case&quot;); 
+
+ticketObj.Id = &#39;{!Case.Id}&#39;; 
+ticketObj.Survey_Sent__c = true;
+
+var sSent = &#39;{!Case.No_of_Surveys_Sent__c}&#39;; 
+if (sSent == &#39;&#39;) { 
+ticketObj.No_of_Surveys_Sent__c = 1; 
+} else { 
+ticketObj.No_of_Surveys_Sent__c = parseInt(sSent) + 1; 
+} 
+
+sforce.connection.update([ticketObj]); 
+
+location.replace(&#39;/_ui/core/email/author/EmailAuthor?rtype=003&amp;retURL=%2F{!Case.Id}&amp;saveURL=%2F{!Case.Id}&amp;p2={!Case.Contact}&amp;p2_lkid={!Case.ContactId}&amp;p3_lkid={!Case.Id}&amp;template_id=00X90000000F4Hg&amp;p26=delivery@enett.com&#39;)</url>
+</WebLink>

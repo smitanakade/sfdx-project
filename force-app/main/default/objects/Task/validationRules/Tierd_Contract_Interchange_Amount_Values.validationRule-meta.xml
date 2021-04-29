@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Tierd_Contract_Interchange_Amount_Values</fullName>
+    <active>false</active>
+    <description>Ensures Interchange_Amount__c is a whole number no greater than 100.</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName=&#39;Contract_Deal_Arrangement&#39;,
+ISPICKVAL(00N9000000EBgfb,&#39;Tiered&#39;),
+OR( FLOOR( 00N9000000EBgfY ) &lt;&gt;  00N9000000EBgfY
+,00N9000000EBgfY &gt; 100 )
+)</errorConditionFormula>
+    <errorMessage>Interchange Amount must be a whole number no greater than 100.</errorMessage>
+</ValidationRule>

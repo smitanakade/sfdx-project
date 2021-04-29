@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>verFlag_FBA__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Flag values: 
+0 - No verification 
+1 - Each Funding Account has one or more verifications but at least one verification has no attachments 
+2 - Each Funding Account has at least one verification and all verifications contain at least one attachment</inlineHelpText>
+    <label>verFlag_FBA</label>
+    <summaryForeignKey>Snapshot_Director_Association__c.Registration_Snapshot__c</summaryForeignKey>
+    <summaryOperation>count</summaryOperation>
+    <trackTrending>false</trackTrending>
+    <type>Summary</type>
+</CustomField>

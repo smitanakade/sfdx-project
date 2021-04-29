@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hidden_API_Check_Fund_Task_Trigger__c</fullName>
+    <defaultValue>false</defaultValue>
+    <externalId>false</externalId>
+    <inlineHelpText>This checkbox is checked by a time trigger when the delivery moved from phase 3 to 4.  The checkbox will set the date 5 days before the Projected Live Testing Completed date field setting.</inlineHelpText>
+    <label>Hidden API Check Fund Task Trigger</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

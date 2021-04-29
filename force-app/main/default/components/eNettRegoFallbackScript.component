@@ -1,0 +1,1793 @@
+<apex:component controller="eNettRegistrationFallbackController">
+<script type="text/javascript">
+
+
+	        // Initial Processing
+	        // ***************************************************
+			$( document ).ready(function() {
+             	 //console.log( "document loaded" );
+             	 checkActiveRegistration();// Check The Valide Data
+			     getRegistrationJS();
+			     
+             	 // Set Country
+			      var countriesItems = {!Countries};  
+			      setCountriesJS(countriesItems);
+              	// Set salutation
+	              var salutationItems = {!Salutations};
+	              setsalutationJS(salutationItems);
+               // Set currency
+	              var currencyItems = {!FundingCurrencies};
+	              setCurrencyJS(currencyItems);
+
+	              
+             	 // Bind Country Select/Changes 
+              	onChangeCountries();
+			  });
+
+	        /*****************************************************************
+	        *   Set  Label to Add / Remove on Production Checkbox Button
+	        *   
+	        ******************************************************************/
+	        function setAddRemoveProductLabel($checkboxID) {
+	          //console.log( "---setAddRemoveProductLabel-" );
+	          var text = ($($checkboxID).is(':checked'))?'remove':'add';
+	          $($checkboxID).parent('.checkbox-wrapper').removeClass('remove');
+	          $($checkboxID).next('label').text(text);
+	        }
+
+			/*****************************************************************
+			*  Get Registration daa 
+			*   
+			******************************************************************/
+			function getRegistrationJS() {
+			    CurrentId = {!CurrentId};
+			    ReferrerID = {!Referrer};
+			    $('#referrer').val(ReferrerID);
+
+			    if (CurrentId) { // if Rego ID then get Rego Data
+			        Visualforce.remoting.Manager.invokeAction('eNettRegistrationFallbackController.getRegistration',
+			            CurrentId,
+			            function(result, event) {
+			                if (event.status) {
+			                    setLabels(result.Country__c);
+			                    //console.log(result);
+			                    setBusRegions(result.Country__c, result.State_Province__c, 'state');
+
+			                    $('.btn-next-start').addClass('hidden');
+			                    $('.btn-next-validation-check').removeClass('hidden');
+
+			                    $('#id').val(result.Id);
+			                    $('#leadid').val(result.Lead__c);
+			                    $('#product').val(result.Product__c);
+			                    $('#title').val(result.Salutation__c);
+			                    $('#firstname').val(result.First_Name__c);
+			                    $('#lastname').val(result.Last_Name__c);
+			                    $('#jobtitle').val(result.Job_Role__c);
+			                    $('#email').val(result.Email__c);
+			                    $('#contactnumber').val(result.Phone__c);
+			                    $('#country').val(result.Country__c);
+			                    $('#businessname').val(result.Registered_Company_Name__c);
+			                    $('#businessNumber').val(result.Business_Number__c);
+
+			                   // console.log(result.Product__c);
+			                    if (result.Product__c == "VANs;eNett EFT") {
+			                        $("#van_add").attr('checked', 'checked');
+			                        $("#eft_add").attr('checked', 'checked');
+			                        setAddRemoveProductLabel("#van_add");
+			                        setAddRemoveProductLabel("#eft_add");
+			                    } else {
+			                        if (result.Product__c == "VANs") {
+			                            $("#van_add").attr('checked', 'checked');
+			                            setAddRemoveProductLabel("#van_add");
+			                        } else if (result.Product__c == "eNett EFT") {
+			                            $("#eft_add").attr('checked', 'checked');
+			                            setAddRemoveProductLabel("#eft_add");
+			                        }
+			                    }
+			                    if (result.Country__c == 'Australia' || result.Country__c == 'New Zealand') {
+			                        $('.wrapper-products').removeClass('hidden');
+			                    } else {
+			                        $('.wrapper-products').addClass('hidden');
+			                    }
+
+
+			                    $('#VANs_Subscription_Fee').val(result.VANs_Subscription_Fee__c);
+			                    $('#EFT_Subscription_Fee').val(result.EFT_Subscription_Fee__c);
+			                    $('#Subscription_Fee_Currency').val(result.Subscription_Fee_Currency__c);
+			                    $('#Subscription_Fee_Symbol').val(result.Subscription_Fee_Symbol__c);
+			                } else {
+			                   // console.log('Bad >>>>>>>' + result.First_Name__c);
+			                }
+			            }, {
+			                escape: true
+			            });
+
+			          getBankAccounts('Funding');
+                      getBankAccounts('Payable');
+					  getBankAccounts('Receivable');
+					  getBankAccounts('Billing');
+			    }
+			}
+
+			/*****************************************************************
+			// Retrieve Funding Bank Accounts and Display it on Page 2
+			//  Get the Record ID form URL  ans Set as CurrentId;
+			***************************************************************/
+			function getBankAccounts(Account_Type) {
+
+			   // console.log('--- getBankAccounts---'+Account_Type);
+			    CurrentId = {!CurrentId};
+			    var accountsList = '';
+			    Visualforce.remoting.Manager.invokeAction(
+			        'eNettRegistrationFallbackController.getBankAccounts',
+			        CurrentId, Account_Type,
+			        function(result, event) {
+			            
+			            if(Account_Type=='Funding')
+			            {
+			             // Remvoe accounts list 
+			              $('#funding-accounts').find('li.item').remove();
+			              $.each(result, function(key, account) {
+			                  accountsList += '<li class="item-bank acc-id-' + account.Id + '">';
+			                    accountsList += '<ul>';
+			                      accountsList += '<li>';
+			                      accountsList += '<h4>Account name</h4>';
+			                      accountsList += (typeof account.Account_Name__c != "undefined") ? account.Account_Name__c : ' ';
+			                      accountsList += '</li>';
+			                      accountsList += '<li>';
+			                      accountsList += '<h4>SWIFT/BIC</h4>';
+			                      accountsList += (typeof account.SWIFT_BIC__c != "undefined") ? account.SWIFT_BIC__c : ' ';
+			                      accountsList += '</li>';
+			                      accountsList += '<li>';
+			                      accountsList += '<h4>IBAN</h4>';
+			                      accountsList += (typeof account.IBAN__c != "undefined") ? account.IBAN__c : ' ';
+			                      accountsList += '</li>';
+			                      accountsList += '<li>';
+			                      accountsList += '<h4>BSB</h4>';
+			                      accountsList += (typeof account.Bank_Code__c != "undefined") ? account.Bank_Code__c : ' ';
+			                      accountsList += '</li>';
+			                      accountsList += '<li>';
+			                      accountsList += '<h4>Acc</h4>';
+			                      accountsList += (typeof account.Account_Number__c != "undefined") ? account.Account_Number__c : ' ';
+			                      accountsList += '</li>';
+			                      accountsList += '<li>';
+			                      accountsList += '<h4>Currency</h4>';
+			                      accountsList += (typeof account.Account_Currency__c != "undefined") ? account.Account_Currency__c : ' ';
+			                      accountsList += '</li>';
+			                      accountsList += '<li>';
+			                      //accountsList += '<a href="#" class="edit" onClick="editFundingAccount(\''+ account.Id+'\',\''+ account.Is_IBAN__c +'\'); return false;">edit</a>';
+			                      accountsList += '<a href="#" class="remove"  onClick="deleteFundingAccount(\''+account.Id+'\');return false;">remove</a>';
+			                      accountsList += '</li>';
+			                    accountsList += '</ul>';
+			                  accountsList += '</li>';
+
+			              });
+			              // bind wiht new accounts list 
+			              $('#funding-accounts').append(accountsList);
+			            }
+			            else if(Account_Type=='Payable')
+			            {
+			               $.each(result, function(key, account) {
+			               
+			               	  $('#payable_account_Id').val(account.Id);
+			                  $('#country_payable').val(account.Account_Country__c);
+			                  $('#financialinstitution_payable').val(account.Financial_Institution__c);
+			                  $('#accountname_payable').val(account.Account_Name__c);
+			                  $('#accountnumber_payable').val(account.Account_Number__c);
+			                  $('#bankcode_payable').val(account.Bank_Code__c);
+			                  $('#addressline1_payable').val(account.Address_Line_1__c);
+			                  $('#addressline2_payable').val(account.Address_Line_2__c);
+			                  $('#city_payable').val(account.City__c);
+			                  //$('#region_payable').val(account.State_Province_LKP__c);
+			                  setBusRegions(account.Account_Country__c,account.State_Province_LKP__c,'region_payable');
+			                  $('#postcode_payable').val(account.Postcode__c);
+
+			                  
+
+			              });
+			            }
+			            else if(Account_Type=='Receivable')
+			            {     $.each(result, function(key, account) {
+			            		$('#receivable_account_Id').val(account.Id);
+			                    $('#country_receivable').val(account.Account_Country__c);
+			                    $('#financialinstitution_receivable').val(account.Financial_Institution__c);
+			                    $('#accountname_receivable').val(account.Account_Name__c);
+			                    $('#accountnumber_receivable').val(account.Account_Number__c);
+			                    $('#bankcode_receivable').val(account.Bank_Code__c);
+			                    $('#addressline1_receivable').val(account.Address_Line_1__c);
+			                    $('#addressline2_receivable').val(account.Address_Line_2__c);
+			                    $('#city_receivable').val(account.City__c);
+			                    
+			                    //log(Account_Type);
+			                     if(typeof account.State_Province_LKP__c =='undefined')
+				                  {
+				                  	setBusRegions($('#country_payable').val(),$('#region_payable').val(),'region_receivable');
+				                  }
+				                  else
+				                  {
+				                  	setBusRegions(account.Account_Country__c,account.State_Province_LKP__c,'region_receivable');
+				                  }
+			                     //setBusRegions(account.Account_Country__c,account.State_Province_LKP__c,'region_receivable');
+			                     //setBusRegions($('#country_payable').val(),$('#region_payable').val(),'region_receivable');
+			                    $('#postcode_receivable').val(account.Postcode__c);
+			                  });
+			            }
+			            else if(Account_Type=='Billing')
+			            {
+			                $.each(result, function(key, account) {
+			                	$('#billing_account_Id').val(account.Id);
+			                    $('#country_billing').val(account.Account_Country__c);
+			                    $('#financialinstitution_billing').val(account.Financial_Institution__c);
+			                    $('#accountname_billing').val(account.Account_Name__c);
+			                    $('#accountnumber_billing').val(account.Account_Number__c);
+			                    $('#bankcode_billing').val(account.Bank_Code__c);
+			                    $('#addressline1_billing').val(account.Address_Line_1__c);
+			                    $('#addressline2_billing').val(account.Address_Line_2__c);
+			                    $('#city_billing').val(account.City__c);
+			                    
+			                     if(typeof account.State_Province_LKP__c =='undefined')
+				                  {
+				                  	setBusRegions($('#country_receivable').val(),$('#region_receivable').val(),'region_billing');
+				                  }
+				                  else
+				                  {
+				                  	setBusRegions(account.Account_Country__c,account.State_Province_LKP__c,'region_billing');
+				                 }
+
+			                    $('#postcode_billing').val(account.Postcode__c);
+			                  });
+			            }
+			            
+
+			            if (event.status) {
+			                // OK
+			            } else if (event.type === 'exception') {
+			                alert(event.message);
+			            } else {
+			                alert(event.message);
+			            }
+			        }
+			    );
+			};
+                     
+                    // puse To next Account
+                    // ***************************************************
+                    function pushReceivableandBilling(accountType){
+                      //console.log('---pushReceivableandBilling---' + accountType );
+                      if(accountType=='Receivable')
+                      {
+
+                      	 
+	                      $('#country_receivable').val($('#country_payable').val());
+                          $('#financialinstitution_receivable').val($('#financialinstitution_payable').val());
+                          $('#accountname_receivable').val($('#accountname_payable').val());
+                          $('#accountnumber_receivable').val($('#accountnumber_payable').val());
+                          $('#bankcode_receivable').val($('#bankcode_payable').val());
+                          $('#addressline1_receivable').val($('#addressline1_payable').val());
+                          $('#addressline2_receivable').val($('#addressline2_payable').val());
+                          $('#city_receivable').val($('#city_payable').val());
+
+                         
+                          $receivableID =  setBusRegions($('#country_payable').val(),$('#region_payable').val(),'region_receivable');
+                           //log('pushReceivableandBilling: '+$('#region_receivable').val());
+                          // log('receivableID: '+$receivableID);
+
+                          
+                          $('#postcode_receivable').val($('#postcode_payable').val());
+                    
+	                    	var fields_ids = 'country_payable,financialinstitution_payable,accountname_payable,accountnumber_payable,bankcode_payable,addressline1_payable,city_payable,region_payable,postcode_payable,addressline2_payable';
+							validationStatus_payable = enettRegoFieldValidation(fields_ids,'payable-error-msg');
+							if(validationStatus_payable)
+							{// valide
+								 //log('===createBankAccount===Payable==');
+		                       	createBankAccount('Payable');
+							}
+
+
+                           var fields_ids = 'country_receivable,financialinstitution_receivable,accountname_receivable,accountnumber_receivable,bankcode_receivable,addressline1_receivable,city_receivable,region_receivable,postcode_receivable,addressline2_receivable';
+							validationStatus_receivable = enettRegoFieldValidation(fields_ids,'receivable-error-msg');
+							if(validationStatus_receivable)
+							{// valide
+
+								if($receivableID)
+								{	// IE7 need some time out to Read the new dropdown value
+									 setTimeout(function(){
+										   //log('===createBankAccount===Receivable==');
+									 		createBankAccount('Receivable',false, $receivableID);
+									 }, 3000);
+									 
+								}
+		                       
+
+		                    }
+		                    
+	      
+                      }
+                     else if(accountType=='Billing')
+                      {
+      	                          $('#country_billing').val($('#country_receivable').val());
+		                          $('#financialinstitution_billing').val($('#financialinstitution_receivable').val());
+		                          $('#accountname_billing').val($('#accountname_receivable').val());
+		                          $('#accountnumber_billing').val($('#accountnumber_receivable').val());
+		                          $('#bankcode_billing').val($('#bankcode_receivable').val());
+		                          $('#addressline1_billing').val($('#addressline1_receivable').val());
+		                          $('#addressline2_billing').val($('#addressline2_receivable').val());
+		                          $('#city_billing').val($('#city_receivable').val());
+		                          // setBusRegions($('#country_receivable').val(),$('#region_receivable').val(),'region_billing');
+		                           $receivableID = setBusRegions($('#country_receivable').val(),$('#region_receivable').val(),'region_billing');
+
+		                          //$('#region_billing').val($('#region_receivable').val());
+		                         
+		                          $('#postcode_billing').val($('#postcode_receivable').val());
+
+		                          
+
+		                           var fields_ids = 'country_receivable,financialinstitution_receivable,accountname_receivable,accountnumber_receivable,bankcode_receivable,addressline1_receivable,city_receivable,region_receivable,postcode_receivable,addressline2_receivable';
+									validationStatus_receivable = enettRegoFieldValidation(fields_ids,'receivable-error-msg');
+
+									if(validationStatus_receivable)
+									{// valide
+				                        createBankAccount('Receivable');
+				                       
+				                    }
+
+				                    var fields_ids = 'country_billing,financialinstitution_billing,accountname_billing,accountnumber_billing,bankcode_billing,addressline1_billing,city_billing,region_billing,postcode_billing,addressline2_billing';
+									validationStatus_billing = enettRegoFieldValidation(fields_ids,'billing-error-msg');
+				                    if(validationStatus_billing)
+									{// valide
+										 
+											if($receivableID)
+											{	
+												// IE7 need some time out to Read the new dropdown value
+												 setTimeout(function(){
+													 //log('===createBankAccount===Receivable==');
+												 	createBankAccount('Billing',false, $receivableID);
+												 }, 3000);
+												 
+											}
+										 
+									}
+   
+                      }
+                    };
+
+
+			function savePayableReceivableBillingBankAccount(){
+				$("#checking").show();  
+				//log('---savePayableReceivableBillingBankAccount----');
+				
+				validationStatus_payabl 	= true;
+				validationStatus_receivable = true;
+				validationStatus_billing 	= true;
+
+				if(($('#accountnumber_payable').val().length>0) && ($('#bankcode_payable').val().length>0) && ($('#accountname_payable').val().length>0) && ($('#country_payable').val().length>0) && ($('#region_payable').val().length>0) )
+				{
+					var fields_ids = 'country_payable,financialinstitution_payable,accountname_payable,accountnumber_payable,bankcode_payable,addressline1_payable,city_payable,region_payable,postcode_payable,addressline2_payable';
+					validationStatus_payabl = enettRegoFieldValidation(fields_ids,'payable-error-msg');
+					if(validationStatus_payabl)
+					{
+						createBankAccount('Payable');
+					}
+					
+					//log('---Save Payable---');
+				}
+				if(($('#accountnumber_payable').val().length>0) && ($('#bankcode_receivable').val().length>0) && ($('#accountname_receivable').val().length>0) && ($('#country_receivable').val().length>0) && ($('#region_receivable').val().length>0) )
+				{
+					var fields_ids = 'country_receivable,financialinstitution_receivable,accountnumber_receivable,accountnumber_receivable,bankcode_receivable,addressline1_receivable,city_receivable,region_receivable,postcode_receivable,addressline2_receivable';
+					validationStatus_receivable = enettRegoFieldValidation(fields_ids,'receivable-error-msg');
+					if(validationStatus_receivable)
+					{
+						createBankAccount('Receivable');
+					}
+					//log('---Save receivable---');
+				}
+				if(($('#accountnumber_payable').val().length>0) && ($('#bankcode_billing').val().length>0) && ($('#accountname_billing').val().length>0) && ($('#country_billing').val().length>0) && ($('#region_billing').val().length>0) )
+				{
+					var fields_ids = 'country_billing,financialinstitution_billing,accountname_billing,accountnumber_billing,bankcode_billing,addressline1_billing,city_billing,region_billing,postcode_billing,addressline2_billing';
+					validationStatus_billing = enettRegoFieldValidation(fields_ids,'billing-error-msg');
+					if(validationStatus_billing)
+					{
+						createBankAccount('Billing');
+					}
+					
+					//log('---Save billing---');
+				}
+				// log("validationStatus_payabl: "+ validationStatus_payabl);
+				// log("validationStatus_receivable: "+ validationStatus_receivable);
+				// log("validationStatus_billing: "+ validationStatus_billing);
+
+
+				  $("#checking").hide();   
+				  if(validationStatus_payabl && validationStatus_receivable && validationStatus_billing)
+			   	  {
+			   	  	//log("Move To nex: ");
+			   	  	showNextStep('btn-next-bankaccount-check');
+			   	  } 
+			}
+
+				
+
+				
+	 			
+
+
+			function skipPayableReceivableBillingBankAccount(){
+			   	  showNextStep('btn-skip-bankaccount-check');
+			}
+
+          // Set Registration Detail
+          // ***************************************************
+				function saveRegistration($stage) {
+				         // console.log('---saveRegistration---');
+
+				          //console.log('---saveRegistration---'+numItems);
+				                
+				            // Save Rego Object        
+				            var RegObject                         = new Object();
+
+				            if($('#id').val())
+				            {
+				              RegObject.ID                          = $('#id').val(); 
+				            }
+				            if($('#leadid').val())
+				            {
+				              RegObject.Lead__c                    = $('#leadid').val(); 
+				            }
+				            if($('#referrer').val())
+				            {
+				              RegObject.Referrer_ECN__c           = $('#referrer').val(); 
+				            }
+				            
+				            RegObject.First_Name__c               = $('#firstname').val();
+				            RegObject.Salutation__c               = $('#title').val();
+				            RegObject.First_Name__c               = $('#firstname').val();
+				            RegObject.Last_Name__c                = $('#lastname').val();
+				            RegObject.Job_Role__c                 = $('#jobtitle').val();
+				            RegObject.Email__c                    = $('#email').val();
+				            RegObject.Phone__c                    = $('#contactnumber').val();
+				            RegObject.Country__c                  = $('#country').val();
+				            RegObject.State_Province__c           = $('#state').val();
+				            RegObject.Registered_Company_Name__c  = $('#businessname').val();
+				            RegObject.Business_Number__c          = $('#businessNumber').val();
+				            RegObject.Registration_Type__c        = 'External Registration';
+				            RegObject.Registration_Status__c      = 'In Progress';
+				            RegObject.Agreement_Type__c           = 'Standard T&Cs';
+				            RegObject.Account_Type__c             = 'Customer';
+				            RegObject.Product__c                  = $('#product').val();
+
+				            RegObject.VANs_Subscription_Fee__c    = $('#VANs_Subscription_Fee').val();
+				            RegObject.EFT_Subscription_Fee__c     = $('#EFT_Subscription_Fee').val();
+				            RegObject.Subscription_Fee_Currency__c = $('#Subscription_Fee_Currency').val();
+				            RegObject.Subscription_Fee_Symbol__c  = $('#Subscription_Fee_Symbol').val();
+
+
+				             //console.log('---saveRegistration---'+JSON.stringify(RegObject));
+				             //console.log(RegObject);
+
+				             Visualforce.remoting.Manager.invokeAction(
+				                  'eNettRegistrationFallbackController.saveRegistration', 
+				                  JSON.stringify(RegObject),
+				                  function(result, event) {
+				                      //$scope.p_bankaccount.Id = result;
+				                      registration_Id = result;
+				                      if (event.status) {                          
+				                          // OK
+				                          //console.log('--saveRegistration-->--registration_Id--',registration_Id);
+				                        if($stage =='getBankinfo')
+				                        {
+				                           window.open('http://reg1-enett.cs5.force.com/fallback/eNettRegistrationFallback?id=' + registration_Id, '_self');
+				                        }
+				                        
+
+				                        return registration_Id;
+
+				                      } else if (event.type === 'exception') {
+				                          alert(event.message);
+				                      } else {
+				                          alert(event.message);
+				                      }
+				                  }     
+				              ); 
+   			 }
+
+        // Delete FundingAccount
+        function deleteFundingAccount(accountID)
+        {
+           //console.log('--deleteFundingAccount -- '+accountID);
+
+           var confirmDelete = confirm("Are you sure you want to delete?");
+             if (confirmDelete){
+              
+              Visualforce.remoting.Manager.invokeAction(
+                    'eNettRegistrationFallbackController.deleteFundingAccount', 
+                    accountID,
+                    function(result, event) {
+                        $('li.acc-id-'+accountID).remove();
+                        if (event.status) {
+                        } else if (event.type === 'exception') {
+                            alert(event.message);
+                        } else {
+                            alert(event.message);
+                        }
+                    }     
+                ); 
+              
+               return false;
+              }
+           
+        }
+
+        // create Bank Account 
+        function createBankAccount($type,$iban,$StateProvinceID)
+        {
+           //console.log('--createBankAccount -- '+$type);
+
+            CurrentId = {!CurrentId};
+            var AccountObject                         = new Object();
+            validationStatus= false;
+            if($type=='Funding' && $iban=='iban')
+            {
+
+	            var fields_ids = 'swift_bic,iban,account_currency_iban,account_name_iban,account_country_iban';
+				validationStatus = enettRegoFieldValidation(fields_ids,'funding-ibn-error-msg');
+				if(validationStatus)
+				{// valide	
+		              var recTypeId = "{!FundingRecType}";
+		              //AccountObject.ID                       = $('#id').val();
+		              AccountObject.Is_IBAN__c               = true;
+		              AccountObject.SWIFT_BIC__c             = $('#swift_bic').val();
+		              AccountObject.IBAN__c                  = $('#iban').val();
+		              AccountObject.Account_Currency__c      = $('#account_currency_iban').val();
+		              AccountObject.Account_Name__c          = $('#account_name_iban').val();
+		              AccountObject.Account_Country__c       = $('#account_country_iban').val();
+		              AccountObject.Bank_Code__c             = '';
+		              AccountObject.Account_Type__c          =  $type;
+		              AccountObject.Account_Number__c        = '';
+		              AccountObject.RecordTypeId             = recTypeId;
+		              AccountObject.Registration__c          = CurrentId;
+		              AccountObject.Active_Registration__c   = CurrentId;
+
+		              $('#swift_bic').val('');
+		              $('#iban').val('');
+		              $('#account_currency_iban').val('');
+		              $('#account_name_iban').val('');
+		              $('#account_country_iban').val('');
+
+		             Visualforce.remoting.Manager.invokeAction(
+		                  'eNettRegistrationFallbackController.saveFundingAccount', 
+		                 JSON.stringify(AccountObject),
+		                  function(result, event) {
+		                      getBankAccounts('Funding');
+		                      if (event.status) {
+		                      } else if (event.type === 'exception') {
+		                          alert(event.message);
+		                      } else {
+		                          alert(event.message);
+		                      }
+		                  }     
+		              ); 
+	          	}
+
+          }
+          else if($type=='Funding' && $iban=='no_iban')
+            {
+            	var fields_ids = 'bsb,account_number,account_currency_no_iban,account_name_no_iban,account_country_no_iban,swift_bic_no_iba';
+				validationStatus = enettRegoFieldValidation(fields_ids,'funding-no_iban-error-msg');
+				if(validationStatus)
+				{// valide	
+		              AccountObject.Is_IBAN__c               = false;
+		              AccountObject.SWIFT_BIC__c             = $('#swift_bic_no_iba').val();
+		              AccountObject.IBAN__c                  = '';
+		              AccountObject.Account_Currency__c      = $('#account_currency_no_iban').val();
+		              AccountObject.Account_Name__c          = $('#account_name_no_iban').val();
+		              AccountObject.Account_Country__c       = $('#account_country_no_iban').val();
+		              AccountObject.Bank_Code__c             = $('#bsb').val();
+		              AccountObject.Account_Type__c          =  $type;
+		              AccountObject.Account_Number__c        = $('#account_number').val();
+		              AccountObject.RecordTypeId             = recTypeId;
+		              AccountObject.Registration__c          = CurrentId;
+		              AccountObject.Active_Registration__c   = CurrentId;
+
+		              $('#bsb').val('');
+		              $('#account_number').val('');
+		              $('#account_currency_no_iban').val('');
+		              $('#account_name_no_iban').val('');
+		              $('#account_country_no_iban').val('');
+		              $('#swift_bic_no_iba').val('');
+
+		              Visualforce.remoting.Manager.invokeAction(
+		                  'eNettRegistrationFallbackController.saveFundingAccount', 
+		                 JSON.stringify(AccountObject),
+		                  function(result, event) {
+		                      getBankAccounts('Funding');
+		                      if (event.status) {
+		                      } else if (event.type === 'exception') {
+		                          alert(event.message);
+		                      } else {
+		                          alert(event.message);
+		                      }
+		                  }     
+		              ); 
+	          	}
+          }
+          else if($type=='Payable')
+          {// Save Payable 
+
+          	  // ===== Save Payable======
+
+            	 var fields_ids = 'country_payable,financialinstitution_payable,accountname_payable,accountnumber_payable,bankcode_payable,addressline1_payable,city_payable,region_payable,postcode_payable,addressline2_payable';
+				validationStatus = enettRegoFieldValidation(fields_ids,'payable-error-msg');
+				if(validationStatus)
+				{// valide	
+		              if($('#payable_account_Id').val())
+		              {
+		              	 AccountObject.Id          			 = $('#payable_account_Id').val();	
+		              }
+		              AccountObject.Account_Name__c          = $('#accountname_payable').val();
+		              AccountObject.Account_Country__c       = $('#country_payable').val();
+		              AccountObject.Bank_Code__c             = $('#bankcode_payable').val();
+		              AccountObject.Account_Number__c      	 = $('#accountnumber_payable').val();
+		              AccountObject.Account_Type__c          =  $type;
+		              AccountObject.Financial_Institution__c = $('#financialinstitution_payable').val();
+		              AccountObject.Address_Line_1__c        = $('#addressline1_payable').val();
+		              AccountObject.Address_Line_2__c        = $('#addressline2_payable').val();
+		              AccountObject.City__c        			 = $('#city_payable').val();
+		              AccountObject.Postcode__c       		 = $('#postcode_payable').val();
+		              AccountObject.State_Province_LKP__c    = $('#region_payable').val();
+		              
+
+		              AccountObject.RecordTypeId             = recTypeId;
+		              AccountObject.Registration__c          = CurrentId;
+		              AccountObject.Active_Registration__c   = CurrentId;
+
+		             // log('Payable');
+		             // log(AccountObject);
+
+		              Visualforce.remoting.Manager.invokeAction(
+		                  'eNettRegistrationFallbackController.saveFundingAccount', 
+		                 JSON.stringify(AccountObject),
+		                  function(result, event) {
+		                      getBankAccounts('Payable');
+							  if (event.status) {
+		                      } else if (event.type === 'exception') {
+		                          alert(event.message);
+		                      } else {
+		                          alert(event.message);
+		                      }
+		                  }     
+		              ); 
+				}
+
+          }
+          else if($type=='Receivable')
+          {// Receivable
+          	  // ===== Save Payable======
+           	 
+             	var fields_ids = 'country_receivable,financialinstitution_receivable,accountnumber_receivable,accountnumber_receivable,bankcode_receivable,addressline1_receivable,city_receivable,region_receivable,postcode_receivable,addressline2_receivable';
+				validationStatus = enettRegoFieldValidation(fields_ids,'receivable-error-msg');
+				if(validationStatus)
+				{// valide	
+		              if($('#receivable_account_Id').val())
+		              {
+		              	 AccountObject.Id          			 = $('#receivable_account_Id').val();	
+		              }
+
+		              AccountObject.Account_Name__c          = $('#accountname_receivable').val();
+		              AccountObject.Account_Country__c       = $('#country_receivable').val();
+		              AccountObject.Bank_Code__c             = $('#bankcode_receivable').val();
+		              AccountObject.Account_Number__c        = $('#accountnumber_receivable').val();
+		              AccountObject.Account_Type__c          =  $type;
+		              AccountObject.Financial_Institution__c = $('#financialinstitution_receivable').val();
+		              AccountObject.Address_Line_1__c        = $('#addressline1_receivable').val();
+		              AccountObject.Address_Line_2__c        = $('#addressline2_receivable').val();
+		              AccountObject.City__c        			 = $('#city_receivable').val();
+		              AccountObject.Postcode__c       		 = $('#postcode_receivable').val();
+		              
+		             if($StateProvinceID)
+		             {
+		             	var State_Province = $StateProvinceID;
+		             } 
+		             else if($('#region_receivable').val())
+		             {
+		               	var State_Province = $('#region_receivable').val();
+		             }
+		             else
+		             {
+		             	var State_Province = $('#region_payable').val();
+		             }
+		              AccountObject.State_Province_LKP__c    = State_Province;
+		              
+
+		              AccountObject.RecordTypeId             = recTypeId;
+		              AccountObject.Registration__c          = CurrentId;
+		              AccountObject.Active_Registration__c   = CurrentId;
+
+		             // log('Receivable');
+		              //log(AccountObject);
+
+		              	Visualforce.remoting.Manager.invokeAction(
+		                  'eNettRegistrationFallbackController.saveFundingAccount', 
+		                 JSON.stringify(AccountObject),
+		                  function(result, event) {
+		                      getBankAccounts('Receivable');
+							  if (event.status) {
+		                      } else if (event.type === 'exception') {
+		                          alert(event.message);
+		                      } else {
+		                          alert(event.message);
+		                      }
+		                  }     
+		              ); 
+	          	}
+
+            
+
+          }
+          else if($type=='Billing')
+          {// Save Billing
+
+          	// ===== Save Payable======
+           	
+              	var fields_ids = 'country_billing,financialinstitution_billing,accountname_billing,accountnumber_billing,bankcode_billing,addressline1_billing,city_billing,region_billing,postcode_billing,addressline2_billing';
+			
+				validationStatus = enettRegoFieldValidation(fields_ids,'billing-error-msg');
+				if(validationStatus)
+				{// valide	
+		              if($('#billing_account_Id').val())
+		              {
+		              	 AccountObject.Id          			 = $('#billing_account_Id').val();	
+		              }
+		             
+		              AccountObject.Account_Name__c          = $('#accountname_billing').val();
+		              AccountObject.Account_Country__c       = $('#country_billing').val();
+		              AccountObject.Account_Number__c      	 = $('#accountnumber_billing').val();
+		              AccountObject.Bank_Code__c             = $('#bankcode_billing').val();
+		              AccountObject.Account_Type__c          =  $type;
+		              AccountObject.Financial_Institution__c = $('#financialinstitution_billing').val();
+		              AccountObject.Address_Line_1__c        = $('#addressline1_billing').val();
+		              AccountObject.Address_Line_2__c        = $('#addressline2_billing').val();
+		              AccountObject.City__c        			 = $('#city_billing').val();
+		              AccountObject.Postcode__c       		 = $('#postcode_billing').val();
+		             
+		             if($StateProvinceID)
+		             {
+		             	var State_Province = $StateProvinceID;
+		             } 
+		             else if($('#region_billing').val())
+		             {
+		              	var State_Province = $('#region_billing').val();
+		             }
+		              else
+		             {
+		             	var State_Province = $('#region_receivable').val();
+		             }
+
+
+		              AccountObject.State_Province_LKP__c    = State_Province;
+		              
+
+		              AccountObject.RecordTypeId             = recTypeId;
+		              AccountObject.Registration__c          = CurrentId;
+		              AccountObject.Active_Registration__c   = CurrentId;
+
+		             // log('billing');
+		             // log(AccountObject);
+
+		              Visualforce.remoting.Manager.invokeAction(
+		                  'eNettRegistrationFallbackController.saveFundingAccount', 
+		                 JSON.stringify(AccountObject),
+		                  function(result, event) {
+		                     getBankAccounts('Billing');
+		                      if (event.status) {
+		                      } else if (event.type === 'exception') {
+		                          alert(event.message);
+		                      } else {
+		                          alert(event.message);
+		                      }
+		                  }     
+		              ); 
+	          }
+
+          }
+         return false;
+        }
+        
+
+
+
+
+        // Get Country Values
+        // ***************************************************
+				function setCountriesJS(countriesItems) {
+					var option = '<option value=""></option>';
+					for (var i=0;i<countriesItems.length;i++){
+					   option += '<option value="'+ countriesItems[i] + '">' + countriesItems[i] + '</option>';
+					}
+					  $('#country').append(option);
+			          $('#account_country_iban').append(option);
+			          $('#account_country_no_iban').append(option);
+			          $('#country_payable').append(option);
+			          $('#country_receivable').append(option);
+			          $('#country_billing').append(option);
+				}
+
+         // Get Country Values
+        // ***************************************************
+        function setCurrencyJS(currencyItems) {
+          var option = '<option value=""></option>';
+          for (var i=0;i<currencyItems.length;i++){
+             option += '<option value="'+ currencyItems[i] + '">' + currencyItems[i] + '</option>';
+          }
+          $('#account_currency_iban').append(option);
+          $('#account_currency_no_iban').append(option);
+          
+        }
+         // Get Salutation Values
+        // ***************************************************
+        function setsalutationJS(salutationItems) {
+          var option = '';
+          for (var i=0;i<salutationItems.length;i++){
+             option += '<option value="'+ salutationItems[i] + '">' + salutationItems[i] + '</option>';
+          }
+          $('#title').append(option);
+        }
+       
+
+          // On Country Change 
+          // ***************************************************
+          function onChangeCountries() {
+              $('#country').change(function() {
+                 //var selectedCountry = $(this).val();
+                  setLabels($(this).val());
+                  setBusRegions($(this).val(), '', 'state');
+                  setPrices($(this).val());
+
+                 if($(this).val()=='Australia' || $(this).val()=='New Zealand' )
+                  {
+                    $('.wrapper-products').removeClass('hidden');
+                  }
+                  else
+                  {
+                    $('.wrapper-products').addClass('hidden');
+                  }
+              });
+              $('#country_payable').change(function() {
+                  //var selectedCountry = $(this).val();
+                  setBusRegions($(this).val(), '', 'region_payable');
+              });
+              $('#country_receivable').change(function() {
+                  //var selectedCountry = $(this).val();
+                  setBusRegions($(this).val(), '', 'region_receivable');
+              });
+              $('#country_billing').change(function() {
+                  //var selectedCountry = $(this).val();
+                  setBusRegions($(this).val(), '', 'region_billing');
+              });
+
+          }
+
+        // Get StateDropdown Values
+        //***************************************************
+        function setBusRegions(country_name,selected_state,stateSelectID) {
+        	//log(' -setBusRegions- '+country_name+' selected_state: '+selected_state+' stateSelectID: '+stateSelectID);
+        	  selected_state; 
+              Visualforce.remoting.Manager.invokeAction(
+                    'eNettRegistrationFallbackController.getRegions', 
+                     country_name,
+                    function(result, event) {
+                        
+                        if (event.status) {                          
+                          // OK
+                          //console.log(result);
+                          
+                          $('select#'+stateSelectID+' option').remove();
+
+                          option = '<option value="" ></option>';
+                          for(var stateData in result){
+                            $selected = (selected_state==result[stateData])?' selected ="selected"':'';
+                            option += '<option value="'+ result[stateData] + '" '+$selected+'>' + stateData + '</option>';
+                          }
+                          $('#'+stateSelectID).append(option);
+                          //console.log($selected);
+                         
+                          
+                        } else if (event.type === 'exception') {
+                            alert(event.message);
+                        } else {
+                            alert(event.message);
+                        }
+                       
+
+                    } , {escape:true}    
+                ); 
+              return selected_state;
+          
+         
+        }
+			// On Country Change 
+          // ***************************************************
+          function onChangeCountries() {
+              $('#country').change(function() {
+                 //var selectedCountry = $(this).val();
+                  setLabels($(this).val());
+                  setBusRegions($(this).val(), '', 'state');
+                  setPrices($(this).val());
+
+                 if($(this).val()=='Australia' || $(this).val()=='New Zealand' )
+                  {
+                    $('.wrapper-products').removeClass('hidden');
+                  }
+                  else
+                  {
+                    $('.wrapper-products').addClass('hidden');
+                  }
+              });
+              $('#country_payable').change(function() {
+                  //var selectedCountry = $(this).val();
+                  setBusRegions($(this).val(), '', 'region_payable');
+              });
+              $('#country_receivable').change(function() {
+              	//log('--onChangeCountries--# country_receivable change');
+
+                  //var selectedCountry = $(this).val();
+                  setBusRegions($(this).val(), '', 'region_receivable');
+              });
+              $('#country_billing').change(function() {
+
+                  //var selectedCountry = $(this).val();
+                  setBusRegions($(this).val(), '', 'region_billing');
+              });
+
+          }
+        /**
+         ** Update Record By ID  
+         */
+		function updateRegistration(){
+			$("#checking").show();   
+			var fields_ids = 'firstname,lastname,jobtitle,contactnumber,email,country,state,businessname,product,businessNumber';
+			var validationStatus = enettRegoFieldValidation(fields_ids,'personalDetails-error-msg');
+			if(validationStatus)
+			{// valide
+
+				saveRegistration();
+			  //log('--move to next Step-');
+			  $("#checking").hide();   
+			   showNextStep('btn-next-validation-check');
+			}
+		}
+
+        /**
+         * * Check before Create Rego Record
+         */
+        function checkDuplicates(){
+			//log('--checkDuplicates Call-');
+			$("#checking").show();   
+	
+			var fields_ids = 'firstname,lastname,jobtitle,contactnumber,email,country,state,businessname,product,businessNumber';
+
+			var validationStatus = enettRegoFieldValidation(fields_ids,'personalDetails-error-msg');
+
+			if(validationStatus)
+			{// valide
+			
+                 var queryString = '?' 
+                 var registered_company_name   =   $('#businessname').val();
+                 var registration_email        =   $('#email').val();
+                   
+                  $('#businessname').val();
+                    Visualforce.remoting.Manager.invokeAction(
+                        'eNettRegistrationFallbackController.checkForDuplicates', 
+                        registered_company_name, registration_email, 
+                        function(result, event) {
+                            var duplicatesFound = result['errorType'];
+                             //console.log(result['errorType']);
+                             //console.log(result['Id']);
+                            if (event.status) {
+                                if (duplicatesFound === 'DuplicateAccountWithECN') {
+                                    //console.log('DuplicateAccountWithECN');
+                                     queryString = queryString + 'errorType=WithECN';
+                                    window.open('http://{!$Setup.RegoSettings__c.sfdcHostAccountSetup__c}/eNettRegoDuplicateAccount' + queryString, '_self');
+                                } else if (duplicatesFound === 'DuplicateAccountnoECN') {
+                                     queryString = queryString + 'errorType=WithOutECN';
+                                    //console.log('DuplicateAccountnoECN');
+                                    window.open('http://{!$Setup.RegoSettings__c.sfdcHostAccountSetup__c}/eNettRegoDuplicateAccount' + queryString, '_self');
+                                } else if (duplicatesFound === 'DuplicateRegistration') {
+                                        
+                                        var registration_Id = result['Id'];
+                                        var leadId 			= result['LeadId'];
+                                        $('#id').val(registration_Id);
+                                        $('#leadid').val(leadId);
+                                        setTimeout(function() {
+
+                                             saveRegistration();
+                                             //console.log('DuplicateRegistration: '+result['Id']);
+                                               window.open('http://{!$Setup.RegoSettings__c.sfdcHostAccountSetup__c}?id=' + registration_Id, '_self');
+                                            }, 500);    
+                                } else if (duplicatesFound === 'DuplicateLead') {                                            
+                                 
+                                            var registration_Id = result['Id'];
+                                            var leadId 			= result['LeadId'];
+
+                                            ('#id').val(registration_Id);
+                                        	$('#leadid').val(leadId);
+                                            setTimeout(function() {
+                                              saveRegistration();
+                                               //console.log('DuplicateLead'+result['Id']);
+                                               window.open('{!$Setup.RegoSettings__c.sfdcHostAccountSetup__c}?id=' + registration_Id, '_self');
+                                            }, 500);  
+                                    
+                                } else if (duplicatesFound === 'NoDuplicates') {  
+                                       var registration_Id = saveRegistration('getBankinfo');
+                                }
+                            } else if (event.type === 'exception') {
+                                alert(event.message);
+                            } else {
+                                alert(event.message);
+                            }
+                        }     
+                    ); 
+              }// Valdi End
+                       
+        }
+
+                 /*
+                 
+
+                  */  
+                function showProcessStep() {
+                	CurrentId 			= 	{!CurrentId};
+         			CurrentToken 		= 	{!CurrentToken};
+         			SelectedStep 		= 	{!SelectedStep};
+
+         			  
+         			 if (CurrentId != null && CurrentId.length>0 && SelectedStep != null && SelectedStep.length>0 && SelectedStep=='TandC' )
+         			 {
+         			 	//log('--collapseTandc-');
+         			 	$('#collapsePersonalDetails').removeClass('in');
+         			 	$('#collapseBankaccount').removeClass('in');
+         			 	$('#collapseTandc').addClass('in');
+         			 }
+         			 else if (CurrentId != null && CurrentId.length>0 && CurrentToken != null && CurrentToken.length>0 )
+         			 {
+         			 	//log('--collapsePersonalDetails-');
+         			 	$('#collapsePersonalDetails').addClass('in');
+         			 	$('#collapseBankaccount').removeClass('in');
+         			 	$('#collapseTandc').removeClass('in');
+
+         			 }
+         			 else if (CurrentId != null && CurrentId.length>0)
+         			 {
+         			 	//log('--collapseTandc-');	
+         			 	$('#collapsePersonalDetails').removeClass('in');
+         			 	$('#collapseBankaccount').addClass('in');
+         			 	$('#collapseTandc').removeClass('in');
+         			 }
+         			 else
+         			 {
+         			 	//log('--collapsePersonalDetails-');
+         			 	$('#collapsePersonalDetails').addClass('in');
+         			 	$('#collapseBankaccount').removeClass('in');
+         			 	$('#collapseTandc').removeClass('in');
+         			 }
+                }
+                /*
+                 
+                 
+                 */    
+         		function checkActiveRegistration() {
+         			
+         				CurrentId 			= 	{!CurrentId};
+         				CurrentToken 		= 	{!CurrentToken};
+         				$("#checking").show();
+                        var queryString ='';
+                         if (CurrentId != null && CurrentId.length>0)
+                         {
+                         		Visualforce.remoting.Manager.invokeAction('eNettRegistrationFallbackController.getRegistration',
+						            CurrentId,
+						            function(result, event) {
+						                if (event.status) {
+						                	//console.log(result);
+						                	  // if Account is Set then With ECN
+				                                if(result.Accept_Terms_and_Conditions__c && result.Account_ECN__c!=null  && result.Account_ECN__c.length>0)
+				                                {
+				                                     queryString                    = '?errorType=WithECN';
+				                                     window.open('http://{!$Setup.RegoSettings__c.sfdcHostAccountSetup__c}/eNettRegoDuplicateAccount' + queryString, '_self');
+				                                }
+				                               // if Account is Set then Without ECN
+				                                else if(result.Accept_Terms_and_Conditions__c && result.Account_ECN__c==null)
+				                                {
+				                                        queryString                   = '?errorType=WithOutECN';
+				                                        window.open('http://{!$Setup.RegoSettings__c.sfdcHostAccountSetup__c}/eNettRegoDuplicateAccount' + queryString, '_self');
+				                                }
+				                                // Check for Valid Token
+				                                else if (CurrentToken != null && CurrentToken.length>0)
+				                                {
+				                                     if(CurrentToken!=result.Name){
+				                                       window.open('http://{!$Setup.RegoSettings__c.sfdcHostAccountSetup__c}/eNettRegoErrorMessages?errorType=invalidToken', '_self');
+				                                    }
+				                                    else
+				                                    {
+				                                       $("#checking").hide();    
+				                                    }
+				                                       
+				                                }
+				                                else
+				                                {
+				                                    $("#checking").hide();  
+				                                }
+
+						                    
+						                } else {
+						                    //console.log('Bad >>>>>>>' + result.First_Name__c);
+						                }
+						            }, {
+						                escape: true
+					            });
+                               
+                        }
+                        else{
+                             $("#checking").hide();
+
+                         } 
+
+                        showProcessStep();
+ 
+                    } ;           
+    // Obtain the country specific product prices.
+        // ***************************************************
+         function setPrices(country_name){
+          //console.log('---setPrices---');
+
+            Visualforce.remoting.Manager.invokeAction(
+                'eNettRegistrationFallbackController.getFees', 
+                country_name,
+                function(result, event) {
+                  //console.log('---result---',result);
+                    if (event.status) {  
+                    	// If ref set to 404686 then make VANs_Subscription_Fee to 0
+                    	 if($('#referrer').val()=='404686')
+                        {
+                           
+                            $('#VANs_Subscription_Fee').val(0);  
+                        } 
+                        else
+                        {
+                            
+                            $('#VANs_Subscription_Fee').val(result.VANs_Subscription_Fee__c);  
+                        } 
+
+                      $('#EFT_Subscription_Fee').val(result.EFT_Subscription_Fee__c);
+                      
+                      $('#Subscription_Fee_Currency').val(result.Enett_Default_Currency__c);
+                      $('#Subscription_Fee_Symbol').val(result.Enett_Default_Currency_Symbol__c);                        
+                    } else if (event.type === 'exception') {
+                        alert(event.message);
+                    } else {
+                        alert(event.message);
+                    }
+                }     
+            ); 
+        } 
+        // Set Product
+        function setProducts()
+        {
+          
+           var van =  $('#van_add').is(':checked') ? 1 : 0;
+           var eft =  $('#eft_add').is(':checked') ? 1 : 0;
+
+            if (van && eft) {
+               $('#product').val('VANs;eNett EFT'); 
+            } else {
+                if (van) {
+                  $('#product').val('VANs'); 
+                }
+                else if (eft) {
+                  $('#product').val('eNett EFT'); 
+                }
+                else{
+                  $('#product').val(''); 
+                }
+            }
+            
+
+        }
+
+        function setLabels(country_name) {
+                  //console.log('---setLabels---');
+                        var Company_Name_Label = 'Company legal name';
+                        var Business_Region_Label = 'Regions';
+                        var Business_Number_Label = 'Company Registration number';
+                        var Region_Prefix_Label = 'Please select country first'; 
+                        var Payable_Bank_Code_Label = 'Bank code';
+                        var Receivable_Bank_Code_Label = 'Bank code';
+                        var Billing_Bank_Code_Label = 'Bank code';
+
+                  switch (country_name) {
+                                
+                            case 'Australia':
+                                Billing_Bank_Code_Label = 'BSB';
+                                Business_Number_Label = 'ACN';
+                                Payable_Bank_Code_Label = 'BSB';
+                                Receivable_Bank_Code_Label = 'BSB';
+                                Business_Region_Label = 'States';
+                                break;
+                                
+                            case 'Austria':
+                                Business_Number_Label = 'Firmenbuchnummer (FN)';
+                                break;
+                                
+                            case 'Belgium':
+                                Business_Region_Label = 'Provinces';
+                                break;
+                                
+                            case 'Canada':
+                                Business_Region_Label = 'Provinces';
+                                break;
+                                
+                            case 'Cyprus':
+                                Business_Number_Label = 'Registered business number';
+                                break;
+                                
+                            case 'Czech Republic':
+                                Business_Number_Label = 'Business identification number';
+                                Company_Name_Label = 'Registered Business Name';
+                                break;
+                                
+                            case 'Denmark':
+                                Business_Number_Label = 'CVR number';
+                                break;
+                                
+                            case 'France':
+                                Business_Number_Label = 'Business ID number';
+                                Business_Region_Label = 'Metropolitan departments';
+                                break;
+                                
+                            case 'Germany':
+                               
+                                break;
+                                
+                            case 'Greece':
+                                Business_Number_Label = 'GEMI number';
+                                break;
+                                
+                            case 'Hong Kong':
+                                 Business_Number_Label = 'CR number';
+                                 Business_Region_Label = 'Districts';
+                                break;
+                                
+                            case 'Hungary':
+                                Business_Number_Label = 'Business registration number';
+                              
+                                break;
+                                
+                            case 'Ireland':
+                                Business_Number_Label = 'CRO number';
+                                Business_Region_Label = 'County';
+                                
+                                break;
+                                
+                            case 'Isle of Man':
+                                
+                                break;
+                                
+                            case 'Israel':
+                                Business_Number_Label = 'No. corporate';
+                               
+                                break;
+                                
+                            case 'Italy':
+                                Business_Number_Label = 'REA number';
+                                Business_Region_Label = 'Provinces';
+                               
+                                break;
+                                
+                            case 'Jordan':
+                                Business_Number_Label = 'Business number';
+                                Business_Region_Label = 'Governorates';
+                                
+                                break;
+                                
+                            case 'Liechtenstein':
+                                Business_Number_Label = 'Business identification number';
+                                break;
+                                
+                            case 'Mexico':
+                                Business_Number_Label = 'SIEM number';
+                                break;
+                                
+                            case 'Netherlands':
+                                Business_Number_Label = 'KVK number';
+                                 Business_Region_Label = 'Provinces';
+                                break;
+                                
+                            case 'New Zealand':
+                                break;
+                                
+                            case 'Norway':
+                                Business_Number_Label = 'Organisasjonsnummer';
+                                Business_Region_Label = 'County';
+                                break;
+                                
+                            case 'Poland':
+                                Business_Number_Label = 'KRS number';
+                                Business_Region_Label = 'Provinces';
+                                break;
+                                
+                            case 'Portugal':
+                                Business_Number_Label = 'Business number';
+                                Business_Region_Label = 'Districts';
+                                break;
+                                
+                            case 'Romania':
+                                Business_Number_Label = 'Nr. ordine RC';
+                                break;
+                                
+                            case 'Slovakia':
+                                Business_Number_Label = 'Company identification number (ICO)';
+                                break;
+                                
+                            case 'South Africa':
+                                Business_Number_Label = 'Enterprise number';
+                                Business_Region_Label = 'Provinces';
+                                break;
+                                
+                            case 'Spain':
+                                Business_Number_Label = 'CIF Number';
+                                Business_Region_Label = 'Provinces';
+                              
+                                break;
+                                
+                            case 'Sweden':
+                                Business_Number_Label = 'Organisasjonsnummer';
+                                Business_Region_Label = 'County';
+                                break;
+                                
+                            case 'Switzerland':
+                                Business_Number_Label = 'Business number';
+                                Business_Region_Label = 'Cantons';
+                                break;
+                                
+                            case 'United Arab Emirates':
+                                Business_Number_Label = 'Department of economic development (DED) number';
+                                Business_Region_Label = 'Emirates';
+                                break;
+                                
+                            case 'United Kingdom':
+                                Business_Region_Label = 'County';
+                                break;
+                                
+                            case 'United States':
+                                Business_Number_Label = 'Federal Tax ID';
+                                Business_Region_Label = 'States';
+                                break;
+                        }
+                        // 
+                        if (country_name != null && country_name.length>0){
+                             Region_Prefix_Label = 'Please select from our approved list of '+ Business_Region_Label; 
+                        }
+                      
+                       $("label[for='businessname']").text(Company_Name_Label);
+                       $("span[data-label='businessname']").text(Company_Name_Label);
+                       $("input[name='businessname']").attr('data-errorCaption',Company_Name_Label);
+
+                       $("label[for='businessNumber']").text(Business_Number_Label);
+                       $("span[data-label='businessNumber']").text(Business_Number_Label);
+                       $("input[name='businessNumber']").attr('data-errorCaption',Business_Number_Label);
+
+
+
+                       $("label[for='state']").text(Region_Prefix_Label);
+        }
+
+
+
+        	/**
+             *  Print Client Agreement and Terms & Conditions section 
+             * @param String elem  ID of Client Agreement  Div
+             * @param String elem  ID of Terms & Conditions Div
+             */
+            function PrintElem(elem,elem2) {
+                
+                var popupwindow = window.open('', 'PRINT', 'height=400,width=600');
+                
+                popupwindow.document.write('<html><head><title>Client Agreement Form</title>');
+                
+                popupwindow.document.write('</head><body >');
+                popupwindow.document.write('<h1>Client Agreement Form</h1>');
+                popupwindow.document.write(document.getElementById(elem).innerHTML);
+                popupwindow.document.write('<h1>Terms & Conditions</h1>');
+                popupwindow.document.write(document.getElementById(elem2).innerHTML);
+                popupwindow.document.write('</body></html>');
+                
+                popupwindow.document.close(); // necessary for IE >= 10
+                popupwindow.focus(); // necessary for IE >= 10*/
+                
+                setTimeout(function(){
+                    popupwindow.print();
+                    popupwindow.close();
+                }, 100);
+             
+                return true;
+                
+            }
+            
+            /**
+             *  Send TandC  via Email
+             *  Update Email_TCs_from_Online_Form__c Field to True and user will get Email
+             * 
+             */
+            function updateEmailTANDC() {
+                //console.log('updateEmailTANDC');
+               
+                CurrentId 									= 	{!CurrentId};
+				var RegObject                         		= 	new Object();
+
+              	RegObject.ID                          		= 	CurrentId; 
+            	RegObject.Email_TCs_from_Online_Form__c  	= 	true ;
+
+
+             	//console.log('---updateEmailTANDC---'+JSON.stringify(RegObject));
+
+                Visualforce.remoting.Manager.invokeAction(
+	                'eNettRegistrationFallbackController.saveRegistration', 
+	                JSON.stringify(RegObject),
+	                function(result, event) {
+	                 // console.log('---result---',result);
+	                  $('.emial-send-to').html($('#email').val());
+	                  $('.tc-pdf-email-send').removeClass('hidden');
+	                    if (event.status) {  
+	                    } else if (event.type === 'exception') {
+	                        alert(event.message);
+	                    } else {
+	                        alert(event.message);
+	                    }
+	                }     
+            	); 
+            }
+
+
+            /**
+             *  Final Save and Continue to Thanks you page
+             *  Update Accept_Terms_and_Conditions__c
+             *  Update Marketing_Subscription__c
+             */
+            function saveFinalProcess() {
+            	$("#checking").show();   
+                //console.log('----saveFinalProcess----');
+               
+                CurrentId 									= 	{!CurrentId};
+				var RegObject                         		= 	new Object();
+
+              	RegObject.ID                          		= 	CurrentId; 
+              	
+              	if($("#TandCAccepted").is(':checked'))
+              	{
+              		RegObject.Accept_Terms_and_Conditions__c  	= true;	
+              	}
+              	else
+              	{
+              		RegObject.Accept_Terms_and_Conditions__c  	= false;	
+              	}
+
+              
+              	if($("#MarketingTandC").is(':checked'))
+              	{
+              		RegObject.Marketing_Subscription__c  	= true;	
+              	}
+              	else
+              	{
+              		RegObject.Marketing_Subscription__c  	= false;	
+              	}
+            	
+             	//console.log('---saveFinalProcess---',RegObject);
+
+             	var fields_ids = 'TandCAccepted';
+             	var validationStatus = enettRegoFieldValidation(fields_ids,'terms-and-conditions-accepted-error-msg');
+             	//log('validationStatus: '+ validationStatus);
+				if(validationStatus)
+				{// valide
+					//log('Valdie');
+	                Visualforce.remoting.Manager.invokeAction(
+		                'eNettRegistrationFallbackController.saveRegistration', 
+		                JSON.stringify(RegObject),
+		                function(result, event) {
+		                  //console.log('---result---',result);
+		                  window.open('http://{!$Setup.RegoSettings__c.sfdcHostAccountSetup__c}/eNettRegoThankYou' , '_self');
+		                    if (event.status) {  
+		                    } else if (event.type === 'exception') {
+		                        alert(event.message);
+		                    } else {
+		                        alert(event.message);
+		                    }
+		                }     
+	            	); 
+	            }
+            	 $("#checking").hide();  
+            }
+
+
+			</script>
+
+
+	<script type="text/javascript">
+
+	/**
+	 * * From filed Validation Process
+	 */
+
+	function enettRegoFieldValidation(fieldsIds,errorDivId)
+	{	
+		validationStatus = true; // true is Valid , false is inValid
+		$fieldIds = fieldsIds.split(',');
+		var showMessages = new Array();
+		
+		// Loop  elementID
+		$count =1;
+		$.each( $fieldIds, function( index, elementID ) {
+		var element  			= 	$('#'+elementID).get(0);
+
+		// Check required
+		if($("[id='"+elementID + "']").hasClass( "required" ) )
+		{
+			
+			var requiredCheck 		= 	requiredCheckfunction(element.value,element);
+			
+			//log('requiredCheck '+requiredCheck);
+
+			var errorMsgDiv 		= 	$("[id='"+elementID + "']").next('div.field_error').find("[data-error-message='required']");
+			if(!requiredCheck)
+			{
+				if ($(element).hasClass('invalid-field'))
+				{
+					//if and error showing then do not show another error
+				}
+				else
+				{
+					$(element).addClass('invalid-field');
+					$(errorMsgDiv).addClass('invalid').removeClass('hidden');
+				}
+				
+				validationStatus 			= 	false;
+			}
+			else
+			{
+				$(element).removeClass('invalid-field');
+				$(errorMsgDiv).addClass('hidden').removeClass('invalid');
+				//validationStatus 			= 	true;
+			}
+		}
+
+		// Check maxlength
+		if($("[id='"+elementID + "']").hasClass( "maxlength" ) && (element.value.length !== 0)  )
+		{
+			var element  			= 	$('#'+elementID).get(0);
+			maxlength 				= 	$(element).attr("data-maxlength");
+
+			var maxlengthCheck 		= 	maxlengthCheckfunction(element.value,element,maxlength);
+			var errorMsgDiv 		= 	$("[id='"+elementID + "']").next('div.field_error').find("[data-error-message='maxlength']");
+			if(!maxlengthCheck)
+			{
+				
+				if ($(element).hasClass('invalid-field'))
+				{
+					//if and error showing then do not show another error
+				}
+				else
+				{
+					$(element).addClass('invalid-field');
+					$(errorMsgDiv).addClass('invalid').removeClass('hidden');	
+				}
+				
+				validationStatus 			= 	false;
+			}
+			else
+			{
+				//log('clear--maxlengthCheck');
+				$(element).removeClass('invalid-field');
+				$(errorMsgDiv).addClass('hidden').removeClass('invalid');
+				
+			}
+		}
+
+		// Check customEmail
+		if($("[id='"+elementID + "']").hasClass( "email" ) && (element.value.length !== 0)  )
+		{
+			var element  			= 	$('#'+elementID).get(0);
+			
+			var internetBasedEmailCheck 		= 	internetBasedEmailCheckfunction(element.value,element);
+			var errorMsgDiv 		= 	$("[id='"+elementID + "']").next('div.field_error').find("[data-error-message='email']");
+			if(!internetBasedEmailCheck)
+			{
+				
+				if ($(element).hasClass('invalid-field'))
+				{
+					//if and error showing then do not show another error
+				}
+				else
+				{
+					$(element).addClass('invalid-field');
+					$(errorMsgDiv).addClass('invalid').removeClass('hidden');	
+				}
+				
+				validationStatus 			= 	false;
+			}
+			else
+			{
+				//log('clear--internetBasedEmailCheck');
+				$(element).removeClass('invalid-field');
+				$(errorMsgDiv).addClass('hidden').removeClass('invalid');
+				
+			}
+		}
+		 
+		
+		$count++;
+		});// end each elementID
+
+		// Process Footer Error Message
+		if(errorDivId)
+		{
+			 $errorMessages ='';
+			 $seperator = ', ';	
+			
+			 var  $numberOfError = 0;
+			 $.each( $fieldIds, function( index, elementID ) {
+				if($("[id='"+elementID + "']").hasClass( "invalid-field" ) )
+				{
+					$numberOfError++;
+				}
+			});	
+
+
+			 $.each( $fieldIds, function( index, elementID ) {
+		 	  var element  			= 	$('#'+elementID).get(0);
+		 	  
+		 	   //log(index);
+				// Check required
+				if($("[id='"+elementID + "']").hasClass( "invalid-field" ) )
+				{
+					
+					if(($numberOfError>1 && index==0))
+						{
+							$seperator = (index==($numberOfError-2))?' and ':', ';
+						}
+						else if($numberOfError>1 && (index==($numberOfError-2)))
+						{
+							$seperator = ' and ';	
+						}
+						else if(index==($numberOfError-1))
+						{
+							$seperator = ' ';	
+						}
+						else
+						{
+							$seperator = ', ';	
+						}	
+					$errorMessages += $('#'+elementID).attr('data-errorCaption')+$seperator;
+				}
+				
+			});	
+			//  $numberOfError = $('.invalid-field').length;
+			// $('.invalid-field').each(function(index,element) {
+
+				
+
+			// 	if(($numberOfError>1 && index==0))
+			// 	{
+			// 		$seperator = (index==($numberOfError-2))?' and ':', ';
+			// 	}
+			// 	else if($numberOfError>1 && (index==($numberOfError-2)))
+			// 	{
+			// 		$seperator = ' and ';	
+			// 	}
+			// 	else if(index==($numberOfError-1))
+			// 	{
+			// 		$seperator = ' ';	
+			// 	}
+			// 	else
+			// 	{
+			// 		$seperator = ', ';	
+			// 	}	
+				
+			// });
+			
+			if($errorMessages.length)
+			{
+				$('#'+errorDivId).html("<p>Please make sure : <span>"+$errorMessages+"</span> is filled out correctly before progressing.</p>");
+				$("#checking").hide(); 
+			}
+			else
+			{
+				$('#'+errorDivId).html('');
+			}
+
+			
+			
+		}
+
+		return validationStatus;
+
+	}
+
+	/* Check for Max lenght*/
+	function maxlengthCheckfunction( value, element, param ) {
+		var length = value ? value.length : getLength( value, element );
+		return  param >= length;
+	}
+
+	function internetBasedEmailCheckfunction( value, element ) {
+			//var re 			= /^(([^<>&%()\[\]\\.,;:\s@"]+(\.[^<>&%()\[\]\\.,;:\s@"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+			var internetBasedEmail = /^[_a-z0-9]+(\.[_a-z0-9]+)*@(?!gmail|yahoo|hotmail|live|msn)+[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/i;
+		return internetBasedEmail.test( value );
+	}
+
+	/* Required Validation Function */
+	function requiredCheckfunction( value, element) {
+		
+		 if ( element.nodeName.toLowerCase() === "select" ) {
+			// Could be an array for select-multiple or a string, both are fine this way
+			var val = $( element ).val();
+			if(val==null){return false;}
+			return val && val.length > 0;
+		}
+		if (checkable( element ) ) {
+			return getLength( value, element ) > 0;
+		}
+		return value.length > 0;
+	}
+
+	/*Check for Radio or Checkbox*/
+	function checkable( element ) {
+		//log(element.type);
+		return ( /radio|checkbox/i ).test( element.type );
+	}
+
+	function getLength( value, element ) {
+
+		switch ( element.nodeName.toLowerCase() ) {
+		case "select":
+			return $( "option:selected", element ).length;
+		case "input":
+			if ( checkable( element ) ) {
+				
+				if($("#"+element.id).is(':checked'))
+				{
+			       return true;
+				}
+			    else{
+			    	  return false;
+			    }
+			}
+		}
+		return value.length;
+	}
+
+	/* Move to next Step */
+	function showNextStep(btnClass) {
+
+		$btn = $('.'+btnClass).get(0);
+		$('.panel-collapse').removeClass('in').css({ height: "0" });
+	    $currentPanel= $($btn).parent().parent().parent().parent();
+	    $($currentPanel).find('.panel-collapse').addClass('in').css({ height: "auto" });
+	    $nextPanel   = $($btn).parent().parent().parent().parent().next();
+	    $($currentPanel).find('.panel-collapse').removeClass('in').css({ height: "0" });
+	    $($nextPanel).find('.panel-collapse').addClass('in').css({ height: "auto" });
+	}
+
+
+	    /**
+	     * * This is short from of console.log
+	     * @param  String/Object $msg Strint or Object
+	     * @return void    Will print on console
+	     **/
+	   function log($msg)
+	    {
+	    	if ( window.console && window.console.log ) {
+	           window.console.log( $msg );
+	        }
+	       
+	    }
+
+	</script>
+
+</apex:component>

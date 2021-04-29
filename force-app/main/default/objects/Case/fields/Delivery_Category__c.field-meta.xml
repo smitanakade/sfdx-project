@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Delivery Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Desktop - Low Touch Self Sufficient</fullName>
+                <default>false</default>
+                <label>Desktop - Low Touch Self Sufficient</label>
+            </value>
+            <value>
+                <fullName>Desktop - High Touch Training / Consultation</fullName>
+                <default>false</default>
+                <label>Desktop - High Touch Training / Consultation</label>
+            </value>
+            <value>
+                <fullName>API - API Integration Remote</fullName>
+                <default>false</default>
+                <label>API - API Integration Remote</label>
+            </value>
+            <value>
+                <fullName>API - Complex Large Business Onsite</fullName>
+                <default>false</default>
+                <label>API - Complex Large Business Onsite</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>eNett_Tiered_Contract</fullName>
+    <active>true</active>
+    <label>eNett Tiered Contract</label>
+    <picklistValues>
+        <picklist>Contract_Expiry_Period__c</picklist>
+        <values>
+            <fullName>1 Month</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 Months</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6 Months</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Stage__c</picklist>
+        <values>
+            <fullName>1%2E New</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>2%2E Awaiting Approval by Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3%2E Awaiting Approval by Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4%2E Awaiting Approval by Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5%2E Proposal %2F Negotiation %2F Signoff</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7%2E Contract Signed by eNett</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8%2E T%26C%27s Accepted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9%2E Agreement not reached</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract Preparation</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Contract_Type__c</picklist>
+        <values>
+            <fullName>Additional ECN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Affiliate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Channel Agreement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Contract not required</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Custom</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Referrer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Service Provider</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Standard T%26Cs</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Exclusivity_Clause__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes - All Cards</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes - Percentage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes - Virtual Cards</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Finance_Approval_Task_Outcome__c</picklist>
+        <values>
+            <fullName>Deal Approved by Finance</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Rejected by Finance</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Incentive_Type__c</picklist>
+        <values>
+            <fullName>%25 of Interchange</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Fixed %25 %28BPS%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Legal_Approval_Task_Outcome__c</picklist>
+        <values>
+            <fullName>Deal Approved by Legal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Rejected by Legal</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Proposal_Neg_Signoff_Task_Outcome__c</picklist>
+        <values>
+            <fullName>Finalised</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modifications Made</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Proposal_Negotiation_Task_Outcome__c</picklist>
+        <values>
+            <fullName>Finalised</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Modifications Made</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Rebate_Type__c</picklist>
+        <values>
+            <fullName>Flat</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tiered</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Sales_Approval_Task_Outcome__c</picklist>
+        <values>
+            <fullName>Deal Approved by Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Deal Rejected by Sales</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Status__c</picklist>
+        <values>
+            <fullName>Active</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>In Flight</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Inactive</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>T_C_Modifications_Required_Listed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Tiered_Rebate_Calculation_Frequency__c</picklist>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yearly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>WUBS__c</picklist>
+        <values>
+            <fullName>WUBS - no</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WUBS - yes %28client Paying%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>WUBS - yes %28eNett Paying%29</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>eNett_Contract_Task_Outcome__c</picklist>
+        <values>
+            <fullName>N%2FA - Existing Customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eNett Sign-off Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eNett Sign-off Rejected</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>eNett_Product__c</picklist>
+        <values>
+            <fullName>VANs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eNett EFT</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

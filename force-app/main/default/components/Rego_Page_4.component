@@ -1,0 +1,1149 @@
+<apex:component > 
+    
+    
+    <style media="screen" type="text/css">
+        table.xxx td, table.xxx th {
+        width: 200px;
+        height: 15px;
+        border: 1px solid #ccc;
+        text-align: center;
+        }
+        table.xxx th {
+        width: 100px;
+        background: lightblue;
+        border-color: white;
+        }
+        table.xxx body {
+        padding: 1rem;
+        }
+        
+    </style>            
+    
+    
+    
+    
+   <!--  ********************************************Start Debug*******************************************
+    ********************************************Start Debug*******************************************
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>p4_Payable_Form.$valid = {{p4_Payable_Form.$valid}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    <table>
+    <tbody>
+    <tr><td><div>p_bankaccount = {{p_bankaccount}}</div></td></tr>
+    <tr><td><div>p_bankaccount.Account_Country__c = {{p_bankaccount.Account_Country__c}}</div></td></tr>
+    <tr><td><div>p_bankaccount.State_Province_LKP__c = {{p_bankaccount.State_Province_LKP__c}}</div></td></tr>
+    <tr><td><div>payregions = {{payregions}}</div></td></tr>
+    <tr><td><div>r_bankaccount.Account_Country__c = {{r_bankaccount.Account_Country__c}}</div></td></tr>
+    <tr><td><div>r_bankaccount.State_Province_LKP__c = {{r_bankaccount.State_Province_LKP__c}}</div></td></tr>
+    <tr><td><div>recregions = {{recregions}}</div></td></tr>
+    <tr><td><div>b_bankaccount.Account_Country__c = {{b_bankaccount.Account_Country__c}}</div></td></tr>
+    <tr><td><div>b_bankaccount.State_Province_LKP__c = {{b_bankaccount.State_Province_LKP__c}}</div></td></tr>
+    <tr><td><div>billregions = {{billregions}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    <table>
+    <tbody>
+    <tr><td><div>RegoID = {{registration.Id}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    <table>
+    <tbody>
+    <tr><td><div>ba_is_iban__c = {{ba_is_iban__c}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    
+    
+    <table>
+    <tbody>
+    <tr><td><div>Payable = {{p_bankaccount}}</div></td></tr>
+    <tr><td><div>Payable = {{r_bankaccount}}</div></td></tr>
+    <tr><td><div>Payable = {{b_bankaccount}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    <table>
+    <tbody>
+    <tr><td><div>Bank Accounts = {{bankaccounts}}</div></td></tr>
+    <tr><td><div>The IBAN Flag = {{ba_is_iban__c}}</div></td></tr>
+    <tr><td><div>Stage: {{registration.Registration_Stage__c}}</div></td></tr>
+    <tr><td><div>Sub Stage: {{registration.Registration_Sub_Stage__c}}</div></td></tr>
+    <tr><td><div>Product: {{registration.Product__c}}</div></td></tr>
+    <tr><td><div>p4_Payable_Form: {{p4_Payable_Form.$valid}}</div></td></tr>
+    <tr><td><div>p4_Receivable_Form: {{p4_Receivable_Form.$valid}}</div></td></tr>
+    <tr><td><div>p4_Billing_Form: {{p4_Billing_Form.$valid}}</div></td></tr>
+    </tbody>
+    </table>
+    
+    ********************************************End Debug*******************************************
+    ********************************************End Debug******************************************* -->
+    
+    
+    
+    
+    
+    <div class="container">
+        <p class="col-xs-12 col-sm-8 intro-content">Please add in the particulars of the bank account/s you’ll be using to fund your eNett transactions.</p>
+        
+        
+        <!-- **************************************************************************
+        *
+        *   FUNDING ACCOUNT DETAILS
+        *
+        **************************************************************************  -->
+        <div class="form-container">
+            <div class="col-xs-12 form-single-column">
+                
+                
+                
+                <!-- **************************************************************************
+                *
+                *   FUNDING SECTION
+                *
+                **************************************************************************  -->
+                <div ng-show="showHide('FundingSection')">
+                    
+                    
+                    <h2 class="form-title">Add Funding to VANS</h2>
+                    
+                    <!-- TRY HERE -->
+                    <fieldset ng-disabled="checkDisable('Disable_Form')">
+                        
+                        <div  ng-show="showHide('FundingEntry')">
+                            
+                            <!--
+                            <h2 class="form-title">Add Funding to VANS</h2>
+                            -->
+                            
+                            
+                            
+                            <!--
+                            <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                            <a href="#yes" aria-controls="home" role="tab" data-toggle="tab" ng-click="ba_is_iban__c = true">Yes, I want to use my iban</a>
+                            </li> 
+                            <li role="presentation">
+                            <a href="#no" aria-controls="profile" role="tab" data-toggle="tab" ng-click="ba_is_iban__c = false">No, I don't want to use my iban</a>
+                            </li>
+                            </ul>
+                            
+                            
+                            
+                            <ul class="nav nav-tabs" role="tablist">
+                            <li role="presentation" class="active">
+                            <a href="#yes" aria-controls="home" role="tab"  data-toggle="tab" ng-click="ba_is_iban__c = true">Yes, I want to use my iban</a>
+                            </li> 
+                            <li role="presentation">
+                            <a href="#no" aria-controls="profile" role="tab"  data-toggle="tab" ng-click="ba_is_iban__c = false">No, I don't want to use my iban</a>
+                            </li>
+                            </ul>
+                            -->
+                            
+                            
+                            <!-- Nav tabs -->
+                            <ul class="nav nav-tabs" role="tablist">
+                                <li role="presentation" ng-class="{ 'active': ba_is_iban__c }">
+                                    <a href="#yes" aria-controls="home" role="tab"  data-toggle="tab" ng-click="ba_is_iban__c = true">Yes, I want to use my iban</a>
+                                </li> 
+                                <li role="presentation" ng-class="{ 'active': !ba_is_iban__c }">
+                                    <a href="#no" aria-controls="profile" role="tab"  data-toggle="tab" ng-click="ba_is_iban__c = false">No, I don't want to use my iban</a>
+                                </li>
+                            </ul>
+                            
+                            
+                            <!-- Tab panes -->
+                            <div class="tab-content">
+                                
+                                
+                                <!-- **************************************************************************
+                                *
+                                *   IBAN PANEL
+                                *
+                                **************************************************************************  -->
+                                
+                                <div role="tabpanel" class="tab-pane active">
+                                    <div>
+                                        <form name="p4_IBAN_Funding_Form" novalidate="novalidate">
+                                            
+                                            
+                                            <!-- SWIFT/BIC (Text/Mandatory/Tooltip)
+											**************************************************************************  -->
+                                            <div class="input-container" ng-show="showHide('SWIFT_BIC')">
+                                                <div ng-class="         (p4_IBAN_Funding_Form.ba_swift_bic__c.$invalid && p4_IBAN_Funding_Form.ba_swift_bic__c.$touched ? 'input-container field_error': 'input-container') 
+                                                               + ' ' +    (ba_swift_bic__c.length > 0 ? 'input-filled': '') ">           
+                                                    <input type="text" class="required" id="ba_swift_bic__c" 
+                                                           name="ba_swift_bic__c"
+                                                           ng-model="ba_swift_bic__c" 
+                                                           ng-required="ba_is_iban__c"
+                                                           ng-class="cssInputClass"
+                                                           ng-change="checkCssInput()" />
+                                                    <label for="ba_swift_bic__c" data-manditoryfield="Please enter SWIFT/BIC">SWIFT/BIC</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_swift_bic__c.$error" ng-if="p4_IBAN_Funding_Form.ba_swift_bic__c.$touched && !p4_IBAN_Funding_Form.ba_swift_bic__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                    </div>
+                                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                                    <div class="tooltip-content">
+                                                        <h4>{{ttHeaders.FundingAccountSWIFTBIC}}</h4>
+                                                        <span class="btn-close"></span>
+                                                        <p>{{ttContents.FundingAccountSWIFTBIC}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            <!-- IBAN (Text/Mandatory/Tooltip)
+											**************************************************************************  -->
+                                            <div class="input-container" ng-show="showHide('IBAN')">
+                                                <div ng-class="         (p4_IBAN_Funding_Form.ba_iban__c.$invalid && p4_IBAN_Funding_Form.ba_iban__c.$touched ? 'input-container field_error': 'input-container') 
+                                                               + ' ' +    (ba_iban__c.length > 0 ? 'input-filled': '') ">           
+                                                    <input type="text" class="required" id="ba_iban__c" 
+                                                           name="ba_iban__c"
+                                                           ng-model="ba_iban__c" 
+                                                           ng-required="ba_is_iban__c"
+                                                           ng-class="cssInputClass"
+                                                           ng-change="checkCssInput()" />
+                                                    <label for="ba_iban__c" data-manditoryfield="Please enter your iban number">IBAN</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_iban__c.$error" ng-if="p4_IBAN_Funding_Form.ba_iban__c.$touched && !p4_IBAN_Funding_Form.ba_iban__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                    </div>
+                                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                                    <div class="tooltip-content">
+                                                        <h4>{{ttHeaders.FundingAccountIBAN}}</h4>
+                                                        <span class="btn-close"></span>
+                                                        <p>{{ttContents.FundingAccountIBAN}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            <!-- BSB (Text/Mandatory/Tooltip) ***BH - Note:stored in SWIFT_BIC__c
+											**************************************************************************  -->
+                                            <div class="input-container" ng-show="showHide('BSB')">
+                                                <div ng-class="         (p4_IBAN_Funding_Form.ba_bank_code__c.$invalid && p4_IBAN_Funding_Form.ba_bank_code__c.$touched ? 'input-container field_error': 'input-container') 
+                                                               + ' ' +    (ba_bank_code__c.length > 0 ? 'input-filled': '') ">           
+                                                    <input type="text" class="required" id="ba_bank_code__c" 
+                                                           name="ba_bank_code__c"
+                                                           ng-model="ba_bank_code__c" 
+                                                           ng-required="!ba_is_iban__c"
+                                                           ng-class="cssInputClass"
+                                                           ng-change="checkCssInput()" />
+                                                    <label for="ba_bank_code__c" data-manditoryfield="Please enter BSB">BSB/Branch Code</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_bank_code__c.$error" ng-if="p4_IBAN_Funding_Form.ba_bank_code__c.$touched && !p4_IBAN_Funding_Form.ba_bank_code__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                    </div>
+                                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                                    <div class="tooltip-content">
+                                                        <h4>{{ttHeaders.FundingAccountBSBBranchCode}}</h4>
+                                                        <span class="btn-close"></span>
+                                                        <p>{{ttContents.FundingAccountBSBBranchCode}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            <!-- Account Number (Text/Mandatory/Tooltip)
+											**************************************************************************  -->
+                                            <div class="input-container" ng-show="showHide('AccNo')">
+                                                <div ng-class="         (p4_IBAN_Funding_Form.ba_account_number__c.$invalid && p4_IBAN_Funding_Form.ba_account_number__c.$touched ? 'input-container field_error': 'input-container') 
+                                                               + ' ' +    (ba_account_number__c.length > 0 ? 'input-filled': '') ">           
+                                                    <input type="text" class="required" id="ba_account_number__c" 
+                                                           name="ba_account_number__c"
+                                                           ng-model="ba_account_number__c" 
+                                                           ng-required="!ba_is_iban__c"
+                                                           ng-class="cssInputClass"
+                                                           ng-change="checkCssInput()" />
+                                                    <label for="ba_account_number__c" data-manditoryfield="Account number - mandatory field">Account Number</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_account_number__c.$error" ng-if="p4_IBAN_Funding_Form.ba_account_number__c.$touched && !p4_IBAN_Funding_Form.ba_account_number__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                    </div>
+                                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                                    <div class="tooltip-content">
+                                                        <h4>{{ttHeaders.FundingAccountNumber}}</h4>
+                                                        <span class="btn-close"></span>
+                                                        <p>{{ttContents.FundingAccountNumber}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            <!-- Currency (Text/Picklist/Mandatory/Tooltip) ***BH - Yet to code
+											**************************************************************************  -->                          
+                                            <div class="input-container">
+                                                <div ng-class="         (p4_IBAN_Funding_Form.ba_account_currency__c.$invalid && p4_IBAN_Funding_Form.ba_account_currency__c.$touched ? 'input-container field_error': 'input-container') 
+                                                               + ' ' +  (ba_account_currency__c.length > 0 ? 'input-filled': '') ">           
+                                                    <select id="ba_account_currency__c" class="required" style="border: 0px;"
+                                                            name="ba_account_currency__c"
+                                                            ng-model="ba_account_currency__c"
+                                                            ng-options="ba_account_currency__c for ba_account_currency__c in fundingcurrencies"
+                                                            required="true"
+                                                            ng-class="cssInputClass"
+                                                            ng-change="checkCssInput()" >                    
+                                                    </select>                                        
+                                                    <label for="ba_account_currency__c" data-manditoryfield="Account currency - mandatory field">Currency</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_account_currency__c.$error" ng-if="p4_IBAN_Funding_Form.ba_account_currency__c.$touched && !p4_IBAN_Funding_Form.ba_account_currency__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                    </div>
+                                                    <apex:image url="{!URLFOR($Resource.RegistrationAssets, 'assets/img/icon-tooltip-open.svg')}" alt="tooltip icon" styleClass="tooltip" />
+                                                    <div class="tooltip-content">
+                                                        <h4>{{ttHeaders.FundingAccountCurrency}}</h4>
+                                                        <span class="btn-close"></span>
+                                                        <p>{{ttContents.FundingAccountCurrency}}</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            <!-- Account Name (Text/Mandatory)
+											**************************************************************************  -->
+                                            <div class="input-container">
+                                                <div ng-class="         (p4_IBAN_Funding_Form.ba_account_name__c.$invalid && p4_IBAN_Funding_Form.ba_account_name__c.$touched ? 'input-container field_error': 'input-container') 
+                                                               + ' ' +    (ba_account_name__c.length > 0 ? 'input-filled': '') ">           
+                                                    <input type="text" class="required" id="ba_account_name__c" 
+                                                           name="ba_account_name__c"
+                                                           ng-model="ba_account_name__c" 
+                                                           required="true"
+                                                           ng-class="cssInputClass"
+                                                           ng-change="checkCssInput()" />
+                                                    <label for="ba_account_name__c" data-manditoryfield="Account name - mandatory field">Account Name</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_account_name__c.$error" ng-if="p4_IBAN_Funding_Form.ba_account_name__c.$touched && !p4_IBAN_Funding_Form.ba_account_name__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                            <!-- Country (Text/Picklist/Mandatory)
+											**************************************************************************  -->
+                                            <div class="input-container">
+                                                <div ng-class="         (p4_IBAN_Funding_Form.ba_account_country__c.$invalid && p4_IBAN_Funding_Form.ba_account_country__c.$touched ? 'input-container field_error': 'input-container') 
+                                                               + ' ' +  (ba_account_country__c.length > 0 ? 'input-filled': '') ">           
+                                                    <select id="ba_account_country__c" class="required" style="border: 0px;"
+                                                            name="ba_account_country__c"
+                                                            ng-model="ba_account_country__c"
+                                                            ng-options="ba_account_country__c for ba_account_country__c in countries"
+                                                            required="true"
+                                                            ng-class="cssInputClass"
+                                                            ng-change="checkCssInput()" >                    
+                                                    </select>                                        
+                                                    <label for="ba_account_country__c" data-manditoryfield="Account country">Account Country</label>
+                                                    <div class="field_error" ng-messages="p4_IBAN_Funding_Form.ba_account_country__c.$error" ng-if="p4_IBAN_Funding_Form.ba_account_country__c.$touched && !p4_IBAN_Funding_Form.ba_account_country__c.$valid">
+                                                        <p ng-message="required">This field is required.</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            
+                                        </form>
+                                        
+                                        
+                                        <!-- Add Account Button
+										**************************************************************************  -->
+                                        <a class="btn btn-add" href="#" ng-disabled="p4_IBAN_Funding_Form.$invalid"  ng-click="createBankAccount()">Add this account</a>
+                                    </div>
+                                </div>
+                                
+                                
+                            </div> <!-- IBAN PANELS -->
+                            
+                            
+                        </div>
+                        
+                        
+                        <!-- Funding Account List
+                        **************************************************************************  -->
+                        <div class="details-repeater-block">
+                            <h2 class="title-repeater-block">My Funding Accounts</h2>
+                            <table class="table" style="margin:0; width: 100%" >
+                                <thead>
+                                    <tr>
+                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Account Name</th>
+                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">SWIFT/BIC</th>
+                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">IBAN</th>
+                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">BSB</th>
+                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Acc #</th>
+                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey">Currency</th>
+                                        <th style="padding:20px 0px 10px 0px; border-bottom: 1px solid grey"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="item" ng-repeat="current in bankaccounts" height="50">
+                                        <td>{{current.Account_Name__c}}</td>
+                                        <td>{{current.SWIFT_BIC__c}}</td>
+                                        <td>{{current.IBAN__c}}</td>
+                                        <td>{{current.Bank_Code__c}}</td>
+                                        <td>{{current.Account_Number__c}}</td>
+                                        <td>{{current.Account_Currency__c}}</td>
+                                        <td ng-show="showHide('FundingEntry')" width="100">
+                                            <a href="" ng-click="editFundingAccount(current)">edit</a>
+                                            <a href="" class="remove" ng-click="deleteFundingAccount(current,current.Id,$event)">remove</a>
+                                            <!-- <a href="" class="remove" ng-click="deleteFundingAccount(current,current.Id)">remove</a> -->
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <!--
+                        </div>
+                        -->
+                        
+                        <!-- TRY HERE -->
+                    </fieldset>
+                    
+                    
+                    
+                    
+                </div>
+                
+                
+                <!-- **************************************************************************
+                *
+                *   PAYABLE / RECEIVABLE / BILLING DETAILS
+                *
+                **************************************************************************  -->
+                
+                
+                
+                <!-- TRY HERE -->
+                <fieldset ng-disabled="checkDisable('Disable_Form')">
+                    
+                    
+                    
+                    <div class="three-column-wrapper" ng-show="showHide('EFT')">
+                        <p class="col-xs-12 col-sm-8 intro-content">Please add your Accounts payable, receivable and billing for EFT service setup</p>
+                        <div class="col-xs-12 three-column">
+                            
+                            <!-- **************************************************************************
+                            *
+                            *   PAYABLE DETAILS
+                            *
+                            **************************************************************************  -->
+                            <form name="p4_Payable_Form" novalidate="novalidate">
+                                
+                                <ul id="payable" class="col-xs-12 col-sm-4">
+                                    <li><h3>Payable</h3></li>
+                                    <div ng-show="p4_Payable_Form.$valid">
+                                        <li ng-show="showHide('DirectorEntry')" ng-click="pushPayable()"><span id="pushPayable">Push field content across</span></li>
+                                    </div>
+                                    
+                                    
+                                    <!-- Payable Country (Text/Picklist/Mandatory)
+                                    **************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.country_payable.$invalid && p4_Payable_Form.country_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +  (p_bankaccount.Account_Country__c.length > 0 ? 'input-filled': '') ">           
+                                                <select id="country_payable" class="required" style="border: 0px;"
+                                                        name="country_payable"
+                                                        ng-model="p_bankaccount.Account_Country__c" 
+                                                        ng-options="country_payable for country_payable in countries"
+                                                        required="true"
+                                                        ng-class="cssInputClass"
+                                                        ng-change="checkCssInput(); changePayableCountry()" >                    
+                                                </select>                                        
+                                                <label for="country_payable" data-manditoryfield="Please select your country">Country</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.country_payable.$error" ng-if="p4_Payable_Form.country_payable.$touched && !p4_Payable_Form.country_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Financial Institution (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.financialinstitution_payable.$invalid && p4_Payable_Form.financialinstitution_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Financial_Institution__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="financialinstitution_payable" 
+                                                       name="financialinstitution_payable"
+                                                       ng-model="p_bankaccount.Financial_Institution__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="financialinstitution_payable" data-manditoryfield="Please enter your financial institution">Financial Institution &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.financialinstitution_payable.$error" ng-if="p4_Payable_Form.financialinstitution_payable.$touched && !p4_Payable_Form.financialinstitution_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Account Name (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.accountname_payable.$invalid && p4_Payable_Form.accountname_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Account_Name__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="accountname_payable" 
+                                                       name="accountname_payable"
+                                                       ng-model="p_bankaccount.Account_Name__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="accountname_payable" data-manditoryfield="Please enter your account name">Account Name &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.accountname_payable.$error" ng-if="p4_Payable_Form.accountname_payable.$touched && !p4_Payable_Form.accountname_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Account Number (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.accountnumber_payable.$invalid && p4_Payable_Form.accountnumber_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Account_Number__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="accountnumber_payable" 
+                                                       name="accountnumber_payable"
+                                                       ng-model="p_bankaccount.Account_Number__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="accountnumber_payable" data-manditoryfield="Please enter your account number">Account Number &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.accountnumber_payable.$error" ng-if="p4_Payable_Form.accountnumber_payable.$touched && !p4_Payable_Form.accountnumber_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Bank Code (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.bankcode_payable.$invalid && p4_Payable_Form.bankcode_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Bank_Code__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="bankcode_payable" 
+                                                       name="bankcode_payable"
+                                                       ng-model="p_bankaccount.Bank_Code__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="bankcode_payable" data-manditoryfield="Please enter your {{Payable_Bank_Code_Label}}">{{Payable_Bank_Code_Label}}</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.bankcode_payable.$error" ng-if="p4_Payable_Form.bankcode_payable.$touched && !p4_Payable_Form.bankcode_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Address Line 1 (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.addressline1_payable.$invalid && p4_Payable_Form.addressline1_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Address_Line_1__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="addressline1_payable" 
+                                                       name="addressline1_payable"
+                                                       ng-model="p_bankaccount.Address_Line_1__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="addressline1_payable" data-manditoryfield="Please enter your address">Address Line 1 &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.addressline1_payable.$error" ng-if="p4_Payable_Form.addressline1_payable.$touched && !p4_Payable_Form.addressline1_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Address Line 2
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.addressline2_payable.$invalid && p4_Payable_Form.addressline2_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Address_Line_2__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" id="addressline2_payable" 
+                                                       name="addressline2_payable"
+                                                       ng-model="p_bankaccount.Address_Line_2__c" 
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="addressline2_payable" data-manditoryfield="Please enter your address">Address Line 2 &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.addressline2_payable.$error" ng-if="p4_Payable_Form.addressline2_payable.$touched && !p4_Payable_Form.addressline2_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable City (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.city_payable.$invalid && p4_Payable_Form.city_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.City__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="city_payable" 
+                                                       name="city_payable"
+                                                       ng-model="p_bankaccount.City__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="city_payable" data-manditoryfield="What city do you live in?">City</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.city_payable.$error" ng-if="p4_Payable_Form.city_payable.$touched && !p4_Payable_Form.city_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Region (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.region_payable.$invalid && p4_Payable_Form.region_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.State_Province_LKP__c.length > 0 ? 'input-filled': '') ">           
+                                                <select type="text" class="required" id="region_payable" 
+                                                        name="region_payable"
+                                                        ng-model="p_bankaccount.State_Province_LKP__c" 
+                                                        required="true"
+                                                        ng-options="reg for (reg, id) in payregions"
+                                                        ng-class="cssInputClass"
+                                                        style="border: 0px;"
+                                                        ng-change="checkCssInput()" />
+                                                <label for="region_payable" data-manditoryfield="What region do you live in?">Region</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.region_payable.$error" ng-if="p4_Payable_Form.region_payable.$touched && !p4_Payable_Form.region_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Payable Postcode (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Payable_Form.postcode_payable.$invalid && p4_Payable_Form.postcode_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (p_bankaccount.Postcode__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="postcode_payable" 
+                                                       name="postcode_payable"
+                                                       ng-model="p_bankaccount.Postcode__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="postcode_payable" data-manditoryfield="Whats your postcode?">Postcode</label>
+                                                <div class="field_error" ng-messages="p4_Payable_Form.postcode_payable.$error" ng-if="p4_Payable_Form.postcode_payable.$touched && !p4_Payable_Form.postcode_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </form>
+                            
+                            <!-- **************************************************************************
+                            *
+                            *   RECEIVABLE DETAILS
+                            *
+                            **************************************************************************  -->
+                            <form name="p4_Receivable_Form" novalidate="novalidate">
+                                
+                                <ul id="payable" class="col-xs-12 col-sm-4">
+                                    <li><h3>Receivable</h3></li>
+                                    <div ng-show="p4_Receivable_Form.$valid">
+                                        <li ng-show="showHide('DirectorEntry')" ng-click="pushReceivable()"><span id="pushPayable">Push field content across</span></li>                                
+                                    </div>
+                                    
+                                    
+                                    <!-- Receivable Country (Text/Picklist/Mandatory)
+                                    *************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.country_payable.$invalid && p4_Receivable_Form.country_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +  (r_bankaccount.Account_Country__c.length > 0 ? 'input-filled': '') ">           
+                                                <select id="country_payable" class="required" style="border: 0px;"
+                                                        name="country_payable"
+                                                        ng-model="r_bankaccount.Account_Country__c" 
+                                                        ng-options="country_payable for country_payable in countries"
+                                                        required="true"
+                                                        ng-class="cssInputClass"
+                                                        ng-change="checkCssInput(); changeReceivableCountry()" >                    
+                                                </select>                                        
+                                                <label for="country_payable" data-manditoryfield="Please select your country">Country</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.country_payable.$error" ng-if="p4_Receivable_Form.country_payable.$touched && !p4_Receivable_Form.country_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Financial Institution (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.financialinstitution_payable.$invalid && p4_Receivable_Form.financialinstitution_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Financial_Institution__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="financialinstitution_payable" 
+                                                       name="financialinstitution_payable"
+                                                       ng-model="r_bankaccount.Financial_Institution__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="financialinstitution_payable" data-manditoryfield="Please enter your financial institution">Financial Institution &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.financialinstitution_payable.$error" ng-if="p4_Receivable_Form.financialinstitution_payable.$touched && !p4_Receivable_Form.financialinstitution_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Account Name (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.accountname_payable.$invalid && p4_Receivable_Form.accountname_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Account_Name__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="accountname_payable" 
+                                                       name="accountname_payable"
+                                                       ng-model="r_bankaccount.Account_Name__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="accountname_payable" data-manditoryfield="Please enter your account name">Account Name &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.accountname_payable.$error" ng-if="p4_Receivable_Form.accountname_payable.$touched && !p4_Receivable_Form.accountname_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Account Number (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.accountnumber_payable.$invalid && p4_Receivable_Form.accountnumber_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Account_Number__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="accountnumber_payable" 
+                                                       name="accountnumber_payable"
+                                                       ng-model="r_bankaccount.Account_Number__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="accountnumber_payable" data-manditoryfield="Please enter your account number">Account Number &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.accountnumber_payable.$error" ng-if="p4_Receivable_Form.accountnumber_payable.$touched && !p4_Receivable_Form.accountnumber_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Bank Code (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.bankcode_payable.$invalid && p4_Receivable_Form.bankcode_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Bank_Code__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="bankcode_payable" 
+                                                       name="bankcode_payable"
+                                                       ng-model="r_bankaccount.Bank_Code__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="bankcode_payable" data-manditoryfield="Please enter your {{Receivable_Bank_Code_Label}}">{{Receivable_Bank_Code_Label}}</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.bankcode_payable.$error" ng-if="p4_Receivable_Form.bankcode_payable.$touched && !p4_Receivable_Form.bankcode_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Address Line 1 (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.addressline1_payable.$invalid && p4_Receivable_Form.addressline1_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Address_Line_1__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="addressline1_payable" 
+                                                       name="addressline1_payable"
+                                                       ng-model="r_bankaccount.Address_Line_1__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="addressline1_payable" data-manditoryfield="Please enter your address">Address Line 1 &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.addressline1_payable.$error" ng-if="p4_Receivable_Form.addressline1_payable.$touched && !p4_Receivable_Form.addressline1_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Address Line 2
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.addressline2_payable.$invalid && p4_Receivable_Form.addressline2_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Address_Line_2__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" id="addressline2_payable" 
+                                                       name="addressline2_payable"
+                                                       ng-model="r_bankaccount.Address_Line_2__c" 
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="addressline2_payable" data-manditoryfield="Please enter your address">Address Line 2 &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.addressline2_payable.$error" ng-if="p4_Receivable_Form.addressline2_payable.$touched && !p4_Receivable_Form.addressline2_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable City (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.city_payable.$invalid && p4_Receivable_Form.city_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.City__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="city_payable" 
+                                                       name="city_payable"
+                                                       ng-model="r_bankaccount.City__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="city_payable" data-manditoryfield="What city do you live in?">City</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.city_payable.$error" ng-if="p4_Receivable_Form.city_payable.$touched && !p4_Receivable_Form.city_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Region (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.region_payable.$invalid && p4_Receivable_Form.region_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.State_Province_LKP__c.length > 0 ? 'input-filled': '') ">           
+                                                <select type="text" class="required" id="region_payable" 
+                                                        name="region_payable"
+                                                        ng-model="r_bankaccount.State_Province_LKP__c" 
+                                                        required="true"
+                                                        ng-options="reg for (reg, id) in recregions"
+                                                        ng-class="cssInputClass"
+                                                        style="border: 0px;"
+                                                        ng-change="checkCssInput()" />
+                                                <label for="region_payable" data-manditoryfield="What region do you live in?">Region</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.region_payable.$error" ng-if="p4_Receivable_Form.region_payable.$touched && !p4_Receivable_Form.region_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Receivable Postcode (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Receivable_Form.postcode_payable.$invalid && p4_Receivable_Form.postcode_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (r_bankaccount.Postcode__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="postcode_payable" 
+                                                       name="postcode_payable"
+                                                       ng-model="r_bankaccount.Postcode__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="postcode_payable" data-manditoryfield="Whats your postcode?">Postcode</label>
+                                                <div class="field_error" ng-messages="p4_Receivable_Form.postcode_payable.$error" ng-if="p4_Receivable_Form.postcode_payable.$touched && !p4_Receivable_Form.postcode_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </form>
+                            
+                            <!-- **************************************************************************
+                            *
+                            *   BILLING DETAILS
+                            *
+                            **************************************************************************  -->
+                            <form name="p4_Billing_Form" novalidate="novalidate">
+                                
+                                <ul class="col-xs-12 col-sm-4">
+                                    <li><h3>Billing</h3></li>
+                                    <li>&nbsp;</li>
+                                    
+                                    
+                                    <!-- Billing Country (Text/Picklist/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.country_payable.$invalid && p4_Billing_Form.country_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +  (b_bankaccount.Account_Country__c.length > 0 ? 'input-filled': '') ">           
+                                                <select id="country_payable" class="required" style="border: 0px;"
+                                                        name="country_payable"
+                                                        ng-model="b_bankaccount.Account_Country__c" 
+                                                        ng-options="country_payable for country_payable in countries"
+                                                        required="true"
+                                                        ng-class="cssInputClass"
+                                                        ng-change="checkCssInput(); changeBillableCountry()" >                    
+                                                </select>                                        
+                                                <label for="country_payable" data-manditoryfield="Please select your country">Country</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.country_payable.$error" ng-if="p4_Billing_Form.country_payable.$touched && !p4_Billing_Form.country_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Financial Institution (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.financialinstitution_payable.$invalid && p4_Billing_Form.financialinstitution_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Financial_Institution__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="financialinstitution_payable" 
+                                                       name="financialinstitution_payable"
+                                                       ng-model="b_bankaccount.Financial_Institution__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="financialinstitution_payable" data-manditoryfield="Please enter your financial institution">Financial Institution &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.financialinstitution_payable.$error" ng-if="p4_Billing_Form.financialinstitution_payable.$touched && !p4_Billing_Form.financialinstitution_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Account Name (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.accountname_payable.$invalid && p4_Billing_Form.accountname_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Account_Name__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="accountname_payable" 
+                                                       name="accountname_payable"
+                                                       ng-model="b_bankaccount.Account_Name__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="accountname_payable" data-manditoryfield="Please enter your account name">Account Name &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.accountname_payable.$error" ng-if="p4_Billing_Form.accountname_payable.$touched && !p4_Billing_Form.accountname_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Account Number (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.accountnumber_payable.$invalid && p4_Billing_Form.accountnumber_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Account_Number__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="accountnumber_payable" 
+                                                       name="accountnumber_payable"
+                                                       ng-model="b_bankaccount.Account_Number__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="accountnumber_payable" data-manditoryfield="Please enter your account number">Account Number &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.accountnumber_payable.$error" ng-if="p4_Billing_Form.accountnumber_payable.$touched && !p4_Billing_Form.accountnumber_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Bank Code (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.bankcode_payable.$invalid && p4_Billing_Form.bankcode_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Bank_Code__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="bankcode_payable" 
+                                                       name="bankcode_payable"
+                                                       ng-model="b_bankaccount.Bank_Code__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="bankcode_payable" data-manditoryfield="Please enter your {{Billing_Bank_Code_Label}}">{{Billing_Bank_Code_Label}}</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.bankcode_payable.$error" ng-if="p4_Billing_Form.bankcode_payable.$touched && !p4_Billing_Form.bankcode_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Address Line 1 (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.addressline1_payable.$invalid && p4_Billing_Form.addressline1_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Address_Line_1__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="addressline1_payable" 
+                                                       name="addressline1_payable"
+                                                       ng-model="b_bankaccount.Address_Line_1__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="addressline1_payable" data-manditoryfield="Please enter your address">Address Line 1 &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.addressline1_payable.$error" ng-if="p4_Billing_Form.addressline1_payable.$touched && !p4_Billing_Form.addressline1_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Address Line 2
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.addressline2_payable.$invalid && p4_Billing_Form.addressline2_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Address_Line_2__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" id="addressline2_payable" 
+                                                       name="addressline2_payable"
+                                                       ng-model="b_bankaccount.Address_Line_2__c" 
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="addressline2_payable" data-manditoryfield="Please enter your address">Address Line 2 &nbsp;</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.addressline2_payable.$error" ng-if="p4_Billing_Form.addressline2_payable.$touched && !p4_Billing_Form.addressline2_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing City (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.city_payable.$invalid && p4_Billing_Form.city_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.City__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="city_payable" 
+                                                       name="city_payable"
+                                                       ng-model="b_bankaccount.City__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="city_payable" data-manditoryfield="What city do you live in?">City</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.city_payable.$error" ng-if="p4_Billing_Form.city_payable.$touched && !p4_Billing_Form.city_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Region (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.region_payable.$invalid && p4_Billing_Form.region_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.State_Province_LKP__c.length > 0 ? 'input-filled': '') ">           
+                                                <select type="text" class="required" id="region_payable" 
+                                                        name="region_payable"
+                                                        ng-model="b_bankaccount.State_Province_LKP__c" 
+                                                        required="true"
+                                                        ng-options="reg for (reg, id) in billregions"
+                                                        ng-class="cssInputClass"
+                                                        style="border: 0px;"
+                                                        ng-change="checkCssInput()" />
+                                                <label for="region_payable" data-manditoryfield="What region do you live in?">Region</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.region_payable.$error" ng-if="p4_Billing_Form.region_payable.$touched && !p4_Billing_Form.region_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                    <!-- Billing Postcode (Text/Mandatory)
+									**************************************************************************  -->
+                                    <li>
+                                        <div class="input-container">
+                                            <div ng-class="         (p4_Billing_Form.postcode_payable.$invalid && p4_Billing_Form.postcode_payable.$touched ? 'input-container field_error': 'input-container') 
+                                                           + ' ' +    (b_bankaccount.Postcode__c.length > 0 ? 'input-filled': '') ">           
+                                                <input type="text" class="required" id="postcode_payable" 
+                                                       name="postcode_payable"
+                                                       ng-model="b_bankaccount.Postcode__c" 
+                                                       required="true"
+                                                       ng-class="cssInputClass"
+                                                       ng-change="checkCssInput()" />
+                                                <label for="postcode_payable" data-manditoryfield="Whats your postcode?">Postcode</label>
+                                                <div class="field_error" ng-messages="p4_Billing_Form.postcode_payable.$error" ng-if="p4_Billing_Form.postcode_payable.$touched && !p4_Billing_Form.postcode_payable.$valid">
+                                                    <p ng-message="required">This field is required.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    
+                                    
+                                </ul>
+                            </form>
+                            
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- TRY HERE -->
+                </fieldset>
+                
+                
+                
+                <!--
+                </div>
+                -->
+                
+                <div class="btn-footer">
+                    <div class="col-xs-12 col-sm-6 col-md-4 item">
+                        <div class="col-xs-12 col-sm-4 btn-wrapper btn-next-wrapper">
+                            <a href="#" class="btn btn-primary btn-back anchor-link" data-btnstep="step3"><span>Back</span></a>
+                        </div>
+                    </div>
+                    <div class="col-xs-12 col-sm-6 col-md-4 item">
+                        <a href="#" ng-click="saveAndContinue()" class="btn btn-primary"><span>Save and continue later</span></a>
+                    </div>
+                    <div class="col-xs-12 col-md-4 item">
+                        <div class="col-xs-12 col-sm-4 btn-wrapper btn-next-wrapper">
+                            <!--
+                            <a href="#" ng-disabled="checkDisable('P4_Next')" class="btn btn-primary btn-next anchor-link" data-btnstep="step5" ng-click="setStages('Review/Confirmation'); saveRego(); upsertPayableBankAccount();upsertReceivableBankAccount();upsertBillingBankAccount()"><span>Next</span></a>
+                            <a href="#" ng-disabled="checkDisable('P4_Next')" class="btn btn-primary btn-next anchor-link" data-btnstep="step5" ng-click="checkFundingAccount()"><span>Next</span></a>
+                            -->
+                            <a href="#" ng-disabled="checkDisable('P4_Next')" class="btn btn-primary btn-next anchor-link" data-btnstep="step5" ng-click="setStages('Review/Confirmation')" ><span>Next</span></a>
+                            
+                            <input type="button" value="Submit" class="btn-next-submit"/>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</apex:component>

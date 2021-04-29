@@ -1,0 +1,1100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Desktop_Delivery_Phase_0_Record_Type</fullName>
+    <active>true</active>
+    <businessProcess>Delivery Process</businessProcess>
+    <label>Desktop Delivery Phase 0 Record Type</label>
+    <picklistValues>
+        <picklist>API_Delivery_Category__c</picklist>
+        <values>
+            <fullName>API - API Integration Remote</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>API - Complex Large Business Onsite</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call_Duration_min__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>40</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Over 60</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>Activations</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Browser Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Communication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EFT Account Changes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EFT Payment Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EFT Refunds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>EFT Training Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Financial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FreeNett Payment Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gateway Payment Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gateway Payment Status</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gateway Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Gateway Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Issues</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Marketing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Notification</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Password</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payment Status</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Post Booking Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pre Booking Support</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Pro Portal Training Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>ProPortal Refunds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refunds%2FVoids</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Sales</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Spam</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Test</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VANS Account Changes</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VANS Financial</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VANS Payment Processing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VANS Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VANS Reporting</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VANS Training Request</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Closed_Lost_Terminated_Reason__c</picklist>
+        <values>
+            <fullName>Change of Delivery Type</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client does not want to pay API fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client not ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client unresponsive%2FNever transacted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No pilot customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VANs does not meet clients needs%2Fexpectations</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Current_Dormant_Reason_Picklist__c</picklist>
+        <values>
+            <fullName>Completed - Future activated VANs%2Fwaiting for settlement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No response</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Not started - customer not ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On hold %E2%80%93 customer resource constraints</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On hold - Training completed %2F customer not ready to transfer funds%2F go live</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On hold - awaiting pilot customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On hold - dependent on 3rd party</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other - Provide additional information</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DCPRE_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DCPRF_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Category__c</picklist>
+        <values>
+            <fullName>API - API Integration Remote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API - Complex Large Business Onsite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop - High Touch Training %2F Consultation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop - Low Touch Self Sufficient</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Phase__c</picklist>
+        <values>
+            <fullName>0 - Pre-Implementation Kick-off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 - Planning %26 Preparation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 - Set Up and Configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Development %28 API integration%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - VAN Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - UAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - Live testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - VAN Reporting and Reconciliation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 - Production cut over</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unassigned Delivery</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Description__c</picklist>
+        <values>
+            <fullName>API Configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Abandon Registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Actual Chargeback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Ad-Hoc</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Add new Currency</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amend Customised Reports</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amend Limits</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amend Report Subscription</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Amend VAN Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Authorisation Cancellation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank Account %28DDR%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank Query- Code Cancelation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Bank Query- Confirm Transaction</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Banking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Billing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Business Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>CSV Batch Import</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Campaign</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cancel VAN issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Certificate Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change Report Subscription</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Change Tolerances</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chargeback</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Chargeback Enquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Correspondence - External</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Correspondence - Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Correspondence with customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Customised Report Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Delete</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Edit Delete User details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Email</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Error Message</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Expired</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>External Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>FireFox</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>GDS</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Generate VAN Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Google Chrome</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How To</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to Amend a VAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to Request a VAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to Void</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to authorise a payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to cancel a VAN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to cancel a payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to configure a report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to edit a payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to login</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to make a booking</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to make a payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>How to refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Inactive or Hide ECN</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect booking refund %28Agoda Request%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet Browser</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internet Browser Safari</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Invoice Enquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Login issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Manual Adjustment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Mapping</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MasterCard Stand-in</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>MiGS Outage Communication</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Registration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Report</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New Report Subscription</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New User Details</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Outage</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Payments via CSV upload</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Phone</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Portal Refund Request %28Internal Process%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Primary Contact</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Enhancement</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product Enquiry</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Query</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Rebate</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reconcillation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refresh Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refresh to Blank Screen</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Refunds</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Remove Email Address</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Report Subscription Request</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Request to Refund</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Reset</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Status update</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscription Fee default</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Subscriptions</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Timeout</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Transaction Default</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to Process</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User Roles</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VAN Authorisation Failure Query</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VANs Non Authorised</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Vans Deposit</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Dormant_Category__c</picklist>
+        <values>
+            <fullName>Did not intend to register for the product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On ISR in error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product does not suit business needs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to contact after multiple attempts</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FARRE_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FARRF_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Funding_Model__c</picklist>
+        <values>
+            <fullName>Funding On Activation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funding On Authorisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funding On Settlement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue__c</picklist>
+        <values>
+            <fullName>Funds Delayed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funds Not Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funds Returned</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>JIRA_Type__c</picklist>
+        <values>
+            <fullName>Investigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Report</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Jira_Priority__c</picklist>
+        <values>
+            <fullName>Critical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Must Have</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nice To Have</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Should Have</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Opportunity</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Voicemail</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>Critical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Must have</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nice to have</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Should have</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product__c</picklist>
+        <values>
+            <fullName>Agoda Pro Portal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Internal</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No eNett Product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>VANs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eNett EFT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eNett Gateway</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>feeNett</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason__c</picklist>
+        <values>
+            <fullName>Citi Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Error - Didn%E2%80%99t Request Sameday Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Error - No ECN Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Error - Wrong Details Used</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clients Bank Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cut-off Time %2F Bank Holiday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Details Used - Bank Unable To Apply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Clearing Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech %2F Feed Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong Account Used %2F Account Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eNett Error</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Select_Whether_Reports_Are_Needed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Transactions_In_Line_with_GDV__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VANs_Still_Enabled__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X44F_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X44_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

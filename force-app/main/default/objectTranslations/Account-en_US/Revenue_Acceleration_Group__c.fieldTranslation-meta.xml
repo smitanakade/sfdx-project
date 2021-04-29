@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Revenue Acceleration Group --></label>
+    <name>Revenue_Acceleration_Group__c</name>
+    <picklistValues>
+        <masterLabel>BAU</masterLabel>
+        <translation><!-- BAU --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Bavel</masterLabel>
+        <translation><!-- Bavel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer Under Performing</masterLabel>
+        <translation><!-- Customer Under Performing --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Fill the Gap</masterLabel>
+        <translation><!-- Fill the Gap --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>New Customer Not Transacting</masterLabel>
+        <translation><!-- New Customer Not Transacting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Prospect</masterLabel>
+        <translation><!-- Prospect --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

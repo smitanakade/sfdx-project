@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>RelatedDeliveryTicket__c</fullName>
+    <externalId>false</externalId>
+    <label>RelatedDeliveryTicket</label>
+    <referenceTo>Case</referenceTo>
+    <relationshipLabel>Delivery Ticket Timers</relationshipLabel>
+    <relationshipName>Delivery_Ticket_Timers</relationshipName>
+    <relationshipOrder>0</relationshipOrder>
+    <reparentableMasterDetail>true</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>true</writeRequiresMasterRead>
+</CustomField>

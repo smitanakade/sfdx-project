@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>BHD_ApprovalInProgress__c</fullName>
+    <externalId>false</externalId>
+    <formula>TEXT(ROUND(BH_ApprovalInProgress__c,2)) + &#39; hours (&#39; + TEXT(ROUND(BH_ApprovalInProgress__c/8.0,1)) + &#39; days)&#39;</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Approval In Progress</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

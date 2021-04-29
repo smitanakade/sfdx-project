@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Online_Registration_Max_Sub_Stage__c</fullName>
+    <externalId>false</externalId>
+    <formula>CASE(Online_Registration_Sub_Stage__c, 
+&#39;Contact Details&#39;, 1,
+&#39;Product Selection&#39;, 2,
+&#39;Overview&#39;, 3,
+&#39;Business Details&#39;, 4,
+&#39;Address Details&#39;, 5,
+&#39;Signatory Details&#39;, 6,
+&#39;Beneficial Owners&#39;, 7,
+&#39;Business Directors&#39;, 8,
+&#39;Travel Group Details&#39;, 9,
+&#39;Financial Accounts&#39;, 10,
+&#39;Review/Confirmation&#39;, 11,
+0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Online Registration Max Sub Stage</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

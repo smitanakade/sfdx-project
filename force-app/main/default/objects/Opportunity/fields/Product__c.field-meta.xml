@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Product__c</fullName>
+    <externalId>false</externalId>
+    <label>eNett Product</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>VANs</fullName>
+                <default>true</default>
+                <label>VANs</label>
+            </value>
+            <value>
+                <fullName>eNett EFT</fullName>
+                <default>false</default>
+                <label>eNett EFT</label>
+            </value>
+            <value>
+                <fullName>feeNett</fullName>
+                <default>false</default>
+                <label>feeNett</label>
+            </value>
+            <value>
+                <fullName>Virtual Terminal</fullName>
+                <default>false</default>
+                <label>Virtual Terminal</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

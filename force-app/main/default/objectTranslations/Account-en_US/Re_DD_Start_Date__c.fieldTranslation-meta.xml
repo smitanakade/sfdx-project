@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Calculated based on Re-DD Due Date - 90 days --></help>
+    <label><!-- Re-DD Start Date --></label>
+    <name>Re_DD_Start_Date__c</name>
+</CustomFieldTranslation>

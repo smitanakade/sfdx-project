@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Flat_Incentive_Type_Fixed</fullName>
+    <active>true</active>
+    <description>For &#39;Flat&#39; Rebate, &#39;Fixed %&#39; Incentive Contracts, you must enter a &#39;Fixed % Amount&#39; and NO &#39;Interchange Amount&#39;.</description>
+    <errorConditionFormula>AND(
+RecordType.DeveloperName =&#39;eNett_Contract_Flat&#39;,
+ISPICKVAL(Incentive_Type__c  , &#39;Fixed %&#39;),
+OR(NOT(ISBLANK(Interchange_Amount__c)),
+ISBLANK( Fixed_Amount__c ))
+)</errorConditionFormula>
+    <errorMessage>For &#39;Flat&#39; Rebate, &#39;Fixed %&#39; Incentive Contracts, you must enter a &#39;Fixed % Amount&#39; and NO &#39;Interchange Amount&#39;.</errorMessage>
+</ValidationRule>

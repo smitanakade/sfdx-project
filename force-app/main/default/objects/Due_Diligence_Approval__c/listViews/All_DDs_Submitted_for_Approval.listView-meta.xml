@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_DDs_Submitted_for_Approval</fullName>
+    <columns>NAME</columns>
+    <columns>Account__c</columns>
+    <columns>Trading_As__c</columns>
+    <columns>Risk_Rating__c</columns>
+    <columns>Submitted_By__c</columns>
+    <columns>Submitted_Date__c</columns>
+    <columns>Approval_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Approval_Status__c</field>
+        <operation>equals</operation>
+        <value>Awaiting Approval</value>
+    </filters>
+    <label>All DDs Submitted for Approval</label>
+</ListView>

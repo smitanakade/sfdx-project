@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Additional_product_filtering</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(ISNEW(), ISPICKVAL(Account_Type__c, &#39;Additional ECN&#39;),OR(AND(INCLUDES(eNett_products__c, &#39;VANs&#39;), NOT(INCLUDES(Legal_Parent__r.eNett_products__c, &#39;VANs&#39;))),
+AND(INCLUDES(eNett_products__c, &#39;eNett EFT&#39;), NOT(INCLUDES(Legal_Parent__r.eNett_products__c, &#39;eNett EFT&#39;)))))</errorConditionFormula>
+    <errorDisplayField>eNett_products__c</errorDisplayField>
+    <errorMessage>For additional ECNs, you can only add products that are active on the parent account.</errorMessage>
+</ValidationRule>

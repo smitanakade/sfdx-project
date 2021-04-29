@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Active_Templates_Cannot_Go_to_Inflight</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISNEW()) &amp;&amp; ISPICKVAL(PRIORVALUE(Status__c), &#39;Active&#39;) &amp;&amp; ISCHANGED(Status__c) &amp;&amp; NOT(ISPICKVAL(Status__c, &#39;Archived&#39;))</errorConditionFormula>
+    <errorMessage>Active templates cannot return to In Flight status (instead clone this record and set to In Flight)</errorMessage>
+</ValidationRule>

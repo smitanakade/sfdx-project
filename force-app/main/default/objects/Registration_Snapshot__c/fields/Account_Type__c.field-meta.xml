@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Account_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Account Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Additional ECN</fullName>
+                <default>false</default>
+                <label>Additional ECN</label>
+            </value>
+            <value>
+                <fullName>Affiliate</fullName>
+                <default>false</default>
+                <label>Affiliate</label>
+            </value>
+            <value>
+                <fullName>Channel Agreement</fullName>
+                <default>false</default>
+                <label>Channel Agreement</label>
+            </value>
+            <value>
+                <fullName>Client</fullName>
+                <default>false</default>
+                <label>Client</label>
+            </value>
+            <value>
+                <fullName>Customer</fullName>
+                <default>false</default>
+                <label>Customer</label>
+            </value>
+            <value>
+                <fullName>eNett Internal</fullName>
+                <default>false</default>
+                <label>eNett Internal</label>
+            </value>
+            <value>
+                <fullName>eNett Internal Demo</fullName>
+                <default>false</default>
+                <label>eNett Internal Demo</label>
+            </value>
+            <value>
+                <fullName>eNett Internal Transacting</fullName>
+                <default>false</default>
+                <label>eNett Internal Transacting</label>
+            </value>
+            <value>
+                <fullName>Referred Client</fullName>
+                <default>false</default>
+                <label>Referred Client</label>
+            </value>
+            <value>
+                <fullName>Referrer</fullName>
+                <default>false</default>
+                <label>Referrer</label>
+            </value>
+            <value>
+                <fullName>Service Provider</fullName>
+                <default>false</default>
+                <label>Service Provider</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

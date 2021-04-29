@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- eNett Products --></label>
+    <name>eNett_products__c</name>
+    <picklistValues>
+        <masterLabel>NA</masterLabel>
+        <translation><!-- NA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VANs</masterLabel>
+        <translation><!-- VANs --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VirtualTerminal</masterLabel>
+        <translation><!-- VirtualTerminal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>eNett EFT</masterLabel>
+        <translation><!-- eNett EFT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>feeNett</masterLabel>
+        <translation><!-- feeNett --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

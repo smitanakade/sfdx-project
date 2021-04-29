@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funding_Account_Is_Not_IBAN</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND(Is_IBAN__c = false, OR(ISBLANK(Account_Number__c), ISBLANK(Bank_Code__c)))</errorConditionFormula>
+    <errorMessage>You must have the following information if Is IBAN is not selected: 
+
+1. Bank Code
+2. Account Number.</errorMessage>
+</ValidationRule>

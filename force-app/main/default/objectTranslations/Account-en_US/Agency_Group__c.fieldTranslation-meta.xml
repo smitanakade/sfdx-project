@@ -1,0 +1,725 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Agency Group --></label>
+    <name>Agency_Group__c</name>
+    <picklistValues>
+        <masterLabel>A TEAM</masterLabel>
+        <translation><!-- A TEAM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AAA</masterLabel>
+        <translation><!-- AAA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ADVANTAGE FOCUS GROUP</masterLabel>
+        <translation><!-- ADVANTAGE FOCUS GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AER</masterLabel>
+        <translation><!-- AER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AFAT</masterLabel>
+        <translation><!-- AFAT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AIRMET</masterLabel>
+        <translation><!-- AIRMET --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AIRTRADE</masterLabel>
+        <translation><!-- AIRTRADE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AMAVET</masterLabel>
+        <translation><!-- AMAVET --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AMERICAN EXPRESS</masterLabel>
+        <translation><!-- AMERICAN EXPRESS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AMEX</masterLabel>
+        <translation><!-- AMEX --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AR Group</masterLabel>
+        <translation><!-- AR Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>AREA</masterLabel>
+        <translation><!-- AREA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ARES</masterLabel>
+        <translation><!-- ARES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ASSOC OF CHINESE TRAVEL AGENTS</masterLabel>
+        <translation><!-- ASSOC OF CHINESE TRAVEL AGENTS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ASSORTED</masterLabel>
+        <translation><!-- ASSORTED --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ATAC</masterLabel>
+        <translation><!-- ATAC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ATP</masterLabel>
+        <translation><!-- ATP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ATP ONLINE HK</masterLabel>
+        <translation><!-- ATP ONLINE HK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ATPI</masterLabel>
+        <translation><!-- ATPI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Air Ticket</masterLabel>
+        <translation><!-- Air Ticket --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BAIA DI LUNA</masterLabel>
+        <translation><!-- BAIA DI LUNA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BARCELO</masterLabel>
+        <translation><!-- BARCELO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BCD</masterLabel>
+        <translation><!-- BCD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BCD GROUP</masterLabel>
+        <translation><!-- BCD GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BEST TRAVEL</masterLabel>
+        <translation><!-- BEST TRAVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BONOLATOURS</masterLabel>
+        <translation><!-- BONOLATOURS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BTP UA</masterLabel>
+        <translation><!-- BTP UA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BV NETWORK</masterLabel>
+        <translation><!-- BV NETWORK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>BVTC</masterLabel>
+        <translation><!-- BVTC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Berg-Hansen</masterLabel>
+        <translation><!-- Berg-Hansen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Big Travel</masterLabel>
+        <translation><!-- Big Travel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Billetkontoret</masterLabel>
+        <translation><!-- Billetkontoret --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CARLSON WAGONLIT</masterLabel>
+        <translation><!-- CARLSON WAGONLIT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CISALPINA</masterLabel>
+        <translation><!-- CISALPINA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CLUB TRAVEL</masterLabel>
+        <translation><!-- CLUB TRAVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CO-OP</masterLabel>
+        <translation><!-- CO-OP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CONCORDE AGENT NETWORK</masterLabel>
+        <translation><!-- CONCORDE AGENT NETWORK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CONSORT TRAVEL GROUP</masterLabel>
+        <translation><!-- CONSORT TRAVEL GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CONSORZIO ABRUZZO</masterLabel>
+        <translation><!-- CONSORZIO ABRUZZO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CONSORZIO CON TE</masterLabel>
+        <translation><!-- CONSORZIO CON TE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CONSULICH</masterLabel>
+        <translation><!-- CONSULICH --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CONTUR</masterLabel>
+        <translation><!-- CONTUR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CT PARTNERS</masterLabel>
+        <translation><!-- CT PARTNERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CTM</masterLabel>
+        <translation><!-- CTM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CTS</masterLabel>
+        <translation><!-- CTS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CWT</masterLabel>
+        <translation><!-- CWT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CWT JOINT VENTURE</masterLabel>
+        <translation><!-- CWT JOINT VENTURE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>CWT NETWORK PARTNER</masterLabel>
+        <translation><!-- CWT NETWORK PARTNER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Concorde Travel Group</masterLabel>
+        <translation><!-- Concorde Travel Group --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>D-REIZEN VAKANTIEWINKELS</masterLabel>
+        <translation><!-- D-REIZEN VAKANTIEWINKELS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DE JONG INTRA VAKANTIES B.V.</masterLabel>
+        <translation><!-- DE JONG INTRA VAKANTIES B.V. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DER</masterLabel>
+        <translation><!-- DER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DESTI INTERNATIONAL</masterLabel>
+        <translation><!-- DESTI INTERNATIONAL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>DSB</masterLabel>
+        <translation><!-- DSB --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ELITE TRAVEL GROUP</masterLabel>
+        <translation><!-- ELITE TRAVEL GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ENI SERVIZI</masterLabel>
+        <translation><!-- ENI SERVIZI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EOLE UNICLAM-GIGATOP</masterLabel>
+        <translation><!-- EOLE UNICLAM-GIGATOP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ERUOSTUD</masterLabel>
+        <translation><!-- ERUOSTUD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ESCAPE TRAVEL</masterLabel>
+        <translation><!-- ESCAPE TRAVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>EUROMASTER STUDIO</masterLabel>
+        <translation><!-- EUROMASTER STUDIO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FALCON TRAVELSHOPS</masterLabel>
+        <translation><!-- FALCON TRAVELSHOPS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FCL</masterLabel>
+        <translation><!-- FCL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FCM</masterLabel>
+        <translation><!-- FCM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FDM</masterLabel>
+        <translation><!-- FDM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FIRST CALABRIA</masterLabel>
+        <translation><!-- FIRST CALABRIA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FIRST GROUP</masterLabel>
+        <translation><!-- FIRST GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FLAVOUR TRAVEL</masterLabel>
+        <translation><!-- FLAVOUR TRAVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FLIGHT CENTRE</masterLabel>
+        <translation><!-- FLIGHT CENTRE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FREEDOM TRAVEL GROUP</masterLabel>
+        <translation><!-- FREEDOM TRAVEL GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FRIGERIO</masterLabel>
+        <translation><!-- FRIGERIO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>FTI</masterLabel>
+        <translation><!-- FTI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Finnish Travel Bureau (Suomen Matkatoimisto)</masterLabel>
+        <translation><!-- Finnish Travel Bureau (Suomen Matkatoimisto) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Flygpoolen</masterLabel>
+        <translation><!-- Flygpoolen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>G40</masterLabel>
+        <translation><!-- G40 --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GATTINONI</masterLabel>
+        <translation><!-- GATTINONI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GEA</masterLabel>
+        <translation><!-- GEA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GLOBAL STAR</masterLabel>
+        <translation><!-- GLOBAL STAR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GO BROKER NETWORK</masterLabel>
+        <translation><!-- GO BROKER NETWORK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GO4TRAVEL</masterLabel>
+        <translation><!-- GO4TRAVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>GTMC</masterLabel>
+        <translation><!-- GTMC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HARVEY WORLD TRAVEL</masterLabel>
+        <translation><!-- HARVEY WORLD TRAVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HAVAS</masterLabel>
+        <translation><!-- HAVAS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HOGG ROBINSON AFFILIATE</masterLabel>
+        <translation><!-- HOGG ROBINSON AFFILIATE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HOLIDAY SHOPPE</masterLabel>
+        <translation><!-- HOLIDAY SHOPPE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HOLITOURS</masterLabel>
+        <translation><!-- HOLITOURS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HOTELPLAN</masterLabel>
+        <translation><!-- HOTELPLAN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HOUSE OF TRAVEL</masterLabel>
+        <translation><!-- HOUSE OF TRAVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>HRG</masterLabel>
+        <translation><!-- HRG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Helloworld</masterLabel>
+        <translation><!-- Helloworld --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>IMTG</masterLabel>
+        <translation><!-- IMTG --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INDEPENDENCE GROUP</masterLabel>
+        <translation><!-- INDEPENDENCE GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>INDEPENDENT</masterLabel>
+        <translation><!-- INDEPENDENT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ISTN</masterLabel>
+        <translation><!-- ISTN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ITN RETAIL GROUP</masterLabel>
+        <translation><!-- ITN RETAIL GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Inca Tours</masterLabel>
+        <translation><!-- Inca Tours --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>JETSET/TRAVELWORLD</masterLabel>
+        <translation><!-- JETSET/TRAVELWORLD --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>KUONI TRAVEL NEDERLAND B.V.</masterLabel>
+        <translation><!-- KUONI TRAVEL NEDERLAND B.V. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kaleva (CWT)</masterLabel>
+        <translation><!-- Kaleva (CWT) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Kilroy</masterLabel>
+        <translation><!-- Kilroy --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LCC - Lufthansa City Centre  Radius</masterLabel>
+        <translation><!-- LCC - Lufthansa City Centre  Radius --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>LIBERTY TRAVEL</masterLabel>
+        <translation><!-- LIBERTY TRAVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MAGELLAN GROUP</masterLabel>
+        <translation><!-- MAGELLAN GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MANOR</masterLabel>
+        <translation><!-- MANOR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MARSUPIO</masterLabel>
+        <translation><!-- MARSUPIO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MERIDIANO</masterLabel>
+        <translation><!-- MERIDIANO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MILANO VENDE VIAGGI</masterLabel>
+        <translation><!-- MILANO VENDE VIAGGI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MONDO DIRECT</masterLabel>
+        <translation><!-- MONDO DIRECT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MONDO TRAVEL</masterLabel>
+        <translation><!-- MONDO TRAVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>MONTYS TRAVEL SERVICE</masterLabel>
+        <translation><!-- MONTYS TRAVEL SERVICE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NETWORK ATLANTIS</masterLabel>
+        <translation><!-- NETWORK ATLANTIS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>NOI LA VACANZE</masterLabel>
+        <translation><!-- NOI LA VACANZE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Nex</masterLabel>
+        <translation><!-- Nex --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OAD REIZEN</masterLabel>
+        <translation><!-- OAD REIZEN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OAD/GLOBE</masterLabel>
+        <translation><!-- OAD/GLOBE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ORIENT EXPRESS</masterLabel>
+        <translation><!-- ORIENT EXPRESS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OTHER</masterLabel>
+        <translation><!-- OTHER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>OTN</masterLabel>
+        <translation><!-- OTN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>PROFESSIONE TURISMO</masterLabel>
+        <translation><!-- PROFESSIONE TURISMO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RADIUS</masterLabel>
+        <translation><!-- RADIUS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RAVT</masterLabel>
+        <translation><!-- RAVT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>RCI</masterLabel>
+        <translation><!-- RCI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ROBINTUR</masterLabel>
+        <translation><!-- ROBINTUR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Resecentrumgruppen</masterLabel>
+        <translation><!-- Resecentrumgruppen --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Resia</masterLabel>
+        <translation><!-- Resia --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SCHIPHOL TRAVEL INTERNATIONAL</masterLabel>
+        <translation><!-- SCHIPHOL TRAVEL INTERNATIONAL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SELECTAIR</masterLabel>
+        <translation><!-- SELECTAIR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SELECTOUR</masterLabel>
+        <translation><!-- SELECTOUR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SIMA</masterLabel>
+        <translation><!-- SIMA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SPAA</masterLabel>
+        <translation><!-- SPAA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>STA TRAVEL</masterLabel>
+        <translation><!-- STA TRAVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>STELLA INDEPENDENT RETAIL</masterLabel>
+        <translation><!-- STELLA INDEPENDENT RETAIL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>STS</masterLabel>
+        <translation><!-- STS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>STUDENT FLIGHTS</masterLabel>
+        <translation><!-- STUDENT FLIGHTS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>SUNAIR VAKANTIES B.V.</masterLabel>
+        <translation><!-- SUNAIR VAKANTIES B.V. --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Swetra</masterLabel>
+        <translation><!-- Swetra --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>THE GLOBAL TRAVEL GROUP</masterLabel>
+        <translation><!-- THE GLOBAL TRAVEL GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>THE STELLA GROUP</masterLabel>
+        <translation><!-- THE STELLA GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>THOMAS COOK</masterLabel>
+        <translation><!-- THOMAS COOK --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TOP ATLANTICO</masterLabel>
+        <translation><!-- TOP ATLANTICO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TOP SARDINIIA</masterLabel>
+        <translation><!-- TOP SARDINIIA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TOURCOM</masterLabel>
+        <translation><!-- TOURCOM --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TOURIST CLUB</masterLabel>
+        <translation><!-- TOURIST CLUB --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVEL ASSOCIATES</masterLabel>
+        <translation><!-- TRAVEL ASSOCIATES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVEL CENTRES</masterLabel>
+        <translation><!-- TRAVEL CENTRES --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVEL COMPANY HQ</masterLabel>
+        <translation><!-- TRAVEL COMPANY HQ --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVEL COUNSELLORS</masterLabel>
+        <translation><!-- TRAVEL COUNSELLORS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVEL LEADERS</masterLabel>
+        <translation><!-- TRAVEL LEADERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVEL MANAGERS</masterLabel>
+        <translation><!-- TRAVEL MANAGERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVEL SAVERS</masterLabel>
+        <translation><!-- TRAVEL SAVERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVEL SMART</masterLabel>
+        <translation><!-- TRAVEL SMART --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVELGROUP/GIGATOUR</masterLabel>
+        <translation><!-- TRAVELGROUP/GIGATOUR --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVELLERS CHOICE</masterLabel>
+        <translation><!-- TRAVELLERS CHOICE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVELSCENE/AMERICAN EXPRESS</masterLabel>
+        <translation><!-- TRAVELSCENE/AMERICAN EXPRESS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TRAVELSMART</masterLabel>
+        <translation><!-- TRAVELSMART --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TTA</masterLabel>
+        <translation><!-- TTA --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TUI</masterLabel>
+        <translation><!-- TUI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TUI INTERNATIONAL</masterLabel>
+        <translation><!-- TUI INTERNATIONAL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TUI SUISSE</masterLabel>
+        <translation><!-- TUI SUISSE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ticket Affärsresor</masterLabel>
+        <translation><!-- Ticket Affärsresor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ticket Feriereiser</masterLabel>
+        <translation><!-- Ticket Feriereiser --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Ticket Privatresor</masterLabel>
+        <translation><!-- Ticket Privatresor --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travel Design</masterLabel>
+        <translation><!-- Travel Design --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travel Solutions International</masterLabel>
+        <translation><!-- Travel Solutions International --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travel Support (Travelnet and Buena Vida)</masterLabel>
+        <translation><!-- Travel Support (Travelnet and Buena Vida) --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travelgate</masterLabel>
+        <translation><!-- Travelgate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travelnet</masterLabel>
+        <translation><!-- Travelnet --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNIGLOBE</masterLabel>
+        <translation><!-- UNIGLOBE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>UNITED TRAVEL</masterLabel>
+        <translation><!-- UNITED TRAVEL --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VEROBNELLI</masterLabel>
+        <translation><!-- VEROBNELLI --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VERTREKPUNT</masterLabel>
+        <translation><!-- VERTREKPUNT --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VIA Travel</masterLabel>
+        <translation><!-- VIA Travel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VIRGIN GROUP</masterLabel>
+        <translation><!-- VIRGIN GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>VIRTUOSO</masterLabel>
+        <translation><!-- VIRTUOSO --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WELCOME TRAVEL GROUP</masterLabel>
+        <translation><!-- WELCOME TRAVEL GROUP --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WIN</masterLabel>
+        <translation><!-- WIN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WORLD TICKET CENTER</masterLabel>
+        <translation><!-- WORLD TICKET CENTER --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WORLD TRAVEL CENTRE</masterLabel>
+        <translation><!-- WORLD TRAVEL CENTRE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WORLD TRAVELLERS</masterLabel>
+        <translation><!-- WORLD TRAVELLERS --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>WORLDCHOICE</masterLabel>
+        <translation><!-- WORLDCHOICE --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>ZANI</masterLabel>
+        <translation><!-- ZANI --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

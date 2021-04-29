@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Don&apos;t mess with this or else --></help>
+    <label><!-- IsApi --></label>
+    <name>IsApi__c</name>
+</CustomFieldTranslation>

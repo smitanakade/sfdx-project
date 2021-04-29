@@ -1,0 +1,54 @@
+<apex:component >
+<div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="headingFourteen">
+        <h4 class="panel-title"> <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFourteen" aria-expanded="true" aria-controls="collapseFourteen">Add Funding to VANS</a></h4>
+    </div>
+    <div id="collapseFourteen" class="panel-collapse collapse wrapper-review" role="tabpanel" aria-labelledby="headingFourteen">
+        <div id="beneficialOwnersDetails" class="panel-body">
+
+        <a class="btn-edit" href="#" data-stepsection="step4::headingFive">edit</a>
+
+          <div class="panel-group" id="accordion3">
+            <div class="panel panel-default">
+             <div class="panel-heading">
+               <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerFourteenOne">
+                 VANS Account One
+               </a></h4>
+             </div>
+             <div id="collapseInnerFourteenOne" class="panel-collapse collapse in">
+               <div class="panel-body">
+                 <ul class="listing-review">
+                   <li><a href="#">SWIFT/BIC</a></li>
+                   <li><a href="#">Iban</a></li>
+                   <li><a href="#">Account currency</a></li>
+                   <li><a href="3">Account name</a></li>
+                   <li><a href="#">Account country</a></li>
+                 </ul>
+               </div>
+             </div>
+            </div>
+            <div class="panel panel-default">
+             <div class="panel-heading">
+               <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion2" href="#collapseInnerFourteenTwo">
+                 VANS Account Two
+               </a></h4>
+             </div>
+             <div id="collapseInnerFourteenTwo" class="panel-collapse collapse">
+               <div class="panel-body">
+                 <ul class="listing-review">
+                   <li><a href="#">SWIFT/BIC</a></li>
+                   <li><a href="#">Iban</a></li>
+                   <li><a href="#">Account currency</a></li>
+                   <li><a href="3">Account name</a></li>
+                   <li><a href="#">Account country</a></li>
+                 </ul>
+               </div>
+             </div>
+            </div>
+          </div>
+
+        </div>
+    </div>
+</div>
+
+</apex:component>

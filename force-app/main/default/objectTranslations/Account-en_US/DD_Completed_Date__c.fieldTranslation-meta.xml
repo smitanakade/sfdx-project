@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Automatically populated based on the date due diligence was completed (approved or declined) by the AML team. --></help>
+    <label><!-- DD Completed Date --></label>
+    <name>DD_Completed_Date__c</name>
+</CustomFieldTranslation>

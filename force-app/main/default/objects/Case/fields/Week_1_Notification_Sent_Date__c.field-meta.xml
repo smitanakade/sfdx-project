@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Week_1_Notification_Sent_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Date when the Week 1 Welcome follow up notification email was sent to the client.  The notification is set to send 1 week after the original email has been sent and no contact has been made with the client.</inlineHelpText>
+    <label>Week 1 Notification Sent Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

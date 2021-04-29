@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>reportFormat__c</fullName>
+    <externalId>false</externalId>
+    <label>Format</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>TABULAR</fullName>
+                <default>false</default>
+                <label>TABULAR</label>
+            </value>
+            <value>
+                <fullName>JOINED</fullName>
+                <default>false</default>
+                <label>JOINED</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

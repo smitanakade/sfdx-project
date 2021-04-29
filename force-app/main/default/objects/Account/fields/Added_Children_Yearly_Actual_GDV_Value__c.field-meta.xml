@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Added_Children_Yearly_Actual_GDV_Value__c</fullName>
+    <defaultValue>0</defaultValue>
+    <description>This field stores the value added to the parent&#39;s &#39;Children Yearly Actual GDV&#39; field.</description>
+    <externalId>false</externalId>
+    <label>Added Children Yearly Actual GDV Value</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

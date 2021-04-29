@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Due_Date_Indicator__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(
+	AND(
+		(NOT(ISPICKVAL(Status__c, &quot;Terminated&quot;))), 
+		(NOT(ISPICKVAL(Status__c, &quot;Completed&quot;))),
+		(NOT(Subject__c = &quot;Contract - eNett Signoff&quot;)), 
+		(NOT(Subject__c = &quot;Contract - eNett - Sign-off&quot;))		
+	),
+
+		IF(Due_Date__c &gt;= TODAY (),IMAGE (&quot;/servlet/servlet.FileDownload?file=015O00000012iiz&quot;, &quot;Green&quot;, 20,40),
+		IMAGE (&quot;/servlet/servlet.FileDownload?file=015O00000012ij9&quot;, &quot;Red&quot;, 20,40)
+), null)</formula>
+    <label>Due Date Indicator</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

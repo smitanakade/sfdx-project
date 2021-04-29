@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Pre_Kickoff_Quest_Complete_Date__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is a Date field equivalent to the historical field &quot;Delivery Pre Kick off Questionnaire&quot;.
+This is automatically populated when the relevent delivery ticket&#39;s &quot;Enter Pre Kick-off Quest Completed Date&quot; field is entered by the delivery personnel</inlineHelpText>
+    <label>Delivery Pre Kickoff Quest Complete Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

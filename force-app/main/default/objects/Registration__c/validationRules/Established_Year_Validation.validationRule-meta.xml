@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Established_Year_Validation</fullName>
+    <active>true</active>
+    <errorConditionFormula>NOT(ISBLANK(Established_Year__c)) &amp;&amp; (NOT(ISNUMBER(Established_Year__c)) || VALUE(Established_Year__c) &lt; 1000)</errorConditionFormula>
+    <errorMessage>The Established Year is Invalid</errorMessage>
+</ValidationRule>

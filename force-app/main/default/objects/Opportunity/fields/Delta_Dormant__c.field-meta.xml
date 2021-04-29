@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delta_Dormant__c</fullName>
+    <externalId>false</externalId>
+    <formula>AND(Year(Dormant_End_Date__c)=Year(Today()), 
+Month(Dormant_End_Date__c)=Month(Today()) 
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Delta Dormant</label>
+    <trackHistory>false</trackHistory>
+    <type>Checkbox</type>
+</CustomField>

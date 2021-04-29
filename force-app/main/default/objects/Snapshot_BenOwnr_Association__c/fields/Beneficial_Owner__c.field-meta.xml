@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Beneficial_Owner__c</fullName>
+    <description>Secondary Relationship</description>
+    <externalId>false</externalId>
+    <label>Beneficial Owner</label>
+    <referenceTo>Beneficial_Owner__c</referenceTo>
+    <relationshipLabel>Snapshot BenOwnr Associations</relationshipLabel>
+    <relationshipName>Snapshot_BenOwnr_Associations</relationshipName>
+    <relationshipOrder>1</relationshipOrder>
+    <reparentableMasterDetail>false</reparentableMasterDetail>
+    <trackTrending>false</trackTrending>
+    <type>MasterDetail</type>
+    <writeRequiresMasterRead>false</writeRequiresMasterRead>
+</CustomField>

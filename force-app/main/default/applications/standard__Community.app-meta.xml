@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <defaultLandingTab>standard-home</defaultLandingTab>
+    <formFactors>Large</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <tabs>standard-Chatter</tabs>
+    <tabs>standard-Contact</tabs>
+    <tabs>standard-Account</tabs>
+    <tabs>standard-Idea</tabs>
+    <tabs>standard-report</tabs>
+    <tabs>standard-Dashboard</tabs>
+    <tabs>Address__c</tabs>
+    <tabs>Currencies__c</tabs>
+    <tabs>Commercial_Terms_Update__c</tabs>
+    <tabs>VAN_Transactions__c</tabs>
+    <tabs>Due_Diligence_Timer__c</tabs>
+    <tabs>Report_Type__c</tabs>
+    <tabs>Process_Task__c</tabs>
+    <tabs>Post_Refresh</tabs>
+</CustomApplication>

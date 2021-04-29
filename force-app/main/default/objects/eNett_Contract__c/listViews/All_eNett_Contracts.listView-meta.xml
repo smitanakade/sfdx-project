@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_eNett_Contracts</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Account_ECN__c</columns>
+    <columns>Contract_Type__c</columns>
+    <columns>eNett_Product__c</columns>
+    <columns>Contract_Stage__c</columns>
+    <columns>Status__c</columns>
+    <columns>Contract_Effective_Date__c</columns>
+    <filterScope>Everything</filterScope>
+    <label>All eNett Contracts</label>
+</ListView>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Global_Level_3_Finance_Open_Assigned2</fullName>
+    <booleanFilter>1 and 2</booleanFilter>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>NAME</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>CASES.CREATED_DATE</columns>
+    <columns>CASES.LAST_UPDATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>Assignee_Region__c</columns>
+    <columns>CASES.ORIGIN</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>Pending,Open,Reopen</value>
+    </filters>
+    <filters>
+        <field>Assignee_Service_Level__c</field>
+        <operation>contains</operation>
+        <value>Finance</value>
+    </filters>
+    <label>Global Level 3 - Finance - Open Assigned</label>
+    <sharedTo>
+        <role>AML</role>
+        <role>APAC_Finance</role>
+        <role>Americas_Finance</role>
+        <role>EMEA_Finance</role>
+        <role>Finance</role>
+        <role>Global_Service_Desk_Level_2</role>
+        <role>Global_Service_Desk_Level_3_Finance</role>
+        <role>Service_Desk_Administrator</role>
+    </sharedTo>
+</ListView>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Standard TCs Template VANs --></label>
+    <name>Standard_TCs_Template_VANs__c</name>
+</CustomFieldTranslation>

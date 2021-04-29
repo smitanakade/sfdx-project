@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DD_Start_Datetime__c</fullName>
+    <description>New field created for DD KPI calculation.  It wasn&#39;t possible to change DD Start Date to a date time since it would require major process flow changes and a data migration but this should be cleaned up at some point.</description>
+    <externalId>false</externalId>
+    <label>DD Start Datetime</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>DateTime</type>
+</CustomField>

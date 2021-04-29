@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>One_receivable_account_per_registration</fullName>
+    <active>false</active>
+    <errorConditionFormula>(ISNEW() || ISCHANGED(Account_Type__c)) &amp;&amp; Active__c &amp;&amp; ISPICKVAL(Account_Type__c, &#39;Receivable&#39;) &amp;&amp;  Registration__r.Active_Receivable_Account_Count__c &gt; 0</errorConditionFormula>
+    <errorMessage>You can only have one active Receivable Account per Registration.</errorMessage>
+</ValidationRule>

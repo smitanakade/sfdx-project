@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Spend_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Spend Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Corporate – Advertising</fullName>
+                <default>false</default>
+                <label>Corporate – Advertising</label>
+            </value>
+            <value>
+                <fullName>Corporate - General Payables</fullName>
+                <default>false</default>
+                <label>Corporate - General Payables</label>
+            </value>
+            <value>
+                <fullName>Corporate – Google</fullName>
+                <default>false</default>
+                <label>Corporate – Google</label>
+            </value>
+            <value>
+                <fullName>Corporate - Tax Only</fullName>
+                <default>false</default>
+                <label>Corporate - Tax Only</label>
+            </value>
+            <value>
+                <fullName>Funding Only</fullName>
+                <default>false</default>
+                <label>Funding Only</label>
+            </value>
+            <value>
+                <fullName>eNett Internal</fullName>
+                <default>false</default>
+                <label>eNett Internal</label>
+            </value>
+            <value>
+                <fullName>Mixed - Travel and Corporate Spend</fullName>
+                <default>false</default>
+                <label>Mixed - Travel and Corporate Spend</label>
+            </value>
+            <value>
+                <fullName>Travel - Accommodation Only</fullName>
+                <default>false</default>
+                <label>Travel - Accommodation Only</label>
+            </value>
+            <value>
+                <fullName>Travel - Airlines Only</fullName>
+                <default>false</default>
+                <label>Travel - Airlines Only</label>
+            </value>
+            <value>
+                <fullName>Travel – General</fullName>
+                <default>false</default>
+                <label>Travel – General</label>
+            </value>
+            <value>
+                <fullName>Travel - Cruises Only</fullName>
+                <default>false</default>
+                <label>Travel - Cruises Only</label>
+            </value>
+            <value>
+                <fullName>Telecom</fullName>
+                <default>false</default>
+                <label>Telecom</label>
+            </value>
+            <value>
+                <fullName>Office Supplies</fullName>
+                <default>false</default>
+                <label>Office Supplies</label>
+            </value>
+            <value>
+                <fullName>Demonstration</fullName>
+                <default>false</default>
+                <label>Demonstration</label>
+            </value>
+            <value>
+                <fullName>eNett IT Testing</fullName>
+                <default>false</default>
+                <label>eNett IT Testing</label>
+            </value>
+            <value>
+                <fullName>Client Testing</fullName>
+                <default>false</default>
+                <label>Client Testing</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

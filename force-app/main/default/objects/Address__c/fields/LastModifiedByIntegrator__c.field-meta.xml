@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>LastModifiedByIntegrator__c</fullName>
+    <externalId>false</externalId>
+    <formula>ROUND(MOD((LastModifiedDate - IntegratorModifiedDate__c)*1440,60),1) == 0.0</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>LastModifiedByIntegrator</label>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

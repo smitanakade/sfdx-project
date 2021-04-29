@@ -1,0 +1,540 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Category__c</fullName>
+    <externalId>false</externalId>
+    <label>Product Category</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Product__c</controllingField>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Account Changes</fullName>
+                <default>false</default>
+                <label>Account Changes</label>
+            </value>
+            <value>
+                <fullName>Activations</fullName>
+                <default>false</default>
+                <label>Activations</label>
+            </value>
+            <value>
+                <fullName>Billing</fullName>
+                <default>false</default>
+                <label>Billing</label>
+            </value>
+            <value>
+                <fullName>Browser Issue</fullName>
+                <default>false</default>
+                <label>Browser Issue</label>
+            </value>
+            <value>
+                <fullName>Client Report</fullName>
+                <default>false</default>
+                <label>Client Report</label>
+            </value>
+            <value>
+                <fullName>Communication</fullName>
+                <default>false</default>
+                <label>Communication</label>
+            </value>
+            <value>
+                <fullName>Complaint</fullName>
+                <default>false</default>
+                <label>Complaint</label>
+            </value>
+            <value>
+                <fullName>Delivery/Implementation</fullName>
+                <default>false</default>
+                <label>Delivery/Implementation</label>
+            </value>
+            <value>
+                <fullName>Dropped Call</fullName>
+                <default>false</default>
+                <label>Dropped Call</label>
+            </value>
+            <value>
+                <fullName>EFT Account Changes</fullName>
+                <default>false</default>
+                <label>EFT Account Changes</label>
+            </value>
+            <value>
+                <fullName>EFT Payment Processing</fullName>
+                <default>false</default>
+                <label>EFT Payment Processing</label>
+            </value>
+            <value>
+                <fullName>EFT Refunds</fullName>
+                <default>false</default>
+                <label>EFT Refunds</label>
+            </value>
+            <value>
+                <fullName>EFT Training Request</fullName>
+                <default>false</default>
+                <label>EFT Training Request</label>
+            </value>
+            <value>
+                <fullName>ePP</fullName>
+                <default>false</default>
+                <label>ePP</label>
+            </value>
+            <value>
+                <fullName>Financial</fullName>
+                <default>false</default>
+                <label>Financial</label>
+            </value>
+            <value>
+                <fullName>FreeNett Payment Processing</fullName>
+                <default>false</default>
+                <label>FreeNett Payment Processing</label>
+            </value>
+            <value>
+                <fullName>Gateway Payment Processing</fullName>
+                <default>false</default>
+                <label>Gateway Payment Processing</label>
+            </value>
+            <value>
+                <fullName>Gateway Payment Status</fullName>
+                <default>false</default>
+                <label>Gateway Payment Status</label>
+            </value>
+            <value>
+                <fullName>Gateway Refund</fullName>
+                <default>false</default>
+                <label>Gateway Refund</label>
+            </value>
+            <value>
+                <fullName>Gateway Reporting</fullName>
+                <default>false</default>
+                <label>Gateway Reporting</label>
+            </value>
+            <value>
+                <fullName>Invoice</fullName>
+                <default>false</default>
+                <label>Invoice</label>
+            </value>
+            <value>
+                <fullName>Issues</fullName>
+                <default>false</default>
+                <label>Issues</label>
+            </value>
+            <value>
+                <fullName>JIRA</fullName>
+                <default>false</default>
+                <label>JIRA</label>
+            </value>
+            <value>
+                <fullName>Marketing</fullName>
+                <default>false</default>
+                <label>Marketing</label>
+            </value>
+            <value>
+                <fullName>New Request</fullName>
+                <default>false</default>
+                <label>New Request</label>
+            </value>
+            <value>
+                <fullName>Notification</fullName>
+                <default>false</default>
+                <label>Notification</label>
+            </value>
+            <value>
+                <fullName>Offboarding</fullName>
+                <default>false</default>
+                <label>Offboarding</label>
+            </value>
+            <value>
+                <fullName>Outage</fullName>
+                <default>false</default>
+                <label>Outage</label>
+            </value>
+            <value>
+                <fullName>Password</fullName>
+                <default>false</default>
+                <label>Password</label>
+            </value>
+            <value>
+                <fullName>Payment Status</fullName>
+                <default>false</default>
+                <label>Payment Status</label>
+            </value>
+            <value>
+                <fullName>Post Booking Support</fullName>
+                <default>false</default>
+                <label>Post Booking Support</label>
+            </value>
+            <value>
+                <fullName>Pre Booking Support</fullName>
+                <default>false</default>
+                <label>Pre Booking Support</label>
+            </value>
+            <value>
+                <fullName>ProPortal Refunds</fullName>
+                <default>false</default>
+                <label>ProPortal Refunds</label>
+            </value>
+            <value>
+                <fullName>Pro Portal Training Request</fullName>
+                <default>false</default>
+                <label>Pro Portal Training Request</label>
+            </value>
+            <value>
+                <fullName>Rebate</fullName>
+                <default>false</default>
+                <label>Rebate</label>
+            </value>
+            <value>
+                <fullName>Refunds/Voids</fullName>
+                <default>false</default>
+                <label>Refunds/Voids</label>
+            </value>
+            <value>
+                <fullName>Registration</fullName>
+                <default>false</default>
+                <label>Registration</label>
+            </value>
+            <value>
+                <fullName>Reporting</fullName>
+                <default>false</default>
+                <label>Reporting</label>
+            </value>
+            <value>
+                <fullName>Sales</fullName>
+                <default>false</default>
+                <label>Sales</label>
+            </value>
+            <value>
+                <fullName>Salesforce</fullName>
+                <default>false</default>
+                <label>Salesforce</label>
+            </value>
+            <value>
+                <fullName>Spam</fullName>
+                <default>false</default>
+                <label>Spam</label>
+            </value>
+            <value>
+                <fullName>Test</fullName>
+                <default>false</default>
+                <label>Test</label>
+            </value>
+            <value>
+                <fullName>VANS Account Changes</fullName>
+                <default>false</default>
+                <label>VANS Account Changes</label>
+            </value>
+            <value>
+                <fullName>VANS Financial</fullName>
+                <default>false</default>
+                <label>VANS Financial</label>
+            </value>
+            <value>
+                <fullName>VANS Payment Processing</fullName>
+                <default>false</default>
+                <label>VANS Payment Processing</label>
+            </value>
+            <value>
+                <fullName>VANS Refund</fullName>
+                <default>false</default>
+                <label>VANS Refund</label>
+            </value>
+            <value>
+                <fullName>VANS Reporting</fullName>
+                <default>false</default>
+                <label>VANS Reporting</label>
+            </value>
+            <value>
+                <fullName>VANS Training Request</fullName>
+                <default>false</default>
+                <label>VANS Training Request</label>
+            </value>
+            <value>
+                <fullName>Wrong Number</fullName>
+                <default>false</default>
+                <label>Wrong Number</label>
+            </value>
+            <value>
+                <fullName>Clients - Integration Management</fullName>
+                <default>false</default>
+                <label>Clients - Integration Management</label>
+            </value>
+            <value>
+                <fullName>Reports - Subscription</fullName>
+                <default>false</default>
+                <label>Reports - Subscription</label>
+            </value>
+            <value>
+                <fullName>Configuration - Credit Limits</fullName>
+                <default>false</default>
+                <label>Configuration - Credit Limits</label>
+            </value>
+            <value>
+                <fullName>Configuration - Merchant Category</fullName>
+                <default>false</default>
+                <label>Configuration - Merchant Category</label>
+            </value>
+            <value>
+                <fullName>Configuration - User References</fullName>
+                <default>false</default>
+                <label>Configuration - User References</label>
+            </value>
+            <value>
+                <fullName>Configuration - VAN defaults</fullName>
+                <default>false</default>
+                <label>Configuration - VAN defaults</label>
+            </value>
+            <value>
+                <fullName>Funding - Not Received</fullName>
+                <default>false</default>
+                <label>Funding - Not Received</label>
+            </value>
+            <value>
+                <fullName>Funding - Delayed</fullName>
+                <default>false</default>
+                <label>Funding - Delayed</label>
+            </value>
+            <value>
+                <fullName>Funding - Returned to Client</fullName>
+                <default>false</default>
+                <label>Funding - Returned to Client</label>
+            </value>
+            <value>
+                <fullName>Payment Processing</fullName>
+                <default>false</default>
+                <label>Payment Processing</label>
+            </value>
+            <value>
+                <fullName>Reports</fullName>
+                <default>false</default>
+                <label>Reports</label>
+            </value>
+            <value>
+                <fullName>Support - TAB</fullName>
+                <default>false</default>
+                <label>Support - TAB</label>
+            </value>
+            <value>
+                <fullName>Training Request</fullName>
+                <default>false</default>
+                <label>Training Request</label>
+            </value>
+            <value>
+                <fullName>User Settings - Users</fullName>
+                <default>false</default>
+                <label>User Settings - Users</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <controllingFieldValue>VANs</controllingFieldValue>
+            <controllingFieldValue>feeNett</controllingFieldValue>
+            <controllingFieldValue>Agoda Pro Portal</controllingFieldValue>
+            <valueName>Browser Issue</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <valueName>Complaint</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <controllingFieldValue>VANs</controllingFieldValue>
+            <valueName>Delivery/Implementation</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <valueName>EFT Account Changes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <valueName>EFT Payment Processing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <valueName>EFT Refunds</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <valueName>EFT Training Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <controllingFieldValue>feeNett</controllingFieldValue>
+            <valueName>Financial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <controllingFieldValue>VANs</controllingFieldValue>
+            <valueName>Password</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <controllingFieldValue>feeNett</controllingFieldValue>
+            <valueName>Payment Status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <controllingFieldValue>VANs</controllingFieldValue>
+            <valueName>Registration</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <controllingFieldValue>feeNett</controllingFieldValue>
+            <valueName>Reporting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett EFT</controllingFieldValue>
+            <controllingFieldValue>VANs</controllingFieldValue>
+            <controllingFieldValue>feeNett</controllingFieldValue>
+            <controllingFieldValue>Agoda Pro Portal</controllingFieldValue>
+            <valueName>Sales</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VANs</controllingFieldValue>
+            <valueName>VANS Account Changes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VANs</controllingFieldValue>
+            <valueName>VANS Financial</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VANs</controllingFieldValue>
+            <valueName>VANS Payment Processing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VANs</controllingFieldValue>
+            <valueName>VANS Refund</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VANs</controllingFieldValue>
+            <valueName>VANS Reporting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VANs</controllingFieldValue>
+            <valueName>VANS Training Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>feeNett</controllingFieldValue>
+            <valueName>Account Changes</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>feeNett</controllingFieldValue>
+            <valueName>FreeNett Payment Processing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>feeNett</controllingFieldValue>
+            <valueName>Refunds/Voids</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agoda Pro Portal</controllingFieldValue>
+            <valueName>Activations</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agoda Pro Portal</controllingFieldValue>
+            <valueName>Issues</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agoda Pro Portal</controllingFieldValue>
+            <valueName>Post Booking Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agoda Pro Portal</controllingFieldValue>
+            <valueName>Pre Booking Support</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agoda Pro Portal</controllingFieldValue>
+            <valueName>ProPortal Refunds</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Agoda Pro Portal</controllingFieldValue>
+            <valueName>Pro Portal Training Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Communication</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>ePP</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>JIRA</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>New Request</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Notification</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Offboarding</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Outage</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Internal</controllingFieldValue>
+            <valueName>Salesforce</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett Gateway</controllingFieldValue>
+            <valueName>Gateway Payment Processing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett Gateway</controllingFieldValue>
+            <valueName>Gateway Payment Status</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett Gateway</controllingFieldValue>
+            <valueName>Gateway Refund</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>eNett Gateway</controllingFieldValue>
+            <valueName>Gateway Reporting</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No eNett Product</controllingFieldValue>
+            <valueName>Dropped Call</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No eNett Product</controllingFieldValue>
+            <valueName>Marketing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No eNett Product</controllingFieldValue>
+            <valueName>Spam</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No eNett Product</controllingFieldValue>
+            <valueName>Test</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>No eNett Product</controllingFieldValue>
+            <valueName>Wrong Number</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VANs Billing</controllingFieldValue>
+            <valueName>Billing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VANs Billing</controllingFieldValue>
+            <valueName>Client Report</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VANs Billing</controllingFieldValue>
+            <valueName>Invoice</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>VANs Billing</controllingFieldValue>
+            <valueName>Rebate</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

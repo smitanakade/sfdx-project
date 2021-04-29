@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>not_to_modify_records_created_by_unassig</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND((NOT(ISBLANK(ECN_ID__c))), OR(ISCHANGED( Name ) , 
+ISCHANGED( AddressType__c ),ISCHANGED( Client__c ), ISCHANGED( countryname__c ), ISCHANGED( CountryCode2__c ), ISCHANGED( CountryCode3__c ), ISCHANGED( Line1__c ), ISCHANGED( Line2__c ), ISCHANGED( Line3__c ), ISCHANGED(Postcode__c), ISCHANGED(StateID__c), ISCHANGED(Suburb__c)), (CreatedBy.Id = &#39;00590000000riL4&#39;), ($User.Id &lt;&gt; &#39;00590000000riL4&#39;))</errorConditionFormula>
+    <errorMessage>This record could not be changed, as it is created by the administrator.</errorMessage>
+</ValidationRule>

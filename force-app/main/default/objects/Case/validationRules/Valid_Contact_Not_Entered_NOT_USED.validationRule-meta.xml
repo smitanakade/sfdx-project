@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Valid_Contact_Not_Entered_NOT_USED</fullName>
+    <active>false</active>
+    <description>NOT IN USE - currently replaced by required fields on close page layout</description>
+    <errorConditionFormula>AND(ContactId=&quot;&quot;,(ISPICKVAL(Status,&quot;Closed&quot;)))</errorConditionFormula>
+    <errorDisplayField>AccountId</errorDisplayField>
+    <errorMessage>An appropriate Account and Contact must be associated with the ticket</errorMessage>
+</ValidationRule>

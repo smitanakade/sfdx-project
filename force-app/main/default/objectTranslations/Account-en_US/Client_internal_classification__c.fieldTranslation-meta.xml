@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Please enter the classification as a whole numerical value.  Abbreviated values are permitted (B - Billion, M - Million, K - Thousand) Eg 1M - Will automatically be converted to 1,000,000. --></help>
+    <label><!-- Total GDV p.a. --></label>
+    <name>Client_internal_classification__c</name>
+</CustomFieldTranslation>

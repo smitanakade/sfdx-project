@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Other_Details__c</fullName>
+    <description>Mandatory when Integrators Used is Other.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Please provide details if selecting Other as integrator.</inlineHelpText>
+    <label>Other Details</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>TextArea</type>
+</CustomField>

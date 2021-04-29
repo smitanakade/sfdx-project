@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Delivery_Ticket</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>New Delivery Ticket</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+
+var profileName = &#39;{!$Profile.Name}&#39;; 
+
+if(profileName.indexOf(&quot;Delivery&quot;) &gt; -1) { 
+
+var ECN = &quot;{!Opportunity.ECN__c}&quot;; 
+var theID = &quot;{!Opportunity.Id}&quot;; 
+var type = &quot;{!Opportunity.Delivery_type__c}&quot;;
+var queryResult = sforce.connection.query(&quot;SELECT Id FROM Case WHERE Related_Delivery_Opportunity__c = &#39;&quot; + theID + &quot;&#39; AND Delivery_Ticket__c = true LIMIT 1&quot;); 
+
+if(ECN == null || ECN == &quot;&quot; &amp;&amp; type == &quot;Delivery - Desktop&quot;) { 
+alert (&quot;Cannot create Desktop delivery ticket as this account does not have an ECN yet.&quot;); 
+} else if(queryResult.getArray(&quot;records&quot;) == null || queryResult.getArray(&quot;records&quot;).length &gt; 0) { 
+alert(&quot;Cannot create Delivery Ticket as this Opportunity already has a Delivery Ticket.&quot;); 
+} else { 
+
+var udString = &quot;Unassigned Delivery&quot;; 
+var dString = &quot;Delivery -&quot;; 
+
+window.location = &#39;/500/e?RecordType=01290000000iE8h&amp;CF00N9000000D03qm_lkid={!Opportunity.Id}&amp;CF00N9000000D03qm={!URLENCODE(Opportunity.Name)}&amp;00N9000000D03pH={!Opportunity.Delivery_type__c}&amp;CF00N9000000D03pG=&#39; + udString + &#39;&amp;cas4={!URLENCODE(Opportunity.Account)}&amp;cas4_lkid={!Opportunity.AccountId}&amp;cas3={!URLENCODE(Opportunity.Primary_Implementation_Contact__c)}&amp;cas3={!Opportunity.Primary_Implementation_ContactId__c}&amp;CF00N9000000D03qv={!URLENCODE(Opportunity.Secondary_Implemantation_Contact__c)}&amp;CF00N9000000D03qv_lkid={!Opportunity.Secondary_Implemantation_ContactId__c}&amp;cas14=&#39; + dString + &#39;+{!URLENCODE(Opportunity.Name)}&amp;cas11=&quot;Opportunity&quot;&amp;00N9000000D1EuB={!Opportunity.Implementation_Start_Date__c}&#39;; 
+
+} 
+
+} else { 
+alert(&quot;Only users that are a part of a Delivery profile can create Delivery Tickets.&quot;); 
+}</url>
+</WebLink>

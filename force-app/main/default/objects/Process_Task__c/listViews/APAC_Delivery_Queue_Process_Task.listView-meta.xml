@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>APAC_Delivery_Queue_Process_Task</fullName>
+    <columns>NAME</columns>
+    <columns>Due_Date_Indicator__c</columns>
+    <columns>Due_Date__c</columns>
+    <columns>ECN__c</columns>
+    <columns>Task_Name__c</columns>
+    <columns>Delivery_Ticket__c</columns>
+    <columns>Related_Account__c</columns>
+    <columns>Status__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <filterScope>Queue</filterScope>
+    <label>APAC Delivery Queue</label>
+    <queue>APAC_Delivery_Queue</queue>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

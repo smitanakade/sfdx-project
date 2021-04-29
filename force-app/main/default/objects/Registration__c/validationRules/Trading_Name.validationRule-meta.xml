@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Trading_Name</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND
+(ISCHANGED(  Trading_Name_Checkbox__c ),Trading_Name_Checkbox__c=TRUE,
+ VerA_Trading_Name__c =FALSE
+)</errorConditionFormula>
+    <errorMessage>At least one verification document with Evidence Type of Trading Name is required.</errorMessage>
+</ValidationRule>

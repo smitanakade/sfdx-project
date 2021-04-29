@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Dormant_Reason_Additional_Info_Required</fullName>
+    <active>true</active>
+    <description>If the user selected &#39;Other - Provide additional information&#39; as a Dormant Reason.</description>
+    <errorConditionFormula>AND(ISPICKVAL(Dormant_Reason_Picklist__c, &#39;Other - Provide additional information&#39;), ISBLANK(Dormant_Reason__c))</errorConditionFormula>
+    <errorMessage>Please specify further details in the Dormant Reason Additional Information field.</errorMessage>
+</ValidationRule>

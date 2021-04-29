@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AML_Queue_Registration</fullName>
+    <columns>NAME</columns>
+    <columns>Registered_Company_Name__c</columns>
+    <columns>Account_ECN__c</columns>
+    <columns>Account_Type__c</columns>
+    <columns>Registration_Type__c</columns>
+    <columns>Product__c</columns>
+    <columns>Registration_Status__c</columns>
+    <columns>DD_Status__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>CREATEDBY_USER</columns>
+    <filterScope>Queue</filterScope>
+    <label>AML Queue</label>
+    <queue>AML_Queue</queue>
+</ListView>

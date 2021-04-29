@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_set_Priority_to_None</fullName>
+    <active>true</active>
+    <description>A default field must be set.  The -None- option has been set to the default.  The business would like to make this field mandatory.  Because -None- is a valid entry, the selection is deemed valid. This rule will prevent this selection.</description>
+    <errorConditionFormula>OR( 
+AND(ISPICKVAL(Priority,&quot;-- None --&quot;),ISPICKVAL(Origin,&quot;Call&quot;)), 
+AND( ISPICKVAL(Status ,&quot;Closed&quot;), ISPICKVAL (PRIORVALUE(Status),&quot;New&quot;),ISPICKVAL(Priority,&quot;-- None --&quot;)), 
+AND( ISPICKVAL(Status ,&quot;Closed&quot;), ISPICKVAL (PRIORVALUE(Status),&quot;Open&quot;),ISPICKVAL(Priority,&quot;-- None --&quot;)) 
+)</errorConditionFormula>
+    <errorDisplayField>X44CS_settlement_report_email__c</errorDisplayField>
+    <errorMessage>&quot;--None--&quot; is not an acceptable &quot;Customer Service Priority&quot; setting. Please select a valid option from the list.</errorMessage>
+</ValidationRule>

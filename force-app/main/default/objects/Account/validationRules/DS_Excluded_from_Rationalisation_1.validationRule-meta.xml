@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DS_Excluded_from_Rationalisation_1</fullName>
+    <active>true</active>
+    <description>When Segment Status field value is &#39;Excluded from Customer Rationalisation&#39;, Reason must be provided in Segment Notes filed.</description>
+    <errorConditionFormula>AND(ISPICKVAL( Segment_Status__c ,&quot;Excluded from Customer Rationalisation&quot;), ISBLANK( Segment_Notes__c ) )</errorConditionFormula>
+    <errorMessage>Please provide reason for exclusion in Segment Notes filed</errorMessage>
+</ValidationRule>

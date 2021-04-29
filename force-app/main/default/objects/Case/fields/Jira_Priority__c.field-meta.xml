@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jira_Priority__c</fullName>
+    <externalId>false</externalId>
+    <label>Jira Priority</label>
+    <required>false</required>
+    <trackFeedHistory>true</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Critical</fullName>
+                <default>false</default>
+                <label>Critical</label>
+            </value>
+            <value>
+                <fullName>Must Have</fullName>
+                <default>false</default>
+                <label>Must Have</label>
+            </value>
+            <value>
+                <fullName>Should Have</fullName>
+                <default>false</default>
+                <label>Should Have</label>
+            </value>
+            <value>
+                <fullName>Nice To Have</fullName>
+                <default>false</default>
+                <label>Nice To Have</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

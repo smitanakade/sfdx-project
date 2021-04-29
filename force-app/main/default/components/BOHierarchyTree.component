@@ -1,0 +1,68 @@
+<apex:component Controller="BOStructure">
+
+    <apex:attribute name="currentId2" description="This is the Beneficial Owner Id for displaying Hierarchy Map" type="String" required="true" assignTo="{!currentId}"/>
+
+    <div class="treeNode">
+
+    <table width="100%" style="border: 0px; padding: 0px; cellspacing: 0px; border-collapse: collapse; line-height:16px;">
+        <tr>
+            <td style="height=16px; valign=top; overflow:hidden; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold">
+            </td>
+            <td style="height=16px; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold">
+                <apex:outputText value="Percentage Shareholder" />&nbsp;
+            </td>
+            <td style="height=16px; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold">
+                <apex:outputText value="Owner Type" />&nbsp;
+            </td>
+            <td style="height=16px; border-bottom:1px solid; padding: 0px; cell-padding: 0px; color: grey; font-weight: bold">
+                <apex:outputText value="Record Name" />&nbsp;
+            </td>
+        </tr>
+        <apex:repeat value="{!ObjectStructure}" var="pos" >
+            <tr>
+            <td style="height=16px; valign=top; overflow:hidden; border:0px; padding: 0px; cell-padding: 0px;">
+                <apex:repeat value="{!pos.levelFlag}" var="flag" first="0">
+                    <apex:image url="/img/tree/empty.gif" height="16" width="20" rendered="{!IF(flag,false,true)}"/>
+                    <!--apex:image url="/s.gif" alt="" width="3" height="16" rendered="{!IF(flag,true,false)}"/-->
+                    <apex:image url="/img/tree/chain.gif" height="16" width="20" rendered="{!IF(flag,true,false)}"/>
+                </apex:repeat>
+                <apex:outputText rendered="{!IF(pos.nodeType=='start',true,false)}">
+                    <apex:image id="tree_start" url="/img/tree/minusStart.gif" height="16" width="20" title="Click to goto account." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                    <apex:image id="Icon_start" url="/img/icon/custom51_100/globe16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,false,true), true)}"/>
+                    <apex:image id="Icon_start_current" url="/img/icon/star16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,true,false), false)}"/>
+                </apex:outputText>
+                <apex:outputText rendered="{!IF(OR(pos.nodeType=='parent',pos.nodeType=='parent_end'),true,false)}">
+                    <apex:image id="Tree_parent" url="/img/tree/minus.gif" rendered="{!IF(pos.nodeType=='parent',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                    <apex:image id="Tree_parent_end" url="/img/tree/minusEnd.gif" rendered="{!IF(pos.nodeType=='parent_end',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>                
+                    <apex:image id="Icon_parent" url="/img/icon/factory16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,false,true),false)}"/>
+                    <apex:image id="Icon_parent_current" url="/img/icon/star16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,true,false),false)}"/>
+                </apex:outputText>
+                <apex:outputText rendered="{!IF(OR(pos.nodeType=='child',pos.nodeType=='child_end'),true,false)}">
+                    <apex:image id="Tree_child" url="/img/tree/node.gif" rendered="{!IF(pos.nodeType=='child',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                    <apex:image id="Tree_child_current" url="/img/tree/nodeEnd.gif" rendered="{!IF(pos.nodeType=='child_end',true,false)}" height="16" width="20" title="Click to expand/collapse nested items." onClick="TreeNodeElement.prototype.toggle(this,'{!pos.nodeId}')"/>
+                    <apex:image id="Icon_child" url="/img/icon/desk16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,false,true), false)}"/>
+                    <apex:image id="Icon_child_current" url="/img/icon/star16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,true,false), false)}"/>
+                </apex:outputText>
+                <apex:outputText rendered="{!IF(pos.nodeType=='end',true,false)}">
+                    <apex:image id="Tree_end" url="/img/tree/nodeEnd.gif" height="16" width="20"/>&nbsp;
+                    <apex:image id="Icon_end" url="/img/icon/desk16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,false,true),false)}"/>
+                    <apex:image id="Icon_end_current" url="/img/icon/star16.png" width="16" height="16" rendered="{!AND(IF(pos.currentNode,true,false), false)}"/>
+                </apex:outputText>
+                <apex:outputLink value="/{!pos.bo.id}" style="{!IF(pos.currentNode,'font-weight: bold;','')}" styleClass="columnHeadActiveBlack" target="_top">{!pos.bo.Beneficial_Owner_or_Business_Name__c}</apex:outputLink>
+                <apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')}" value="{!pos.accName}" rendered="{!IF(pos.nodeType=='start',true,false)}"/>&nbsp;
+            </td>
+            <td style="height=16px; border:0px; padding: 0px; cell-padding: 0px;">
+                <apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')};" value="{!pos.bo.Percentage_Shareholder__c}%" rendered="{!IF(!ISBLANK(pos.bo.Percentage_Shareholder__c),true,false)}"/>&nbsp;
+            </td>
+            <td style="height=16px; border:0px; padding: 0px; cell-padding: 0px;">
+                <apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')};" value="{!pos.bo.Owner_Type__c}" />&nbsp;
+            </td>
+            <td style="height=16px; border:0px; padding: 0px; cell-padding: 0px;">
+                <apex:outputText style="{!IF(pos.currentNode,'font-weight: bold;','')};" value="{!pos.bo.name}" />&nbsp;
+            </td>
+            </tr>
+        </apex:repeat>
+    </table>
+    </div>
+
+</apex:component>

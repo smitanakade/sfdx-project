@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hidden_Counter_for_Tickets_Within_SLA__c</fullName>
+    <externalId>false</externalId>
+    <formula>If (  AND(OR(RecordTypeId = &#39;01290000000hwKc&#39;,RecordTypeId = &#39;01290000000i3QS&#39;, RecordTypeId = &#39;01290000000i3QX&#39;,  RecordTypeId = &#39;01290000000huwY&#39;, RecordTypeId =&#39;01290000000iCRi&#39;), KPI_Met__c = true), 1, 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Hidden Counter for Tickets Within SLA</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

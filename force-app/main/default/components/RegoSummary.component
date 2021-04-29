@@ -1,0 +1,113 @@
+<apex:component >
+
+
+
+    
+
+    <div class="container" id="final-review-and-submit">
+    <p class="col-xs-12 col-sm-8 intro-content">To activiate your account we need to link your primary account used for funding to the eNett service. </p>
+        
+
+
+
+   
+
+        <div class="col-xs-12 panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+            <c:RegoSummaryStep1 />
+            <c:RegoSummaryStep2 />
+            <c:RegoSummaryStep3 />
+            <c:RegoSummaryStep4 />
+            <c:RegoSummaryStep5 />
+            <c:RegoSummaryStep6 />
+            <c:RegoSummaryStep7 />
+            <c:RegoSummaryStep8 />
+            <c:RegoSummaryStep9 />
+        </div> <!-- .panel-group -->
+
+
+
+<!-- START -->   
+<!-- START -->   
+<div class="wrapper-terms">
+    <div class="container">
+        <h2>Review and submit</h2>
+        <p>
+            The finish line is just up ahead. All that’s left is to review your details and go over some terms and conditions, then you’re on your way.
+        </p>
+        <h3>This is some text regarding the Client Agreement Form!</h3>
+        <div class="divTextArea" id="theAgreement" ng-bind-html="theAgreementForm"></div>
+       <h3>This is some text regarding the Terms and Conditions!</h3>
+        <div class="divTextArea" ng-bind-html="theText"></div>
+        
+        
+        
+        
+        <!-- Accept Terms and Conditions
+        **************************************************************************  -->
+        <div style="text-align: center;" class="wrapper-checkbox input-container">
+            <input  type="checkbox" 
+                   id="TandC" 
+                   name="TandCAccepted" 
+                   ng-model="registration.Accept_Terms_and_Conditions__c" 
+                   value="1"/> Accept Terms and Conditions <br />
+        </div>
+ 
+
+
+
+
+
+        <div class="btn-footer">
+            
+            <div class="col-xs-12 col-sm-6 col-md-4 item">
+                <div class="col-xs-12 col-sm-4 btn-wrapper btn-back-wrapper">
+                    <a href="#" class="btn btn-primary btn-back anchor-link"><span>Back</span></a>
+                </div>
+            </div>
+            
+            <div class="col-xs-12 col-sm-6 col-md-4 item">
+                <a href="#" class="btn btn-primary" onClick="PrintElem('theAgreement')"><span>Print Agreement</span></a>
+            </div>
+            
+            <div class="col-xs-12 col-md-4 item">
+                <div class="col-xs-12 col-sm-4 btn-wrapper btn-next-wrapper">
+                    <a ng-disabled="checkDisable('TCChecked')" href="#" class="btn btn-primary btn-next" ng-click="saveRego()"><span>Submit</span></a>
+                    <input type="button" value="Submit" class="btn-next-submit"/>
+                </div>
+            </div>
+            
+        </div>
+
+<!-- END -->   
+<!-- END -->   
+
+
+
+
+
+
+<!--
+        <div class="btn-footer">
+            <div class="col-xs-12 col-sm-6 col-md-4 item">
+                <div class="col-xs-12 col-sm-4 btn-wrapper btn-next-wrapper">
+                    <a href="#" class="btn btn-primary btn-next anchor-link" data-btnstep="step4"><span>Back</span></a>
+                </div>
+            </div>
+            <div class="col-xs-12 col-sm-6 col-md-4 item">
+                <a href="#" class="btn btn-primary"><span>Save and continue later</span></a>
+            </div>
+            <div class="col-xs-12 col-md-4 item">
+                <div class="col-xs-12 col-sm-4 btn-wrapper btn-next-wrapper">
+                    <a href="thankyou.php" class="btn btn-primary btn-next"><span>Submit</span></a>
+                    <input type="button" value="Submit" class="btn-next-submit"/>
+                </div>
+            </div>
+        </div>
+
+-->
+
+        </div>
+    </div>
+</div>
+
+</apex:component>

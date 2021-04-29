@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Onboarding_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>Onboarding Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Awaiting Approval</fullName>
+                <default>false</default>
+                <label>Awaiting Approval</label>
+            </value>
+            <value>
+                <fullName>Awaiting Authorisation</fullName>
+                <default>false</default>
+                <label>Awaiting Authorisation</label>
+            </value>
+            <value>
+                <fullName>Awaiting Citi</fullName>
+                <default>false</default>
+                <label>Awaiting Citi</label>
+            </value>
+            <value>
+                <fullName>Awaiting EFT deposit form</fullName>
+                <default>false</default>
+                <label>Awaiting EFT deposit form</label>
+            </value>
+            <value>
+                <fullName>Awaiting Legal</fullName>
+                <default>false</default>
+                <label>Awaiting Legal</label>
+            </value>
+            <value>
+                <fullName>Awaiting Terms and Conditions</fullName>
+                <default>false</default>
+                <label>Awaiting Terms and Conditions</label>
+            </value>
+            <value>
+                <fullName>DD Complete</fullName>
+                <default>false</default>
+                <label>DD Complete</label>
+            </value>
+            <value>
+                <fullName>Deleted</fullName>
+                <default>false</default>
+                <label>Deleted</label>
+            </value>
+            <value>
+                <fullName>Due Diligence In Progress</fullName>
+                <default>false</default>
+                <label>Due Diligence In Progress</label>
+            </value>
+            <value>
+                <fullName>New Due Diligence</fullName>
+                <default>false</default>
+                <label>New Due Diligence</label>
+            </value>
+            <value>
+                <fullName>New registration</fullName>
+                <default>false</default>
+                <label>New registration</label>
+            </value>
+            <value>
+                <fullName>Periodic review</fullName>
+                <default>false</default>
+                <label>Periodic review</label>
+            </value>
+            <value>
+                <fullName>Referred</fullName>
+                <default>false</default>
+                <label>Referred</label>
+            </value>
+            <value>
+                <fullName>Registration Approved</fullName>
+                <default>false</default>
+                <label>Registration Approved</label>
+            </value>
+            <value>
+                <fullName>Registration Complete</fullName>
+                <default>false</default>
+                <label>Registration Complete</label>
+            </value>
+            <value>
+                <fullName>Registration Completed Input</fullName>
+                <default>false</default>
+                <label>Registration Completed Input</label>
+            </value>
+            <value>
+                <fullName>Registration Declined</fullName>
+                <default>false</default>
+                <label>Registration Declined</label>
+            </value>
+            <value>
+                <fullName>Registration In Progress</fullName>
+                <default>false</default>
+                <label>Registration In Progress</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

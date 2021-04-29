@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Beneficial_Ownership_Risk_Rating_High</fullName>
+    <active>true</active>
+    <description>Beneficial Owners require verified documents</description>
+    <errorConditionFormula>AND
+(OR(ISPICKVAL( Business_Type__c,&quot;Partnership&quot;),ISPICKVAL( Business_Type__c,&quot;Private Company&quot;),ISPICKVAL( Business_Type__c,&quot;Association/Club&quot;),ISPICKVAL( Business_Type__c,&quot;Trusts/Foundation&quot;)),
+Risk_Rating__c=&quot;High&quot;,
+ISCHANGED(Beneficial_Ownership__c), Beneficial_Ownership__c =TRUE,
+INCLUDES(Product__c,&quot;VANs&quot;),
+verFlag_BO__c&lt;2,
+Active_BO_Count__c&gt;0
+)</errorConditionFormula>
+    <errorMessage>For every Beneficial Owner, a verification record is required.  Each verification must have at least one supporting document per verification.</errorMessage>
+</ValidationRule>

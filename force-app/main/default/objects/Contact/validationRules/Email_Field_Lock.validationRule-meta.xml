@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Field_Lock</fullName>
+    <active>true</active>
+    <description>For channel agreement and referrer accounts. email is default to aml@enett.com to prevent the customer from getting an activation email.</description>
+    <errorConditionFormula>AND
+(
+  OR(
+    Account.RecordType.Name = &#39;Referrer&#39;,
+    Account.RecordType.Name = &#39;Channel Agreement&#39;
+    ),
+  NOT(ISPICKVAL(Account.Account_Status__c,&#39;Active&#39;)),
+  INCLUDES(Job_Role__c,&#39;Primary&#39;),
+  Primary_Email_Address__c  &lt;&gt; &#39;aml@enett.com&#39;
+)</errorConditionFormula>
+    <errorMessage>For channel agreement and referrer accounts. primary email is default to aml@enett.com to prevent the customer from getting an activation email.</errorMessage>
+</ValidationRule>

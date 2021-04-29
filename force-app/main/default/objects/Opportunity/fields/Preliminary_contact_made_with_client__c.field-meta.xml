@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Preliminary_contact_made_with_client__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This date is automatically populated when the preliminary contact with the client has been confirmed. The trigger is based on the Delivery Ticket - Preliminary Contact Established date field has been set.</inlineHelpText>
+    <label>Preliminary contact made with client</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Date</type>
+</CustomField>

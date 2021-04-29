@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>X3rd_Party_VANS_Integrators__c</fullName>
+    <externalId>false</externalId>
+    <label>3rd Party VANS Integrators</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>A2Z Travel Solutions</fullName>
+                <default>false</default>
+                <label>A2Z Travel Solutions</label>
+            </value>
+            <value>
+                <fullName>Agoda PP</fullName>
+                <default>false</default>
+                <label>Agoda PP</label>
+            </value>
+            <value>
+                <fullName>AirTrade</fullName>
+                <default>false</default>
+                <label>AirTrade</label>
+            </value>
+            <value>
+                <fullName>Bavel Voxel</fullName>
+                <default>false</default>
+                <label>Bavel Voxel</label>
+            </value>
+            <value>
+                <fullName>BTravel</fullName>
+                <default>false</default>
+                <label>BTravel</label>
+            </value>
+            <value>
+                <fullName>CalypsoNet</fullName>
+                <default>false</default>
+                <label>CalypsoNet</label>
+            </value>
+            <value>
+                <fullName>Cavagent / Scandisys / Antares</fullName>
+                <default>false</default>
+                <label>Cavagent / Scandisys / Antares</label>
+            </value>
+            <value>
+                <fullName>Conferma</fullName>
+                <default>false</default>
+                <label>Conferma</label>
+            </value>
+            <value>
+                <fullName>Cornerstone</fullName>
+                <default>false</default>
+                <label>Cornerstone</label>
+            </value>
+            <value>
+                <fullName>D3R</fullName>
+                <default>false</default>
+                <label>D3R</label>
+            </value>
+            <value>
+                <fullName>Flightgenius</fullName>
+                <default>false</default>
+                <label>Flightgenius</label>
+            </value>
+            <value>
+                <fullName>Gateway</fullName>
+                <default>false</default>
+                <label>Gateway</label>
+            </value>
+            <value>
+                <fullName>Hitchhiker</fullName>
+                <default>false</default>
+                <label>Hitchhiker</label>
+            </value>
+            <value>
+                <fullName>Hotelzon</fullName>
+                <default>false</default>
+                <label>Hotelzon</label>
+            </value>
+            <value>
+                <fullName>IGA</fullName>
+                <default>false</default>
+                <label>IGA</label>
+            </value>
+            <value>
+                <fullName>Inhouse</fullName>
+                <default>false</default>
+                <label>Inhouse</label>
+            </value>
+            <value>
+                <fullName>InnStant Travel</fullName>
+                <default>false</default>
+                <label>InnStant Travel</label>
+            </value>
+            <value>
+                <fullName>Multicom</fullName>
+                <default>false</default>
+                <label>Multicom</label>
+            </value>
+            <value>
+                <fullName>Navitas Solutions</fullName>
+                <default>false</default>
+                <label>Navitas Solutions</label>
+            </value>
+            <value>
+                <fullName>Parsec Comunicaciones</fullName>
+                <default>false</default>
+                <label>Parsec Comunicaciones</label>
+            </value>
+            <value>
+                <fullName>Perennial Systems</fullName>
+                <default>false</default>
+                <label>Perennial Systems</label>
+            </value>
+            <value>
+                <fullName>Procon Solution</fullName>
+                <default>false</default>
+                <label>Procon Solution</label>
+            </value>
+            <value>
+                <fullName>Real Time Travel Connections</fullName>
+                <default>false</default>
+                <label>Real Time Travel Connections</label>
+            </value>
+            <value>
+                <fullName>Rezopia</fullName>
+                <default>false</default>
+                <label>Rezopia</label>
+            </value>
+            <value>
+                <fullName>Travelport GDS</fullName>
+                <default>false</default>
+                <label>Travelport GDS</label>
+            </value>
+            <value>
+                <fullName>Traveltek</fullName>
+                <default>false</default>
+                <label>Traveltek</label>
+            </value>
+            <value>
+                <fullName>TRX Concur</fullName>
+                <default>false</default>
+                <label>TRX Concur</label>
+            </value>
+            <value>
+                <fullName>VIBE Software</fullName>
+                <default>false</default>
+                <label>VIBE Software</label>
+            </value>
+            <value>
+                <fullName>Visittravelcom Technology Group</fullName>
+                <default>false</default>
+                <label>Visittravelcom Technology Group</label>
+            </value>
+            <value>
+                <fullName>Juniper</fullName>
+                <default>false</default>
+                <label>Juniper</label>
+            </value>
+            <value>
+                <fullName>Mr Orange</fullName>
+                <default>false</default>
+                <label>Mr Orange</label>
+            </value>
+            <value>
+                <fullName>Pyton</fullName>
+                <default>false</default>
+                <label>Pyton</label>
+            </value>
+            <value>
+                <fullName>Sapeig Viaxoft</fullName>
+                <default>false</default>
+                <label>Sapeig Viaxoft</label>
+            </value>
+            <value>
+                <fullName>Ypsilon.Net</fullName>
+                <default>false</default>
+                <label>Ypsilon.Net</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

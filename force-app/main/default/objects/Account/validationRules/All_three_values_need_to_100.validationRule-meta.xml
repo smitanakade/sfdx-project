@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>All_three_values_need_to_100</fullName>
+    <active>false</active>
+    <errorConditionFormula>(estimated_TTV_Air__c+estimated_ttv_hotel__c +estimated_ttv_other__c) &lt;100   ||   (estimated_TTV_Air__c+estimated_ttv_hotel__c +estimated_ttv_other__c )&gt;100</errorConditionFormula>
+    <errorMessage>All TTV Generation (Air,Hotels &amp; Other ) need be 100 .</errorMessage>
+</ValidationRule>

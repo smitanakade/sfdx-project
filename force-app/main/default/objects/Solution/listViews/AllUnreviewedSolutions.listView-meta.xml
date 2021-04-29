@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>AllUnreviewedSolutions</fullName>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>SOLUTION.STATUS_CODE</field>
+        <operation>equals</operation>
+        <value>0</value>
+    </filters>
+    <label>All Unreviewed Solution Bank</label>
+    <sharedTo>
+        <group>Demo_Corporate_Admins</group>
+        <group>Todd_Carly</group>
+        <group>unassigned_enett_group</group>
+        <role>Global_Service_Desk_Level_2</role>
+    </sharedTo>
+</ListView>

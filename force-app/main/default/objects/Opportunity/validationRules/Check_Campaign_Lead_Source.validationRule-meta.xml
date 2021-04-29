@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_Campaign_Lead_Source</fullName>
+    <active>false</active>
+    <description>Requirement - When Lead Source is eNett Campaign, Partner Campaign or Industry Event, a pop up message should appear prompting the user to link the Opportunity to a Campaign.  Lead Conversion checkbox set to un-ticked.</description>
+    <errorConditionFormula>AND(
+OR(ISPICKVAL( LeadSource ,&quot;eNett Campaign&quot;),ISPICKVAL( LeadSource ,&quot;Partner Campaign&quot;),ISPICKVAL( LeadSource ,&quot;Industry Event&quot;)),
+ISBLANK(Campaign.Name))</errorConditionFormula>
+    <errorMessage>When selecting the Lead Source : &quot;eNett Campaign&quot;, &quot;Partner Campaign&quot; or &quot;Industry Event&quot;, you will need to select a Campaign from the &quot;Primary Campaign Source&quot; field.</errorMessage>
+</ValidationRule>

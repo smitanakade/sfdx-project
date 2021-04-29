@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Hidden_field_showing_Domain__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK( Contact.Email ),(SUBSTITUTE(SuppliedEmail, LEFT(SuppliedEmail, FIND(&quot;@&quot;, SuppliedEmail)), &quot;&quot;)),
+(SUBSTITUTE(Contact.Email, LEFT(Contact.Email, FIND(&quot;@&quot;, Contact.Email)), &quot;&quot;)))</formula>
+    <label>Hidden field showing Domain</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Schedule_Kick_off_Call_Task_Created__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>This is the date that the Schedule Kick Off Call was created.  The Task due date has been set for 4 days from the task creation date.</inlineHelpText>
+    <label>Schedule Kick-off Call Task Created</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Start_Approval</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Start Approval</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+
+var sub = &quot;{!Due_Diligence_Approval__c.Submitted_By__c}&quot;; 
+var user = &quot;{!User.Name}&quot;; 
+var userid = &quot;{!User.Id}&quot;; 
+var sa = new sforce.SObject(&quot;Due_Diligence_Approval__c&quot;); 
+var status = &quot;{!Due_Diligence_Approval__c.Approval_Status__c}&quot;; 
+var owner = &quot;{!Due_Diligence_Approval__c.OwnerId}&quot;; 
+var riskRating = &quot;{!Due_Diligence_Approval__c.Risk_Rating__c}&quot;; 
+var rightToApprove = &quot;{!$Setup.DD_Config__c.Can_Approve_High_Risk_DD__c}&quot;;
+
+sa.id = &quot;{!Due_Diligence_Approval__c.Id}&quot;; 
+
+if (riskRating == &#39;High&#39; &amp;&amp; rightToApprove == &#39;false&#39;) {
+alert(&#39;Registration is high risk and can only be reviewed by Head of AML.&#39;); 
+
+} else if (sub == user) { 
+
+alert(&#39;You cannot work on a Due Diligence Approval that has been submitted by you.&#39;); 
+
+} else { 
+sa.Approval_Status__c = &#39;Approval In Progress&#39; 
+sa.Approval_Type__c = &#39;DD Approval In Progress&#39;; 
+sa.OwnerId = &quot;{!User.Id}&quot;; 
+sa.RecordTypeId = &#39;{!$Setup.recTypesDDApproval__c.DD_Awaiting_Approval__c}&#39;; 
+
+result = sforce.connection.update([sa]); 
+
+if (result[0].getBoolean(&quot;success&quot;) == false ) { 
+alert(result[0].errors.message); 
+} 
+
+window.location.reload() 
+
+}</url>
+</WebLink>

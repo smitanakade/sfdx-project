@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Account Type --></label>
+    <name>Account_Type__c</name>
+    <picklistValues>
+        <masterLabel>Additional ECN</masterLabel>
+        <translation><!-- Additional ECN --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Affiliate</masterLabel>
+        <translation><!-- Affiliate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Channel Agreement</masterLabel>
+        <translation><!-- Channel Agreement --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Customer</masterLabel>
+        <translation><!-- Customer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Referrer</masterLabel>
+        <translation><!-- Referrer --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Service Provider</masterLabel>
+        <translation><!-- Service Provider --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>eNett Internal</masterLabel>
+        <translation><!-- eNett Internal --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>eNett Internal Non Transacting</masterLabel>
+        <translation><!-- eNett Internal Non Transacting --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>eNett Internal Transacting</masterLabel>
+        <translation><!-- eNett Internal Transacting --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

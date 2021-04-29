@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Registration_Status__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Default is new and is automatically populated as the user selects start or complete registration button.</inlineHelpText>
+    <label>Registration Status</label>
+    <required>false</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>In Progress</fullName>
+                <default>false</default>
+                <label>In Progress</label>
+            </value>
+            <value>
+                <fullName>Complete</fullName>
+                <default>false</default>
+                <label>Complete</label>
+            </value>
+            <value>
+                <fullName>New</fullName>
+                <default>true</default>
+                <label>New</label>
+            </value>
+            <value>
+                <fullName>Awaiting Acceptance</fullName>
+                <default>false</default>
+                <label>Awaiting Acceptance</label>
+            </value>
+            <value>
+                <fullName>New (Product)</fullName>
+                <default>false</default>
+                <label>New (Product)</label>
+            </value>
+            <value>
+                <fullName>Rejected - Non-responsive</fullName>
+                <default>false</default>
+                <label>Rejected - Non-responsive</label>
+            </value>
+            <value>
+                <fullName>Rejected - Spam/test application</fullName>
+                <default>false</default>
+                <label>Rejected - Spam/test application</label>
+            </value>
+            <value>
+                <fullName>Rejected - Application N/A</fullName>
+                <default>false</default>
+                <label>Rejected - Application N/A</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

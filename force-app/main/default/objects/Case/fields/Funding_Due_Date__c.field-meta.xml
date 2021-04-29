@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funding_Due_Date__c</fullName>
+    <description>This is the date that has been agreed on by the client and the delivery team member as to when the funds will be added.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Enter the agreed funding date.</inlineHelpText>
+    <label>Funding Due Date</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Date</type>
+</CustomField>

@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Active_Deliveries</fullName>
+    <columns>OPPORTUNITY.NAME</columns>
+    <columns>ECN__c</columns>
+    <columns>Delivery_Owner__c</columns>
+    <columns>Delivery_type__c</columns>
+    <columns>Attainable_TTV_annual__c</columns>
+    <columns>Primary_Implementation_Contact__c</columns>
+    <columns>Implementation_Start_Date__c</columns>
+    <columns>Delivery_Ticket_Number__c</columns>
+    <columns>Delivery_Category_Name__c</columns>
+    <columns>Delivery_Phase__c</columns>
+    <columns>Delivery_Status__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Delivery_Status__c</field>
+        <operation>equals</operation>
+        <value>Active</value>
+    </filters>
+    <filters>
+        <field>Region__c</field>
+        <operation>equals</operation>
+        <value>EMEA,Americas</value>
+    </filters>
+    <label>EMEA - Active Deliveries</label>
+    <sharedTo>
+        <role>Global_Service_Desk_Level_2</role>
+        <role>Global_Service_Desk_Level_3_Delivery</role>
+    </sharedTo>
+</ListView>

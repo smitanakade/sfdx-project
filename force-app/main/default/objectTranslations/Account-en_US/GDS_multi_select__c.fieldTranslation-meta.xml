@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- GDS (multi-select) --></label>
+    <name>GDS_multi_select__c</name>
+    <picklistValues>
+        <masterLabel>Abacus</masterLabel>
+        <translation><!-- Abacus --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Amadeus</masterLabel>
+        <translation><!-- Amadeus --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Apollo</masterLabel>
+        <translation><!-- Apollo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Axess</masterLabel>
+        <translation><!-- Axess --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Galileo</masterLabel>
+        <translation><!-- Galileo --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Infini</masterLabel>
+        <translation><!-- Infini --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sabre</masterLabel>
+        <translation><!-- Sabre --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Sirena</masterLabel>
+        <translation><!-- Sirena --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Topas</masterLabel>
+        <translation><!-- Topas --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Travelsky</masterLabel>
+        <translation><!-- Travelsky --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Worldspan</masterLabel>
+        <translation><!-- Worldspan --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

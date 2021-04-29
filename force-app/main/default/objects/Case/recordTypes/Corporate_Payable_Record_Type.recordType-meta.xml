@@ -1,0 +1,500 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RecordType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Corporate_Payable_Record_Type</fullName>
+    <active>true</active>
+    <businessProcess>Test Support Process</businessProcess>
+    <label>Corporate Payable Record Type</label>
+    <picklistValues>
+        <picklist>API_Delivery_Category__c</picklist>
+        <values>
+            <fullName>API - API Integration Remote</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>API - Complex Large Business Onsite</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Call_Duration_min__c</picklist>
+        <values>
+            <fullName>1</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>10</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>20</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>30</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>40</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>50</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>6</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>60</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>7</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>8</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>9</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Over 60</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Category__c</picklist>
+        <values>
+            <fullName>VANS Payment Processing</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Closed_Lost_Terminated_Reason__c</picklist>
+        <values>
+            <fullName>Client does not want to pay API fee</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client not ready</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client unresponsive%2FNever transacted</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No pilot customer</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Other</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DCPRE_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>DCPRF_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Category__c</picklist>
+        <values>
+            <fullName>API - API Integration Remote</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>API - Complex Large Business Onsite</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop - High Touch Training %2F Consultation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Desktop - Low Touch Self Sufficient</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Delivery_Phase__c</picklist>
+        <values>
+            <fullName>0 - Pre-Implementation Kick-off</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 - Planning %26 Preparation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>1 - Set Up and Configuration</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - Development %28 API integration%29</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>2 - VAN Training</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - Funding</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>3 - UAT</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - Live testing</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>4 - VAN Reporting and Reconciliation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>5 - Production cut over</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unassigned Delivery</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Description__c</picklist>
+        <values>
+            <fullName>Supplier Payment</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Dormant_Category__c</picklist>
+        <values>
+            <fullName>Did not intend to register for the product</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>No Information</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>On ISR in error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Product does not suit business needs</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Unable to contact after multiple attempts</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FARRE_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>FARRF_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Funding_Model__c</picklist>
+        <values>
+            <fullName>Funding On Activation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funding On Authorisation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funding On Settlement</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Issue__c</picklist>
+        <values>
+            <fullName>Funds Delayed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funds Not Received</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Funds Returned</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>JIRA_Type__c</picklist>
+        <values>
+            <fullName>Investigation</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Report</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Jira_Priority__c</picklist>
+        <values>
+            <fullName>Critical</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Must Have</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Nice To Have</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Should Have</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Origin</picklist>
+        <values>
+            <fullName>Corporate Payable</fullName>
+            <default>true</default>
+        </values>
+        <values>
+            <fullName>Voicemail</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Priority</picklist>
+        <values>
+            <fullName>Critical</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Product__c</picklist>
+        <values>
+            <fullName>VANs</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason</picklist>
+        <values>
+            <fullName>Complex functionality</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Duplicate Ticket</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Existing problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Instructions not clear</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>New problem</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>User didn%27t attend training</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Reason__c</picklist>
+        <values>
+            <fullName>Citi Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Error - Didn%E2%80%99t Request Sameday Payment</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Error - No ECN Provided</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Client Error - Wrong Details Used</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Clients Bank Error</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Cut-off Time %2F Bank Holiday</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Incorrect Details Used - Bank Unable To Apply</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Local Clearing Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Tech %2F Feed Issue</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Wrong Account Used %2F Account Closed</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>eNett Error</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Select_Whether_Reports_Are_Needed__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Transactions_In_Line_with_GDV__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>Type</picklist>
+        <values>
+            <fullName>Task</fullName>
+            <default>true</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>VANs_Still_Enabled__c</picklist>
+        <values>
+            <fullName>No</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Yes</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X44F_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+    <picklistValues>
+        <picklist>X44_Frequency__c</picklist>
+        <values>
+            <fullName>Daily</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Monthly</fullName>
+            <default>false</default>
+        </values>
+        <values>
+            <fullName>Weekly</fullName>
+            <default>false</default>
+        </values>
+    </picklistValues>
+</RecordType>

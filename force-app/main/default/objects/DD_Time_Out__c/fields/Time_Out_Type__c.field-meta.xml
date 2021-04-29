@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Time_Out_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Time Out Type</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Awaiting Client</fullName>
+                <default>false</default>
+                <label>Awaiting Client</label>
+            </value>
+            <value>
+                <fullName>On Hold</fullName>
+                <default>false</default>
+                <label>On Hold</label>
+            </value>
+            <value>
+                <fullName>Non Responsive</fullName>
+                <default>false</default>
+                <label>Non Responsive</label>
+            </value>
+            <value>
+                <fullName>Needs More Time</fullName>
+                <default>false</default>
+                <label>Needs More Time</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

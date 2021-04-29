@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Desktop_Delivery_cannot_be_Completed</fullName>
+    <active>true</active>
+    <description>Desktop delivery cannot be completed unless the Reporting Requirements are specified</description>
+    <errorConditionFormula>AND( Delivery_Type__c = &#39;Delivery - Desktop&#39;, ISPICKVAL(Status ,&#39;Completed&#39;), ISBLANK( Reporting_Requirement_Defined__c ))</errorConditionFormula>
+    <errorDisplayField>Reporting_Requirement_Defined__c</errorDisplayField>
+    <errorMessage>You must define the reporting requirements before completing this ticket</errorMessage>
+</ValidationRule>

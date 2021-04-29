@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>FCP_Opportunity_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>FCP Opportunity Status</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Early Days</fullName>
+                <default>false</default>
+                <label>Early Days</label>
+            </value>
+            <value>
+                <fullName>Long Shot</fullName>
+                <default>false</default>
+                <label>Long Shot</label>
+            </value>
+            <value>
+                <fullName>50 : 50</fullName>
+                <default>false</default>
+                <label>50 : 50</label>
+            </value>
+            <value>
+                <fullName>Looking Good</fullName>
+                <default>false</default>
+                <label>Looking Good</label>
+            </value>
+            <value>
+                <fullName>Won</fullName>
+                <default>false</default>
+                <label>Won</label>
+            </value>
+            <value>
+                <fullName>Lost</fullName>
+                <default>false</default>
+                <label>Lost</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

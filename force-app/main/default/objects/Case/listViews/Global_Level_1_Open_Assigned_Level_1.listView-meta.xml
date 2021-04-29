@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Global_Level_1_Open_Assigned_Level_1</fullName>
+    <booleanFilter>1 AND 2 AND 3 AND (4 OR 5 OR 6 OR 7 OR 8)</booleanFilter>
+    <columns>CASES.CASE_NUMBER</columns>
+    <columns>CASES.LAST_UPDATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>CASES.STATUS</columns>
+    <columns>CASES.SUBJECT</columns>
+    <columns>CASES.ORIGIN</columns>
+    <columns>CASES.PRIORITY</columns>
+    <columns>Assignee_Region__c</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Assignee_Service_Level__c</field>
+        <operation>equals</operation>
+        <value>Service Desk Level 1</value>
+    </filters>
+    <filters>
+        <field>CASES.STATUS</field>
+        <operation>equals</operation>
+        <value>Open,Pending,Reopen</value>
+    </filters>
+    <filters>
+        <field>OWNER_NAME</field>
+        <operation>notEqual</operation>
+        <value>Global Service Desk Level 1</value>
+    </filters>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.Zendesk_Historical_Record</value>
+    </filters>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.Enett_Service_Cloud_Record_Type</value>
+    </filters>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.Closed_Enett_Service_Cloud_Record_Type</value>
+    </filters>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.Reopen_Enett_Service_Cloud_Record_Type</value>
+    </filters>
+    <filters>
+        <field>CASES.RECORDTYPE</field>
+        <operation>equals</operation>
+        <value>Case.Internal_Service_Cloud_Record_Type</value>
+    </filters>
+    <label>Global Level 1 -  Open Assigned</label>
+    <sharedTo>
+        <role>AML</role>
+        <role>Global_Service_Desk_Level_1</role>
+        <role>Global_Service_Desk_Level_2</role>
+        <role>Service_Desk_Administrator</role>
+        <role>Stefanini_Management</role>
+    </sharedTo>
+</ListView>

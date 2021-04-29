@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Declined_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Declined Reason</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Risk</fullName>
+                <default>false</default>
+                <label>Risk</label>
+            </value>
+            <value>
+                <fullName>Non Responsive</fullName>
+                <default>false</default>
+                <label>Non Responsive</label>
+            </value>
+            <value>
+                <fullName>DD Not Met</fullName>
+                <default>false</default>
+                <label>DD Not Met</label>
+            </value>
+            <value>
+                <fullName>DD Not Provided</fullName>
+                <default>false</default>
+                <label>DD Not Provided</label>
+            </value>
+            <value>
+                <fullName>Not Interested</fullName>
+                <default>false</default>
+                <label>Not Interested</label>
+            </value>
+            <value>
+                <fullName>Competitor</fullName>
+                <default>false</default>
+                <label>Competitor</label>
+            </value>
+            <value>
+                <fullName>Language</fullName>
+                <default>false</default>
+                <label>Language</label>
+            </value>
+            <value>
+                <fullName>Not Travel</fullName>
+                <default>false</default>
+                <label>Not Travel</label>
+            </value>
+            <value>
+                <fullName>Needs More Time</fullName>
+                <default>false</default>
+                <label>Needs More Time</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

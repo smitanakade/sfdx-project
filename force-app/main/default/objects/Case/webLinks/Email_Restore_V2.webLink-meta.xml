@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Email_Restore_V2</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Restore</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/24.0/connection.js&quot;)}
+{!REQUIRESCRIPT(&quot;/soap/ajax/20.0/apex.js&quot;)}
+var currentDate = new Date();
+var c = new sforce.SObject(&quot;Case&quot;);
+c.id = &quot;{!Case.Id}&quot;;
+c.Archive_Restore_Date__c = currentDate;
+sforce.connection.update([c]);
+loc=&quot;/apex/cface__emailsArchive?id={!Case.Id}&amp;number={!Case.CaseNumber}&amp;type=ua&quot;;
+window.top.location.href = loc;</url>
+</WebLink>

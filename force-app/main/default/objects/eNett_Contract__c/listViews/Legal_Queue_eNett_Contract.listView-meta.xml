@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Legal_Queue_eNett_Contract</fullName>
+    <columns>NAME</columns>
+    <columns>Account_Name__c</columns>
+    <columns>Contract_Type__c</columns>
+    <columns>eNett_Product__c</columns>
+    <columns>Status__c</columns>
+    <columns>Contract_Stage__c</columns>
+    <columns>OWNER.ALIAS</columns>
+    <columns>LAST_UPDATE</columns>
+    <filterScope>Everything</filterScope>
+    <filters>
+        <field>Contract_Type__c</field>
+        <operation>equals</operation>
+        <value>Custom</value>
+    </filters>
+    <label>Custom Contracts</label>
+    <sharedTo>
+        <allInternalUsers/>
+    </sharedTo>
+</ListView>

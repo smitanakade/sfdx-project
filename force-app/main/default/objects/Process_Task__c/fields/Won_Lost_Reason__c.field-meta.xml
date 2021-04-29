@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Won_Lost_Reason__c</fullName>
+    <externalId>false</externalId>
+    <label>Won / Lost Reason</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Contract_Outcome__c</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>No Competition</fullName>
+                <default>false</default>
+                <label>No Competition</label>
+            </value>
+            <value>
+                <fullName>Product / Solution</fullName>
+                <default>false</default>
+                <label>Product / Solution</label>
+            </value>
+            <value>
+                <fullName>Speed of Service</fullName>
+                <default>false</default>
+                <label>Speed of Service</label>
+            </value>
+            <value>
+                <fullName>Pricing</fullName>
+                <default>false</default>
+                <label>Pricing</label>
+            </value>
+            <value>
+                <fullName>FX / Currency</fullName>
+                <default>false</default>
+                <label>FX / Currency</label>
+            </value>
+            <value>
+                <fullName>No response - DD</fullName>
+                <default>false</default>
+                <label>No response - DD</label>
+            </value>
+            <value>
+                <fullName>No response - Sales</fullName>
+                <default>false</default>
+                <label>No response - Sales</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+            <value>
+                <fullName>Lost to competitor</fullName>
+                <default>false</default>
+                <label>Lost to competitor</label>
+            </value>
+            <value>
+                <fullName>Stopped Using eNett</fullName>
+                <default>false</default>
+                <label>Stopped Using eNett</label>
+            </value>
+            <value>
+                <fullName>Failed DD</fullName>
+                <default>false</default>
+                <label>Failed DD</label>
+            </value>
+            <value>
+                <fullName>Duplicate Opportunity</fullName>
+                <default>false</default>
+                <label>Duplicate Opportunity</label>
+            </value>
+            <value>
+                <fullName>Client unresponsive/Never transacted</fullName>
+                <default>false</default>
+                <label>Client unresponsive/Never transacted</label>
+            </value>
+            <value>
+                <fullName>Client not ready</fullName>
+                <default>false</default>
+                <label>Client not ready</label>
+            </value>
+            <value>
+                <fullName>VANs does not meet clients needs/expectations</fullName>
+                <default>false</default>
+                <label>VANs does not meet clients needs/expectations</label>
+            </value>
+            <value>
+                <fullName>No pilot customer</fullName>
+                <default>false</default>
+                <label>No pilot customer</label>
+            </value>
+            <value>
+                <fullName>Client does not want to pay API fee</fullName>
+                <default>false</default>
+                <label>Client does not want to pay API fee</label>
+            </value>
+            <value>
+                <fullName>Change of Contract</fullName>
+                <default>false</default>
+                <label>Change of Contract</label>
+            </value>
+            <value>
+                <fullName>Change of Delivery Type</fullName>
+                <default>false</default>
+                <label>Change of Delivery Type</label>
+            </value>
+            <value>
+                <fullName>High risk vs GDV</fullName>
+                <default>false</default>
+                <label>High risk vs GDV</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>2. Won - GDV Not Met</controllingFieldValue>
+            <controllingFieldValue>1. Won - GDV Met</controllingFieldValue>
+            <valueName>No Competition</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2. Won - GDV Not Met</controllingFieldValue>
+            <controllingFieldValue>1. Won - GDV Met</controllingFieldValue>
+            <valueName>Product / Solution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2. Won - GDV Not Met</controllingFieldValue>
+            <controllingFieldValue>1. Won - GDV Met</controllingFieldValue>
+            <valueName>Speed of Service</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2. Won - GDV Not Met</controllingFieldValue>
+            <controllingFieldValue>1. Won - GDV Met</controllingFieldValue>
+            <valueName>Pricing</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>2. Won - GDV Not Met</controllingFieldValue>
+            <controllingFieldValue>1. Won - GDV Met</controllingFieldValue>
+            <valueName>FX / Currency</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>No response - DD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>No response - Sales</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>Lost to competitor</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>Stopped Using eNett</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>Failed DD</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>Duplicate Opportunity</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>Client unresponsive/Never transacted</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>Client not ready</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>No pilot customer</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>Client does not want to pay API fee</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>Change of Contract</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>Change of Delivery Type</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>3. Lost</controllingFieldValue>
+            <valueName>High risk vs GDV</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

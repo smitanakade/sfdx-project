@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Header_Text__c</fullName>
+    <externalId>false</externalId>
+    <formula>IF(ISBLANK(TEXT(DD_Status__c)), 
+(CASE(Registration_Status__c, 
+&quot;In Progress&quot;, &quot;Registration In Progress&quot;, 
+&quot;New&quot;, &quot;New Registration&quot;, 
+&quot;Awaiting Acceptance&quot;, &quot;Registration Awaiting Acceptance&quot;, 
+TEXT(Registration_Status__c))), (CASE(DD_Status__c, 
+&quot;On Hold&quot;, &quot;DD is On Hold&quot;, 
+&quot;Awaiting Client&quot;, &quot;DD is Awaiting Client&quot;, 
+&quot;In Progress&quot;, &quot;DD In Progress&quot;, 
+&quot;New&quot;, &quot;New DD&quot;, 
+&quot;Referred&quot;, &quot;DD has been Referred&quot;, 
+&quot;Awaiting Approval&quot;, &quot;DD Awaiting Approval&quot;, 
+&quot;Approval in Progress&quot;, &quot;DD Approval in Progress&quot;, 
+&quot;&quot;, &quot;Registration&quot;, 
+TEXT(DD_Status__c))))</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Header Text</label>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

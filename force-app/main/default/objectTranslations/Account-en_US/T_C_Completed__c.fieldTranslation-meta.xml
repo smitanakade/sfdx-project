@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <help><!-- Automatically populated if the T&amp;Cs were completed by the client. --></help>
+    <label><!-- T&amp;C Completed --></label>
+    <name>T_C_Completed__c</name>
+</CustomFieldTranslation>

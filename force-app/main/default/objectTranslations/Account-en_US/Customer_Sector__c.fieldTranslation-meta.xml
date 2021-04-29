@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label><!-- Customer Sector --></label>
+    <name>Customer_Sector__c</name>
+    <picklistValues>
+        <masterLabel>Agent</masterLabel>
+        <translation><!-- Agent --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Airline</masterLabel>
+        <translation><!-- Airline --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Consolidator</masterLabel>
+        <translation><!-- Consolidator --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Corporate</masterLabel>
+        <translation><!-- Corporate --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Hotel</masterLabel>
+        <translation><!-- Hotel --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>TMC</masterLabel>
+        <translation><!-- TMC --></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Wholesaler</masterLabel>
+        <translation><!-- Wholesaler --></translation>
+    </picklistValues>
+</CustomFieldTranslation>

@@ -1,0 +1,12 @@
+<apex:component >
+        <div class="container">
+            <div class="col-xs-12 col-sm-offset-1 col-sm-10 col-md-offset-2 col-md-8 content-wrapper">
+                <div class="icon-content save">
+                    <p class="intro-content">You have successfully saved your application and can resume it later when you're ready.</p>
+                    <p>We have sent you an email contining your unique link to resume your application. Simply click on the link when ever your would like to start adding more details to your application.</p>
+                </div>
+                <h2>To resume application click</h2>
+                <a href="#" class="save">http://www.xxxxxxx.com/xxxxxxx/xxxxxx</a>
+            </div>
+        </div>
+</apex:component>

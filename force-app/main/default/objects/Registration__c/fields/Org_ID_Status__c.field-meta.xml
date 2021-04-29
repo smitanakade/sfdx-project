@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Org_ID_Status__c</fullName>
+    <externalId>false</externalId>
+    <label>ORG ID Status</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Awaiting Client - Attestation Report</fullName>
+                <default>false</default>
+                <label>Awaiting Client - Attestation Report</label>
+            </value>
+            <value>
+                <fullName>Awaiting Client - Doc Request</fullName>
+                <default>false</default>
+                <label>Awaiting Client - Doc Request</label>
+            </value>
+            <value>
+                <fullName>Awaiting Org ID Response</fullName>
+                <default>false</default>
+                <label>Awaiting Org ID Response</label>
+            </value>
+            <value>
+                <fullName>Close record</fullName>
+                <default>false</default>
+                <label>Close record</label>
+            </value>
+            <value>
+                <fullName>Information uploaded to Org ID</fullName>
+                <default>false</default>
+                <label>Information uploaded to Org ID</label>
+            </value>
+            <value>
+                <fullName>Profile Report - Accepted</fullName>
+                <default>false</default>
+                <label>Profile Report - Accepted</label>
+            </value>
+            <value>
+                <fullName>Profile Report - Published</fullName>
+                <default>false</default>
+                <label>Profile Report - Published</label>
+            </value>
+            <value>
+                <fullName>re-DD awaiting re-approval</fullName>
+                <default>false</default>
+                <label>Re-DD awaiting re-approval</label>
+            </value>
+            <value>
+                <fullName>re-DD complete</fullName>
+                <default>false</default>
+                <label>Re-DD complete</label>
+            </value>
+            <value>
+                <fullName>With_AML_Team</fullName>
+                <default>false</default>
+                <label>With AML Team</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

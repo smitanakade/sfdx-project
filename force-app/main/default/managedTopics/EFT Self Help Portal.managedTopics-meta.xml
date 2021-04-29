@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ManagedTopics xmlns="http://soap.sforce.com/2006/04/metadata">
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Featured:Account Maintenance</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Account Maintenance</name>
+        <parentName/>
+        <position>5</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Featured:Billing</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Billing</name>
+        <parentName/>
+        <position>3</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Featured:Integration Management</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Integration Management</name>
+        <parentName/>
+        <position>2</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Featured:Payments</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Payments</name>
+        <parentName/>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Featured:Reporting</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Reporting</name>
+        <parentName/>
+        <position>4</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Featured:Users</fullName>
+        <managedTopicType>Featured</managedTopicType>
+        <name>Users</name>
+        <parentName/>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Account Changes</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Account Changes</name>
+        <parentName>Account Maintenance</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Account Maintenance</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Account Maintenance</name>
+        <parentName/>
+        <position>5</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Billing</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Billing</name>
+        <parentName/>
+        <position>3</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:General</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>General</name>
+        <parentName>Account Maintenance</parentName>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Importing Payments</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Importing Payments</name>
+        <parentName>Payments</parentName>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Integration Management</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Integration Management</name>
+        <parentName/>
+        <position>2</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Making Payments</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Making Payments</name>
+        <parentName>Payments</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Managing Payments</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Managing Payments</name>
+        <parentName>Payments</parentName>
+        <position>2</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Managing Users</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Managing Users</name>
+        <parentName>Users</parentName>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Mapping</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Mapping</name>
+        <parentName>Integration Management</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Master Administrators</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Master Administrators</name>
+        <parentName>Users</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Monthly Billing</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Monthly Billing</name>
+        <parentName>Billing</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Payments</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Payments</name>
+        <parentName/>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Reporting</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Reporting</name>
+        <parentName/>
+        <position>4</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Scheduled Reports</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Scheduled Reports</name>
+        <parentName>Reporting</parentName>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Users</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Users</name>
+        <parentName/>
+        <position>1</position>
+        <topicDescription/>
+    </managedTopic>
+    <managedTopic>
+        <fullName>EFT Self Help Portal.Navigational:Web Portal Reports</fullName>
+        <managedTopicType>Navigational</managedTopicType>
+        <name>Web Portal Reports</name>
+        <parentName>Reporting</parentName>
+        <position>0</position>
+        <topicDescription/>
+    </managedTopic>
+</ManagedTopics>

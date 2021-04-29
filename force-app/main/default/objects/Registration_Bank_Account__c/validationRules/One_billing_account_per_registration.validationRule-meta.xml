@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>One_billing_account_per_registration</fullName>
+    <active>true</active>
+    <errorConditionFormula>(ISNEW() || ISCHANGED(Account_Type__c)) &amp;&amp;
+Active__c &amp;&amp; ISPICKVAL(Account_Type__c, &#39;Billing&#39;) &amp;&amp; Registration__r.Active_Billing_Account_Count__c &gt; 0</errorConditionFormula>
+    <errorMessage>You can only have one active Billing Account per Registration.</errorMessage>
+</ValidationRule>

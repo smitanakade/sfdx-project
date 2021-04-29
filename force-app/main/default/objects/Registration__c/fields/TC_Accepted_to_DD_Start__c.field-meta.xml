@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>TC_Accepted_to_DD_Start__c</fullName>
+    <externalId>false</externalId>
+    <formula>(DD_Start_Datetime__c - Account__r.T_C_Accepted_Datetime__c)*24</formula>
+    <inlineHelpText>Elapsed time between T&amp;Cs Accepted Date and DD Start Date.  This does not take into account business hours!</inlineHelpText>
+    <label>T&amp;C Accepted to DD Start (elapsed hours)</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

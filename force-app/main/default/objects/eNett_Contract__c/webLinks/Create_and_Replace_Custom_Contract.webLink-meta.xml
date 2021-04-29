@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Create_and_Replace_Custom_Contract</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Create and Replace Custom Contract</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+{!REQUIRESCRIPT(&#39;/resource/&#39; &amp; LEFT(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(TEXT(NOW()),&#39;:&#39;,&#39;&#39;),&#39;-&#39;,&#39;&#39;),&#39; &#39;,&#39;&#39;),10) &amp; &#39;000/jsConstants&#39;)}
+{!REQUIRESCRIPT(&#39;/resource/&#39; &amp; LEFT(SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(TEXT(NOW()),&#39;:&#39;,&#39;&#39;),&#39;-&#39;,&#39;&#39;),&#39; &#39;,&#39;&#39;),10) &amp; &#39;000/jsUtils&#39;)}
+
+
+checkCreateContract(&#39;{!$Profile.Id}&#39;, &#39;{!Account.Id}&#39;, &#39;{!Account.Name}&#39;);</url>
+</WebLink>

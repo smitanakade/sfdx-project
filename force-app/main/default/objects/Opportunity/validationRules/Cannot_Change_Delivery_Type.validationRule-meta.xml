@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Cannot_Change_Delivery_Type</fullName>
+    <active>true</active>
+    <errorConditionFormula>AND ( 
+  ISCHANGED( Delivery_type__c ), 
+  OR( 
+    (ISPICKVAL ( PRIORVALUE (Delivery_type__c) , &#39;Delivery - Desktop&#39;) ), 
+    (ISPICKVAL ( PRIORVALUE (Delivery_type__c) , &#39;Delivery - API&#39;) )
+  ),
+  NOT( ISBLANK( Delivery_Ticket_Number__c ) )
+)</errorConditionFormula>
+    <errorMessage>You cannot change the Delivery Type once it has been set to &#39;Desktop&#39; or &#39;API&#39; and a Delivery Ticket has been created.</errorMessage>
+</ValidationRule>

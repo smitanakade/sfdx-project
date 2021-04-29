@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>EMEA_Lead_Queue</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATE</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>LEAD.CREATED_DATE</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <columns>LEAD.UNREAD</columns>
+    <filterScope>Queue</filterScope>
+    <label>EMEA - Lead Queue</label>
+    <queue>EMEA_Lead_Queue</queue>
+    <sharedTo>
+        <role>AML</role>
+        <role>Corporate</role>
+        <role>EMEA_Account_Manager</role>
+        <role>EMEA_Area_Director</role>
+        <role>EMEA_Finance</role>
+        <role>EMEA_Managers</role>
+        <role>EMEA_Regional_Account_Manager</role>
+        <role>EMEA_Sales</role>
+        <role>EMEA_Sales_Manager</role>
+        <role>EMEA_Salespeople</role>
+        <role>Finance</role>
+        <role>Global_Manager</role>
+        <role>Global_Service_Desk_Level_1</role>
+        <role>Global_Service_Desk_Level_2</role>
+        <role>Global_Service_Desk_Level_3_Delivery</role>
+        <role>Global_Service_Desk_Level_3_IT</role>
+        <role>Legal</role>
+        <role>Service_Desk_Administrator</role>
+        <role>Stefanini_Management</role>
+    </sharedTo>
+</ListView>

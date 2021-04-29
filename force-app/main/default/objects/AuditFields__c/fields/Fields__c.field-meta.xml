@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Fields__c</fullName>
+    <description>List of comma delimited API field names</description>
+    <externalId>false</externalId>
+    <inlineHelpText>List of comma delimited API field names (i.e. first_name__c,last_name__c etc.)</inlineHelpText>
+    <label>Fields</label>
+    <length>255</length>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
+    <unique>false</unique>
+</CustomField>

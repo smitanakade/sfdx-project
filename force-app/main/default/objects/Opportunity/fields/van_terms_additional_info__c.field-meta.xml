@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>van_terms_additional_info__c</fullName>
+    <externalId>false</externalId>
+    <inlineHelpText>Long form text field for material contract terms outside those listed above</inlineHelpText>
+    <label>VAN terms - Additional info</label>
+    <length>32768</length>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <type>LongTextArea</type>
+    <visibleLines>3</visibleLines>
+</CustomField>

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Resolve</fullName>
+    <availability>online</availability>
+    <displayType>button</displayType>
+    <linkType>javascript</linkType>
+    <masterLabel>Resolve</masterLabel>
+    <openType>onClickJavaScript</openType>
+    <protected>false</protected>
+    <url>{!REQUIRESCRIPT(&#39;/resource/bigiant_dialog__bDialogJs&#39;)} 
+BIGIANT_DIALOG.init(this, &#39;Message Dialog&#39;, {id : &#39;{!Due_Diligence_Escalation__c.Id}&#39;, controllerExt : &#39;DDEscalation_resolve&#39;});
+/*
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/connection.js&quot;)} 
+{!REQUIRESCRIPT(&quot;/soap/ajax/33.0/apex.js&quot;)} 
+
+var sub = &quot;{!Due_Diligence_Escalation__c.Submitted_By__c}&quot;; 
+var user = &quot;{!User.Name}&quot;; 
+var userid = &quot;{!User.Id}&quot;; 
+var owner = &quot;{!Due_Diligence_Escalation__c.OwnerId}&quot;; 
+var r = new sforce.SObject(&quot;Due_Diligence_Escalation__c&quot;);
+
+r.id = &quot;{!Due_Diligence_Escalation__c.Id}&quot;; 
+
+if (sub == user) { 
+alert(&#39;You cannot work on a Due Diligence Escalation that has been submitted by you.&#39;); 
+
+} else if (owner != userid) { 
+alert(&#39;Please reassign ownership to yourself to resolve the Due Diligence Escalation.&#39;);
+
+} else if ({!Due_Diligence_Escalation__c.Resolved__c}) {
+alert(&#39;This escalation record has already been resolved.&#39;); 
+
+} else { 
+
+var reason = prompt(&quot;Please enter the Escalation Resolution&quot;); 
+
+r.id = &quot;{!Due_Diligence_Escalation__c.Id}&quot;; 
+var clid = &quot;{!Due_Diligence_Escalation__c.RegistrationId__c}&quot;; 
+
+if (reason != null){ 
+r.Resolved__c = true; 
+r.Resolution__c = reason; 
+
+result = sforce.connection.update([r]); 
+
+if (result[0].getBoolean(&quot;success&quot;) == false ) { 
+alert(result[0].errors.message); 
+
+} 
+window.top.location.href = &#39;{!URLFOR($Action.Registration__c.View, Due_Diligence_Escalation__c.RegistrationId__c)}&#39;; 
+}
+}*/</url>
+</WebLink>

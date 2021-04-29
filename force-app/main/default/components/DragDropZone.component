@@ -1,0 +1,167 @@
+<apex:component >
+    <!-- Attribute Definitions -->
+   <apex:attribute name="parentId" type="String" description="Parent record where attachment should be attached"/>
+   <apex:attribute name="attachNamePrefix" description="This is the Prefix name to the attachment."   type="String"/>
+   <apex:attribute name="divID" type="String" description="UploadIdID"/>
+
+    
+    <style>
+        .dropzone { border: 2px dashed #0087F7; border-radius: 5px; background: white; }
+        .dz-success .dz-remove {display: none !important;}
+        .upload-namePrefix {display: none !important;}
+
+    </style>    
+        
+    <h3>
+        Upload files: 
+    </h3>
+
+    <div id="upload-widget-{!divID}" method="post" action="#" class="dropzone"></div>
+    <span id="upload-NamePrefix-{!divID}" class="upload-namePrefix">{!attachNamePrefix}</span>
+        
+    <!--
+    <div>
+    {{registration.Id}}
+    </div>
+    -->
+    
+    <script>
+    
+   // console.log('---upload---{!attachNamePrefix}');
+    var sfdcHostName = '{!$Setup.RegoSettings__c.sfdcHostName__c}';
+    //console.log('HostName >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> '+ sfdcHostName);
+    
+    Dropzone.options.uploadWidget{!divID} = {
+        paramName: 'file',
+        addRemoveLinks: true,
+        maxFilesize: 20, // MB
+        maxFiles :10,
+        acceptedFiles: ".png,.jpg,.gif,.bmp,.jpeg,.doc,.pdf,.docx",
+        dictInvalidFileType: 'Sorry, your file type is not accepted. Please upload any of the following: png, jpeg, gif, bmp, pdf, docx or doc.',
+        dictDefaultMessage: 'Drag a file here to upload, or click to select one.',
+        init: function() {
+            this.on('success', function( file){
+                 attachNamePrefix = document.querySelector('#upload-NamePrefix-{!divID}').textContent;
+                readfiles(file,attachNamePrefix);
+            }
+            // ,
+            // this.on('removedfile', function( file){
+            //     deletefiles(file);
+            // }
+            );
+            
+        }
+    };
+    
+    function readfiles(files,attachNamePrefix) { 
+
+        
+
+        var uploadToSF = false;
+        // console.log(files.accepted);
+        if(files.accepted){
+            uploadToSF = files.accepted;
+
+        }
+        //console.log('---prefix---{!attachNamePrefix}');
+        //console.log(files);
+        //console.log(uploadToSF);
+
+        // if its a Valid File then send the File to SF
+        if(uploadToSF)
+        {
+            //console.log('Send to SF');
+            //
+           
+
+            var theScope = angular.element($("#theBody")).scope();
+            var theRegoId = theScope.getRegoID();
+           // console.log('ParentId >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ' + theRegoId );
+            
+            // now post a new XHR request
+            var xhr = new XMLHttpRequest();
+
+           
+            
+           
+
+            var sfdcurl = 'https://'+sfdcHostName+'/services/apexrest/DragAndDrop?FileName='+encodeURIComponent(attachNamePrefix+files.name)+'&cType='+encodeURIComponent(files.type)+ '&parId=' + theRegoId;
+            xhr.open('POST','https://'+sfdcHostName+'/services/proxy' );
+            //xhr.setRequestHeader("Content-type",'multipart/form-data');
+            //xhr.setRequestHeader("Content-type",'');
+            //xhr.setRequestHeader("Authorization","Bearer {!$Api.Session_ID}");
+            xhr.setRequestHeader('SalesforceProxy-Endpoint', sfdcurl);
+            xhr.setRequestHeader('X-User-Agent', 'DragAndDropAPI v1.0');
+            
+            xhr.onload = function() {
+                //resetAll();
+            };
+            
+            xhr.onreadystatechange=function() {
+                if (xhr.readyState==4 && xhr.status != 200)
+                {
+                    if(xhr.responseText)
+                        alert(xhr.responseText);
+                    else
+                        alert('Some error occurred while uploading file');
+                     //console.log(xhr);
+                }
+            }
+            xhr.send(files);
+
+            //pr(xhr);
+            $time = (files.size/100);
+            //console.log($time);
+            setTimeout(function() {
+               document.querySelector('#getAttachments-'+attachNamePrefix).click();
+            }, 2500+$time);
+           // console.log('#getAttachments-'+attachNamePrefix);
+            
+            
+        }
+        
+    }
+    // function deletefiles(files) { 
+        
+    //     var theScope = angular.element($("#theBody")).scope();
+    //     var theRegoId = theScope.getRegoID();
+    //    // console.log('ParentId >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> ' + theRegoId );
+        
+    //     // now post a new XHR request
+    //     var xhr = new XMLHttpRequest();
+        
+    //     var sfdcurl = 'https://'+sfdcHostName+'/services/apexrest/DragAndDrop?FileName='+encodeURIComponent('{!attachNamePrefix}'+files.name)+'&cType='+encodeURIComponent(files.type)+ '&parId=' + theRegoId;
+    //     //var sfdcurl = 'https://'+sfdcHostName+'.salesforce.com/services/apexrest/DragAndDrop/v1?FileName='+encodeURIComponent(files.name)+'&cType='+encodeURIComponent(files.type)+ '&parId={!parentId}' ;
+    //    // console.log('sfdcurl >>>>>>>>>>>>>>>>>>>>>>>>>>>>>> '+sfdcurl);
+    //     //console.log(sfdcHostName);
+    //     //xhr.open('POST','/services/proxy' );
+    //     xhr.open('POST','https://'+sfdcHostName+'/services/proxy' );
+
+    //     //console.log('https://'+sfdcHostName+'/services/proxy');
+        
+    //     //xhr.setRequestHeader("Content-type",'multipart/form-data');
+    //     //xhr.setRequestHeader("Content-type",'');
+    //     //xhr.setRequestHeader("Authorization","Bearer {!$Api.Session_ID}");
+    //     xhr.setRequestHeader('SalesforceProxy-Endpoint', sfdcurl);
+    //     xhr.setRequestHeader('X-User-Agent', 'DragAndDropAPI v1.0');
+        
+    //     xhr.onload = function() {
+    //         //resetAll();
+    //     };
+        
+    //     xhr.onreadystatechange=function() {
+    //         if (xhr.readyState==4 && xhr.status != 200)
+    //         {
+    //             if(xhr.responseText)
+    //                 alert(xhr.responseText);
+    //             else
+    //                 alert('Some error occurred while uploading file');
+    //             console.log(xhr);
+    //         }
+    //     }
+    //     xhr.send(files);
+        
+    // }
+    
+    </script>
+</apex:component>

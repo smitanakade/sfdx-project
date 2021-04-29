@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebLink xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>New_Indirect_PEP_bo</fullName>
+    <availability>online</availability>
+    <displayType>massActionButton</displayType>
+    <encodingKey>UTF-8</encodingKey>
+    <linkType>url</linkType>
+    <masterLabel>New Indirect PEP</masterLabel>
+    <openType>replace</openType>
+    <protected>false</protected>
+    <requireRowSelection>false</requireRowSelection>
+    <url>/{!$Setup.ObjectReferenceIds__c.PEP_Object_Prefix__c}/e?RecordType={!$Setup.recTypesPEP__c.Beneficial_Owner_Indirect_PEP__c}&amp;CF{!$Setup.ObjectReferenceIds__c.PEP_Beneficial_Owner__c}={!Beneficial_Owner__c.Name}&amp;CF{!$Setup.ObjectReferenceIds__c.PEP_Beneficial_Owner__c}_lkid={!Beneficial_Owner__c.Id}&amp;retURL=%2F{!Beneficial_Owner__c.Id}</url>
+</WebLink>

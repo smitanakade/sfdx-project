@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Jira_Support_Ticket__c</fullName>
+    <description>The URL to the JIRA Ticket record</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Add the direct URL for the JIRA Ticket record</inlineHelpText>
+    <label>Jira Support Ticket</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Url</type>
+</CustomField>
